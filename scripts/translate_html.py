@@ -1,4 +1,7 @@
+import os
 import sys
+
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def modify_html(filename):
     with open(filename, 'r', encoding='utf-8') as f:
@@ -53,5 +56,5 @@ def modify_html(filename):
         f.write(content)
 
 if __name__ == "__main__":
-    modify_html("index.html")
-    modify_html("produccion.html")
+    modify_html(os.path.join(REPO_ROOT, "index.html"))
+    modify_html(os.path.join(REPO_ROOT, "produccion.html"))

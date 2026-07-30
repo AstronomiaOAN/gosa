@@ -227,6 +227,11 @@ document.addEventListener('DOMContentLoaded', () => {
     initExpandableCards();
     initTeamAvatars();
 
+    // Keep footer copyright year current without manual edits
+    document.querySelectorAll('.footer-year').forEach(el => {
+        el.textContent = new Date().getFullYear();
+    });
+
     // Language Initialization
     const savedLang = localStorage.getItem('gosa_lang') || 'es';
     setLang(savedLang);

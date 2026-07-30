@@ -12,7 +12,10 @@ El proyecto está dividido en varios archivos principales que separan la estruct
 - **`styles.css`**: Hoja de estilos principal. Contiene todas las reglas de diseño, variables CSS para los colores, estilos de fuente, diseño responsivo y animaciones.
 - **`script.js`**: Archivo principal de lógica del cliente. Maneja la interactividad de la página, animaciones al hacer scroll, filtros y la internacionalización (cambio de idioma).
 - **`Media/` e `images/`**: Carpetas que contienen los recursos visuales, imágenes de fondo, fotografías de los miembros del equipo y logotipos.
-- **`publicaciones_organizadas.csv`**: Archivo de datos que almacena la información estructurada de las publicaciones.
+- **`data/`**: Archivos de datos fuente de las publicaciones (`publicaciones_organizadas.csv` y `publicaicones.txt`).
+- **`docs/`**: Documentos de referencia del grupo (p. ej. `Tesis de Maestría.txt`).
+- **`scripts/`**: Scripts auxiliares de mantenimiento (p. ej. `translate_html.py`, usado puntualmente para inyectar el selector de idioma en el HTML).
+- **`archive/`**: Archivos sueltos sin uso actual en el sitio, conservados por si acaso (fotos sin referenciar, un duplicado, un archivo `.enc`).
 
 ---
 
