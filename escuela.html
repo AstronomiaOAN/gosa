@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoSA - Escuela de Herramientas Computacionales en Astrofísica Solar</title>
+    <meta name="description"
+        content="Escuela del Grupo de Astrofísica Solar (GoSA) del Observatorio Astronómico Nacional, Universidad Nacional de Colombia: talleres prácticos sobre análisis de datos solares, Python, aprendizaje automático y computación de alto rendimiento.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .escuela-intro {
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            padding: 40px;
+        }
+
+        .escuela-intro p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 1.2rem;
+        }
+
+        /* Fichas de datos prácticos (fecha, modalidad, cupo...) */
+        .escuela-facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: var(--space-sm);
+            margin: 2rem 0;
+        }
+
+        .escuela-fact {
+            padding: var(--space-md);
+            text-align: center;
+        }
+
+        .escuela-fact .fact-icon {
+            font-size: 1.6rem;
+            color: var(--secondary);
+            margin-bottom: var(--space-2xs);
+        }
+
+        .escuela-fact h4 {
+            font-family: var(--font-heading);
+            color: var(--text-bright);
+            font-size: 1rem;
+            margin: 0 0 4px;
+        }
+
+        .escuela-fact p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Llamado a la inscripción */
+        .escuela-cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .escuela-cta .btn {
+            font-size: 1.1rem;
+            padding: 16px 40px;
+        }
+
+        .escuela-cta .cta-note {
+            margin-top: var(--space-sm);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .btn[aria-disabled="true"] {
+            opacity: 0.55;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        /* Tarjetas de módulo con foto del expositor */
+        .escuela-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .module-head {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+        }
+
+        .module-head img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 18px var(--primary-glow);
+            flex-shrink: 0;
+        }
+
+        .module-speaker {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .module-speaker h4 {
+            margin: 0;
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            color: var(--text-bright);
+        }
+
+        .module-speaker .role {
+            margin: 2px 0 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .news-card .expand-content p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 1.1rem;
+        }
+
+        .module-pending {
+            color: var(--secondary);
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .escuela-intro {
+                padding: var(--space-md);
+            }
+
+            .module-head {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body class="lang-es">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
+    <header id="header">
+        <div class="logo">
+            <img src="images/logo_gosa.jpg" alt="Logo GoSA" class="header-logo gosa-logo">
+            <span class="gradient-text">GoSA</span>
+        </div>
+        <nav id="navbar">
+            <ul>
+                <li><a href="index.html" class="nav-link"><span class="es">Inicio</span><span class="en">Home</span></a>
+                </li>
+                <li><a href="index.html#acerca" class="nav-link"><span class="es">Acerca de</span><span class="en">About
+                            Us</span></a></li>
+                <li><a href="index.html#novedades" class="nav-link active"><span class="es">Novedades</span><span
+                            class="en">News</span></a></li>
+                <li><a href="index.html#investigacion" class="nav-link"><span class="es">Investigación</span><span
+                            class="en">Research</span></a></li>
+                <li><a href="index.html#integrantes" class="nav-link"><span class="es">Integrantes</span><span
+                            class="en">Team</span></a></li>
+                <li><a href="produccion.html" class="nav-link"><span class="es">Producción</span><span
+                            class="en">Production</span></a></li>
+                <li><a href="index.html#contacto" class="nav-link"><span class="es">Contacto</span><span
+                            class="en">Contact</span></a></li>
+                <li><a href="index.html#colaboradores" class="nav-link"><span class="es">Colaboraciones</span><span
+                            class="en">Collaborators</span></a></li>
+                <li class="lang-switcher">
+                    <button class="lang-toggle-btn active" onclick="setLang('es', event)" id="btn-es" title="Español">
+                        <img src="https://flagcdn.com/w40/co.png" alt="Colombia Flag" class="lang-flag">
+                    </button>
+                    <button class="lang-toggle-btn" onclick="setLang('en', event)" id="btn-en" title="English">
+                        <img src="https://flagcdn.com/w40/gb.png" alt="UK Flag" class="lang-flag">
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-btn" id="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-spacing" style="padding-top: 150px;">
+            <div class="container fade-in scroll-appear">
+
+                <!-- ============ Presentación de la escuela ============ -->
+                <div class="glassmorphism escuela-intro">
+                    <h2 class="section-title" style="margin-bottom: 1.5rem;">
+                        <span class="es">Escuela de <span class="gradient-text">Herramientas Computacionales</span> en
+                            Astrofísica Solar</span>
+                        <span class="en">School of <span class="gradient-text">Computational Tools</span> in Solar
+                            Astrophysics</span>
+                    </h2>
+
+                    <div class="es">
+                        <p>El <strong>Grupo de Astrofísica Solar (GoSA)</strong> abre una escuela de talleres prácticos
+                            dictados por sus propios integrantes y colaboradores. Cada sesión recorre, de principio a
+                            fin, un flujo de trabajo real: desde la búsqueda y descarga de observaciones solares hasta su
+                            análisis, visualización e interpretación física.</p>
+                        <p>Los talleres están dirigidos a estudiantes de pregrado y posgrado, y a cualquier persona
+                            interesada en el análisis computacional de datos solares. Se recomienda un manejo básico de
+                            <strong>Python</strong>; el resto de las herramientas se introducen durante las sesiones.</p>
+                    </div>
+
+                    <div class="en">
+                        <p>The <strong>Solar Astrophysics Group (GoSA)</strong> is launching a school of hands-on
+                            workshops taught by its own members and collaborators. Each session walks through a real
+                            end-to-end workflow: from searching for and downloading solar observations to analysing,
+                            visualising and physically interpreting them.</p>
+                        <p>The workshops are aimed at undergraduate and graduate students, and at anyone interested in
+                            the computational analysis of solar data. Basic <strong>Python</strong> skills are
+                            recommended; every other tool is introduced during the sessions.</p>
+                    </div>
+
+                    <div class="escuela-facts">
+                        <div class="glassmorphism escuela-fact">
+                            <div class="fact-icon"><i class="fa-regular fa-calendar"></i></div>
+                            <h4><span class="es">Fechas</span><span class="en">Dates</span></h4>
+                            <!-- TODO: reemplazar por las fechas definitivas -->
+                            <p><span class="es">Por definir</span><span class="en">To be defined</span></p>
+                        </div>
+                        <div class="glassmorphism escuela-fact">
+                            <div class="fact-icon"><i class="fa-solid fa-laptop"></i></div>
+                            <h4><span class="es">Modalidad</span><span class="en">Format</span></h4>
+                            <p><span class="es">Híbrida (OAN / virtual)</span><span class="en">Hybrid (OAN /
+                                    online)</span></p>
+                        </div>
+                        <div class="glassmorphism escuela-fact">
+                            <div class="fact-icon"><i class="fa-solid fa-tag"></i></div>
+                            <h4><span class="es">Costo</span><span class="en">Cost</span></h4>
+                            <p><span class="es">Gratuita</span><span class="en">Free</span></p>
+                        </div>
+                        <div class="glassmorphism escuela-fact">
+                            <div class="fact-icon"><i class="fa-brands fa-python"></i></div>
+                            <h4><span class="es">Requisitos</span><span class="en">Requirements</span></h4>
+                            <p><span class="es">Python básico</span><span class="en">Basic Python</span></p>
+                        </div>
+                    </div>
+
+                    <div class="escuela-cta">
+                        <a href="#" class="btn btn-primary js-inscripcion" target="_blank" rel="noopener">
+                            <span class="es">Inscríbete aquí</span><span class="en">Register here</span>
+                        </a>
+                        <p class="cta-note">
+                            <span class="es">¿Dudas? Escríbenos a <a href="mailto:svargasd@unal.edu.co"
+                                    class="news-link">svargasd@unal.edu.co</a></span>
+                            <span class="en">Questions? Write to <a href="mailto:svargasd@unal.edu.co"
+                                    class="news-link">svargasd@unal.edu.co</a></span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ============ Módulos / talleres ============ -->
+                <h2 class="section-title">
+                    <span class="es">Talleres y <span class="gradient-text">Expositores</span></span>
+                    <span class="en">Workshops and <span class="gradient-text">Speakers</span></span>
+                </h2>
+                <p class="section-subtitle">
+                    <span class="es">Haz clic en cada taller para ver la descripción completa. La programación sigue
+                        creciendo: iremos añadiendo nuevos talleres y expositores.</span>
+                    <span class="en">Click on each workshop to read the full description. The programme keeps growing:
+                        we will keep adding new workshops and speakers.</span>
+                </p>
+
+                <div class="escuela-grid">
+
+                    <!-- Daniel Alberto Rodríguez Torres -->
+                    <article class="news-card glassmorphism expandable">
+                        <div class="module-head">
+                            <img src="images/daniel_rodriguez.jpg" alt="Daniel Alberto Rodríguez Torres"
+                                class="team-avatar-img" loading="lazy" decoding="async" width="90" height="90">
+                            <div class="module-speaker">
+                                <h4>Daniel Alberto Rodríguez Torres</h4>
+                                <p class="role"><span class="es">Estudiante de Posgrado — GoSA</span><span
+                                        class="en">Graduate Student — GoSA</span></p>
+                            </div>
+                        </div>
+                        <h3>
+                            <span class="es">Del dato solar al mapa científico: introducción al análisis de
+                                observaciones solares con Python</span>
+                            <span class="en">From solar data to the scientific map: an introduction to the analysis of
+                                solar observations with Python</span>
+                        </h3>
+                        <p>
+                            <span class="es">FITS, SunPy, sistemas de coordenadas heliográficas y helioproyectivas, y un
+                                flujo de análisis completo con magnetogramas o Dopplergramas.</span>
+                            <span class="en">FITS, SunPy, heliographic and helioprojective coordinate systems, and a
+                                complete analysis workflow with magnetograms or Dopplergrams.</span>
+                        </p>
+
+                        <div class="expand-btn-open">
+                            <span class="es">Ver descripción completa →</span>
+                            <span class="en">Read the full description →</span>
+                        </div>
+
+                        <div class="expand-content">
+                            <div class="es">
+                                <p>Las observaciones solares obtenidas por instrumentos espaciales proporcionan grandes
+                                    volúmenes de información que requieren herramientas específicas para su consulta,
+                                    interpretación y análisis. Este taller ofrecerá una introducción práctica al manejo
+                                    de datos solares mediante Python, siguiendo el recorrido desde la búsqueda y descarga
+                                    de una observación hasta su representación e interpretación dentro de un sistema de
+                                    coordenadas físicas.</p>
+                                <p>A partir de observaciones reales, se introducirán las características fundamentales
+                                    del formato FITS y la información contenida en sus encabezados, destacando la
+                                    importancia de los metadatos para interpretar correctamente una imagen astronómica.
+                                    Posteriormente, se emplearán herramientas de SunPy para consultar, descargar,
+                                    visualizar y manipular datos solares, familiarizando a los asistentes con algunos de
+                                    los recursos utilizados actualmente en el análisis computacional de observaciones del
+                                    Sol.</p>
+                                <p>El taller abordará además los principales sistemas de coordenadas heliográficas y
+                                    helioproyectivas, así como su relación con las coordenadas de una imagen y la
+                                    posición aparente de las estructuras solares. Mediante ejemplos sencillos se
+                                    explorarán transformaciones de coordenadas, seguimiento de regiones sobre la
+                                    superficie solar y conceptos básicos de reproyección, mostrando por qué la geometría
+                                    de las observaciones resulta fundamental al comparar imágenes obtenidas en diferentes
+                                    instantes o mediante distintas variables físicas.</p>
+                                <p>Finalmente, se construirá un pequeño flujo de análisis utilizando magnetogramas o
+                                    Dopplergramas solares, integrando descarga, lectura, selección de regiones y
+                                    visualización. De esta manera, los asistentes podrán comprender no solo cómo acceder
+                                    a datos solares reales, sino también los pasos necesarios para transformarlos en
+                                    información físicamente interpretable y preparada para análisis científicos
+                                    posteriores.</p>
+                            </div>
+                            <div class="en">
+                                <p>Solar observations obtained by space instruments provide large volumes of information
+                                    that require specific tools for querying, interpreting and analysing them. This
+                                    workshop offers a practical introduction to handling solar data with Python,
+                                    following the path from searching for and downloading an observation to representing
+                                    and interpreting it within a physical coordinate system.</p>
+                                <p>Starting from real observations, the workshop introduces the fundamental features of
+                                    the FITS format and the information contained in its headers, highlighting how
+                                    important metadata are for correctly interpreting an astronomical image. SunPy tools
+                                    are then used to query, download, visualise and manipulate solar data, familiarising
+                                    attendees with some of the resources currently used in the computational analysis of
+                                    solar observations.</p>
+                                <p>The workshop also covers the main heliographic and helioprojective coordinate systems,
+                                    together with their relationship to image coordinates and the apparent position of
+                                    solar structures. Simple examples explore coordinate transformations, tracking of
+                                    regions on the solar surface and basic reprojection concepts, showing why observation
+                                    geometry is essential when comparing images taken at different times or through
+                                    different physical variables.</p>
+                                <p>Finally, a small analysis pipeline is built using solar magnetograms or Dopplergrams,
+                                    integrating download, reading, region selection and visualisation. Attendees will
+                                    thus understand not only how to access real solar data, but also the steps needed to
+                                    turn them into physically interpretable information, ready for subsequent scientific
+                                    analysis.</p>
+                            </div>
+                            <div class="expand-btn-close">
+                                <span class="es">↑ Contraer ↑</span>
+                                <span class="en">↑ Collapse ↑</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Juan Pablo Herrera Moreno -->
+                    <article class="news-card glassmorphism expandable">
+                        <div class="module-head">
+                            <img src="images/team-optimized/juan_pablo_herrera_moreno.webp"
+                                alt="Juan Pablo Herrera Moreno" class="team-avatar-img" loading="lazy" decoding="async"
+                                width="90" height="90">
+                            <div class="module-speaker">
+                                <h4>Juan Pablo Herrera Moreno</h4>
+                                <p class="role"><span class="es">Estudiante de Posgrado — GoSA</span><span
+                                        class="en">Graduate Student — GoSA</span></p>
+                            </div>
+                        </div>
+                        <h3>
+                            <span class="es">Procesamiento de imágenes de la fotósfera: identificación y caracterización
+                                de manchas solares</span>
+                            <span class="en">Photospheric image processing: identifying and characterising
+                                sunspots</span>
+                        </h3>
+                        <p>
+                            <span class="es">Astropy y SunPy para abrir archivos FITS, leer encabezados y localizar
+                                manchas solares en coordenadas de píxel y coordenadas físicas.</span>
+                            <span class="en">Astropy and SunPy to open FITS files, read headers and locate sunspots in
+                                pixel and physical coordinates.</span>
+                        </p>
+
+                        <div class="expand-btn-open">
+                            <span class="es">Ver descripción completa →</span>
+                            <span class="en">Read the full description →</span>
+                        </div>
+
+                        <div class="expand-content">
+                            <div class="es">
+                                <p>Esta clase introduce los fundamentos del procesamiento de imágenes de la fotósfera
+                                    almacenados en archivos FITS, desde su adquisición hasta la identificación y
+                                    caracterización básica de manchas solares. Se presentará el uso de herramientas de
+                                    Python, especialmente Astropy y SunPy, para descargar datos de observaciones solares,
+                                    abrir y explorar archivos FITS, interpretar sus encabezados y acceder tanto a los
+                                    datos numéricos como a la información espacial asociada.</p>
+                                <p>A través de ejemplos prácticos con imágenes de la superficie solar, los estudiantes
+                                    aprenderán a visualizar observaciones, identificar manchas solares mediante criterios
+                                    de intensidad y obtener sus posiciones en coordenadas de píxel y coordenadas
+                                    heliográficas o heliocéntricas. También se abordará la interpretación de parámetros
+                                    relevantes del encabezado FITS, como la escala espacial, la posición del centro solar
+                                    y la información necesaria para transformar coordenadas de imagen en coordenadas
+                                    físicas.</p>
+                                <p>La clase busca proporcionar una introducción práctica y reproducible al flujo de
+                                    trabajo necesario para pasar de un archivo de observación solar a una representación
+                                    física de las estructuras presentes en la imagen, estableciendo las bases para
+                                    análisis posteriores de áreas, movimientos y campos magnéticos de regiones activas.
+                                </p>
+                            </div>
+                            <div class="en">
+                                <p>This class introduces the fundamentals of processing photospheric images stored in
+                                    FITS files, from acquisition to the identification and basic characterisation of
+                                    sunspots. It presents the use of Python tools — especially Astropy and SunPy — to
+                                    download solar observation data, open and explore FITS files, interpret their headers
+                                    and access both the numerical data and the associated spatial information.</p>
+                                <p>Through practical examples with images of the solar surface, students will learn to
+                                    visualise observations, identify sunspots using intensity criteria and obtain their
+                                    positions in pixel coordinates and in heliographic or heliocentric coordinates. The
+                                    class also covers the interpretation of relevant FITS header parameters, such as the
+                                    spatial scale, the position of the solar centre and the information needed to
+                                    transform image coordinates into physical coordinates.</p>
+                                <p>The aim is to provide a practical, reproducible introduction to the workflow required
+                                    to go from a solar observation file to a physical representation of the structures
+                                    present in the image, laying the groundwork for later analyses of areas, motions and
+                                    magnetic fields of active regions.</p>
+                            </div>
+                            <div class="expand-btn-close">
+                                <span class="es">↑ Contraer ↑</span>
+                                <span class="en">↑ Collapse ↑</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Óscar Andrés Calvo Rebellón -->
+                    <article class="news-card glassmorphism expandable">
+                        <div class="module-head">
+                            <img src="images/team-optimized/oscar_andres_calvo_rebellon.webp"
+                                alt="Oscar Andres Calvo Rebellon" class="team-avatar-img" loading="lazy"
+                                decoding="async" width="90" height="90">
+                            <div class="module-speaker">
+                                <h4>Óscar Andrés Calvo Rebellón</h4>
+                                <p class="role"><span class="es">Estudiante de Posgrado — GoSA</span><span
+                                        class="en">Graduate Student — GoSA</span></p>
+                            </div>
+                        </div>
+                        <h3>
+                            <span class="es">Ondas MHD y su influencia en la cromosfera solar</span>
+                            <span class="en">MHD waves and their influence on the solar chromosphere</span>
+                        </h3>
+                        <p>
+                            <span class="es">Modos de Alfvén y magnetoacústicos, oscilaciones en fibrilos de Hα y
+                                técnicas para caracterizar la propagación de perturbaciones en la cromosfera.</span>
+                            <span class="en">Alfvén and magnetoacoustic modes, oscillations in Hα fibrils, and
+                                techniques to characterise the propagation of perturbations in the chromosphere.</span>
+                        </p>
+
+                        <div class="expand-btn-open">
+                            <span class="es">Ver descripción completa →</span>
+                            <span class="en">Read the full description →</span>
+                        </div>
+
+                        <div class="expand-content">
+                            <div class="es">
+                                <p>Las ondas magnetohidrodinámicas (MHD) son perturbaciones que se propagan en un plasma
+                                    magnetizado debido a la interacción entre el plasma y el campo magnético. En la
+                                    atmósfera solar pueden transportar energía desde las capas inferiores hacia la
+                                    cromosfera y la corona, donde su comportamiento está determinado por propiedades como
+                                    la densidad, la temperatura y la intensidad y geometría del campo magnético. Entre
+                                    los principales modos se encuentran las ondas de Alfvén y las ondas magnetoacústicas,
+                                    cada una con características de propagación y perturbación diferentes.</p>
+                                <p>En la cromosfera, las ondas MHD pueden producir variaciones en la velocidad,
+                                    intensidad, densidad y configuración del campo magnético, generando oscilaciones y
+                                    perturbaciones observables en estructuras cromosféricas. Los fibrilos,
+                                    particularmente visibles en observaciones de Hα, son estructuras alargadas asociadas
+                                    con la organización del campo magnético y pueden mostrar movimientos transversales,
+                                    oscilaciones o perturbaciones que se propagan a lo largo de ellos. El análisis de
+                                    estos fenómenos permite estudiar cómo las ondas interactúan con la estructura
+                                    magnética de la atmósfera solar.</p>
+                                <p>El estudio de las ondas MHD puede abordarse mediante diferentes técnicas
+                                    observacionales y teóricas, incluyendo análisis de velocidades Doppler,
+                                    desplazamientos transversales, variaciones de intensidad, análisis espectral,
+                                    diagramas espacio-temporales y modelos numéricos. Estas herramientas permiten
+                                    caracterizar la propagación y evolución de las perturbaciones, así como estudiar su
+                                    relación con el campo magnético y el transporte de energía en la cromosfera.</p>
+                            </div>
+                            <div class="en">
+                                <p>Magnetohydrodynamic (MHD) waves are perturbations that propagate through a magnetised
+                                    plasma as a result of the interaction between the plasma and the magnetic field. In
+                                    the solar atmosphere they can transport energy from the lower layers towards the
+                                    chromosphere and the corona, where their behaviour is determined by properties such
+                                    as density, temperature and the strength and geometry of the magnetic field. The main
+                                    modes include Alfvén waves and magnetoacoustic waves, each with different propagation
+                                    and perturbation characteristics.</p>
+                                <p>In the chromosphere, MHD waves can produce variations in velocity, intensity, density
+                                    and magnetic field configuration, generating oscillations and perturbations that are
+                                    observable in chromospheric structures. Fibrils, particularly visible in Hα
+                                    observations, are elongated structures associated with the organisation of the
+                                    magnetic field, and they can display transverse motions, oscillations or
+                                    perturbations propagating along them. Analysing these phenomena makes it possible to
+                                    study how waves interact with the magnetic structure of the solar atmosphere.</p>
+                                <p>MHD waves can be studied through a range of observational and theoretical techniques,
+                                    including Doppler velocity analysis, transverse displacements, intensity variations,
+                                    spectral analysis, space-time diagrams and numerical models. These tools allow the
+                                    propagation and evolution of the perturbations to be characterised, as well as the
+                                    study of their relationship with the magnetic field and with energy transport in the
+                                    chromosphere.</p>
+                            </div>
+                            <div class="expand-btn-close">
+                                <span class="es">↑ Contraer ↑</span>
+                                <span class="en">↑ Collapse ↑</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Juan Esteban Agudelo Ortiz -->
+                    <article class="news-card glassmorphism expandable">
+                        <div class="module-head">
+                            <img src="images/team-optimized/juan_esteban_agudelo_ortiz.webp"
+                                alt="Juan Esteban Agudelo Ortiz" class="team-avatar-img" loading="lazy" decoding="async"
+                                width="90" height="90">
+                            <div class="module-speaker">
+                                <h4>Juan Esteban Agudelo Ortiz</h4>
+                                <p class="role"><span class="es">Estudiante de Doctorado — GoSA</span><span
+                                        class="en">PhD Student — GoSA</span></p>
+                            </div>
+                        </div>
+                        <h3>
+                            <span class="es">Vision Language Models aplicados a la Astronomía</span>
+                            <span class="en">Vision Language Models applied to Astronomy</span>
+                        </h3>
+                        <p>
+                            <span class="es">Qué son los Vision Language Models (VLM) y cómo pueden aplicarse al análisis
+                                de datos astronómicos.</span>
+                            <span class="en">What Vision Language Models (VLMs) are and how they can be applied to the
+                                analysis of astronomical data.</span>
+                        </p>
+
+                        <div class="expand-btn-open">
+                            <span class="es">Ver descripción completa →</span>
+                            <span class="en">Read the full description →</span>
+                        </div>
+
+                        <div class="expand-content">
+                            <div class="es">
+                                <p>El taller introduce qué son los <strong>Vision Language Models (VLM)</strong>:
+                                    modelos que combinan el procesamiento de imágenes con el de lenguaje natural. A
+                                    partir de esa base se presentará una propuesta de aplicación de estos modelos en
+                                    Astronomía y las líneas de trabajo que abre para el análisis de observaciones.</p>
+                                <p class="module-pending"><span class="es">Descripción detallada por confirmar.</span>
+                                </p>
+                            </div>
+                            <div class="en">
+                                <p>The workshop introduces what <strong>Vision Language Models (VLMs)</strong> are:
+                                    models that combine image processing with natural language processing. Building on
+                                    that foundation, it presents a proposal for applying these models in Astronomy and
+                                    the lines of work this opens up for the analysis of observations.</p>
+                                <p class="module-pending">Detailed description to be confirmed.</p>
+                            </div>
+                            <div class="expand-btn-close">
+                                <span class="es">↑ Contraer ↑</span>
+                                <span class="en">↑ Collapse ↑</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Carlos Alberto Martínez Sibaja -->
+                    <article class="news-card glassmorphism expandable">
+                        <div class="module-head">
+                            <img src="images/team-optimized/carlos_alberto_martinez_sibaja.webp"
+                                alt="Carlos Alberto Martínez Sibaja" class="team-avatar-img" loading="lazy"
+                                decoding="async" width="90" height="90">
+                            <div class="module-speaker">
+                                <h4>Carlos Alberto Martínez Sibaja</h4>
+                                <p class="role"><span class="es">Estudiante de Posgrado — GoSA</span><span
+                                        class="en">Graduate Student — GoSA</span></p>
+                            </div>
+                        </div>
+                        <h3>
+                            <span class="es">Simulaciones astrofísicas y trabajo con HPC</span>
+                            <span class="en">Astrophysical simulations and working with HPC</span>
+                        </h3>
+                        <p>
+                            <span class="es">Introducción a las simulaciones astrofísicas y al uso de computación de
+                                alto rendimiento (HPC) para ejecutarlas y analizar sus resultados.</span>
+                            <span class="en">Introduction to astrophysical simulations and to the use of high-performance
+                                computing (HPC) to run them and analyse their results.</span>
+                        </p>
+
+                        <div class="expand-btn-open">
+                            <span class="es">Ver descripción completa →</span>
+                            <span class="en">Read the full description →</span>
+                        </div>
+
+                        <div class="expand-content">
+                            <div class="es">
+                                <p>El taller presenta una introducción a las <strong>simulaciones astrofísicas</strong>
+                                    y al trabajo con <strong>computación de alto rendimiento (HPC)</strong>: cómo se
+                                    plantea una simulación, cómo se ejecuta en un clúster y cómo se manejan y analizan
+                                    los volúmenes de datos que produce.</p>
+                                <p class="module-pending"><span class="es">Descripción detallada por confirmar.</span>
+                                </p>
+                            </div>
+                            <div class="en">
+                                <p>The workshop offers an introduction to <strong>astrophysical simulations</strong> and
+                                    to working with <strong>high-performance computing (HPC)</strong>: how a simulation
+                                    is set up, how it is run on a cluster, and how the data volumes it produces are
+                                    handled and analysed.</p>
+                                <p class="module-pending">Detailed description to be confirmed.</p>
+                            </div>
+                            <div class="expand-btn-close">
+                                <span class="es">↑ Contraer ↑</span>
+                                <span class="en">↑ Collapse ↑</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Marcador para próximos talleres -->
+                    <article class="news-card glassmorphism">
+                        <div class="news-date"><span class="es">Próximamente</span><span class="en">Coming
+                                soon</span></div>
+                        <h3><span class="es">Más talleres en camino</span><span class="en">More workshops on the
+                                way</span></h3>
+                        <p>
+                            <span class="es">La escuela irá creciendo con nuevos talleres dictados por integrantes y
+                                colaboradores del grupo. Si quieres proponer uno, completa el formulario de
+                                propuestas.</span>
+                            <span class="en">The school will keep growing with new workshops taught by members and
+                                collaborators of the group. If you would like to propose one, fill in the proposal
+                                form.</span>
+                        </p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSegiJe5f527wcazjofjqp2xogpr3f0GcJa5oMW11KgM1SCgLA/viewform?usp=header"
+                            target="_blank" rel="noopener" class="news-link"><span class="es">Proponer un taller
+                                →</span><span class="en">Propose a workshop →</span></a>
+                    </article>
+
+                </div>
+
+                <!-- ============ Inscripción (repetida al final) ============ -->
+                <div class="glassmorphism escuela-intro" style="margin-top: 40px; text-align: center;">
+                    <h3 style="font-family: var(--font-heading); color: var(--text-bright); margin-bottom: 1rem;">
+                        <span class="es">¿Quieres participar?</span><span class="en">Want to take part?</span>
+                    </h3>
+                    <p>
+                        <span class="es">Los cupos son limitados. Completa el formulario para reservar el tuyo y recibir
+                            la información de conexión y los materiales de cada taller.</span>
+                        <span class="en">Places are limited. Fill in the form to reserve yours and receive the connection
+                            details and materials for each workshop.</span>
+                    </p>
+                    <div class="escuela-cta">
+                        <a href="#" class="btn btn-primary js-inscripcion" target="_blank" rel="noopener">
+                            <span class="es">Inscríbete aquí</span><span class="en">Register here</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logos">
+                        <img src="images/logo_oan.png" alt="Logo OAN" class="footer-logo">
+                        <img src="images/addb59_f11bf82202fb41088f8ddf86c8ed0365_mv2.jpg" alt="Logo GoSA"
+                            class="footer-logo gosa-logo-footer">
+                    </div>
+                    <h2 class="gradient-text">GoSA</h2>
+                    <p><span class="es">Grupo de Astrofísica Solar</span><span class="en">Group of Solar
+                            Astrophysics</span></p>
+                    <p><span class="es">Observatorio Astronómico Nacional<br>Universidad Nacional de
+                            Colombia</span><span class="en">National Astronomical Observatory<br>National University of
+                            Colombia</span></p>
+                </div>
+                <div class="footer-links">
+                    <h3><span class="es">Enlaces Rápidos</span><span class="en">Quick Links</span></h3>
+                    <a href="index.html"><span class="es">Inicio</span><span class="en">Home</span></a>
+                    <a href="index.html#acerca"><span class="es">Acerca de nosotros</span><span class="en">About
+                            Us</span></a>
+                    <a href="index.html#novedades"><span class="es">Novedades</span><span class="en">News</span></a>
+                    <a href="index.html#investigacion"><span class="es">Investigación</span><span
+                            class="en">Research</span></a>
+                    <a href="index.html#integrantes"><span class="es">Equipo</span><span class="en">Team</span></a>
+                    <a href="index.html#colaboradores"><span class="es">Colaboradores</span><span
+                            class="en">Collaborators</span></a>
+                </div>
+                <div class="footer-social">
+                    <h3><span class="es">Síguenos</span><span class="en">Follow Us</span></h3>
+                    <div class="social-links">
+                        <a href="https://x.com/gosa_oan" target="_blank" class="social-link"><i
+                                class="fa-brands fa-x-twitter"></i>
+                            <span>X (Twitter)</span></a>
+                        <a href="https://github.com/GoSA-OAN" target="_blank" class="social-link"><i
+                                class="fa-brands fa-github"></i> <span>GitHub</span></a>
+                        <a href="https://www.facebook.com/gosaOAN" target="_blank" rel="noopener" class="social-link"><i
+                                class="fa-brands fa-facebook-f"></i> <span>Facebook</span></a>
+                        <a href="https://www.instagram.com/gosa.oan/?g=5" target="_blank" class="social-link"><i
+                                class="fa-brands fa-instagram"></i> <span>Instagram</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span class="footer-year">2026</span> <span class="es">Grupo de Astrofísica Solar (GoSA). Todos
+                        los derechos reservados.</span><span class="en">Solar Astrophysics Group (GoSA). All rights
+                        reserved.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // =====================================================================
+        //  INSCRIPCIÓN: pega aquí la URL del formulario de Google y listo.
+        //  Mientras esté vacía, los botones se muestran deshabilitados con el
+        //  texto "Inscripciones próximamente".
+        //  Ejemplo: const FORM_INSCRIPCION = 'https://forms.gle/XXXXXXXXXXXX';
+        // =====================================================================
+        const FORM_INSCRIPCION = '';
+
+        document.querySelectorAll('.js-inscripcion').forEach(btn => {
+            if (FORM_INSCRIPCION) {
+                btn.href = FORM_INSCRIPCION;
+                return;
+            }
+            btn.removeAttribute('href');
+            btn.setAttribute('aria-disabled', 'true');
+            btn.innerHTML = '<span class="es">Inscripciones próximamente</span>' +
+                '<span class="en">Registration opening soon</span>';
+        });
+    </script>
+</body>
+
+</html>

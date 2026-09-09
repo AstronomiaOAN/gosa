@@ -218,6 +218,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // News cards expansion
         document.querySelectorAll('.news-card.expandable').forEach(card => {
             card.addEventListener('click', (e) => {
+                // Let links inside the card work without collapsing it
+                if (e.target.closest('a')) return;
                 // Toggle expansion
                 card.classList.toggle('expanded');
             });
