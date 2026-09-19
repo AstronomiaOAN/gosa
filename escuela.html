@@ -83,6 +83,56 @@
             pointer-events: none;
         }
 
+        .escuela-qr {
+            display: block;
+            margin: var(--space-md) auto 0;
+            border-radius: 12px;
+            background: #fff;
+            padding: 8px;
+        }
+
+        /* Cronograma */
+        .cronograma-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .cronograma-table th,
+        .cronograma-table td {
+            padding: var(--space-sm) var(--space-xs);
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+        }
+
+        .cronograma-table th {
+            color: var(--secondary);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        .cronograma-table td {
+            color: var(--text-muted);
+        }
+
+        .cronograma-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        @media (max-width: 600px) {
+            .cronograma-table {
+                font-size: 0.85rem;
+            }
+
+            .cronograma-table th,
+            .cronograma-table td {
+                padding: var(--space-xs);
+            }
+        }
+
         /* Tarjetas de módulo con foto del expositor */
         .escuela-grid {
             display: grid;
@@ -133,11 +183,6 @@
             color: var(--text-muted);
             line-height: 1.8;
             margin-bottom: 1.1rem;
-        }
-
-        .module-pending {
-            color: var(--secondary);
-            font-style: italic;
         }
 
         @media (max-width: 600px) {
@@ -235,8 +280,8 @@
                         <div class="glassmorphism escuela-fact">
                             <div class="fact-icon"><i class="fa-regular fa-calendar"></i></div>
                             <h4><span class="es">Fechas</span><span class="en">Dates</span></h4>
-                            <!-- TODO: reemplazar por las fechas definitivas -->
-                            <p><span class="es">Por definir</span><span class="en">To be defined</span></p>
+                            <p><span class="es">1, 8, 15, 22 y 29 de octubre de 2026</span><span class="en">October 1,
+                                    8, 15, 22 and 29, 2026</span></p>
                         </div>
                         <div class="glassmorphism escuela-fact">
                             <div class="fact-icon"><i class="fa-solid fa-laptop"></i></div>
@@ -266,7 +311,57 @@
                             <span class="en">Questions? Write to <a href="mailto:svargasd@unal.edu.co"
                                     class="news-link">svargasd@unal.edu.co</a></span>
                         </p>
+                        <img src="images/qr_inscripcion_escuela.png" alt="Código QR del formulario de inscripción"
+                            class="escuela-qr" width="150" height="150" loading="lazy">
+                        <p class="cta-note">
+                            <span class="es">Escanea el código QR para inscribirte desde tu celular</span>
+                            <span class="en">Scan the QR code to register from your phone</span>
+                        </p>
                     </div>
+                </div>
+
+                <!-- ============ Cronograma ============ -->
+                <h2 class="section-title">
+                    <span class="es">Cronograma</span>
+                    <span class="en">Schedule</span>
+                </h2>
+                <div class="glassmorphism escuela-intro" style="padding: var(--space-md) var(--space-lg);">
+                    <table class="cronograma-table">
+                        <thead>
+                            <tr>
+                                <th><span class="es">Fecha</span><span class="en">Date</span></th>
+                                <th><span class="es">Modalidad</span><span class="en">Format</span></th>
+                                <th><span class="es">Taller</span><span class="en">Workshop</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="es">1 de octubre</span><span class="en">October 1</span></td>
+                                <td><span class="es">Híbrida</span><span class="en">Hybrid</span></td>
+                                <td>Juan Pablo Herrera Moreno · Daniel Alberto Rodríguez Torres</td>
+                            </tr>
+                            <tr>
+                                <td><span class="es">8 de octubre</span><span class="en">October 8</span></td>
+                                <td><span class="es">Híbrida</span><span class="en">Hybrid</span></td>
+                                <td>Daniel Alberto Rodríguez Torres</td>
+                            </tr>
+                            <tr>
+                                <td><span class="es">15 de octubre</span><span class="en">October 15</span></td>
+                                <td><span class="es">Híbrida</span><span class="en">Hybrid</span></td>
+                                <td>Óscar Andrés Calvo Rebellón</td>
+                            </tr>
+                            <tr>
+                                <td><span class="es">22 de octubre</span><span class="en">October 22</span></td>
+                                <td><span class="es">Híbrida</span><span class="en">Hybrid</span></td>
+                                <td>Carlos Alberto Martínez Sibaja · Milena Andrea Barrios Gallego</td>
+                            </tr>
+                            <tr>
+                                <td><span class="es">29 de octubre</span><span class="en">October 29</span></td>
+                                <td><span class="es">Híbrida</span><span class="en">Hybrid</span></td>
+                                <td>Juan Esteban Agudelo Ortiz</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
                 <!-- ============ Módulos / talleres ============ -->
@@ -285,6 +380,8 @@
 
                     <!-- Daniel Alberto Rodríguez Torres -->
                     <article class="news-card glassmorphism expandable">
+                        <div class="news-date"><span class="es">📅 1 de octubre de 2026</span><span class="en">📅
+                                October 1, 2026</span></div>
                         <div class="module-head">
                             <img src="images/daniel_rodriguez.jpg" alt="Daniel Alberto Rodríguez Torres"
                                 class="team-avatar-img" loading="lazy" decoding="async" width="90" height="90">
@@ -374,6 +471,8 @@
 
                     <!-- Juan Pablo Herrera Moreno -->
                     <article class="news-card glassmorphism expandable">
+                        <div class="news-date"><span class="es">📅 1 de octubre de 2026</span><span class="en">📅
+                                October 1, 2026</span></div>
                         <div class="module-head">
                             <img src="images/team-optimized/juan_pablo_herrera_moreno.webp"
                                 alt="Juan Pablo Herrera Moreno" class="team-avatar-img" loading="lazy" decoding="async"
@@ -449,6 +548,8 @@
 
                     <!-- Óscar Andrés Calvo Rebellón -->
                     <article class="news-card glassmorphism expandable">
+                        <div class="news-date"><span class="es">📅 15 de octubre de 2026</span><span class="en">📅
+                                October 15, 2026</span></div>
                         <div class="module-head">
                             <img src="images/team-optimized/oscar_andres_calvo_rebellon.webp"
                                 alt="Oscar Andres Calvo Rebellon" class="team-avatar-img" loading="lazy"
@@ -530,6 +631,8 @@
 
                     <!-- Juan Esteban Agudelo Ortiz -->
                     <article class="news-card glassmorphism expandable">
+                        <div class="news-date"><span class="es">📅 29 de octubre de 2026</span><span class="en">📅
+                                October 29, 2026</span></div>
                         <div class="module-head">
                             <img src="images/team-optimized/juan_esteban_agudelo_ortiz.webp"
                                 alt="Juan Esteban Agudelo Ortiz" class="team-avatar-img" loading="lazy" decoding="async"
@@ -558,19 +661,41 @@
 
                         <div class="expand-content">
                             <div class="es">
-                                <p>El taller introduce qué son los <strong>Vision Language Models (VLM)</strong>:
-                                    modelos que combinan el procesamiento de imágenes con el de lenguaje natural. A
-                                    partir de esa base se presentará una propuesta de aplicación de estos modelos en
-                                    Astronomía y las líneas de trabajo que abre para el análisis de observaciones.</p>
-                                <p class="module-pending"><span class="es">Descripción detallada por confirmar.</span>
+                                <p>Los Vision Language Models (VLM) son modelos de aprendizaje profundo que combinan
+                                    el procesamiento de imágenes con el de lenguaje natural, permitiendo relacionar el
+                                    contenido visual de una imagen con descripciones, preguntas o instrucciones en
+                                    texto. Este taller presentará los conceptos básicos detrás de estos modelos: cómo
+                                    se representan conjuntamente la información visual y textual, y qué tipo de
+                                    tareas pueden resolver, como la descripción automática de imágenes, la búsqueda de
+                                    contenido visual a partir de texto o la respuesta a preguntas sobre una imagen.
                                 </p>
+                                <p>A partir de esta base, se explorará una propuesta de aplicación de los VLM en
+                                    Astronomía: su uso potencial para explorar, describir y clasificar grandes
+                                    volúmenes de observaciones astronómicas, incluyendo imágenes solares, apoyando
+                                    tareas donde la inspección manual resulta poco práctica por el volumen de datos
+                                    disponible.</p>
+                                <p>El taller cerrará con una discusión sobre las líneas de trabajo que abre esta
+                                    tecnología para el análisis de observaciones astronómicas, así como sus
+                                    limitaciones y los retos que implica adaptar modelos entrenados en imágenes
+                                    genéricas a datos científicos especializados.</p>
                             </div>
                             <div class="en">
-                                <p>The workshop introduces what <strong>Vision Language Models (VLMs)</strong> are:
-                                    models that combine image processing with natural language processing. Building on
-                                    that foundation, it presents a proposal for applying these models in Astronomy and
-                                    the lines of work this opens up for the analysis of observations.</p>
-                                <p class="module-pending">Detailed description to be confirmed.</p>
+                                <p>Vision Language Models (VLMs) are deep learning models that combine image
+                                    processing with natural language processing, making it possible to relate the
+                                    visual content of an image to descriptions, questions or instructions given in
+                                    text. This workshop will present the basic concepts behind these models: how
+                                    visual and textual information are jointly represented, and the kinds of tasks
+                                    they can solve, such as automatic image captioning, searching for visual content
+                                    from text, or answering questions about an image.</p>
+                                <p>Building on this foundation, the workshop will explore a proposal for applying
+                                    VLMs in Astronomy: their potential use for exploring, describing and classifying
+                                    large volumes of astronomical observations, including solar images, supporting
+                                    tasks where manual inspection is impractical given the amount of available data.
+                                </p>
+                                <p>The workshop will close with a discussion of the lines of work this technology
+                                    opens up for the analysis of astronomical observations, as well as its
+                                    limitations and the challenges involved in adapting models trained on generic
+                                    images to specialised scientific data.</p>
                             </div>
                             <div class="expand-btn-close">
                                 <span class="es">↑ Contraer ↑</span>
@@ -581,6 +706,8 @@
 
                     <!-- Carlos Alberto Martínez Sibaja -->
                     <article class="news-card glassmorphism expandable">
+                        <div class="news-date"><span class="es">📅 22 de octubre de 2026</span><span class="en">📅
+                                October 22, 2026</span></div>
                         <div class="module-head">
                             <img src="images/team-optimized/carlos_alberto_martinez_sibaja.webp"
                                 alt="Carlos Alberto Martínez Sibaja" class="team-avatar-img" loading="lazy"
@@ -609,19 +736,121 @@
 
                         <div class="expand-content">
                             <div class="es">
-                                <p>El taller presenta una introducción a las <strong>simulaciones astrofísicas</strong>
-                                    y al trabajo con <strong>computación de alto rendimiento (HPC)</strong>: cómo se
-                                    plantea una simulación, cómo se ejecuta en un clúster y cómo se manejan y analizan
-                                    los volúmenes de datos que produce.</p>
-                                <p class="module-pending"><span class="es">Descripción detallada por confirmar.</span>
-                                </p>
+                                <p>Las simulaciones astrofísicas permiten reproducir en un computador la evolución de
+                                    sistemas físicos que serían imposibles o muy costosos de estudiar mediante
+                                    experimentos de laboratorio, desde la dinámica de plasmas magnetizados hasta la
+                                    formación de estructuras a gran escala. Este taller presenta los conceptos básicos
+                                    para plantear una simulación: la elección de las ecuaciones físicas a resolver, la
+                                    discretización del dominio y las condiciones iniciales y de frontera necesarias
+                                    para que el problema esté bien planteado.</p>
+                                <p>Se introducirá el uso de computación de alto rendimiento (HPC) como herramienta
+                                    indispensable para ejecutar estas simulaciones: qué es un clúster, cómo se
+                                    distribuye el trabajo entre múltiples núcleos o nodos mediante paralelización, y
+                                    las particularidades de trabajar en un entorno compartido con colas de ejecución y
+                                    recursos limitados, a diferencia de un computador personal.</p>
+                                <p>Finalmente, se abordará el manejo de los grandes volúmenes de datos que produce una
+                                    simulación: formatos de salida, estrategias de almacenamiento y herramientas
+                                    básicas de visualización y análisis, de modo que los asistentes puedan pasar de un
+                                    archivo de resultados en bruto a una interpretación física de la simulación
+                                    realizada.</p>
                             </div>
                             <div class="en">
-                                <p>The workshop offers an introduction to <strong>astrophysical simulations</strong> and
-                                    to working with <strong>high-performance computing (HPC)</strong>: how a simulation
-                                    is set up, how it is run on a cluster, and how the data volumes it produces are
-                                    handled and analysed.</p>
-                                <p class="module-pending">Detailed description to be confirmed.</p>
+                                <p>Astrophysical simulations make it possible to reproduce on a computer the evolution
+                                    of physical systems that would be impossible or too costly to study through
+                                    laboratory experiments, from the dynamics of magnetised plasmas to the formation
+                                    of large-scale structures. This workshop presents the basic concepts needed to set
+                                    up a simulation: choosing the physical equations to solve, discretising the
+                                    domain, and defining the initial and boundary conditions required for the problem
+                                    to be well posed.</p>
+                                <p>It will introduce the use of high-performance computing (HPC) as an essential tool
+                                    for running these simulations: what a cluster is, how work is distributed across
+                                    multiple cores or nodes through parallelisation, and the particularities of
+                                    working in a shared environment with job queues and limited resources, unlike a
+                                    personal computer.</p>
+                                <p>Finally, the workshop will cover how to handle the large volumes of data a
+                                    simulation produces: output formats, storage strategies and basic visualisation
+                                    and analysis tools, so that attendees can go from a raw results file to a physical
+                                    interpretation of the simulation performed.</p>
+                            </div>
+                            <div class="expand-btn-close">
+                                <span class="es">↑ Contraer ↑</span>
+                                <span class="en">↑ Collapse ↑</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Milena Andrea Barrios Gallego -->
+                    <article class="news-card glassmorphism expandable">
+                        <div class="news-date"><span class="es">📅 22 de octubre de 2026</span><span class="en">📅
+                                October 22, 2026</span></div>
+                        <div class="module-head">
+                            <img src="images/team-optimized/milena_andrea_barrios_gallego.webp"
+                                alt="Milena Andrea Barrios Gallego" class="team-avatar-img" loading="lazy"
+                                decoding="async" width="90" height="90">
+                            <div class="module-speaker">
+                                <h4>Milena Andrea Barrios Gallego</h4>
+                                <p class="role"><span class="es">Estudiante de Pregrado — GoSA</span><span
+                                        class="en">Undergraduate Student — GoSA</span></p>
+                            </div>
+                        </div>
+                        <h3>
+                            <span class="es">Procesos estocásticos y la ecuación de Fokker-Planck</span>
+                            <span class="en">Stochastic processes and the Fokker-Planck equation</span>
+                        </h3>
+                        <p>
+                            <span class="es">Introducción a los procesos estocásticos y a la ecuación de
+                                Fokker-Planck, con aplicaciones a sistemas físicos y astrofísicos con dinámica
+                                aleatoria.</span>
+                            <span class="en">Introduction to stochastic processes and the Fokker-Planck equation,
+                                with applications to physical and astrophysical systems with random dynamics.</span>
+                        </p>
+
+                        <div class="expand-btn-open">
+                            <span class="es">Ver descripción completa →</span>
+                            <span class="en">Read the full description →</span>
+                        </div>
+
+                        <div class="expand-content">
+                            <div class="es">
+                                <p>Los procesos estocásticos describen la evolución en el tiempo de sistemas sujetos
+                                    a fluctuaciones aleatorias, un comportamiento presente en numerosos fenómenos
+                                    físicos y astrofísicos: desde el movimiento browniano de partículas hasta la
+                                    turbulencia en plasmas magnetizados. En lugar de seguir una trayectoria única y
+                                    determinista, estos sistemas se describen mediante distribuciones de probabilidad
+                                    que evolucionan de acuerdo con reglas bien definidas.</p>
+                                <p>La ecuación de Fokker-Planck es la herramienta central para describir esta
+                                    evolución: una ecuación diferencial parcial que gobierna cómo cambia en el tiempo
+                                    la densidad de probabilidad de encontrar al sistema en un estado dado, a partir
+                                    de un término de arrastre (drift), asociado a las fuerzas promedio que actúan
+                                    sobre el sistema, y un término de difusión, que captura el efecto acumulado de
+                                    las fluctuaciones aleatorias. Se presentará su relación con la ecuación de
+                                    Langevin y con el movimiento browniano como caso particular.</p>
+                                <p>El taller mostrará cómo estas herramientas se aplican al estudio de sistemas
+                                    astrofísicos con dinámica aleatoria, como la difusión y aceleración de partículas
+                                    cargadas en plasmas turbulentos o el transporte de campos magnéticos en la
+                                    atmósfera solar, dando a los asistentes un marco conceptual y matemático para
+                                    abordar problemas donde el ruido y la incertidumbre juegan un papel físico
+                                    central.</p>
+                            </div>
+                            <div class="en">
+                                <p>Stochastic processes describe the time evolution of systems subject to random
+                                    fluctuations, a behaviour present in many physical and astrophysical phenomena:
+                                    from the Brownian motion of particles to turbulence in magnetised plasmas. Rather
+                                    than following a single deterministic trajectory, these systems are described
+                                    through probability distributions that evolve according to well-defined rules.
+                                </p>
+                                <p>The Fokker-Planck equation is the central tool for describing this evolution: a
+                                    partial differential equation that governs how the probability density of
+                                    finding the system in a given state changes over time, in terms of a drift term,
+                                    associated with the average forces acting on the system, and a diffusion term,
+                                    which captures the accumulated effect of random fluctuations. Its relationship to
+                                    the Langevin equation and to Brownian motion as a particular case will also be
+                                    presented.</p>
+                                <p>The workshop will show how these tools apply to the study of astrophysical systems
+                                    with random dynamics, such as the diffusion and acceleration of charged particles
+                                    in turbulent plasmas or the transport of magnetic field lines in the solar
+                                    atmosphere, giving attendees a conceptual and mathematical framework for tackling
+                                    problems where noise and uncertainty play a central physical role.</p>
                             </div>
                             <div class="expand-btn-close">
                                 <span class="es">↑ Contraer ↑</span>
@@ -733,7 +962,7 @@
         //  texto "Inscripciones próximamente".
         //  Ejemplo: const FORM_INSCRIPCION = 'https://forms.gle/XXXXXXXXXXXX';
         // =====================================================================
-        const FORM_INSCRIPCION = '';
+        const FORM_INSCRIPCION = 'https://docs.google.com/forms/d/e/1FAIpQLSeBQ8YBXiob-ZtD9KfJK5MTmeQg_UqXdKa3hXDNRYB1oQ3DfQ/viewform';
 
         document.querySelectorAll('.js-inscripcion').forEach(btn => {
             if (FORM_INSCRIPCION) {
