@@ -1822,3 +1822,36 @@ img { max-width: 100%; }
     .scroll-appear { opacity: 1; transform: none; }
     .glassmorphism, .glassmorphism-light { box-shadow: none; break-inside: avoid; }
 }
+
+/* Legibilidad de las tarjetas de investigación con fotografía de fondo. */
+.research-card[style*="background-image"] {
+    --text-main: #f5f7fa;
+    --text-muted: #e2e8ef;
+    --primary: #e0bd86;
+    --secondary: #e0bd86;
+    color: #f5f7fa;
+    background-color: #081a28;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .45);
+}
+.research-card[style*="background-image"] h3 {
+    color: #ffffff;
+}
+.research-card[style*="background-image"] p.summary {
+    color: #e2e8ef;
+    line-height: 1.7;
+}
+.research-card[style*="background-image"] .research-text h4,
+.research-card[style*="background-image"] strong,
+.research-card[style*="background-image"] a {
+    color: #e0bd86;
+}
+.research-card[style*="background-image"] a {
+    text-decoration: underline;
+    text-underline-offset: .2em;
+}
+.research-card[style*="background-image"] a:hover {
+    color: #ffffff;
+}
+.research-card[style*="background-image"].expanded .research-details {
+    border-color: rgba(224, 189, 134, .5);
+}
