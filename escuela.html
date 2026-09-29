@@ -83,14 +83,6 @@
             pointer-events: none;
         }
 
-        .escuela-qr {
-            display: block;
-            margin: var(--space-md) auto 0;
-            border-radius: 12px;
-            background: #fff;
-            padding: 8px;
-        }
-
         /* Cronograma */
         .cronograma-table {
             width: 100%;
@@ -346,20 +338,20 @@
                     </div>
 
                     <div class="escuela-cta">
-                        <a href="#" class="btn btn-primary js-inscripcion" target="_blank" rel="noopener">
-                            <span class="es">Inscríbete aquí</span><span class="en">Register here</span>
-                        </a>
+                        <span class="btn btn-primary" aria-disabled="true">
+                            <span class="es">Inscripciones cerradas</span><span class="en">Registration closed</span>
+                        </span>
+                        <p class="cta-note">
+                            <span class="es">El plazo de inscripción ya terminó. Si te inscribiste, recibirás por correo la
+                                información de conexión y los materiales de cada sesión.</span>
+                            <span class="en">The registration period has ended. If you registered, you will receive the
+                                connection details and materials for each session by email.</span>
+                        </p>
                         <p class="cta-note">
                             <span class="es">¿Dudas? Escríbenos a <a href="mailto:svargasd@unal.edu.co"
                                     class="news-link">svargasd@unal.edu.co</a></span>
                             <span class="en">Questions? Write to <a href="mailto:svargasd@unal.edu.co"
                                     class="news-link">svargasd@unal.edu.co</a></span>
-                        </p>
-                        <img src="images/qr_inscripcion_escuela.png" alt="Código QR del formulario de inscripción"
-                            class="escuela-qr" width="150" height="150" loading="lazy">
-                        <p class="cta-note">
-                            <span class="es">Escanea el código QR para inscribirte desde tu celular</span>
-                            <span class="en">Scan the QR code to register from your phone</span>
                         </p>
                     </div>
                 </div>
@@ -1148,19 +1140,14 @@
                 <!-- ============ Inscripción (repetida al final) ============ -->
                 <div class="glassmorphism escuela-intro" style="margin-top: 40px; text-align: center;">
                     <h3 style="font-family: var(--font-heading); color: var(--text-bright); margin-bottom: 1rem;">
-                        <span class="es">¿Quieres participar?</span><span class="en">Want to take part?</span>
+                        <span class="es">Inscripciones cerradas</span><span class="en">Registration closed</span>
                     </h3>
                     <p>
-                        <span class="es">Los cupos son limitados. Completa el formulario para reservar el tuyo y recibir
-                            la información de conexión y los materiales de cada taller.</span>
-                        <span class="en">Places are limited. Fill in the form to reserve yours and receive the connection
-                            details and materials for each workshop.</span>
+                        <span class="es">El plazo de inscripción a la Helio Data Academy 2026 ya terminó. Gracias a todas
+                            las personas que se inscribieron; nos vemos en las sesiones.</span>
+                        <span class="en">Registration for the Helio Data Academy 2026 has closed. Thank you to everyone
+                            who signed up; see you at the sessions.</span>
                     </p>
-                    <div class="escuela-cta">
-                        <a href="#" class="btn btn-primary js-inscripcion" target="_blank" rel="noopener">
-                            <span class="es">Inscríbete aquí</span><span class="en">Register here</span>
-                        </a>
-                    </div>
                 </div>
 
             </div>
@@ -1220,26 +1207,6 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // =====================================================================
-        //  INSCRIPCIÓN: pega aquí la URL del formulario de Google y listo.
-        //  Mientras esté vacía, los botones se muestran deshabilitados con el
-        //  texto "Inscripciones próximamente".
-        //  Ejemplo: const FORM_INSCRIPCION = 'https://forms.gle/XXXXXXXXXXXX';
-        // =====================================================================
-        const FORM_INSCRIPCION = 'https://docs.google.com/forms/d/e/1FAIpQLSeBQ8YBXiob-ZtD9KfJK5MTmeQg_UqXdKa3hXDNRYB1oQ3DfQ/viewform';
-
-        document.querySelectorAll('.js-inscripcion').forEach(btn => {
-            if (FORM_INSCRIPCION) {
-                btn.href = FORM_INSCRIPCION;
-                return;
-            }
-            btn.removeAttribute('href');
-            btn.setAttribute('aria-disabled', 'true');
-            btn.innerHTML = '<span class="es">Inscripciones próximamente</span>' +
-                '<span class="en">Registration opening soon</span>';
-        });
-    </script>
 </body>
 
 </html>
