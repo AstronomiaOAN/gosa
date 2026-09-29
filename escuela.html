@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoSA - Escuela de Herramientas Computacionales en Astrofísica Solar</title>
+    <title>GoSA - Helio Data Academy 2026: Escuela de Astrofísica Solar</title>
     <meta name="description"
-        content="Escuela del Grupo de Astrofísica Solar (GoSA) del Observatorio Astronómico Nacional, Universidad Nacional de Colombia: talleres prácticos sobre análisis de datos solares, Python, aprendizaje automático y computación de alto rendimiento.">
+        content="Helio Data Academy 2026, Escuela de Astrofísica Solar del Grupo de Astrofísica Solar (GoSA) del Observatorio Astronómico Nacional, Universidad Nacional de Colombia: análisis de datos solares, magnetohidrodinámica, oscilaciones, partículas, simulaciones y Machine Learning.">
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap"
         rel="stylesheet">
@@ -120,6 +120,49 @@
 
         .cronograma-table tr:last-child td {
             border-bottom: none;
+        }
+
+        .cronograma-intro p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .cronograma-table td {
+            vertical-align: top;
+        }
+
+        .crono-details summary {
+            cursor: pointer;
+            color: var(--text-bright);
+        }
+
+        .crono-details ul {
+            margin: var(--space-xs) 0 0 1.2rem;
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        .crono-speaker {
+            margin: var(--space-xs) 0 0;
+            font-size: 0.85rem;
+            color: var(--secondary);
+        }
+
+        .crono-dur {
+            display: inline-block;
+            margin-left: 4px;
+            padding: 0 8px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            color: var(--secondary);
+            border: 1px solid var(--secondary);
+            white-space: nowrap;
+        }
+
+        .cronograma-note {
+            margin-top: var(--space-sm);
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
         @media (max-width: 600px) {
@@ -250,30 +293,31 @@
                 <!-- ============ Presentación de la escuela ============ -->
                 <div class="glassmorphism escuela-intro">
                     <h2 class="section-title" style="margin-bottom: 1.5rem;">
-                        <span class="es">Escuela de <span class="gradient-text">Herramientas Computacionales</span> en
+                        <span class="es"><span class="gradient-text">Helio Data Academy 2026</span><br>Escuela de
                             Astrofísica Solar</span>
-                        <span class="en">School of <span class="gradient-text">Computational Tools</span> in Solar
+                        <span class="en"><span class="gradient-text">Helio Data Academy 2026</span><br>School of Solar
                             Astrophysics</span>
                     </h2>
 
                     <div class="es">
-                        <p>El <strong>Grupo de Astrofísica Solar (GoSA)</strong> abre una escuela de talleres prácticos
-                            dictados por sus propios integrantes y colaboradores. Cada sesión recorre, de principio a
-                            fin, un flujo de trabajo real: desde la búsqueda y descarga de observaciones solares hasta su
-                            análisis, visualización e interpretación física.</p>
-                        <p>Los talleres están dirigidos a estudiantes de pregrado y posgrado, y a cualquier persona
-                            interesada en el análisis computacional de datos solares. Se recomienda un manejo básico de
+                        <p>El <strong>Grupo de Astrofísica Solar (GoSA)</strong> abre la <strong>Helio Data Academy
+                            2026</strong>, una escuela de astrofísica solar dictada por sus propios integrantes. A lo
+                            largo de cinco sesiones, el programa avanza desde el manejo y análisis de datos solares hasta
+                            la dinámica de la superficie, la magnetohidrodinámica, las oscilaciones, las partículas, las
+                            simulaciones y las técnicas de Machine Learning.</p>
+                        <p>La escuela está dirigida a estudiantes de pregrado y posgrado, y a cualquier persona
+                            interesada en la física solar y el análisis de sus datos. Se recomienda un manejo básico de
                             <strong>Python</strong>; el resto de las herramientas se introducen durante las sesiones.</p>
                     </div>
 
                     <div class="en">
-                        <p>The <strong>Solar Astrophysics Group (GoSA)</strong> is launching a school of hands-on
-                            workshops taught by its own members and collaborators. Each session walks through a real
-                            end-to-end workflow: from searching for and downloading solar observations to analysing,
-                            visualising and physically interpreting them.</p>
-                        <p>The workshops are aimed at undergraduate and graduate students, and at anyone interested in
-                            the computational analysis of solar data. Basic <strong>Python</strong> skills are
-                            recommended; every other tool is introduced during the sessions.</p>
+                        <p>The <strong>Solar Astrophysics Group (GoSA)</strong> is launching the <strong>Helio Data
+                            Academy 2026</strong>, a school of solar astrophysics taught by its own members. Over five
+                            sessions, the programme moves from handling and analysing solar data to surface dynamics,
+                            magnetohydrodynamics, oscillations, particles, simulations and Machine Learning techniques.</p>
+                        <p>The school is aimed at undergraduate and graduate students, and at anyone interested in solar
+                            physics and the analysis of solar data. Basic <strong>Python</strong> skills are recommended;
+                            every other tool is introduced during the sessions.</p>
                     </div>
 
                     <div class="escuela-facts">
@@ -326,42 +370,206 @@
                     <span class="en">Schedule</span>
                 </h2>
                 <div class="glassmorphism escuela-intro" style="padding: var(--space-md) var(--space-lg);">
+                    <div class="es cronograma-intro">
+                        <p>La escuela se desarrollará durante <strong>cinco jueves consecutivos</strong>, con sesiones de
+                            <strong>dos horas</strong>. El programa es progresivo: comienza con el manejo y análisis de
+                            datos solares y avanza hacia dinámica, magnetohidrodinámica, oscilaciones, partículas,
+                            simulaciones y técnicas de Machine Learning.</p>
+                        <p>Las dos primeras sesiones tienen un mayor componente práctico, orientado al manejo y análisis
+                            de datos; las siguientes se enfocan principalmente en conceptos físicos, métodos de análisis y
+                            aplicaciones en investigación. Cada sesión incluye un espacio para preguntas y discusión.</p>
+                    </div>
+                    <div class="en cronograma-intro">
+                        <p>The school runs over <strong>five consecutive Thursdays</strong>, with <strong>two-hour</strong>
+                            sessions. The programme is progressive: it starts with handling and analysing solar data and
+                            moves on to dynamics, magnetohydrodynamics, oscillations, particles, simulations and Machine
+                            Learning techniques.</p>
+                        <p>The first two sessions are more hands-on, focused on handling and analysing data; the later
+                            ones concentrate mainly on physical concepts, analysis methods and research applications.
+                            Every session includes time for questions and discussion.</p>
+                    </div>
                     <table class="cronograma-table">
                         <thead>
                             <tr>
                                 <th><span class="es">Fecha</span><span class="en">Date</span></th>
-                                <th><span class="es">Modalidad</span><span class="en">Format</span></th>
-                                <th><span class="es">Taller</span><span class="en">Workshop</span></th>
+                                <th><span class="es">Tema</span><span class="en">Topic</span></th>
+                                <th><span class="es">Expositor(es)</span><span class="en">Speaker(s)</span></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><span class="es">1 de octubre</span><span class="en">October 1</span></td>
-                                <td><span class="es">Híbrida</span><span class="en">Hybrid</span></td>
-                                <td>Juan Pablo Herrera Moreno</td>
+                                <td><span class="es">Jueves 1 de octubre</span><span class="en">Thursday, October 1</span></td>
+                                <td>
+                                    <details class="crono-details">
+                                        <summary><span class="es">Introducción y herramientas para el análisis de
+                                                datos</span><span class="en">Introduction and tools for data
+                                                analysis</span></summary>
+                                        <ul class="es">
+                                            <li>Bienvenida e introducción a la escuela; generalidades sobre física solar.</li>
+                                            <li>Observaciones solares y principales tipos de datos.</li>
+                                            <li>El formato FITS; visualización y exploración con DS9.</li>
+                                            <li>Introducción a Astropy y SunPy.</li>
+                                            <li>Actividades prácticas de manejo y visualización de datos solares.</li>
+                                        </ul>
+                                        <ul class="en">
+                                            <li>Welcome and introduction to the school; solar physics overview.</li>
+                                            <li>Solar observations and the main data types.</li>
+                                            <li>The FITS format; visualisation and exploration with DS9.</li>
+                                            <li>Introduction to Astropy and SunPy.</li>
+                                            <li>Hands-on activities handling and visualising solar data.</li>
+                                        </ul>
+                                    </details>
+                                </td>
+                                <td>Daniel Alberto Rodríguez Torres <span class="crono-dur">2 h</span></td>
                             </tr>
                             <tr>
-                                <td><span class="es">8 de octubre</span><span class="en">October 8</span></td>
-                                <td><span class="es">Híbrida</span><span class="en">Hybrid</span></td>
-                                <td>Daniel Alberto Rodríguez Torres</td>
+                                <td><span class="es">Jueves 8 de octubre</span><span class="en">Thursday, October 8</span></td>
+                                <td>
+                                    <details class="crono-details">
+                                        <summary><span class="es">Observaciones solares, flujos y
+                                                movimientos</span><span class="en">Solar observations, flows and
+                                                motions</span></summary>
+                                        <p class="crono-speaker">Juan Pablo Herrera Moreno</p>
+                                        <ul class="es">
+                                            <li>Imágenes de continuo y magnetogramas.</li>
+                                            <li>Caracterización de manchas: identificación de umbra y penumbra.</li>
+                                            <li>Local Correlation Tracking (LCT) y flujos moat.</li>
+                                            <li>Actividad práctica de análisis de datos.</li>
+                                        </ul>
+                                        <ul class="en">
+                                            <li>Continuum images and magnetograms.</li>
+                                            <li>Sunspot characterisation: identifying umbra and penumbra.</li>
+                                            <li>Local Correlation Tracking (LCT) and moat flows.</li>
+                                            <li>Hands-on data analysis activity.</li>
+                                        </ul>
+                                        <p class="crono-speaker">Luis Felipe Losada González</p>
+                                        <ul class="es">
+                                            <li>Limpieza de datos: creación de cubos, recortes y correcciones de
+                                                Dopplergramas, magnetogramas, continuo y AIA.</li>
+                                            <li>Introducción a la transformada de Fourier.</li>
+                                            <li>Diagramas tiempo-distancia y análisis de perturbaciones.</li>
+                                            <li>Introducción a los Sunquakes.</li>
+                                        </ul>
+                                        <ul class="en">
+                                            <li>Data cleaning: building cubes, cropping and correcting Dopplergrams,
+                                                magnetograms, continuum and AIA images.</li>
+                                            <li>Introduction to the Fourier transform.</li>
+                                            <li>Time-distance diagrams and analysis of perturbations.</li>
+                                            <li>Introduction to sunquakes.</li>
+                                        </ul>
+                                    </details>
+                                </td>
+                                <td>Juan Pablo Herrera Moreno <span class="crono-dur">1 h</span><br>
+                                    Luis Felipe Losada González <span class="crono-dur">1 h</span></td>
                             </tr>
                             <tr>
-                                <td><span class="es">15 de octubre</span><span class="en">October 15</span></td>
-                                <td><span class="es">Híbrida</span><span class="en">Hybrid</span></td>
-                                <td>Óscar Andrés Calvo Rebellón</td>
+                                <td><span class="es">Jueves 15 de octubre</span><span class="en">Thursday, October 15</span></td>
+                                <td>
+                                    <details class="crono-details">
+                                        <summary><span class="es">Magnetohidrodinámica y oscilaciones en la atmósfera
+                                                solar</span><span class="en">Magnetohydrodynamics and oscillations in
+                                                the solar atmosphere</span></summary>
+                                        <p class="crono-speaker">Óscar Andrés Calvo Rebellón</p>
+                                        <ul class="es">
+                                            <li>Ecuaciones MHD; ondas y oscilaciones MHD.</li>
+                                            <li>Observaciones de la cromosfera y fibrillas cromosféricas.</li>
+                                            <li>Oscilaciones transversales en fibrillas: observación, análisis y modos
+                                                MHD.</li>
+                                            <li>Ondas, oscilaciones y calentamiento coronal.</li>
+                                        </ul>
+                                        <ul class="en">
+                                            <li>MHD equations; MHD waves and oscillations.</li>
+                                            <li>Chromospheric observations and chromospheric fibrils.</li>
+                                            <li>Transverse oscillations in fibrils: observation, analysis and MHD
+                                                modes.</li>
+                                            <li>Waves, oscillations and coronal heating.</li>
+                                        </ul>
+                                        <p class="crono-speaker">Carlos Alberto Martínez Sibaja</p>
+                                        <ul class="es">
+                                            <li>Introducción a las simulaciones MHD.</li>
+                                            <li>Interacción entre haces de partículas y la atmósfera solar.</li>
+                                        </ul>
+                                        <ul class="en">
+                                            <li>Introduction to MHD simulations.</li>
+                                            <li>Interaction between particle beams and the solar atmosphere.</li>
+                                        </ul>
+                                    </details>
+                                </td>
+                                <td>Óscar Andrés Calvo Rebellón <span class="crono-dur">1 h 30</span><br>
+                                    Carlos Alberto Martínez Sibaja <span class="crono-dur">30 min</span></td>
                             </tr>
                             <tr>
-                                <td><span class="es">22 de octubre</span><span class="en">October 22</span></td>
-                                <td><span class="es">Híbrida</span><span class="en">Hybrid</span></td>
-                                <td>Carlos Alberto Martínez Sibaja · Milena Andrea Barrios Gallego</td>
+                                <td><span class="es">Jueves 22 de octubre</span><span class="en">Thursday, October 22</span></td>
+                                <td>
+                                    <details class="crono-details">
+                                        <summary><span class="es">Partículas, rayos X y viento solar</span><span
+                                                class="en">Particles, X-rays and the solar wind</span></summary>
+                                        <p class="crono-speaker">Milena Andrea Barrios Gallego</p>
+                                        <ul class="es">
+                                            <li>Transporte de electrones acelerados: poblaciones térmicas y no
+                                                térmicas.</li>
+                                            <li>Formalismo de Langevin y Fokker-Planck.</li>
+                                            <li>Mecanismos del drift: campo eléctrico, choques, turbulencia.</li>
+                                            <li>Rayos X y modelos de aceleración (blanco grueso vs. aceleración
+                                                estocástica).</li>
+                                        </ul>
+                                        <ul class="en">
+                                            <li>Transport of accelerated electrons: thermal and non-thermal
+                                                populations.</li>
+                                            <li>Langevin and Fokker-Planck formalism.</li>
+                                            <li>Drift mechanisms: electric field, shocks, turbulence.</li>
+                                            <li>X-rays and acceleration models (thick target vs. stochastic
+                                                acceleration).</li>
+                                        </ul>
+                                        <p class="crono-speaker">Carlos Alberto Martínez Sibaja</p>
+                                        <ul class="es">
+                                            <li>Viento solar y sus partículas.</li>
+                                            <li>Introducción a las simulaciones de partículas.</li>
+                                            <li>Comunicación con clusters y servidores.</li>
+                                            <li>Ejecución y análisis de simulaciones.</li>
+                                        </ul>
+                                        <ul class="en">
+                                            <li>The solar wind and its particles.</li>
+                                            <li>Introduction to particle simulations.</li>
+                                            <li>Working with clusters and servers.</li>
+                                            <li>Running and analysing simulations.</li>
+                                        </ul>
+                                    </details>
+                                </td>
+                                <td>Milena Andrea Barrios Gallego <span class="crono-dur">1 h</span><br>
+                                    Carlos Alberto Martínez Sibaja <span class="crono-dur">1 h</span></td>
                             </tr>
                             <tr>
-                                <td><span class="es">29 de octubre</span><span class="en">October 29</span></td>
-                                <td><span class="es">Híbrida</span><span class="en">Hybrid</span></td>
-                                <td>Juan Esteban Agudelo Ortiz</td>
+                                <td><span class="es">Jueves 29 de octubre</span><span class="en">Thursday, October 29</span></td>
+                                <td>
+                                    <details class="crono-details">
+                                        <summary><span class="es">Machine Learning aplicado al estudio del
+                                                Sol</span><span class="en">Machine Learning applied to the study of the
+                                                Sun</span></summary>
+                                        <ul class="es">
+                                            <li>Conceptos básicos de aprendizaje automático y aprendizaje profundo.</li>
+                                            <li>Aplicaciones del Machine Learning al análisis de datos solares.</li>
+                                            <li>Presentación de su trabajo de investigación: motivación, datos,
+                                                metodología y resultados.</li>
+                                            <li>Discusión y preguntas.</li>
+                                        </ul>
+                                        <ul class="en">
+                                            <li>Basic concepts of machine learning and deep learning.</li>
+                                            <li>Machine Learning applications to solar data analysis.</li>
+                                            <li>Presentation of the speaker's research: motivation, data, methodology and
+                                                results.</li>
+                                            <li>Discussion and questions.</li>
+                                        </ul>
+                                    </details>
+                                </td>
+                                <td>Juan Esteban Agudelo Ortiz <span class="crono-dur">2 h</span></td>
                             </tr>
                         </tbody>
                     </table>
+                    <p class="cronograma-note">
+                        <span class="es">Haz clic en cada tema para ver los contenidos. Duración total: 10 horas.</span>
+                        <span class="en">Click on each topic to see its contents. Total duration: 10 hours.</span>
+                    </p>
                 </div>
 
                 <!-- ============ Módulos / talleres ============ -->
@@ -378,87 +586,10 @@
 
                 <div class="escuela-grid">
 
-                    <!-- Juan Pablo Herrera Moreno -->
+                    <!-- Daniel Alberto Rodríguez Torres -->
                     <article class="news-card glassmorphism expandable">
                         <div class="news-date"><span class="es">📅 1 de octubre de 2026</span><span class="en">📅
                                 October 1, 2026</span></div>
-                        <div class="module-head">
-                            <img src="images/team-optimized/juan_pablo_herrera_moreno.webp"
-                                alt="Juan Pablo Herrera Moreno" class="team-avatar-img" loading="lazy" decoding="async"
-                                width="90" height="90">
-                            <div class="module-speaker">
-                                <h4>Juan Pablo Herrera Moreno</h4>
-                                <p class="role"><span class="es">Estudiante de Posgrado — GoSA</span><span
-                                        class="en">Graduate Student — GoSA</span></p>
-                            </div>
-                        </div>
-                        <h3>
-                            <span class="es">Procesamiento de imágenes de la fotósfera: identificación y caracterización
-                                de manchas solares</span>
-                            <span class="en">Photospheric image processing: identifying and characterising
-                                sunspots</span>
-                        </h3>
-                        <p>
-                            <span class="es">Astropy y SunPy para abrir archivos FITS, leer encabezados y localizar
-                                manchas solares en coordenadas de píxel y coordenadas físicas.</span>
-                            <span class="en">Astropy and SunPy to open FITS files, read headers and locate sunspots in
-                                pixel and physical coordinates.</span>
-                        </p>
-
-                        <div class="expand-btn-open">
-                            <span class="es">Ver descripción completa →</span>
-                            <span class="en">Read the full description →</span>
-                        </div>
-
-                        <div class="expand-content">
-                            <div class="es">
-                                <p>Esta clase introduce los fundamentos del procesamiento de imágenes de la fotósfera
-                                    almacenados en archivos FITS, desde su adquisición hasta la identificación y
-                                    caracterización básica de manchas solares. Se presentará el uso de herramientas de
-                                    Python, especialmente Astropy y SunPy, para descargar datos de observaciones solares,
-                                    abrir y explorar archivos FITS, interpretar sus encabezados y acceder tanto a los
-                                    datos numéricos como a la información espacial asociada.</p>
-                                <p>A través de ejemplos prácticos con imágenes de la superficie solar, los estudiantes
-                                    aprenderán a visualizar observaciones, identificar manchas solares mediante criterios
-                                    de intensidad y obtener sus posiciones en coordenadas de píxel y coordenadas
-                                    heliográficas o heliocéntricas. También se abordará la interpretación de parámetros
-                                    relevantes del encabezado FITS, como la escala espacial, la posición del centro solar
-                                    y la información necesaria para transformar coordenadas de imagen en coordenadas
-                                    físicas.</p>
-                                <p>La clase busca proporcionar una introducción práctica y reproducible al flujo de
-                                    trabajo necesario para pasar de un archivo de observación solar a una representación
-                                    física de las estructuras presentes en la imagen, estableciendo las bases para
-                                    análisis posteriores de áreas, movimientos y campos magnéticos de regiones activas.
-                                </p>
-                            </div>
-                            <div class="en">
-                                <p>This class introduces the fundamentals of processing photospheric images stored in
-                                    FITS files, from acquisition to the identification and basic characterisation of
-                                    sunspots. It presents the use of Python tools — especially Astropy and SunPy — to
-                                    download solar observation data, open and explore FITS files, interpret their headers
-                                    and access both the numerical data and the associated spatial information.</p>
-                                <p>Through practical examples with images of the solar surface, students will learn to
-                                    visualise observations, identify sunspots using intensity criteria and obtain their
-                                    positions in pixel coordinates and in heliographic or heliocentric coordinates. The
-                                    class also covers the interpretation of relevant FITS header parameters, such as the
-                                    spatial scale, the position of the solar centre and the information needed to
-                                    transform image coordinates into physical coordinates.</p>
-                                <p>The aim is to provide a practical, reproducible introduction to the workflow required
-                                    to go from a solar observation file to a physical representation of the structures
-                                    present in the image, laying the groundwork for later analyses of areas, motions and
-                                    magnetic fields of active regions.</p>
-                            </div>
-                            <div class="expand-btn-close">
-                                <span class="es">↑ Contraer ↑</span>
-                                <span class="en">↑ Collapse ↑</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Daniel Alberto Rodríguez Torres -->
-                    <article class="news-card glassmorphism expandable">
-                        <div class="news-date"><span class="es">📅 8 de octubre de 2026</span><span class="en">📅
-                                October 8, 2026</span></div>
                         <div class="module-head">
                             <img src="images/daniel_rodriguez.jpg" alt="Daniel Alberto Rodríguez Torres"
                                 class="team-avatar-img" loading="lazy" decoding="async" width="90" height="90">
@@ -538,6 +669,149 @@
                                     thus understand not only how to access real solar data, but also the steps needed to
                                     turn them into physically interpretable information, ready for subsequent scientific
                                     analysis.</p>
+                            </div>
+                            <div class="expand-btn-close">
+                                <span class="es">↑ Contraer ↑</span>
+                                <span class="en">↑ Collapse ↑</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Juan Pablo Herrera Moreno -->
+                    <article class="news-card glassmorphism expandable">
+                        <div class="news-date"><span class="es">📅 8 de octubre de 2026</span><span class="en">📅
+                                October 8, 2026</span></div>
+                        <div class="module-head">
+                            <img src="images/team-optimized/juan_pablo_herrera_moreno.webp"
+                                alt="Juan Pablo Herrera Moreno" class="team-avatar-img" loading="lazy" decoding="async"
+                                width="90" height="90">
+                            <div class="module-speaker">
+                                <h4>Juan Pablo Herrera Moreno</h4>
+                                <p class="role"><span class="es">Estudiante de Posgrado — GoSA</span><span
+                                        class="en">Graduate Student — GoSA</span></p>
+                            </div>
+                        </div>
+                        <h3>
+                            <span class="es">Manchas solares y flujos en la superficie: umbra, penumbra y Local
+                                Correlation Tracking</span>
+                            <span class="en">Sunspots and surface flows: umbra, penumbra and Local Correlation
+                                Tracking</span>
+                        </h3>
+                        <p>
+                            <span class="es">Imágenes de continuo y magnetogramas para caracterizar manchas solares, y
+                                LCT para medir movimientos en la superficie solar y estudiar los flujos moat.</span>
+                            <span class="en">Continuum images and magnetograms to characterise sunspots, and LCT to
+                                measure motions on the solar surface and study moat flows.</span>
+                        </p>
+
+                        <div class="expand-btn-open">
+                            <span class="es">Ver descripción completa →</span>
+                            <span class="en">Read the full description →</span>
+                        </div>
+
+                        <div class="expand-content">
+                            <div class="es">
+                                <p>Las imágenes de continuo y los magnetogramas son dos de las observaciones más
+                                    utilizadas para estudiar la fotósfera solar: las primeras muestran la intensidad de
+                                    la radiación emitida por la superficie, mientras que los segundos permiten conocer
+                                    la distribución y polaridad del campo magnético. Este taller parte de ambos tipos de
+                                    datos para caracterizar manchas solares, identificando y delimitando sus dos
+                                    regiones principales: la umbra y la penumbra.</p>
+                                <p>A continuación se introducirá el Local Correlation Tracking (LCT), una técnica que
+                                    permite estimar campos de velocidad horizontales comparando imágenes consecutivas de
+                                    la superficie solar. Se presentarán sus fundamentos, sus parámetros principales y su
+                                    aplicación al estudio de los flujos moat: flujos que se alejan radialmente de las
+                                    manchas solares más allá de la penumbra.</p>
+                                <p>El taller incluirá una actividad práctica de análisis de datos, en la que los
+                                    asistentes aplicarán estas herramientas a observaciones reales para estudiar los
+                                    movimientos y flujos en la superficie solar alrededor de una región activa.</p>
+                            </div>
+                            <div class="en">
+                                <p>Continuum images and magnetograms are two of the most widely used observations for
+                                    studying the solar photosphere: the former show the intensity of the radiation
+                                    emitted by the surface, while the latter reveal the distribution and polarity of the
+                                    magnetic field. This workshop starts from both kinds of data to characterise
+                                    sunspots, identifying and delimiting their two main regions: the umbra and the
+                                    penumbra.</p>
+                                <p>It then introduces Local Correlation Tracking (LCT), a technique that estimates
+                                    horizontal velocity fields by comparing consecutive images of the solar surface. Its
+                                    foundations and main parameters will be presented, together with its application to
+                                    the study of moat flows: outflows that move radially away from sunspots beyond the
+                                    penumbra.</p>
+                                <p>The workshop includes a hands-on data analysis activity in which attendees will apply
+                                    these tools to real observations to study motions and flows on the solar surface
+                                    around an active region.</p>
+                            </div>
+                            <div class="expand-btn-close">
+                                <span class="es">↑ Contraer ↑</span>
+                                <span class="en">↑ Collapse ↑</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Luis Felipe Losada González -->
+                    <article class="news-card glassmorphism expandable">
+                        <div class="news-date"><span class="es">📅 8 de octubre de 2026</span><span class="en">📅
+                                October 8, 2026</span></div>
+                        <div class="module-head">
+                            <img src="images/team-optimized/luis_felipe_losada_gonzalez.webp"
+                                alt="Luis Felipe Losada González" class="team-avatar-img" loading="lazy"
+                                decoding="async" width="90" height="90">
+                            <div class="module-speaker">
+                                <h4>Luis Felipe Losada González</h4>
+                                <p class="role"><span class="es">Integrante — GoSA</span><span class="en">Member —
+                                        GoSA</span></p>
+                            </div>
+                        </div>
+                        <h3>
+                            <span class="es">Del dato crudo al observable físico: limpieza de datos solares,
+                                Dopplergramas y diagramas tiempo-distancia</span>
+                            <span class="en">From raw data to physical observables: cleaning solar data, Dopplergrams
+                                and time-distance diagrams</span>
+                        </h3>
+                        <p>
+                            <span class="es">Scripts para crear cubos de datos, recortar y corregir Dopplergramas,
+                                magnetogramas, imágenes de continuo y AIA; transformada de Fourier, diagramas
+                                tiempo-distancia y Sunquakes.</span>
+                            <span class="en">Scripts to build data cubes, crop and correct Dopplergrams, magnetograms,
+                                continuum and AIA images; Fourier transforms, time-distance diagrams and sunquakes.</span>
+                        </p>
+
+                        <div class="expand-btn-open">
+                            <span class="es">Ver descripción completa →</span>
+                            <span class="en">Read the full description →</span>
+                        </div>
+
+                        <div class="expand-content">
+                            <div class="es">
+                                <p>Antes de extraer información física de una observación solar es necesario preparar
+                                    los datos: corregir efectos instrumentales y geométricos, seleccionar la región de
+                                    interés y organizar las imágenes en el tiempo. Este taller presenta técnicas de
+                                    limpieza de datos solares y algunas herramientas que permiten pasar de las
+                                    observaciones a observables físicos.</p>
+                                <p>Se mostrarán scripts para la creación de cubos de datos, recortes y correcciones de
+                                    Dopplergramas, magnetogramas, imágenes de continuo y observaciones de AIA, junto con
+                                    una introducción al uso de la transformada de Fourier en el análisis de series de
+                                    tiempo solares.</p>
+                                <p>A partir de los Dopplergramas se introducirán los diagramas tiempo-distancia
+                                    (time-distance diagrams) como herramienta para analizar movimientos y perturbaciones
+                                    en la superficie solar, y se presentarán los Sunquakes: ondas sísmicas generadas por
+                                    fulguraciones que se propagan por la fotósfera. El taller cerrará con la aplicación
+                                    de estas técnicas al análisis de observaciones solares reales.</p>
+                            </div>
+                            <div class="en">
+                                <p>Before any physical information can be extracted from a solar observation, the data
+                                    have to be prepared: instrumental and geometric effects corrected, the region of
+                                    interest selected and the images organised in time. This workshop presents
+                                    techniques for cleaning solar data and some tools that make it possible to go from
+                                    observations to physical observables.</p>
+                                <p>It will show scripts for building data cubes, cropping and correcting Dopplergrams,
+                                    magnetograms, continuum images and AIA observations, together with an introduction
+                                    to the Fourier transform for analysing solar time series.</p>
+                                <p>Starting from Dopplergrams, it will introduce time-distance diagrams as a tool for
+                                    analysing motions and perturbations on the solar surface, and present sunquakes:
+                                    flare-driven seismic waves that propagate across the photosphere. The workshop will
+                                    close by applying these techniques to the analysis of real solar observations.</p>
                             </div>
                             <div class="expand-btn-close">
                                 <span class="es">↑ Contraer ↑</span>
@@ -631,8 +905,8 @@
 
                     <!-- Carlos Alberto Martínez Sibaja -->
                     <article class="news-card glassmorphism expandable">
-                        <div class="news-date"><span class="es">📅 22 de octubre de 2026</span><span class="en">📅
-                                October 22, 2026</span></div>
+                        <div class="news-date"><span class="es">📅 15 y 22 de octubre de 2026</span><span class="en">📅
+                                October 15 and 22, 2026</span></div>
                         <div class="module-head">
                             <img src="images/team-optimized/carlos_alberto_martinez_sibaja.webp"
                                 alt="Carlos Alberto Martínez Sibaja" class="team-avatar-img" loading="lazy"
@@ -799,14 +1073,14 @@
                             </div>
                         </div>
                         <h3>
-                            <span class="es">Vision Language Models aplicados a la Astronomía</span>
-                            <span class="en">Vision Language Models applied to Astronomy</span>
+                            <span class="es">Machine Learning aplicado al estudio del Sol</span>
+                            <span class="en">Machine Learning applied to the study of the Sun</span>
                         </h3>
                         <p>
-                            <span class="es">Qué son los Vision Language Models (VLM) y cómo pueden aplicarse al análisis
-                                de datos astronómicos.</span>
-                            <span class="en">What Vision Language Models (VLMs) are and how they can be applied to the
-                                analysis of astronomical data.</span>
+                            <span class="es">Conceptos básicos de aprendizaje automático, sus aplicaciones al análisis de
+                                datos solares y la presentación de un trabajo de investigación reciente.</span>
+                            <span class="en">Basic concepts of machine learning, its applications to solar data analysis
+                                and the presentation of a recent research project.</span>
                         </p>
 
                         <div class="expand-btn-open">
@@ -816,41 +1090,31 @@
 
                         <div class="expand-content">
                             <div class="es">
-                                <p>Los Vision Language Models (VLM) son modelos de aprendizaje profundo que combinan
-                                    el procesamiento de imágenes con el de lenguaje natural, permitiendo relacionar el
-                                    contenido visual de una imagen con descripciones, preguntas o instrucciones en
-                                    texto. Este taller presentará los conceptos básicos detrás de estos modelos: cómo
-                                    se representan conjuntamente la información visual y textual, y qué tipo de
-                                    tareas pueden resolver, como la descripción automática de imágenes, la búsqueda de
-                                    contenido visual a partir de texto o la respuesta a preguntas sobre una imagen.
-                                </p>
-                                <p>A partir de esta base, se explorará una propuesta de aplicación de los VLM en
-                                    Astronomía: su uso potencial para explorar, describir y clasificar grandes
-                                    volúmenes de observaciones astronómicas, incluyendo imágenes solares, apoyando
-                                    tareas donde la inspección manual resulta poco práctica por el volumen de datos
-                                    disponible.</p>
-                                <p>El taller cerrará con una discusión sobre las líneas de trabajo que abre esta
-                                    tecnología para el análisis de observaciones astronómicas, así como sus
-                                    limitaciones y los retos que implica adaptar modelos entrenados en imágenes
-                                    genéricas a datos científicos especializados.</p>
+                                <p>Los instrumentos que observan el Sol producen volúmenes de datos cada vez mayores,
+                                    lo que ha convertido al Machine Learning en una herramienta cada vez más importante en
+                                    física solar. Esta sesión presenta los conceptos básicos del aprendizaje automático y
+                                    del aprendizaje profundo: qué significa entrenar un modelo, cómo se preparan los
+                                    datos y cómo se evalúan los resultados.</p>
+                                <p>Se revisarán aplicaciones de estas técnicas al análisis de datos solares, mostrando
+                                    qué tipo de problemas pueden abordarse con ellas y cuáles son sus ventajas y
+                                    limitaciones frente a los métodos tradicionales.</p>
+                                <p>La sesión incluirá la presentación de un trabajo de investigación del expositor, que
+                                    recorrerá su contexto y motivación científica, los datos y la metodología utilizados
+                                    y sus principales resultados. Cerrará con un espacio de discusión y preguntas sobre
+                                    el papel del Machine Learning en la física solar.</p>
                             </div>
                             <div class="en">
-                                <p>Vision Language Models (VLMs) are deep learning models that combine image
-                                    processing with natural language processing, making it possible to relate the
-                                    visual content of an image to descriptions, questions or instructions given in
-                                    text. This workshop will present the basic concepts behind these models: how
-                                    visual and textual information are jointly represented, and the kinds of tasks
-                                    they can solve, such as automatic image captioning, searching for visual content
-                                    from text, or answering questions about an image.</p>
-                                <p>Building on this foundation, the workshop will explore a proposal for applying
-                                    VLMs in Astronomy: their potential use for exploring, describing and classifying
-                                    large volumes of astronomical observations, including solar images, supporting
-                                    tasks where manual inspection is impractical given the amount of available data.
-                                </p>
-                                <p>The workshop will close with a discussion of the lines of work this technology
-                                    opens up for the analysis of astronomical observations, as well as its
-                                    limitations and the challenges involved in adapting models trained on generic
-                                    images to specialised scientific data.</p>
+                                <p>The instruments that observe the Sun produce ever larger volumes of data, making
+                                    Machine Learning an increasingly important tool in solar physics. This session
+                                    presents the basic concepts of machine learning and deep learning: what it means to
+                                    train a model, how data are prepared and how results are evaluated.</p>
+                                <p>It will review applications of these techniques to solar data analysis, showing what
+                                    kinds of problems they can tackle and their advantages and limitations compared with
+                                    traditional methods.</p>
+                                <p>The session will include the presentation of a research project by the speaker,
+                                    covering its scientific context and motivation, the data and methodology used, and
+                                    its main results. It will close with time for discussion and questions on the role of
+                                    Machine Learning in solar physics.</p>
                             </div>
                             <div class="expand-btn-close">
                                 <span class="es">↑ Contraer ↑</span>
