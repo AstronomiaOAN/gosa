@@ -17,162 +17,227 @@
     <style>
         /* ===== Infografía de producción académica ===== */
         .prod-info {
-            --info-bg: #0c2233;
-            --info-card: #13304a;
-            --info-line: rgba(159, 179, 194, 0.22);
-            --info-text: #e8eef2;
-            --info-muted: #9fb3c2;
+            --info-bg: #0a1c2b;
+            --info-raise: rgba(255, 255, 255, 0.035);
+            --info-line: rgba(200, 216, 228, 0.12);
+            --info-text: #eef3f6;
+            --info-muted: #97abba;
             --info-bar: #7cc4e0;
             --info-accent: #e2b567;
-            background: var(--info-bg);
-            color: var(--info-text);
-            border-radius: 6px;
-            padding: 32px 36px;
-            margin: 0 auto 48px;
+            position: relative;
+            overflow: hidden;
             max-width: 1000px;
-            box-shadow: 0 12px 40px rgba(8, 26, 40, 0.25);
-            font-family: var(--font-body);
+            margin: 0 auto 56px;
+            padding: 56px 56px 40px;
+            border-radius: 18px;
+            color: var(--info-text);
+            font-family: 'Inter', var(--font-body);
+            background:
+                radial-gradient(circle at 88% 8%, rgba(226, 170, 80, 0.22), transparent 38%),
+                radial-gradient(circle at 0% 100%, rgba(124, 196, 224, 0.08), transparent 45%),
+                var(--info-bg);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 0 30px 60px -20px rgba(8, 26, 40, 0.45);
         }
 
-        .prod-info a {
-            color: var(--info-bar);
+        .prod-info .info-sun {
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 330px;
+            height: 330px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 60px 6px rgba(226, 150, 50, 0.45), 0 0 140px 30px rgba(226, 150, 50, 0.15);
+            pointer-events: none;
         }
 
-        .info-top {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            padding-bottom: 18px;
-            border-bottom: 1px solid var(--info-line);
-        }
-
-        .info-top img {
-            height: 64px;
-            width: auto;
-        }
-
-        .info-top .info-logo-gosa {
-            background: #fff;
-            padding: 4px 8px;
-            border-radius: 2px;
-        }
-
-        .info-kicker {
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: var(--info-bar);
+        .prod-info .info-sun img {
+            display: block;
+            width: 110%;
+            height: 110%;
+            margin: -5%;
+            object-fit: cover;
         }
 
         .info-hero {
-            display: grid;
-            grid-template-columns: 1fr 240px;
-            gap: 28px;
-            align-items: center;
-            padding: 24px 0;
-            border-bottom: 1px solid var(--info-line);
+            position: relative;
+            max-width: 560px;
+            margin-bottom: 44px;
+        }
+
+        .info-kicker {
+            font-family: 'Outfit', var(--font-body);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--info-accent);
         }
 
         .info-hero h3 {
             font-family: var(--font-heading);
-            font-size: clamp(1.8rem, 4vw, 2.6rem);
-            line-height: 1.15;
+            font-weight: 400;
+            font-size: clamp(2rem, 4.4vw, 3rem);
+            line-height: 1.08;
             color: var(--info-text);
-            margin: 10px 0 12px;
+            margin: 14px 0 16px;
         }
 
-        .info-hero .info-tagline {
-            font-size: 1.05rem;
-            color: var(--info-text);
-            margin-bottom: 10px;
+        .info-hero h3 em {
+            font-style: italic;
+            background: linear-gradient(135deg, #f0cf8f, #c9a365);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
-        .info-hero .info-affil {
+        .info-tagline {
+            font-size: 1.1rem;
+            color: var(--info-text);
+            opacity: 0.9;
+            margin: 0 0 6px;
+        }
+
+        .info-affil {
+            font-size: 0.9rem;
             color: var(--info-muted);
-            font-size: 0.92rem;
-            line-height: 1.5;
-        }
-
-        .info-hero img {
-            width: 100%;
-            aspect-ratio: 1;
-            object-fit: cover;
-            border-radius: 4px;
-            background: #000;
+            margin: 0;
         }
 
         .info-stats {
+            position: relative;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin: 24px 0 32px;
+            grid-template-columns: 1fr 1.35fr 1fr;
+            border-top: 1px solid var(--info-line);
+            border-bottom: 1px solid var(--info-line);
+            margin-bottom: 44px;
         }
 
         .info-stat {
-            background: var(--info-card);
-            border-radius: 8px;
-            padding: 18px 18px 16px;
+            padding: 26px 24px 24px;
+        }
+
+        .info-stat + .info-stat {
+            border-left: 1px solid var(--info-line);
+        }
+
+        .info-stat:first-child {
+            padding-left: 0;
         }
 
         .info-stat .num {
-            font-family: var(--font-heading);
-            font-size: 2.4rem;
-            font-weight: 700;
-            color: var(--info-accent);
-            line-height: 1.1;
+            font-family: 'Outfit', var(--font-body);
+            font-weight: 300;
+            font-size: clamp(2.2rem, 4.6vw, 3rem);
+            line-height: 1;
+            letter-spacing: -1px;
+            white-space: nowrap;
+            color: var(--info-text);
             font-variant-numeric: tabular-nums;
         }
 
-        .info-stat .lbl {
-            font-weight: 700;
-            margin: 8px 0 6px;
-            color: var(--info-text);
-        }
-
-        .info-stat .sub {
-            font-size: 0.82rem;
+        .info-stat .num .dash {
             color: var(--info-muted);
         }
 
-        .info-section-title {
-            font-size: 1.05rem;
-            font-weight: 700;
-            letter-spacing: 1px;
+        .info-stat .lbl {
+            font-family: 'Outfit', var(--font-body);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+            color: var(--info-accent);
+            margin: 12px 0 4px;
+        }
+
+        .info-stat .sub {
+            font-size: 0.85rem;
+            color: var(--info-muted);
+        }
+
+        .info-panel {
+            background: var(--info-raise);
+            border: 1px solid var(--info-line);
+            border-radius: 14px;
+            padding: 26px 28px 22px;
+            margin-bottom: 44px;
+        }
+
+        .info-panel-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 26px;
+        }
+
+        .info-section-title {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            font-size: 1.45rem;
             color: var(--info-text);
             margin: 0 0 4px;
         }
 
         .info-section-sub {
+            font-size: 0.88rem;
             color: var(--info-muted);
-            font-size: 0.9rem;
-            margin-bottom: 18px;
+            margin: 0;
+        }
+
+        .info-legend {
+            display: flex;
+            gap: 18px;
+            font-size: 0.8rem;
+            color: var(--info-muted);
+            padding-top: 6px;
+        }
+
+        .info-legend > span::before {
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 3px;
+            margin-right: 7px;
+            vertical-align: -1px;
+            background: var(--info-bar);
+        }
+
+        .info-legend .hl::before {
+            background: var(--info-accent);
         }
 
         /* Gráfico de barras */
         .info-chart {
             position: relative;
-            height: 240px;
-            margin: 0 0 6px 26px;
+            height: 230px;
+            margin-left: 28px;
         }
 
         .info-grid-line {
             position: absolute;
             left: 0;
             right: 0;
-            border-top: 1px solid var(--info-line);
+            border-top: 1px dashed var(--info-line);
+        }
+
+        .info-grid-line:first-child {
+            border-top-style: solid;
+            border-color: rgba(200, 216, 228, 0.28);
         }
 
         .info-grid-line span {
             position: absolute;
-            left: -26px;
+            left: -28px;
             top: -8px;
-            font-size: 0.72rem;
-            color: var(--info-muted);
             width: 20px;
             text-align: right;
+            font-size: 0.7rem;
+            color: var(--info-muted);
+            font-variant-numeric: tabular-nums;
         }
 
         .info-bars {
@@ -199,44 +264,62 @@
         }
 
         .info-bar .fill {
-            width: min(70%, 38px);
-            background: var(--info-bar);
+            width: min(56%, 30px);
             border-radius: 4px 4px 0 0;
-            transition: filter .15s ease;
+            background: linear-gradient(180deg, #9fd5ea, #5fa9c8);
+            opacity: 0.85;
+            transition: opacity .15s ease, transform .15s ease;
+            transform-origin: bottom;
         }
 
         .info-bar.is-hl .fill {
-            background: var(--info-accent);
+            background: linear-gradient(180deg, #f3d193, #d6a24f);
+            opacity: 1;
+            box-shadow: 0 0 18px rgba(226, 181, 103, 0.35);
         }
 
         .info-bar .val {
-            font-size: 0.8rem;
-            font-weight: 700;
+            font-family: 'Outfit', var(--font-body);
+            font-size: 0.82rem;
+            font-weight: 600;
             color: var(--info-text);
-            margin-bottom: 4px;
+            margin-bottom: 6px;
+            opacity: 0;
+            transition: opacity .15s ease;
             font-variant-numeric: tabular-nums;
+        }
+
+        .info-bar.is-hl .val {
+            opacity: 1;
+            color: var(--info-accent);
         }
 
         .info-bar:hover .fill,
         .info-bar:focus-visible .fill {
-            filter: brightness(1.18);
+            opacity: 1;
+        }
+
+        .info-bar:hover .val,
+        .info-bar:focus-visible .val {
+            opacity: 1;
         }
 
         .info-bar:focus-visible {
             outline: 2px solid var(--info-text);
             outline-offset: 2px;
+            border-radius: 4px;
         }
 
         .info-years {
             display: flex;
             gap: 2px;
-            margin-left: 26px;
+            margin: 10px 0 0 28px;
         }
 
         .info-years span {
             flex: 1;
             text-align: center;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             color: var(--info-muted);
             font-variant-numeric: tabular-nums;
         }
@@ -252,10 +335,10 @@
             color: #142d3d;
             font-size: 0.8rem;
             padding: 6px 10px;
-            border-radius: 4px;
+            border-radius: 6px;
             white-space: nowrap;
             transform: translate(-50%, -100%);
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
             opacity: 0;
             transition: opacity .1s ease;
             z-index: 2;
@@ -266,114 +349,131 @@
         }
 
         .info-callout {
-            display: flex;
-            align-items: baseline;
-            gap: 14px;
-            margin: 18px 0 28px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid var(--info-line);
-        }
-
-        .info-callout .yr {
-            font-family: var(--font-heading);
-            font-size: 1.7rem;
-            font-weight: 700;
-            color: var(--info-accent);
-        }
-
-        .info-callout p {
-            margin: 0;
-        }
-
-        .info-hint {
-            font-size: 0.8rem;
+            margin: 22px 0 0;
+            padding-top: 18px;
+            border-top: 1px solid var(--info-line);
+            font-size: 0.95rem;
             color: var(--info-muted);
-            margin-top: 4px;
+        }
+
+        .info-callout strong {
+            font-family: 'Outfit', var(--font-body);
+            font-weight: 600;
+            color: var(--info-accent);
+            margin-right: 6px;
         }
 
         /* Temas */
+        .info-topics-head {
+            margin-bottom: 20px;
+        }
+
         .info-topics {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 14px;
-            margin-bottom: 28px;
+            margin-bottom: 40px;
         }
 
         .info-topic {
-            background: var(--info-card);
-            border-radius: 8px;
-            padding: 16px 18px;
+            border: 1px solid var(--info-line);
+            border-radius: 14px;
+            padding: 20px 18px;
+            background: var(--info-raise);
+            transition: border-color .2s ease, transform .2s ease;
+        }
+
+        .info-topic:hover {
+            border-color: rgba(226, 181, 103, 0.55);
+            transform: translateY(-2px);
+        }
+
+        .info-topic i {
+            display: grid;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(226, 181, 103, 0.12);
+            color: var(--info-accent);
+            font-size: 0.95rem;
+            margin-bottom: 14px;
         }
 
         .info-topic h4 {
-            font-size: 1.05rem;
+            font-family: 'Outfit', var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
             color: var(--info-text);
             margin: 0 0 8px;
-            font-family: var(--font-body);
-        }
-
-        .info-topic h4 b {
-            color: var(--info-bar);
-            margin-right: 8px;
         }
 
         .info-topic p {
+            font-size: 0.85rem;
+            line-height: 1.55;
             color: var(--info-muted);
-            font-size: 0.9rem;
-            line-height: 1.5;
             margin: 0;
         }
 
         .info-foot {
-            border-top: 1px solid var(--info-line);
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: baseline;
             padding-top: 20px;
-        }
-
-        .info-foot .info-kicker {
-            color: var(--info-accent);
+            border-top: 1px solid var(--info-line);
+            font-size: 0.8rem;
+            color: var(--info-muted);
         }
 
         .info-foot p {
-            margin: 8px 0 0;
+            margin: 0;
         }
 
-        .info-foot small {
-            display: block;
-            color: var(--info-muted);
-            font-size: 0.78rem;
-            line-height: 1.6;
-            margin-top: 12px;
+        @media (max-width: 900px) {
+            .info-topics {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 720px) {
             .prod-info {
-                padding: 22px 16px;
+                padding: 150px 20px 28px;
+                border-radius: 14px;
             }
 
-            .info-top img {
-                height: 46px;
-            }
-
-            .info-top .info-kicker {
-                display: none;
+            .prod-info .info-sun {
+                width: 220px;
+                height: 220px;
+                top: -70px;
+                right: -60px;
             }
 
             .info-hero {
+                margin-bottom: 32px;
+            }
+
+            .info-stats {
                 grid-template-columns: 1fr;
             }
 
-            .info-hero img {
-                max-width: 220px;
-                justify-self: center;
+            .info-stat,
+            .info-stat:first-child {
+                padding: 18px 0;
             }
 
-            .info-stats,
+            .info-stat + .info-stat {
+                border-left: 0;
+                border-top: 1px solid var(--info-line);
+            }
+
+            .info-panel {
+                padding: 20px 14px 16px;
+            }
+
             .info-topics {
                 grid-template-columns: 1fr;
-            }
-
-            .info-bar .val {
-                font-size: 0.66rem;
             }
 
             .info-years .full {
@@ -444,38 +544,30 @@
 
                 <!-- ============ Infografía de producción académica ============ -->
                 <div class="prod-info" id="prod-info">
-                    <div class="info-top">
-                        <img src="images/logo_gosa.jpg" alt="Logo GoSA" class="info-logo-gosa">
-                        <span class="info-kicker"><span class="es">Investigación · GoSA · OAN</span><span
-                                class="en">Research · GoSA · OAN</span></span>
-                        <img src="images/logo_oan.png" alt="Logo Observatorio Astronómico Nacional">
-                    </div>
+                    <div class="info-sun" aria-hidden="true"><img src="images/full_sun_circle.png" alt=""
+                            width="330" height="330" loading="lazy"></div>
 
                     <div class="info-hero">
-                        <div>
-                            <span class="info-kicker"><span class="es">GoSA / Producción académica</span><span
-                                    class="en">GoSA / Academic output</span></span>
-                            <h3><span class="es">Grupo de Astrofísica Solar</span><span class="en">Group of Solar
-                                    Astrophysics</span></h3>
-                            <p class="info-tagline"><span class="es">Explorar el Sol. Comprender su influencia.</span><span
-                                    class="en">Exploring the Sun. Understanding its influence.</span></p>
-                            <p class="info-affil">Observatorio Astronómico Nacional<br>Universidad Nacional de Colombia</p>
-                        </div>
-                        <img src="images/full_sun_circle.png" alt="Imagen del disco solar completo" width="240"
-                            height="240" loading="lazy">
+                        <span class="info-kicker"><span class="es">Producción académica · GoSA · OAN</span><span
+                                class="en">Academic output · GoSA · OAN</span></span>
+                        <h3><span class="es">Grupo de <em>Astrofísica Solar</em></span><span class="en">Group of
+                                <em>Solar Astrophysics</em></span></h3>
+                        <p class="info-tagline"><span class="es">Explorar el Sol. Comprender su influencia.</span><span
+                                class="en">Exploring the Sun. Understanding its influence.</span></p>
+                        <p class="info-affil">Observatorio Astronómico Nacional · Universidad Nacional de Colombia</p>
                     </div>
 
                     <div class="info-stats">
                         <div class="info-stat">
                             <div class="num" id="info-total">–</div>
-                            <div class="lbl"><span class="es">producción académica</span><span class="en">academic
+                            <div class="lbl"><span class="es">Producción académica</span><span class="en">Academic
                                     output</span></div>
                             <div class="sub"><span class="es">Publicaciones y contribuciones</span><span
                                     class="en">Publications and contributions</span></div>
                         </div>
                         <div class="info-stat">
                             <div class="num" id="info-period">–</div>
-                            <div class="lbl"><span class="es">periodo del listado</span><span class="en">period
+                            <div class="lbl"><span class="es">Periodo del listado</span><span class="en">Period
                                     covered</span></div>
                             <div class="sub" id="info-period-sub"></div>
                         </div>
@@ -486,46 +578,63 @@
                         </div>
                     </div>
 
-                    <h4 class="info-section-title"><span class="es">La producción a lo largo del tiempo</span><span
-                            class="en">Output over time</span></h4>
-                    <p class="info-section-sub"><span class="es">Producción académica por año. Haz clic en una barra
-                            para ver las publicaciones de ese año.</span><span class="en">Academic output per year. Click
-                            a bar to see that year's publications.</span></p>
-                    <div class="info-chart" id="info-chart" role="group"
-                        aria-label="Producción académica por año">
-                        <div class="info-bars" id="info-bars"></div>
-                        <div class="info-tooltip" id="info-tooltip" role="status"></div>
+                    <div class="info-panel">
+                        <div class="info-panel-head">
+                            <div>
+                                <h4 class="info-section-title"><span class="es">La producción a lo largo del
+                                        tiempo</span><span class="en">Output over time</span></h4>
+                                <p class="info-section-sub"><span class="es">Publicaciones por año · haz clic en una barra
+                                        para ver ese año</span><span class="en">Publications per year · click a bar to
+                                        see that year</span></p>
+                            </div>
+                            <div class="info-legend">
+                                <span><span class="es">Publicaciones</span><span class="en">Publications</span></span>
+                                <span class="hl"><span class="es">Año destacado</span><span class="en">Highlighted
+                                        year</span></span>
+                            </div>
+                        </div>
+                        <div class="info-chart" id="info-chart" role="group"
+                            aria-label="Producción académica por año">
+                            <div class="info-bars" id="info-bars"></div>
+                            <div class="info-tooltip" id="info-tooltip" role="status"></div>
+                        </div>
+                        <div class="info-years" id="info-years" aria-hidden="true"></div>
+                        <p class="info-callout" id="info-callout"></p>
                     </div>
-                    <div class="info-years" id="info-years" aria-hidden="true"></div>
-                    <div class="info-callout" id="info-callout"></div>
 
-                    <h4 class="info-section-title"><span class="es">Del Sol a la sociedad</span><span class="en">From
-                            the Sun to society</span></h4>
-                    <p class="info-section-sub"><span class="es">Temas presentes en las publicaciones</span><span
-                            class="en">Topics covered by the publications</span></p>
+                    <div class="info-topics-head">
+                        <h4 class="info-section-title"><span class="es">Del Sol a la sociedad</span><span
+                                class="en">From the Sun to society</span></h4>
+                        <p class="info-section-sub"><span class="es">Temas presentes en las publicaciones</span><span
+                                class="en">Topics covered by the publications</span></p>
+                    </div>
                     <div class="info-topics">
                         <div class="info-topic">
-                            <h4><b>01</b><span class="es">Física solar</span><span class="en">Solar physics</span></h4>
+                            <i class="fa-solid fa-sun" aria-hidden="true"></i>
+                            <h4><span class="es">Física solar</span><span class="en">Solar physics</span></h4>
                             <p><span class="es">Convección, vórtices, campos magnéticos, fulguraciones y
                                     heliosismología.</span><span class="en">Convection, vortices, magnetic fields, flares
                                     and helioseismology.</span></p>
                         </div>
                         <div class="info-topic">
-                            <h4><b>02</b><span class="es">Clima espacial</span><span class="en">Space weather</span></h4>
+                            <i class="fa-solid fa-satellite" aria-hidden="true"></i>
+                            <h4><span class="es">Clima espacial</span><span class="en">Space weather</span></h4>
                             <p><span class="es">Tormentas geomagnéticas, viento solar, radioestallidos y efectos sobre
                                     satélites y la Tierra.</span><span class="en">Geomagnetic storms, solar wind, radio
                                     bursts and effects on satellites and the Earth.</span></p>
                         </div>
                         <div class="info-topic">
-                            <h4><b>03</b><span class="es">Instrumentación y datos</span><span class="en">Instrumentation
-                                    and data</span></h4>
+                            <i class="fa-solid fa-tower-broadcast" aria-hidden="true"></i>
+                            <h4><span class="es">Instrumentación y datos</span><span class="en">Instrumentation and
+                                    data</span></h4>
                             <p><span class="es">Radioastronomía, rayos X, observación multibanda, simulación e
                                     inteligencia artificial.</span><span class="en">Radio astronomy, X-rays,
                                     multiwavelength observation, simulation and artificial intelligence.</span></p>
                         </div>
                         <div class="info-topic">
-                            <h4><b>04</b><span class="es">Ciencia y sociedad</span><span class="en">Science and
-                                    society</span></h4>
+                            <i class="fa-solid fa-people-group" aria-hidden="true"></i>
+                            <h4><span class="es">Ciencia y sociedad</span><span class="en">Science and society</span>
+                            </h4>
                             <p><span class="es">Educación, inclusión, historia de la ciencia, contaminación lumínica y
                                     astrobiología.</span><span class="en">Education, inclusion, history of science, light
                                     pollution and astrobiology.</span></p>
@@ -533,14 +642,12 @@
                     </div>
 
                     <div class="info-foot">
-                        <span class="info-kicker"><span class="es">Una mirada multidisciplinaria al universo</span><span
-                                class="en">A multidisciplinary view of the universe</span></span>
                         <p><span class="es">Artículos, libros, contribuciones a congresos y otras contribuciones
                                 académicas.</span><span class="en">Articles, books, conference contributions and other
                                 academic work.</span></p>
-                        <small><span class="es">Fuente: listado de publicaciones de esta página; las cifras y el gráfico se
-                                calculan automáticamente a partir de él.</span><span class="en">Source: the publication
-                                list on this page; figures and chart are computed from it automatically.</span></small>
+                        <p><span class="es">Cifras calculadas automáticamente a partir del listado de esta
+                                página.</span><span class="en">Figures computed automatically from the list on this
+                                page.</span></p>
                     </div>
                 </div>
 
@@ -3549,7 +3656,7 @@
             const both = (es, en) => `<span class="es">${es}</span><span class="en">${en}</span>`;
 
             document.getElementById('info-total').textContent = items.length;
-            document.getElementById('info-period').textContent = `${first}–${last}`;
+            document.getElementById('info-period').innerHTML = `${first}<span class="dash">–</span>${last}`;
             document.getElementById('info-period-sub').innerHTML =
                 both(`${series.length} años calendario`, `${series.length} calendar years`);
             document.getElementById('info-last').textContent = counts[last];
@@ -3614,9 +3721,9 @@
             });
 
             document.getElementById('info-callout').innerHTML =
-                `<span class="yr">${peak.year}</span><p>` +
-                both(`${peak.n} contribuciones: el mayor total anual del periodo.`,
-                    `${peak.n} contributions: the highest yearly total in the period.`) + '</p>';
+                `<strong>${peak.year}</strong>` +
+                both(`${peak.n} contribuciones, el mayor total anual del periodo.`,
+                    `${peak.n} contributions, the highest yearly total in the period.`);
         })();
     </script>
 </body>
