@@ -1,18 +1,23 @@
 #!/usr/bin/env python3
 """Descarga desde OpenAlex las publicaciones de los investigadores principales
-del GoSA (Santiago Vargas Domínguez y Benjamín Calvo Mozo) y de los estudiantes
-de posgrado con perfil identificado, marca qué miembros
+del GoSA (Santiago Vargas Domínguez y Benjamín Calvo Mozo), de los colaboradores
+externos y de los estudiantes de posgrado con perfil identificado, marca qué
+miembros
 del grupo aparecen como coautores y señala cuáles aún no están en
 produccion.html.
 
 Uso:
     python3 scripts/scrape_publicaciones.py
+    python3 scripts/scrape_publicaciones.py --reusar-csv   # no consulta OpenAlex:
+        # parte del CSV existente y solo actualiza los colaboradores (útil
+        # cuando se agota la cuota diaria gratuita de OpenAlex)
 
 Salida:
     data/publicaciones_openalex.csv
 """
 
 import csv
+import sys
 import json
 import re
 import time
@@ -29,6 +34,15 @@ OUT = ROOT / "data" / "publicaciones_openalex.csv"
 PIS = {
     "Santiago Vargas Domínguez": ["A5067032230", "A5123796859", "A5127492052", "A5103860334"],
     "Benjamín Calvo Mozo": ["A5071278092", "A5082411304"],
+}
+
+# Colaboradores externos que figuran como miembros activos en index.html. Se
+# consultan por ORCID (+ Crossref para los autores) porque en OpenAlex sus
+# perfiles están partidos y mezclados con homónimos.
+COLLABORATORS = {
+    "Juan Carlos Martínez Oliveros": "0000-0002-2587-1342",
+    "Juan Camilo Buitrago": "0000-0002-8203-4794",
+    "Jose Ivan Campos Rozo": "0000-0001-8883-6790",
 }
 
 # Perfiles de OpenAlex de estudiantes de posgrado, para incluir trabajos en los
@@ -118,9 +132,102 @@ def works_for(author_ids):
     return works
 
 
+def get_json(url):
+    req = urllib.request.Request(url, headers={"Accept": "application/json"})
+    for attempt in range(4):
+        try:
+            with urllib.request.urlopen(req, timeout=40) as r:
+                return json.load(r)
+        except Exception:
+            time.sleep(2 * (attempt + 1))
+    return None
+
+
+ORCID_TYPES = {"journal-article": "article", "conference-abstract": "conference-abstract",
+               "conference-paper": "conference-paper", "preprint": "preprint",
+               "book": "book", "book-chapter": "book-chapter", "dissertation-thesis": "dissertation"}
+
+
+CROSSREF_TYPES = {"journal-article": "article", "proceedings-article": "conference-paper",
+                  "posted-content": "preprint", "book-chapter": "book-chapter", "book": "book"}
+
+
+def crossref_by_title(title):
+    """Busca en Crossref una obra con exactamente el mismo título."""
+    query = urllib.parse.urlencode({"query.bibliographic": title, "rows": 3})
+    items = ((get_json(f"https://api.crossref.org/works?{query}") or {})
+             .get("message", {}).get("items", []))
+    for item in items:
+        if norm(" ".join(item.get("title") or [""])) == norm(title):
+            return item
+    return None
+
+
+def orcid_records(orcid):
+    """Obras de un perfil ORCID, completando los autores con Crossref."""
+    data = get_json(f"https://pub.orcid.org/v3.0/{orcid}/works") or {}
+    records = []
+    for group in data.get("group", []):
+        w = group["work-summary"][0]
+        ids = (w.get("external-ids") or {}).get("external-id", [])
+        ids += [e for g in group["work-summary"][1:]
+                for e in (g.get("external-ids") or {}).get("external-id", [])]
+        doi = next((e["external-id-value"] for e in ids if e["external-id-type"] == "doi"), "")
+        doi = re.sub(r"^https?://(dx\.)?doi\.org/", "", doi.strip()).lower()
+        year = ((w.get("publication-date") or {}).get("year") or {}).get("value")
+        rec = {
+            "year": int(year) if year else None,
+            "title": " ".join(w["title"]["title"]["value"].split()),
+            "venue": ((w.get("journal-title") or {}).get("value") or ""),
+            "type": ORCID_TYPES.get(w.get("type"), w.get("type") or ""),
+            "authors": [],
+            "doi": doi,
+            "link": (w.get("url") or {}).get("value", "") if w.get("url") else "",
+        }
+        bibcode = next((e["external-id-value"] for e in ids if e["external-id-type"] == "bibcode"), "")
+        if not rec["link"] and bibcode:
+            rec["link"] = f"https://ui.adsabs.harvard.edu/abs/{bibcode}"
+        if doi:
+            msg = (get_json(f"https://api.crossref.org/works/{urllib.parse.quote(doi)}") or {}).get("message")
+        else:
+            msg = crossref_by_title(rec["title"])
+            if msg:
+                rec["doi"] = msg["DOI"].lower()
+        if msg:
+            rec["authors"] = [f"{a.get('given', '')} {a.get('family', '')}".strip()
+                              for a in msg.get("author", [])]
+            rec["venue"] = rec["venue"] or (msg.get("container-title") or [""])[0]
+            rec["type"] = CROSSREF_TYPES.get(msg.get("type"), rec["type"])
+        time.sleep(0.1)
+        records.append(rec)
+    return records
+
+
+def openalex_record(w):
+    return {
+        "year": w.get("publication_year"),
+        "title": (w.get("title") or "").strip(),
+        "venue": ((w.get("primary_location") or {}).get("source") or {}).get("display_name") or "",
+        "type": w.get("type"),
+        "authors": [a["author"]["display_name"] for a in w.get("authorships", [])],
+        "doi": (w.get("doi") or "").replace("https://doi.org/", "").lower(),
+        "link": w.get("id") or "",
+    }
+
+
+def csv_record(r):
+    return {"year": int(r["Año"]) if r["Año"] else None, "title": r["Título"],
+            "venue": r["Revista/Fuente"], "type": r["Tipo"],
+            "authors": [a.strip() for a in r["Autores"].split(",") if a.strip()],
+            "doi": r["DOI"].lower(), "link": r["Enlace"]}
+
+
 def existing_dois():
     html = (ROOT / "produccion.html").read_text(encoding="utf-8")
-    return {d.lower().rstrip(".") for d in re.findall(r'doi\.org/([^"\s<]+)', html)}
+    # DOI en cualquier enlace (doi.org o la página de la editorial).
+    hrefs = re.findall(r'href="([^"]+)"', html)
+    return {m.group(1).lower().rstrip(".") for h in hrefs
+            for m in [re.search(r"(10\.\d{4,9}/[^\s?#]+)", urllib.parse.unquote(h))] if m}
 
 
 def existing_titles():
@@ -133,31 +240,39 @@ def main():
     members = load_members()
     known_dois, known_titles = existing_dois(), existing_titles()
 
-    all_works = {}
-    for ids in [*PIS.values(), *STUDENTS.values()]:
-        for wid, w in works_for(ids).items():
-            all_works.setdefault(wid, w)
+    if "--reusar-csv" in sys.argv:
+        with OUT.open(encoding="utf-8") as f:
+            records = [csv_record(r) for r in csv.DictReader(f)]
+    else:
+        works = {}
+        for ids in [*PIS.values(), *STUDENTS.values()]:
+            works.update(works_for(ids))
+        records = [openalex_record(w) for w in works.values()]
+    for orcid in COLLABORATORS.values():
+        records += orcid_records(orcid)
 
-    rows = []
-    for w in all_works.values():
-        authors = [a["author"]["display_name"] for a in w.get("authorships", [])]
-        in_group = group_members(authors, members)
-        doi = (w.get("doi") or "").replace("https://doi.org/", "")
-        title = (w.get("title") or "").strip()
+    rows, seen = [], set()
+    for rec in records:
+        title = rec["title"]
         tkey = " ".join(norm(title))[:60]
-        on_site = (doi and doi.lower() in known_dois) or tkey in known_titles
-        venue = ((w.get("primary_location") or {}).get("source") or {}).get("display_name") or ""
+        key = rec["doi"] or tkey
+        if not title or key in seen:
+            continue
+        seen.add(key)
+        doi = rec["doi"]
+        in_group = group_members(rec["authors"], members)
+        on_site = (doi and doi in known_dois) or tkey in known_titles
         rows.append({
-            "Año": w.get("publication_year"),
+            "Año": rec["year"],
             "Título": title,
-            "Revista/Fuente": venue,
-            "Tipo": w.get("type"),
-            "Autores": ", ".join(authors),
+            "Revista/Fuente": rec["venue"],
+            "Tipo": rec["type"],
+            "Autores": ", ".join(rec["authors"]),
             "Miembros GoSA": "; ".join(m["name"] for m in in_group),
             "Estudiantes activos": "; ".join(m["name"] for m in in_group
                                               if m["class"] in STUDENT_CLASSES),
             "DOI": doi,
-            "Enlace": f"https://doi.org/{doi}" if doi else (w.get("id") or ""),
+            "Enlace": f"https://doi.org/{doi}" if doi else rec["link"],
             "Ya en produccion.html": "sí" if on_site else "no",
         })
 
