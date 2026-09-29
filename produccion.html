@@ -14,6 +14,377 @@
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ===== Infografía de producción académica ===== */
+        .prod-info {
+            --info-bg: #0c2233;
+            --info-card: #13304a;
+            --info-line: rgba(159, 179, 194, 0.22);
+            --info-text: #e8eef2;
+            --info-muted: #9fb3c2;
+            --info-bar: #7cc4e0;
+            --info-accent: #e2b567;
+            background: var(--info-bg);
+            color: var(--info-text);
+            border-radius: 6px;
+            padding: 32px 36px;
+            margin: 0 auto 48px;
+            max-width: 1000px;
+            box-shadow: 0 12px 40px rgba(8, 26, 40, 0.25);
+            font-family: var(--font-body);
+        }
+
+        .prod-info a {
+            color: var(--info-bar);
+        }
+
+        .info-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--info-line);
+        }
+
+        .info-top img {
+            height: 64px;
+            width: auto;
+        }
+
+        .info-top .info-logo-gosa {
+            background: #fff;
+            padding: 4px 8px;
+            border-radius: 2px;
+        }
+
+        .info-kicker {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--info-bar);
+        }
+
+        .info-hero {
+            display: grid;
+            grid-template-columns: 1fr 240px;
+            gap: 28px;
+            align-items: center;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--info-line);
+        }
+
+        .info-hero h3 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            line-height: 1.15;
+            color: var(--info-text);
+            margin: 10px 0 12px;
+        }
+
+        .info-hero .info-tagline {
+            font-size: 1.05rem;
+            color: var(--info-text);
+            margin-bottom: 10px;
+        }
+
+        .info-hero .info-affil {
+            color: var(--info-muted);
+            font-size: 0.92rem;
+            line-height: 1.5;
+        }
+
+        .info-hero img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 4px;
+            background: #000;
+        }
+
+        .info-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 24px 0 32px;
+        }
+
+        .info-stat {
+            background: var(--info-card);
+            border-radius: 8px;
+            padding: 18px 18px 16px;
+        }
+
+        .info-stat .num {
+            font-family: var(--font-heading);
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--info-accent);
+            line-height: 1.1;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .info-stat .lbl {
+            font-weight: 700;
+            margin: 8px 0 6px;
+            color: var(--info-text);
+        }
+
+        .info-stat .sub {
+            font-size: 0.82rem;
+            color: var(--info-muted);
+        }
+
+        .info-section-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--info-text);
+            margin: 0 0 4px;
+        }
+
+        .info-section-sub {
+            color: var(--info-muted);
+            font-size: 0.9rem;
+            margin-bottom: 18px;
+        }
+
+        /* Gráfico de barras */
+        .info-chart {
+            position: relative;
+            height: 240px;
+            margin: 0 0 6px 26px;
+        }
+
+        .info-grid-line {
+            position: absolute;
+            left: 0;
+            right: 0;
+            border-top: 1px solid var(--info-line);
+        }
+
+        .info-grid-line span {
+            position: absolute;
+            left: -26px;
+            top: -8px;
+            font-size: 0.72rem;
+            color: var(--info-muted);
+            width: 20px;
+            text-align: right;
+        }
+
+        .info-bars {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: flex-end;
+            gap: 2px;
+        }
+
+        .info-bar {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            background: none;
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+            font: inherit;
+            color: inherit;
+        }
+
+        .info-bar .fill {
+            width: min(70%, 38px);
+            background: var(--info-bar);
+            border-radius: 4px 4px 0 0;
+            transition: filter .15s ease;
+        }
+
+        .info-bar.is-hl .fill {
+            background: var(--info-accent);
+        }
+
+        .info-bar .val {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--info-text);
+            margin-bottom: 4px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .info-bar:hover .fill,
+        .info-bar:focus-visible .fill {
+            filter: brightness(1.18);
+        }
+
+        .info-bar:focus-visible {
+            outline: 2px solid var(--info-text);
+            outline-offset: 2px;
+        }
+
+        .info-years {
+            display: flex;
+            gap: 2px;
+            margin-left: 26px;
+        }
+
+        .info-years span {
+            flex: 1;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--info-muted);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .info-years .short {
+            display: none;
+        }
+
+        .info-tooltip {
+            position: absolute;
+            pointer-events: none;
+            background: #f7f9fa;
+            color: #142d3d;
+            font-size: 0.8rem;
+            padding: 6px 10px;
+            border-radius: 4px;
+            white-space: nowrap;
+            transform: translate(-50%, -100%);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+            opacity: 0;
+            transition: opacity .1s ease;
+            z-index: 2;
+        }
+
+        .info-tooltip.show {
+            opacity: 1;
+        }
+
+        .info-callout {
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+            margin: 18px 0 28px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--info-line);
+        }
+
+        .info-callout .yr {
+            font-family: var(--font-heading);
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--info-accent);
+        }
+
+        .info-callout p {
+            margin: 0;
+        }
+
+        .info-hint {
+            font-size: 0.8rem;
+            color: var(--info-muted);
+            margin-top: 4px;
+        }
+
+        /* Temas */
+        .info-topics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+
+        .info-topic {
+            background: var(--info-card);
+            border-radius: 8px;
+            padding: 16px 18px;
+        }
+
+        .info-topic h4 {
+            font-size: 1.05rem;
+            color: var(--info-text);
+            margin: 0 0 8px;
+            font-family: var(--font-body);
+        }
+
+        .info-topic h4 b {
+            color: var(--info-bar);
+            margin-right: 8px;
+        }
+
+        .info-topic p {
+            color: var(--info-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .info-foot {
+            border-top: 1px solid var(--info-line);
+            padding-top: 20px;
+        }
+
+        .info-foot .info-kicker {
+            color: var(--info-accent);
+        }
+
+        .info-foot p {
+            margin: 8px 0 0;
+        }
+
+        .info-foot small {
+            display: block;
+            color: var(--info-muted);
+            font-size: 0.78rem;
+            line-height: 1.6;
+            margin-top: 12px;
+        }
+
+        @media (max-width: 720px) {
+            .prod-info {
+                padding: 22px 16px;
+            }
+
+            .info-top img {
+                height: 46px;
+            }
+
+            .info-top .info-kicker {
+                display: none;
+            }
+
+            .info-hero {
+                grid-template-columns: 1fr;
+            }
+
+            .info-hero img {
+                max-width: 220px;
+                justify-self: center;
+            }
+
+            .info-stats,
+            .info-topics {
+                grid-template-columns: 1fr;
+            }
+
+            .info-bar .val {
+                font-size: 0.66rem;
+            }
+
+            .info-years .full {
+                display: none;
+            }
+
+            .info-years .short {
+                display: inline;
+            }
+        }
+    </style>
 </head>
 
 <body class="lang-es">
@@ -70,6 +441,108 @@
                 <h2 class="section-title"><span class="es">Producción <span
                             class="gradient-text">Científica</span></span><span class="en">Scientific <span
                             class="gradient-text">Production</span></span></h2>
+
+                <!-- ============ Infografía de producción académica ============ -->
+                <div class="prod-info" id="prod-info">
+                    <div class="info-top">
+                        <img src="images/logo_gosa.jpg" alt="Logo GoSA" class="info-logo-gosa">
+                        <span class="info-kicker"><span class="es">Investigación · GoSA · OAN</span><span
+                                class="en">Research · GoSA · OAN</span></span>
+                        <img src="images/logo_oan.png" alt="Logo Observatorio Astronómico Nacional">
+                    </div>
+
+                    <div class="info-hero">
+                        <div>
+                            <span class="info-kicker"><span class="es">GoSA / Producción académica</span><span
+                                    class="en">GoSA / Academic output</span></span>
+                            <h3><span class="es">Grupo de Astrofísica Solar</span><span class="en">Group of Solar
+                                    Astrophysics</span></h3>
+                            <p class="info-tagline"><span class="es">Explorar el Sol. Comprender su influencia.</span><span
+                                    class="en">Exploring the Sun. Understanding its influence.</span></p>
+                            <p class="info-affil">Observatorio Astronómico Nacional<br>Universidad Nacional de Colombia</p>
+                        </div>
+                        <img src="images/full_sun_circle.png" alt="Imagen del disco solar completo" width="240"
+                            height="240" loading="lazy">
+                    </div>
+
+                    <div class="info-stats">
+                        <div class="info-stat">
+                            <div class="num" id="info-total">–</div>
+                            <div class="lbl"><span class="es">producción académica</span><span class="en">academic
+                                    output</span></div>
+                            <div class="sub"><span class="es">Publicaciones y contribuciones</span><span
+                                    class="en">Publications and contributions</span></div>
+                        </div>
+                        <div class="info-stat">
+                            <div class="num" id="info-period">–</div>
+                            <div class="lbl"><span class="es">periodo del listado</span><span class="en">period
+                                    covered</span></div>
+                            <div class="sub" id="info-period-sub"></div>
+                        </div>
+                        <div class="info-stat">
+                            <div class="num" id="info-last">–</div>
+                            <div class="lbl" id="info-last-lbl"></div>
+                            <div class="sub" id="info-last-sub"></div>
+                        </div>
+                    </div>
+
+                    <h4 class="info-section-title"><span class="es">La producción a lo largo del tiempo</span><span
+                            class="en">Output over time</span></h4>
+                    <p class="info-section-sub"><span class="es">Producción académica por año. Haz clic en una barra
+                            para ver las publicaciones de ese año.</span><span class="en">Academic output per year. Click
+                            a bar to see that year's publications.</span></p>
+                    <div class="info-chart" id="info-chart" role="group"
+                        aria-label="Producción académica por año">
+                        <div class="info-bars" id="info-bars"></div>
+                        <div class="info-tooltip" id="info-tooltip" role="status"></div>
+                    </div>
+                    <div class="info-years" id="info-years" aria-hidden="true"></div>
+                    <div class="info-callout" id="info-callout"></div>
+
+                    <h4 class="info-section-title"><span class="es">Del Sol a la sociedad</span><span class="en">From
+                            the Sun to society</span></h4>
+                    <p class="info-section-sub"><span class="es">Temas presentes en las publicaciones</span><span
+                            class="en">Topics covered by the publications</span></p>
+                    <div class="info-topics">
+                        <div class="info-topic">
+                            <h4><b>01</b><span class="es">Física solar</span><span class="en">Solar physics</span></h4>
+                            <p><span class="es">Convección, vórtices, campos magnéticos, fulguraciones y
+                                    heliosismología.</span><span class="en">Convection, vortices, magnetic fields, flares
+                                    and helioseismology.</span></p>
+                        </div>
+                        <div class="info-topic">
+                            <h4><b>02</b><span class="es">Clima espacial</span><span class="en">Space weather</span></h4>
+                            <p><span class="es">Tormentas geomagnéticas, viento solar, radioestallidos y efectos sobre
+                                    satélites y la Tierra.</span><span class="en">Geomagnetic storms, solar wind, radio
+                                    bursts and effects on satellites and the Earth.</span></p>
+                        </div>
+                        <div class="info-topic">
+                            <h4><b>03</b><span class="es">Instrumentación y datos</span><span class="en">Instrumentation
+                                    and data</span></h4>
+                            <p><span class="es">Radioastronomía, rayos X, observación multibanda, simulación e
+                                    inteligencia artificial.</span><span class="en">Radio astronomy, X-rays,
+                                    multiwavelength observation, simulation and artificial intelligence.</span></p>
+                        </div>
+                        <div class="info-topic">
+                            <h4><b>04</b><span class="es">Ciencia y sociedad</span><span class="en">Science and
+                                    society</span></h4>
+                            <p><span class="es">Educación, inclusión, historia de la ciencia, contaminación lumínica y
+                                    astrobiología.</span><span class="en">Education, inclusion, history of science, light
+                                    pollution and astrobiology.</span></p>
+                        </div>
+                    </div>
+
+                    <div class="info-foot">
+                        <span class="info-kicker"><span class="es">Una mirada multidisciplinaria al universo</span><span
+                                class="en">A multidisciplinary view of the universe</span></span>
+                        <p><span class="es">Artículos, libros, contribuciones a congresos y otras contribuciones
+                                académicas.</span><span class="en">Articles, books, conference contributions and other
+                                academic work.</span></p>
+                        <small><span class="es">Fuente: listado de publicaciones de esta página; las cifras y el gráfico se
+                                calculan automáticamente a partir de él.</span><span class="en">Source: the publication
+                                list on this page; figures and chart are computed from it automatically.</span></small>
+                    </div>
+                </div>
 
                 <div class="tabs-container">
                     <div class="tabs-header">
@@ -3057,6 +3530,95 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Infografía de producción: cifras y gráfico calculados desde #pub-list.
+        (function () {
+            const items = [...document.querySelectorAll('#pub-list .pub-item')];
+            if (!items.length) return;
+            const counts = {};
+            items.forEach(li => {
+                const y = +li.dataset.year;
+                counts[y] = (counts[y] || 0) + 1;
+            });
+            const years = Object.keys(counts).map(Number);
+            const first = Math.min(...years), last = Math.max(...years);
+            const series = [];
+            for (let y = first; y <= last; y++) series.push({ year: y, n: counts[y] || 0 });
+            const peak = series.reduce((a, b) => (b.n > a.n ? b : a));
+            const current = new Date().getFullYear();
+            const both = (es, en) => `<span class="es">${es}</span><span class="en">${en}</span>`;
+
+            document.getElementById('info-total').textContent = items.length;
+            document.getElementById('info-period').textContent = `${first}–${last}`;
+            document.getElementById('info-period-sub').innerHTML =
+                both(`${series.length} años calendario`, `${series.length} calendar years`);
+            document.getElementById('info-last').textContent = counts[last];
+            document.getElementById('info-last-lbl').innerHTML =
+                both(`contribuciones en ${last}`, `contributions in ${last}`);
+            document.getElementById('info-last-sub').innerHTML = last === current
+                ? both('Año en curso · cifra parcial', 'Current year · partial count')
+                : both('Último año del listado', 'Latest year listed');
+
+            // Escala: múltiplo de 10 por encima del máximo.
+            const max = Math.max(10, Math.ceil(peak.n / 10) * 10);
+            const chart = document.getElementById('info-chart');
+            for (let v = 0; v <= max; v += 10) {
+                const line = document.createElement('div');
+                line.className = 'info-grid-line';
+                line.style.bottom = `${(v / max) * 100}%`;
+                line.innerHTML = `<span>${v}</span>`;
+                chart.insertBefore(line, chart.firstChild);
+            }
+
+            const bars = document.getElementById('info-bars');
+            const labels = document.getElementById('info-years');
+            const tip = document.getElementById('info-tooltip');
+            const isEn = () => document.body.classList.contains('lang-en');
+            series.forEach(({ year, n }) => {
+                const b = document.createElement('button');
+                b.type = 'button';
+                b.className = 'info-bar' + (year === peak.year || year === last ? ' is-hl' : '');
+                b.setAttribute('aria-label', `${year}: ${n}`);
+                b.innerHTML = `<span class="val">${n || ''}</span>` +
+                    `<span class="fill" style="height:${(n / max) * 100}%"></span>`;
+                const show = () => {
+                    tip.textContent = isEn()
+                        ? `${year} · ${n} ${n === 1 ? 'publication' : 'publications'} · click to filter`
+                        : `${year} · ${n} ${n === 1 ? 'publicación' : 'publicaciones'} · clic para filtrar`;
+                    const r = b.getBoundingClientRect(), c = chart.getBoundingClientRect();
+                    const fill = b.querySelector('.fill').getBoundingClientRect();
+                    const half = tip.offsetWidth / 2;
+                    const x = r.left - c.left + r.width / 2;
+                    tip.style.left = `${Math.min(Math.max(x, half - 26), c.width - half)}px`;
+                    tip.style.top = `${Math.min(fill.top, r.bottom - 20) - c.top - 24}px`;
+                    tip.classList.add('show');
+                };
+                const hide = () => tip.classList.remove('show');
+                b.addEventListener('mouseenter', show);
+                b.addEventListener('focus', show);
+                b.addEventListener('mouseleave', hide);
+                b.addEventListener('blur', hide);
+                b.addEventListener('click', () => {
+                    const select = document.getElementById('pub-year-filter');
+                    const tab = document.querySelector('.tab-btn[data-tab="pubs"]');
+                    if (tab && !tab.classList.contains('active')) tab.click();
+                    if (select) {
+                        select.value = String(year);
+                        select.dispatchEvent(new Event('change'));
+                    }
+                    document.getElementById('pubs').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+                bars.appendChild(b);
+                labels.insertAdjacentHTML('beforeend',
+                    `<span><span class="full">${year}</span><span class="short">'${String(year).slice(2)}</span></span>`);
+            });
+
+            document.getElementById('info-callout').innerHTML =
+                `<span class="yr">${peak.year}</span><p>` +
+                both(`${peak.n} contribuciones: el mayor total anual del periodo.`,
+                    `${peak.n} contributions: the highest yearly total in the period.`) + '</p>';
+        })();
+    </script>
 </body>
 
 </html>
