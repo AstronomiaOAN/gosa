@@ -75,3 +75,16 @@ El archivo CSS hace uso intensivo de:
    ```
 2. Al no usar un framework, no requiere instalación mediante `npm` ni procesos de compilación (build scripts).
 3. Simplemente puedes abrir el archivo `index.html` en cualquier navegador web moderno, o si cuentas con VSCode, utilizar la extensión **Live Server** para previsualizar los cambios en tiempo real.
+
+## 🌐 Sitio publicado: una URL por idioma
+
+Los HTML del repositorio siguen siendo bilingües (`class="es"` / `class="en"`) y se pueden abrir directamente como antes. Al publicar, GitHub Actions ejecuta `scripts/build_site.py`, que genera `_site/` con cada página solo en español (`/gosa/…`) y solo en inglés (`/gosa/en/…`), más `canonical`, `hreflang` y `sitemap.xml`. Así los buscadores indexan cada idioma por separado.
+
+Para ver localmente el sitio tal como se publica:
+
+```bash
+python3 scripts/build_site.py
+python3 -m http.server 8123 -d _site
+```
+
+El título y la descripción en inglés de cada página se declaran junto a los de español, en `data-en` (`<title>`) y `data-en-content` (`<meta name="description">`).
