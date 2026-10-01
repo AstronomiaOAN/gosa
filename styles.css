@@ -1855,3 +1855,14 @@ img { max-width: 100%; }
 .research-card[style*="background-image"].expanded .research-details {
     border-color: rgba(224, 189, 134, .5);
 }
+
+/* Páginas de líneas de investigación (optica-alta-resolucion.html, clima-espacial.html, ...) */
+.research-page .section-title { text-align: left; }
+.research-page-kicker { margin-bottom: 1rem; font-size: .9rem; }
+.research-page-question { font-size: 1.5rem; margin: 2rem 0 .75rem; color: var(--ink); }
+.research-page-answer { font-size: 1.05rem; line-height: 1.75; margin-bottom: 2rem; }
+.research-page .research-detail-img { margin-bottom: 2rem; }
+.research-page-links { margin: 0 0 1.5rem 1.2rem; line-height: 2; }
+.research-more { margin-top: 1.5rem; }
+.research-page a:not(.news-link) { color: var(--gold-dark); }
+.research-page a:not(.news-link):hover { color: var(--ink); }

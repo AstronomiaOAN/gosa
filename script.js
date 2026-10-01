@@ -73,7 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('header');
     // Intersection Observer for Scroll Animations
     const observerOptions = {
-        threshold: 0.1,
+        // 0 so that sections taller than the viewport (e.g. the team) still appear
+        threshold: 0,
         rootMargin: '0px 0px -50px 0px'
     };
 

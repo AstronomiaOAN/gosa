@@ -29,8 +29,11 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "_site"
 BASE_URL = "https://astronomiaoan.co/gosa/"
 
-PAGES = ["index.html", "escuela.html", "produccion.html", "dynasun.html"]
-PRIORITY = {"index.html": "1.0", "escuela.html": "0.8", "produccion.html": "0.8", "dynasun.html": "0.7"}
+RESEARCH_PAGES = ["optica-alta-resolucion.html", "radio-rayos-x.html", "clima-espacial.html",
+                  "simulaciones-machine-learning.html"]
+PAGES = ["index.html", "escuela.html", "produccion.html", "dynasun.html"] + RESEARCH_PAGES
+PRIORITY = {"index.html": "1.0", "escuela.html": "0.8", "produccion.html": "0.8", "dynasun.html": "0.7",
+            **{page: "0.8" for page in RESEARCH_PAGES}}
 # Archivos y carpetas que se publican tal cual (el resto del repo no se sube).
 ASSETS = ["styles.css", "script.js", "produccion.js", "images", "Media"]
 ASSET_GLOBS = ["google*.html"]
