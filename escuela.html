@@ -10,10 +10,75 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap"
         rel="stylesheet">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self'; media-src 'self'; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="canonical" href="https://astronomiaoan.co/gosa/escuela.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="GoSA">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:title" content="GoSA - Helio Data Academy 2026: Escuela de Astrofísica Solar">
+    <meta property="og:description" content="Helio Data Academy 2026, Escuela de Astrofísica Solar del Grupo de Astrofísica Solar (GoSA) del Observatorio Astronómico Nacional, Universidad Nacional de Colombia: análisis de datos solares, magnetohidrodinámica, oscilaciones, partículas, simulaciones y Machine Learning.">
+    <meta property="og:url" content="https://astronomiaoan.co/gosa/escuela.html">
+    <meta property="og:image" content="https://astronomiaoan.co/gosa/Media/imagen%20sol.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GoSA - Helio Data Academy 2026: Escuela de Astrofísica Solar">
+    <meta name="twitter:description" content="Helio Data Academy 2026, Escuela de Astrofísica Solar del Grupo de Astrofísica Solar (GoSA) del Observatorio Astronómico Nacional, Universidad Nacional de Colombia: análisis de datos solares, magnetohidrodinámica, oscilaciones, partículas, simulaciones y Machine Learning.">
+    <meta name="twitter:image" content="https://astronomiaoan.co/gosa/Media/imagen%20sol.jpg">
+    <script type="application/ld+json">
+[
+  {
+    "@type": "ResearchOrganization",
+    "name": "GoSA - Grupo de Astrofísica Solar",
+    "alternateName": "GoSA",
+    "url": "https://astronomiaoan.co/gosa/",
+    "logo": "https://astronomiaoan.co/gosa/images/logo_gosa.jpg",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Observatorio Astronómico Nacional, Universidad Nacional de Colombia"
+    },
+    "@context": "https://schema.org"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationEvent",
+    "name": "Helio Data Academy 2026: Escuela de Astrofísica Solar",
+    "description": "Helio Data Academy 2026, Escuela de Astrofísica Solar del Grupo de Astrofísica Solar (GoSA) del Observatorio Astronómico Nacional, Universidad Nacional de Colombia: análisis de datos solares, magnetohidrodinámica, oscilaciones, partículas, simulaciones y Machine Learning.",
+    "startDate": "2026-10-01",
+    "endDate": "2026-10-29",
+    "inLanguage": "es",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": [
+      {
+        "@type": "VirtualLocation",
+        "url": "https://astronomiaoan.co/gosa/escuela.html"
+      },
+      {
+        "@type": "Place",
+        "name": "Observatorio Astronómico Nacional",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bogotá",
+          "addressCountry": "CO"
+        }
+      }
+    ],
+    "isAccessibleForFree": true,
+    "url": "https://astronomiaoan.co/gosa/escuela.html",
+    "image": "https://astronomiaoan.co/gosa/Media/imagen%20sol.jpg",
+    "organizer": {
+      "@type": "Organization",
+      "name": "GoSA - Grupo de Astrofísica Solar",
+      "url": "https://astronomiaoan.co/gosa/"
+    }
+  }
+]
+    </script>
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <style>
         .escuela-intro {
             max-width: 1000px;
@@ -262,10 +327,10 @@
                 <li><a href="index.html#colaboradores" class="nav-link"><span class="es">Colaboraciones</span><span
                             class="en">Collaborators</span></a></li>
                 <li class="lang-switcher">
-                    <button class="lang-toggle-btn active" onclick="setLang('es', event)" id="btn-es" title="Español">
+                    <button class="lang-toggle-btn active" data-lang="es" id="btn-es" title="Español">
                         <img src="https://flagcdn.com/w40/co.png" alt="Colombia Flag" class="lang-flag">
                     </button>
-                    <button class="lang-toggle-btn" onclick="setLang('en', event)" id="btn-en" title="English">
+                    <button class="lang-toggle-btn" data-lang="en" id="btn-en" title="English">
                         <img src="https://flagcdn.com/w40/gb.png" alt="UK Flag" class="lang-flag">
                     </button>
                 </li>

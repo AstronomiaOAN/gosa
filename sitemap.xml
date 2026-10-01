@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://astronomiaoan.co/gosa/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://astronomiaoan.co/gosa/escuela.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://astronomiaoan.co/gosa/produccion.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://astronomiaoan.co/gosa/dynasun.html</loc>
+    <priority>0.7</priority>
+  </url>
+</urlset>

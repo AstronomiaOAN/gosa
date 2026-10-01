@@ -256,3 +256,14 @@ window.setLang = function (lang) {
         el.placeholder = lang === 'es' ? el.getAttribute('data-es-placeholder') : el.getAttribute('data-en-placeholder');
     });
 };
+
+// Delegated handlers (replace inline onclick so the CSP can forbid inline scripts)
+document.addEventListener('click', (e) => {
+    const langBtn = e.target.closest('[data-lang]');
+    if (langBtn) {
+        window.setLang(langBtn.dataset.lang);
+        return;
+    }
+    const card = e.target.closest('.research-card');
+    if (card) card.classList.toggle('expanded');
+});

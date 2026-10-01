@@ -10,10 +10,41 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap"
         rel="stylesheet">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self'; media-src 'self'; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="canonical" href="https://astronomiaoan.co/gosa/produccion.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="GoSA">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:title" content="GoSA - Producción Científica">
+    <meta property="og:description" content="Página oficial del Grupo de Astrofísica Solar (GoSA) del Observatorio Astronómico Nacional, Universidad Nacional de Colombia.">
+    <meta property="og:url" content="https://astronomiaoan.co/gosa/produccion.html">
+    <meta property="og:image" content="https://astronomiaoan.co/gosa/Media/imagen%20sol.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GoSA - Producción Científica">
+    <meta name="twitter:description" content="Página oficial del Grupo de Astrofísica Solar (GoSA) del Observatorio Astronómico Nacional, Universidad Nacional de Colombia.">
+    <meta name="twitter:image" content="https://astronomiaoan.co/gosa/Media/imagen%20sol.jpg">
+    <script type="application/ld+json">
+[
+  {
+    "@type": "ResearchOrganization",
+    "name": "GoSA - Grupo de Astrofísica Solar",
+    "alternateName": "GoSA",
+    "url": "https://astronomiaoan.co/gosa/",
+    "logo": "https://astronomiaoan.co/gosa/images/logo_gosa.jpg",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Observatorio Astronómico Nacional, Universidad Nacional de Colombia"
+    },
+    "@context": "https://schema.org"
+  }
+]
+    </script>
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <style>
         /* ===== Infografía de producción académica ===== */
         .prod-info {
@@ -516,10 +547,10 @@
                 <li><a href="index.html#colaboradores" class="nav-link"><span class="es">Colaboraciones</span><span
                             class="en">Collaborators</span></a></li>
                 <li class="lang-switcher">
-                    <button class="lang-toggle-btn active" onclick="setLang('es', event)" id="btn-es" title="Español">
+                    <button class="lang-toggle-btn active" data-lang="es" id="btn-es" title="Español">
                         <img src="https://flagcdn.com/w40/co.png" alt="Colombia Flag" class="lang-flag">
                     </button>
-                    <button class="lang-toggle-btn" onclick="setLang('en', event)" id="btn-en" title="English">
+                    <button class="lang-toggle-btn" data-lang="en" id="btn-en" title="English">
                         <img src="https://flagcdn.com/w40/gb.png" alt="UK Flag" class="lang-flag">
                     </button>
                 </li>
@@ -3637,95 +3668,7 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Infografía de producción: cifras y gráfico calculados desde #pub-list.
-        (function () {
-            const items = [...document.querySelectorAll('#pub-list .pub-item')];
-            if (!items.length) return;
-            const counts = {};
-            items.forEach(li => {
-                const y = +li.dataset.year;
-                counts[y] = (counts[y] || 0) + 1;
-            });
-            const years = Object.keys(counts).map(Number);
-            const first = Math.min(...years), last = Math.max(...years);
-            const series = [];
-            for (let y = first; y <= last; y++) series.push({ year: y, n: counts[y] || 0 });
-            const peak = series.reduce((a, b) => (b.n > a.n ? b : a));
-            const current = new Date().getFullYear();
-            const both = (es, en) => `<span class="es">${es}</span><span class="en">${en}</span>`;
-
-            document.getElementById('info-total').textContent = items.length;
-            document.getElementById('info-period').innerHTML = `${first}<span class="dash">–</span>${last}`;
-            document.getElementById('info-period-sub').innerHTML =
-                both(`${series.length} años calendario`, `${series.length} calendar years`);
-            document.getElementById('info-last').textContent = counts[last];
-            document.getElementById('info-last-lbl').innerHTML =
-                both(`contribuciones en ${last}`, `contributions in ${last}`);
-            document.getElementById('info-last-sub').innerHTML = last === current
-                ? both('Año en curso · cifra parcial', 'Current year · partial count')
-                : both('Último año del listado', 'Latest year listed');
-
-            // Escala: múltiplo de 10 por encima del máximo.
-            const max = Math.max(10, Math.ceil(peak.n / 10) * 10);
-            const chart = document.getElementById('info-chart');
-            for (let v = 0; v <= max; v += 10) {
-                const line = document.createElement('div');
-                line.className = 'info-grid-line';
-                line.style.bottom = `${(v / max) * 100}%`;
-                line.innerHTML = `<span>${v}</span>`;
-                chart.insertBefore(line, chart.firstChild);
-            }
-
-            const bars = document.getElementById('info-bars');
-            const labels = document.getElementById('info-years');
-            const tip = document.getElementById('info-tooltip');
-            const isEn = () => document.body.classList.contains('lang-en');
-            series.forEach(({ year, n }) => {
-                const b = document.createElement('button');
-                b.type = 'button';
-                b.className = 'info-bar' + (year === peak.year || year === last ? ' is-hl' : '');
-                b.setAttribute('aria-label', `${year}: ${n}`);
-                b.innerHTML = `<span class="val">${n || ''}</span>` +
-                    `<span class="fill" style="height:${(n / max) * 100}%"></span>`;
-                const show = () => {
-                    tip.textContent = isEn()
-                        ? `${year} · ${n} ${n === 1 ? 'publication' : 'publications'} · click to filter`
-                        : `${year} · ${n} ${n === 1 ? 'publicación' : 'publicaciones'} · clic para filtrar`;
-                    const r = b.getBoundingClientRect(), c = chart.getBoundingClientRect();
-                    const fill = b.querySelector('.fill').getBoundingClientRect();
-                    const half = tip.offsetWidth / 2;
-                    const x = r.left - c.left + r.width / 2;
-                    tip.style.left = `${Math.min(Math.max(x, half - 26), c.width - half)}px`;
-                    tip.style.top = `${Math.min(fill.top, r.bottom - 20) - c.top - 24}px`;
-                    tip.classList.add('show');
-                };
-                const hide = () => tip.classList.remove('show');
-                b.addEventListener('mouseenter', show);
-                b.addEventListener('focus', show);
-                b.addEventListener('mouseleave', hide);
-                b.addEventListener('blur', hide);
-                b.addEventListener('click', () => {
-                    const select = document.getElementById('pub-year-filter');
-                    const tab = document.querySelector('.tab-btn[data-tab="pubs"]');
-                    if (tab && !tab.classList.contains('active')) tab.click();
-                    if (select) {
-                        select.value = String(year);
-                        select.dispatchEvent(new Event('change'));
-                    }
-                    document.getElementById('pubs').scrollIntoView({ behavior: 'smooth', block: 'start' });
-                });
-                bars.appendChild(b);
-                labels.insertAdjacentHTML('beforeend',
-                    `<span><span class="full">${year}</span><span class="short">'${String(year).slice(2)}</span></span>`);
-            });
-
-            document.getElementById('info-callout').innerHTML =
-                `<strong>${peak.year}</strong>` +
-                both(`${peak.n} contribuciones, el mayor total anual del periodo.`,
-                    `${peak.n} contributions, the highest yearly total in the period.`);
-        })();
-    </script>
+    <script src="produccion.js"></script>
 </body>
 
 </html>
