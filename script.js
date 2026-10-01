@@ -229,6 +229,20 @@ document.addEventListener('DOMContentLoaded', () => {
     initExpandableCards();
     initTeamAvatars();
 
+    // Play looping videos (former GIFs) only while visible, so they load on demand
+    const lazyVideos = document.querySelectorAll('video.lazy-video');
+    if ('IntersectionObserver' in window) {
+        const videoObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.play().catch(() => {});
+                else entry.target.pause();
+            });
+        });
+        lazyVideos.forEach(video => videoObserver.observe(video));
+    } else {
+        lazyVideos.forEach(video => video.play().catch(() => {}));
+    }
+
     // Keep footer copyright year current without manual edits
     document.querySelectorAll('.footer-year').forEach(el => {
         el.textContent = new Date().getFullYear();
