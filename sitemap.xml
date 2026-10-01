@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Respaldo para el despliegue directo desde la rama; scripts/build_site.py genera el definitivo (con /en/ y hreflang) -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://astronomiaoan.co/gosa/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://astronomiaoan.co/gosa/escuela.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://astronomiaoan.co/gosa/produccion.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://astronomiaoan.co/gosa/dynasun.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://astronomiaoan.co/gosa/optica-alta-resolucion.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://astronomiaoan.co/gosa/radio-rayos-x.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://astronomiaoan.co/gosa/clima-espacial.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://astronomiaoan.co/gosa/simulaciones-machine-learning.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+</urlset>
