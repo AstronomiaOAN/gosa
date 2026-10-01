@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="GoSA - Scientific Production">GoSA - Producción Científica</title>
+    <meta name="description"
+        content="Artículos, tesis y ponencias del Grupo de Astrofísica Solar (GoSA) de la Universidad Nacional de Colombia: física solar, clima espacial y heliosismología."
+        data-en-content="Papers, theses and talks by the Group of Solar Astrophysics (GoSA), National University of Colombia: solar physics, space weather and helioseismology.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self'; media-src 'self'; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="canonical" href="https://astronomiaoan.co/gosa/produccion.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="GoSA">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:title" content="GoSA - Producción Científica">
+    <meta property="og:description" content="Artículos, tesis y ponencias del Grupo de Astrofísica Solar (GoSA) de la Universidad Nacional de Colombia: física solar, clima espacial y heliosismología.">
+    <meta property="og:url" content="https://astronomiaoan.co/gosa/produccion.html">
+    <meta property="og:image" content="https://astronomiaoan.co/gosa/Media/imagen%20sol.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GoSA - Producción Científica">
+    <meta name="twitter:description" content="Artículos, tesis y ponencias del Grupo de Astrofísica Solar (GoSA) de la Universidad Nacional de Colombia: física solar, clima espacial y heliosismología.">
+    <meta name="twitter:image" content="https://astronomiaoan.co/gosa/Media/imagen%20sol.jpg">
+    <script type="application/ld+json">
+[
+  {
+    "@type": "ResearchOrganization",
+    "name": "GoSA - Grupo de Astrofísica Solar",
+    "alternateName": "GoSA",
+    "url": "https://astronomiaoan.co/gosa/",
+    "logo": "https://astronomiaoan.co/gosa/images/logo_gosa.jpg",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Observatorio Astronómico Nacional, Universidad Nacional de Colombia"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bogotá",
+      "addressCountry": "CO"
+    },
+    "sameAs": [
+      "https://www.facebook.com/gosaOAN",
+      "https://x.com/gosa_oan",
+      "https://www.instagram.com/gosa.oan/",
+      "https://github.com/GoSA-OAN"
+    ],
+    "@context": "https://schema.org"
+  }
+]
+    </script>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        /* ===== Infografía de producción académica ===== */
+        .prod-info {
+            --info-bg: #0a1c2b;
+            --info-raise: rgba(255, 255, 255, 0.035);
+            --info-line: rgba(200, 216, 228, 0.12);
+            --info-text: #eef3f6;
+            --info-muted: #97abba;
+            --info-bar: #7cc4e0;
+            --info-accent: #e2b567;
+            position: relative;
+            overflow: hidden;
+            max-width: 1000px;
+            margin: 0 auto 56px;
+            padding: 56px 56px 40px;
+            border-radius: 18px;
+            color: var(--info-text);
+            font-family: 'Inter', var(--font-body);
+            background:
+                radial-gradient(circle at 88% 8%, rgba(226, 170, 80, 0.22), transparent 38%),
+                radial-gradient(circle at 0% 100%, rgba(124, 196, 224, 0.08), transparent 45%),
+                var(--info-bg);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 0 30px 60px -20px rgba(8, 26, 40, 0.45);
+        }
+
+        .prod-info .info-sun {
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 330px;
+            height: 330px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 60px 6px rgba(226, 150, 50, 0.45), 0 0 140px 30px rgba(226, 150, 50, 0.15);
+            pointer-events: none;
+        }
+
+        .prod-info .info-sun img {
+            display: block;
+            width: 110%;
+            height: 110%;
+            margin: -5%;
+            object-fit: cover;
+        }
+
+        .info-hero {
+            position: relative;
+            max-width: 560px;
+            margin-bottom: 44px;
+        }
+
+        .info-kicker {
+            font-family: 'Outfit', var(--font-body);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--info-accent);
+        }
+
+        .info-hero h3 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            font-size: clamp(2rem, 4.4vw, 3rem);
+            line-height: 1.08;
+            color: var(--info-text);
+            margin: 14px 0 16px;
+        }
+
+        .info-hero h3 em {
+            font-style: italic;
+            background: linear-gradient(135deg, #f0cf8f, #c9a365);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .info-tagline {
+            font-size: 1.1rem;
+            color: var(--info-text);
+            opacity: 0.9;
+            margin: 0 0 6px;
+        }
+
+        .info-affil {
+            font-size: 0.9rem;
+            color: var(--info-muted);
+            margin: 0;
+        }
+
+        .info-stats {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1.35fr 1fr;
+            border-top: 1px solid var(--info-line);
+            border-bottom: 1px solid var(--info-line);
+            margin-bottom: 44px;
+        }
+
+        .info-stat {
+            padding: 26px 24px 24px;
+        }
+
+        .info-stat + .info-stat {
+            border-left: 1px solid var(--info-line);
+        }
+
+        .info-stat:first-child {
+            padding-left: 0;
+        }
+
+        .info-stat .num {
+            font-family: 'Outfit', var(--font-body);
+            font-weight: 300;
+            font-size: clamp(2.2rem, 4.6vw, 3rem);
+            line-height: 1;
+            letter-spacing: -1px;
+            white-space: nowrap;
+            color: var(--info-text);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .info-stat .num .dash {
+            color: var(--info-muted);
+        }
+
+        .info-stat .lbl {
+            font-family: 'Outfit', var(--font-body);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--info-accent);
+            margin: 12px 0 4px;
+        }
+
+        .info-stat .sub {
+            font-size: 0.85rem;
+            color: var(--info-muted);
+        }
+
+        .info-panel {
+            background: var(--info-raise);
+            border: 1px solid var(--info-line);
+            border-radius: 14px;
+            padding: 26px 28px 22px;
+            margin-bottom: 44px;
+        }
+
+        .info-panel-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 26px;
+        }
+
+        .info-section-title {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            font-size: 1.45rem;
+            color: var(--info-text);
+            margin: 0 0 4px;
+        }
+
+        .info-section-sub {
+            font-size: 0.88rem;
+            color: var(--info-muted);
+            margin: 0;
+        }
+
+        .info-legend {
+            display: flex;
+            gap: 18px;
+            font-size: 0.8rem;
+            color: var(--info-muted);
+            padding-top: 6px;
+        }
+
+        .info-legend > span::before {
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 3px;
+            margin-right: 7px;
+            vertical-align: -1px;
+            background: var(--info-bar);
+        }
+
+        .info-legend .hl::before {
+            background: var(--info-accent);
+        }
+
+        /* Gráfico de barras */
+        .info-chart {
+            position: relative;
+            height: 230px;
+            margin-left: 28px;
+        }
+
+        .info-grid-line {
+            position: absolute;
+            left: 0;
+            right: 0;
+            border-top: 1px dashed var(--info-line);
+        }
+
+        .info-grid-line:first-child {
+            border-top-style: solid;
+            border-color: rgba(200, 216, 228, 0.28);
+        }
+
+        .info-grid-line span {
+            position: absolute;
+            left: -28px;
+            top: -8px;
+            width: 20px;
+            text-align: right;
+            font-size: 0.7rem;
+            color: var(--info-muted);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .info-bars {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: flex-end;
+            gap: 2px;
+        }
+
+        .info-bar {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            background: none;
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+            font: inherit;
+            color: inherit;
+        }
+
+        .info-bar .fill {
+            width: min(56%, 30px);
+            border-radius: 4px 4px 0 0;
+            background: linear-gradient(180deg, #9fd5ea, #5fa9c8);
+            opacity: 0.85;
+            transition: opacity .15s ease, transform .15s ease;
+            transform-origin: bottom;
+        }
+
+        .info-bar.is-hl .fill {
+            background: linear-gradient(180deg, #f3d193, #d6a24f);
+            opacity: 1;
+            box-shadow: 0 0 18px rgba(226, 181, 103, 0.35);
+        }
+
+        .info-bar .val {
+            font-family: 'Outfit', var(--font-body);
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--info-text);
+            margin-bottom: 6px;
+            opacity: 0;
+            transition: opacity .15s ease;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .info-bar.is-hl .val {
+            opacity: 1;
+            color: var(--info-accent);
+        }
+
+        .info-bar:hover .fill,
+        .info-bar:focus-visible .fill {
+            opacity: 1;
+        }
+
+        .info-bar:hover .val,
+        .info-bar:focus-visible .val {
+            opacity: 1;
+        }
+
+        .info-bar:focus-visible {
+            outline: 2px solid var(--info-text);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        .info-years {
+            display: flex;
+            gap: 2px;
+            margin: 10px 0 0 28px;
+        }
+
+        .info-years span {
+            flex: 1;
+            text-align: center;
+            font-size: 0.72rem;
+            color: var(--info-muted);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .info-years .short {
+            display: none;
+        }
+
+        .info-tooltip {
+            position: absolute;
+            pointer-events: none;
+            background: #f7f9fa;
+            color: #142d3d;
+            font-size: 0.8rem;
+            padding: 6px 10px;
+            border-radius: 6px;
+            white-space: nowrap;
+            transform: translate(-50%, -100%);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+            opacity: 0;
+            transition: opacity .1s ease;
+            z-index: 2;
+        }
+
+        .info-tooltip.show {
+            opacity: 1;
+        }
+
+        .info-callout {
+            margin: 22px 0 0;
+            padding-top: 18px;
+            border-top: 1px solid var(--info-line);
+            font-size: 0.95rem;
+            color: var(--info-muted);
+        }
+
+        .info-callout strong {
+            font-family: 'Outfit', var(--font-body);
+            font-weight: 600;
+            color: var(--info-accent);
+            margin-right: 6px;
+        }
+
+        /* Temas */
+        .info-topics-head {
+            margin-bottom: 20px;
+        }
+
+        .info-topics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin-bottom: 40px;
+        }
+
+        .info-topic {
+            border: 1px solid var(--info-line);
+            border-radius: 14px;
+            padding: 20px 18px;
+            background: var(--info-raise);
+            transition: border-color .2s ease, transform .2s ease;
+        }
+
+        .info-topic:hover {
+            border-color: rgba(226, 181, 103, 0.55);
+            transform: translateY(-2px);
+        }
+
+        .info-topic i {
+            display: grid;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(226, 181, 103, 0.12);
+            color: var(--info-accent);
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+        }
+
+        .info-topic h4 {
+            font-family: 'Outfit', var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--info-text);
+            margin: 0 0 8px;
+        }
+
+        .info-topic p {
+            font-size: 0.85rem;
+            line-height: 1.55;
+            color: var(--info-muted);
+            margin: 0;
+        }
+
+        .info-foot {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: baseline;
+            padding-top: 20px;
+            border-top: 1px solid var(--info-line);
+            font-size: 0.8rem;
+            color: var(--info-muted);
+        }
+
+        .info-foot p {
+            margin: 0;
+        }
+
+        @media (max-width: 900px) {
+            .info-topics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 720px) {
+            .prod-info {
+                padding: 150px 20px 28px;
+                border-radius: 14px;
+            }
+
+            .prod-info .info-sun {
+                width: 220px;
+                height: 220px;
+                top: -70px;
+                right: -60px;
+            }
+
+            .info-hero {
+                margin-bottom: 32px;
+            }
+
+            .info-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .info-stat,
+            .info-stat:first-child {
+                padding: 18px 0;
+            }
+
+            .info-stat + .info-stat {
+                border-left: 0;
+                border-top: 1px solid var(--info-line);
+            }
+
+            .info-panel {
+                padding: 20px 14px 16px;
+            }
+
+            .info-topics {
+                grid-template-columns: 1fr;
+            }
+
+            .info-years .full {
+                display: none;
+            }
+
+            .info-years .short {
+                display: inline;
+            }
+        }
+    </style>
+    <noscript><style>.scroll-appear { opacity: 1; transform: none; animation: none !important; }</style></noscript>
+</head>
+
+<body class="lang-es">
+
+    <!-- Space Background -->
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
+{{header}}
+
+    <main>
+        <!-- Full Production Section moved from index.html -->
+
+        <!-- Publicaciones & Eventos Section -->
+        <section id="produccion" class="production section-spacing">
+            <div class="container fade-in">
+                <h1 class="section-title"><span class="es">Producción <span
+                            class="gradient-text">Científica</span></span><span class="en">Scientific <span
+                            class="gradient-text">Production</span></span></h1>
+
+                <!-- ============ Infografía de producción académica ============ -->
+                <div class="prod-info" id="prod-info">
+                    <div class="info-sun" aria-hidden="true"><img src="images/full_sun_circle.png" alt=""
+                            width="330" height="330" loading="lazy"></div>
+
+                    <div class="info-hero">
+                        <span class="info-kicker"><span class="es">Producción académica · GoSA · OAN</span><span
+                                class="en">Academic output · GoSA · OAN</span></span>
+                        <h3><span class="es">Grupo de <em>Astrofísica Solar</em></span><span class="en">Group of
+                                <em>Solar Astrophysics</em></span></h3>
+                        <p class="info-tagline"><span class="es">Explorar el Sol. Comprender su influencia.</span><span
+                                class="en">Exploring the Sun. Understanding its influence.</span></p>
+                        <p class="info-affil">Observatorio Astronómico Nacional · Universidad Nacional de Colombia</p>
+                    </div>
+
+                    <div class="info-stats">
+                        <div class="info-stat">
+                            <div class="num" id="info-total">–</div>
+                            <div class="lbl"><span class="es">Producción académica</span><span class="en">Academic
+                                    output</span></div>
+                            <div class="sub"><span class="es">Publicaciones y contribuciones</span><span
+                                    class="en">Publications and contributions</span></div>
+                        </div>
+                        <div class="info-stat">
+                            <div class="num" id="info-period">–</div>
+                            <div class="lbl"><span class="es">Periodo del listado</span><span class="en">Period
+                                    covered</span></div>
+                            <div class="sub" id="info-period-sub"></div>
+                        </div>
+                        <div class="info-stat">
+                            <div class="num" id="info-last">–</div>
+                            <div class="lbl" id="info-last-lbl"></div>
+                            <div class="sub" id="info-last-sub"></div>
+                        </div>
+                    </div>
+
+                    <div class="info-panel">
+                        <div class="info-panel-head">
+                            <div>
+                                <h4 class="info-section-title"><span class="es">La producción a lo largo del
+                                        tiempo</span><span class="en">Output over time</span></h4>
+                                <p class="info-section-sub"><span class="es">Publicaciones por año · haz clic en una barra
+                                        para ver ese año</span><span class="en">Publications per year · click a bar to
+                                        see that year</span></p>
+                            </div>
+                            <div class="info-legend">
+                                <span><span class="es">Publicaciones</span><span class="en">Publications</span></span>
+                                <span class="hl"><span class="es">Año destacado</span><span class="en">Highlighted
+                                        year</span></span>
+                            </div>
+                        </div>
+                        <div class="info-chart" id="info-chart" role="group"
+                            aria-label="Producción académica por año">
+                            <div class="info-bars" id="info-bars"></div>
+                            <div class="info-tooltip" id="info-tooltip" role="status"></div>
+                        </div>
+                        <div class="info-years" id="info-years" aria-hidden="true"></div>
+                        <p class="info-callout" id="info-callout"></p>
+                    </div>
+
+                    <div class="info-topics-head">
+                        <h4 class="info-section-title"><span class="es">Del Sol a la sociedad</span><span
+                                class="en">From the Sun to society</span></h4>
+                        <p class="info-section-sub"><span class="es">Temas presentes en las publicaciones</span><span
+                                class="en">Topics covered by the publications</span></p>
+                    </div>
+                    <div class="info-topics">
+                        <div class="info-topic">
+                            <i class="fa-solid fa-sun" aria-hidden="true"></i>
+                            <h4><span class="es">Física solar</span><span class="en">Solar physics</span></h4>
+                            <p><span class="es">Convección, vórtices, campos magnéticos, fulguraciones y
+                                    heliosismología.</span><span class="en">Convection, vortices, magnetic fields, flares
+                                    and helioseismology.</span></p>
+                        </div>
+                        <div class="info-topic">
+                            <i class="fa-solid fa-satellite" aria-hidden="true"></i>
+                            <h4><span class="es">Clima espacial</span><span class="en">Space weather</span></h4>
+                            <p><span class="es">Tormentas geomagnéticas, viento solar, radioestallidos y efectos sobre
+                                    satélites y la Tierra.</span><span class="en">Geomagnetic storms, solar wind, radio
+                                    bursts and effects on satellites and the Earth.</span></p>
+                        </div>
+                        <div class="info-topic">
+                            <i class="fa-solid fa-tower-broadcast" aria-hidden="true"></i>
+                            <h4><span class="es">Instrumentación y datos</span><span class="en">Instrumentation and
+                                    data</span></h4>
+                            <p><span class="es">Radioastronomía, rayos X, observación multibanda, simulación e
+                                    inteligencia artificial.</span><span class="en">Radio astronomy, X-rays,
+                                    multiwavelength observation, simulation and artificial intelligence.</span></p>
+                        </div>
+                        <div class="info-topic">
+                            <i class="fa-solid fa-people-group" aria-hidden="true"></i>
+                            <h4><span class="es">Ciencia y sociedad</span><span class="en">Science and society</span>
+                            </h4>
+                            <p><span class="es">Educación, inclusión, historia de la ciencia, contaminación lumínica y
+                                    astrobiología.</span><span class="en">Education, inclusion, history of science, light
+                                    pollution and astrobiology.</span></p>
+                        </div>
+                    </div>
+
+                    <div class="info-foot">
+                        <p><span class="es">Artículos, libros, contribuciones a congresos y otras contribuciones
+                                académicas.</span><span class="en">Articles, books, conference contributions and other
+                                academic work.</span></p>
+                        <p><span class="es">Cifras calculadas automáticamente a partir del listado de esta
+                                página.</span><span class="en">Figures computed automatically from the list on this
+                                page.</span></p>
+                    </div>
+                </div>
+
+                <div class="tabs-container">
+                    <div class="tabs-header">
+                        <button class="tab-btn active" data-tab="pubs"><span class="es">Publicaciones
+                                Destacadas</span><span class="en">Featured Publications</span></button>
+                        <button class="tab-btn" data-tab="tesis"><span class="es">Tesis Completadas</span><span
+                                class="en">Completed Theses</span></button>
+                        <button class="tab-btn" data-tab="eventos"><span class="es">Eventos & Divulgación</span><span
+                                class="en">Events & Outreach</span></button>
+                    </div>
+
+                    <div class="tabs-content">
+                        <!-- Publicaciones -->
+                        <div id="pubs" class="tab-pane active glassmorphism">
+                            <div class="filter-container">
+                                <div class="publication-search">
+                                    <label for="pub-search"><span class="es">Buscar por título, autor o DOI</span><span class="en">Search by title, author or DOI</span></label>
+                                    <input id="pub-search" type="search" autocomplete="off" data-es-placeholder="Título, autor o DOI" data-en-placeholder="Title, author or DOI">
+                                </div>
+                                <div class="year-filter"><label for="pub-year-filter"><span class="es">Año</span><span class="en">Year</span></label><select id="pub-year-filter">
+                                        <option value="all"><span class="es">Todos los años</span><span class="en">All
+                                                years</span></option>
+                                        <option value="2026">2026</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2012">2012</option>
+                                    </select></div>
+                            </div>
+                            <p id="pub-results" role="status" aria-live="polite" aria-atomic="true"></p>
+                            <p id="pub-empty" hidden><span class="es">No hay publicaciones que coincidan. Prueba otra búsqueda o selecciona todos los años.</span><span class="en">No matching publications. Try another search or select all years.</span></p>
+                            <ul class="prod-list-beautiful" id="pub-list">
+                                {{publications}}
+                            </ul>
+
+                        </div>
+                        <!-- Tesis -->
+                        <div id="tesis" class="tab-pane glassmorphism">
+                            <div class="filter-container">
+                                <div class="year-filter"><select id="tesis-year-filter">
+                                        <option value="all"><span class="es">Todos los años</span><span class="en">All
+                                                years</span></option>
+                                        <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2012">2012</option>
+                                    </select> <select id="tesis-dir-filter">
+                                        <option value="all"><span class="es">Todos los directores</span><span
+                                                class="en">All directors</span></option>
+                                        <option value="Andrés Muñoz Jaramillo">Andrés Muñoz Jaramillo</option>
+                                        <option value="Benjamín Calvo Mozo">Benjamín Calvo Mozo</option>
+                                        <option value="Dominik Utz">Dominik Utz</option>
+                                        <option value="Giovanni Cardona">Giovanni Cardona</option>
+                                        <option value="Ignacio Alberto Monroy Cañon">Ignacio Alberto Monroy Cañon
+                                        </option>
+                                        <option value="Jefferson Agudelo">Jefferson Agudelo</option>
+                                        <option value="Jose Ivan Campos Rozo">Jose Ivan Campos Rozo</option>
+                                        <option value="Juan Camilo Buitrago">Juan Camilo Buitrago</option>
+                                        <option value="Juan Camilo Guevara">Juan Camilo Guevara</option>
+                                        <option value="Juan Carlos Martínez">Juan Carlos Martínez</option>
+                                        <option value="Juan Rafael Martínez Galarza">Juan Rafael Martínez Galarza
+                                        </option>
+                                        <option value="Natalia Gómez">Natalia Gómez</option>
+                                        <option value="Néstor Hernando Méndez">Néstor Hernando Méndez</option>
+                                        <option value="Santiago Vargas Domínguez">Santiago Vargas Domínguez</option>
+                                        <option value="Sergyi Shelyag">Sergyi Shelyag</option>
+                                    </select></div>
+                            </div>
+                            <ul class="prod-list-beautiful" id="tesis-list">
+                                <li class="tesis-item glassmorphism-light" data-year="2024"
+                                    data-dir="Santiago Vargas Domínguez">
+                                    <div class="tesis-year-badge">2024</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Aplicación de técnicas de Deep Learning en el
+                                            modelamiento y observación de la fotósfera solar</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> • <span>Germain
+                                                Nicolás Morales</span></p>
+                                        <div class="tesis-directors">Director: Santiago Vargas Domínguez<br>Director:
+                                            Sergyi
+                                            Shelyag</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2023"
+                                    data-dir="Benjamín Calvo Mozo">
+                                    <div class="tesis-year-badge">2023</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Dynamics of the Cold Solar Chromosphere Observed with
+                                            ALMA</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> •
+                                            <span>Francisco Javier Ordoñez</span>
+                                        </p>
+                                        <div class="tesis-directors">Director: Benjamín Calvo Mozo<br>Director: Juan
+                                            Camilo Guevara</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2022"
+                                    data-dir="Santiago Vargas Domínguez">
+                                    <div class="tesis-year-badge">2022</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Caracterización y análisis dinámico de estructuras
+                                            magnéticas móviles a pequeña escala (MMF) alrededor de un poro solar</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> • <span>Anyul
+                                                Figueroa</span></p>
+                                        <div class="tesis-directors">Director: Santiago Vargas Domínguez</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2021"
+                                    data-dir="Benjamín Calvo Mozo">
+                                    <div class="tesis-year-badge">2021</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">On the Generation of Subphotospheric Acoustic Sources
+                                        </h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> • <span>Angel
+                                                Martínez</span></p>
+                                        <div class="tesis-directors">Director: Benjamín Calvo Mozo<br>Director: Juan
+                                            Carlos Martínez</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2021"
+                                    data-dir="Santiago Vargas Domínguez">
+                                    <div class="tesis-year-badge">2021</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Prediction of the Occurrence of Flares in the Solar
+                                            Cycle 24 from the Evolution of Magnetic Polarity Barycenters in Active
+                                            Regions</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> • <span>Natalia
+                                                Granados Hernández</span></p>
+                                        <div class="tesis-directors">Director: Santiago Vargas Domínguez<br>Director:
+                                            Domenico Bonaccinni Calia</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2021"
+                                    data-dir="Santiago Vargas Domínguez">
+                                    <div class="tesis-year-badge">2021</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Estudio observacional de la dinámica de puntos
+                                            brillantes en una zona del Sol en calma</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> • <span>Yeimy
+                                                Gerardine Berrios</span></p>
+                                        <div class="tesis-directors">Director: Santiago Vargas Domínguez<br>Director:
+                                            Dominik Utz</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2018"
+                                    data-dir="Benjamín Calvo Mozo">
+                                    <div class="tesis-year-badge">2018</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">The impulsivity of Solar Flares: Concepts and
+                                            Applications</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> • <span>Wilmar
+                                                Gemán Fajardo Mendieta</span></p>
+                                        <div class="tesis-directors">Director: Benjamín Calvo Mozo</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2018"
+                                    data-dir="Benjamín Calvo Mozo">
+                                    <div class="tesis-year-badge">2018</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Characterization of CME-driven shock in the
+                                            interplanetary medium using type II radio bursts</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> • <span>Saida
+                                                Milena Díaz Castillo</span></p>
+                                        <div class="tesis-directors">Director: Benjamín Calvo Mozo</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2018"
+                                    data-dir="Benjamín Calvo Mozo">
+                                    <div class="tesis-year-badge">2018</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Design and development of a solar radio interferometer
+                                            of two elements</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> • <span>Juan
+                                                Camilo Guevara Gómez</span></p>
+                                        <div class="tesis-directors">Director: Benjamín Calvo Mozo</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2017"
+                                    data-dir="Santiago Vargas Domínguez">
+                                    <div class="tesis-year-badge">2017</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Evolution and Dynamic Properties of Photospheric Plasma
+                                            in Solar Active Regions</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> • <span>José
+                                                Iván Campos Rozo</span></p>
+                                        <div class="tesis-directors">Director: Santiago Vargas Domínguez</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2016"
+                                    data-dir="Benjamín Calvo Mozo">
+                                    <div class="tesis-year-badge">2016</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">A study of photospheric vector magnetic field changes
+                                            during solar flares</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> • <span>Juan
+                                                Sebastián Castellanos Durán</span></p>
+                                        <div class="tesis-directors">Director: Benjamín Calvo Mozo</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2016"
+                                    data-dir="Benjamín Calvo Mozo">
+                                    <div class="tesis-year-badge">2016</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Un modelo computacional para estudiar modos P en
+                                            regiones activas del Sol</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> • <span>Carlos
+                                                Andrés Galarza Arevalo</span></p>
+                                        <div class="tesis-directors">Director: Benjamín Calvo Mozo</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2014"
+                                    data-dir="Benjamín Calvo Mozo">
+                                    <div class="tesis-year-badge">2014</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Estudio de la dinámica de partículas cargadas en una
+                                            lámina de corriente de reconexión de una fulguración solar</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> • <span>Andrés
+                                                Mauricio Huertas Hurtado</span></p>
+                                        <div class="tesis-directors">Director: Benjamín Calvo Mozo</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2013"
+                                    data-dir="Benjamín Calvo Mozo">
+                                    <div class="tesis-year-badge">2013</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Sobre la aceleración estocástica de electrones y la
+                                            sismicidad asociada a fulguraciones solares</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> • <span>Juan
+                                                Camilo Buitrago Casas</span></p>
+                                        <div class="tesis-directors">Director: Benjamín Calvo Mozo</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2012"
+                                    data-dir="Benjamín Calvo Mozo">
+                                    <div class="tesis-year-badge">2012</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Modelamiento de variaciones magnéticas en la superficie
+                                            solar y su asociación a fuentes sísmicas generadas por flares</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> • <span>Julián
+                                                David Alvarado Gómez</span></p>
+                                        <div class="tesis-directors">Director: Benjamín Calvo Mozo</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2023"
+                                    data-dir="Santiago Vargas Domínguez">
+                                    <div class="tesis-year-badge">2023</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Estudio de las propiedades anisotrópicas del plasma en
+                                            el viento solar usando simulaciones cinéticas en 3D de turbulencia</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Pregrado</span> • <span>Andres
+                                                Felipe Guerrero</span></p>
+                                        <div class="tesis-directors">Director: Santiago Vargas Domínguez<br>Director:
+                                            Jefferson
+                                            Agudelo</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2022"
+                                    data-dir="Benjamín Calvo Mozo">
+                                    <div class="tesis-year-badge">2022</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Estudio de la respuesta multitérmica en algunos filtros
+                                            del instrumento SDO/AIA</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Pregrado</span> • <span>Juan
+                                                Pablo Herrera</span></p>
+                                        <div class="tesis-directors">Director: Benjamín Calvo Mozo<br>Director: Juan
+                                            Carlos Martínez</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2022"
+                                    data-dir="Santiago Vargas Domínguez">
+                                    <div class="tesis-year-badge">2022</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Solar activity influence on perturbations over the
+                                            geomagnetic field based on data of the Geomagnetic Observatory of Fuquene,
+                                            Colombia</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Pregrado</span> • <span>Santiago
+                                                Pinzón Cortés</span></p>
+                                        <div class="tesis-directors">Director: Santiago Vargas Domínguez<br>Director:
+                                            Natalia Gómez</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2022"
+                                    data-dir="Santiago Vargas Domínguez">
+                                    <div class="tesis-year-badge">2022</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Sobre el entorno magnético de fulguraciones solares de
+                                            gran magnitud y algunas aplicaciones prácticas</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Pregrado</span> • <span>Paula
+                                                González</span></p>
+                                        <div class="tesis-directors">Director: Santiago Vargas Domínguez<br>Director:
+                                            Juan Camilo Buitrago</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2021"
+                                    data-dir="Benjamín Calvo Mozo">
+                                    <div class="tesis-year-badge">2021</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Estudio de la respuesta multitérmica en algunos filtros
+                                            del SDO/AIA</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Pregrado</span> • <span>Juan
+                                                Pablo Herrera</span></p>
+                                        <div class="tesis-directors">Director: Benjamín Calvo Mozo<br>Director: Juan
+                                            Carlos Martínez</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2021"
+                                    data-dir="Benjamín Calvo Mozo">
+                                    <div class="tesis-year-badge">2021</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Estudio de las velocidades Doppler y su relación con las
+                                            oscilaciones del campo magnético en la penumbra de las manchas</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Pregrado</span> •
+                                            <span>Francisco Javier Ordoñez</span>
+                                        </p>
+                                        <div class="tesis-directors">Director: Benjamín Calvo Mozo</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2021"
+                                    data-dir="Santiago Vargas Domínguez">
+                                    <div class="tesis-year-badge">2021</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Implementación de un medidor de centelleo atmosférico
+                                            diurno como parte del estudio de prospección astronómica para el
+                                            emplazamiento de un observatorio solar</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Pregrado</span> • <span>Javier
+                                                Sánchez González</span></p>
+                                        <div class="tesis-directors">Director: Santiago Vargas Domínguez</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2021"
+                                    data-dir="Santiago Vargas Domínguez">
+                                    <div class="tesis-year-badge">2021</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Dinámica del plasma fotosférico durante el decaimiento
+                                            de regiones solares activas</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Pregrado</span> • <span>Valeria
+                                                Quintero</span></p>
+                                        <div class="tesis-directors">Director: Santiago Vargas Domínguez<br>Director:
+                                            Jose Ivan Campos Rozo</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2019"
+                                    data-dir="Santiago Vargas Domínguez">
+                                    <div class="tesis-year-badge">2019</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Análisis de centroides de polaridad magnética en
+                                            regiones solares activas</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Pregrado</span> • <span>Natalia
+                                                Granados Hernández</span></p>
+                                        <div class="tesis-directors">Director: Santiago Vargas Domínguez</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2019"
+                                    data-dir="Santiago Vargas Domínguez">
+                                    <div class="tesis-year-badge">2019</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Estudio de la turbulencia atmosférica</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Pregrado</span> • <span>Johan
+                                                Samir Méndez</span></p>
+                                        <div class="tesis-directors">Director: Santiago Vargas Domínguez</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2019"
+                                    data-dir="Santiago Vargas Domínguez">
+                                    <div class="tesis-year-badge">2019</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Detección automática de puentes de luz en manchas
+                                            solares empleando técnicas de aprendizaje de máquina</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Pregrado</span> • <span>Bryan
+                                                Alfonso Soler</span></p>
+                                        <div class="tesis-directors">Director: Santiago Vargas Domínguez<br>Director:
+                                            Juan Rafael Martínez Galarza</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2018"
+                                    data-dir="Santiago Vargas Domínguez">
+                                    <div class="tesis-year-badge">2018</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Solar Faculae Data Base</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Pregrado</span> • <span>Juan
+                                                Pablo Vargas</span></p>
+                                        <div class="tesis-directors">Director: Santiago Vargas Domínguez<br>Director:
+                                            Andrés Muñoz Jaramillo</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2014"
+                                    data-dir="Benjamín Calvo Mozo">
+                                    <div class="tesis-year-badge">2014</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Dinámica de puntos brillantes en la fotósfera solar</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Pregrado</span> • <span>José
+                                                Iván Campos Rozo</span></p>
+                                        <div class="tesis-directors">Director: Benjamín Calvo Mozo<br>Director: Dominik
+                                            Utz</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2021"
+                                    data-dir="Santiago Vargas Domínguez">
+                                    <div class="tesis-year-badge">2021</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Bayesian constraints on observable properties of
+                                            exoplanetary systems using planet population synthesis simulations</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> • <span>Frank
+                                                Bautista</span></p>
+                                        <div class="tesis-directors">Director: Santiago Vargas Domínguez<br>Director:
+                                            Germán Chaparro</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2023"
+                                    data-dir="Santiago Vargas Domínguez">
+                                    <div class="tesis-year-badge">2023</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Análisis de la conexión entre la astronomía y el plan de
+                                            estudios en educación básica y media en el marco de la Oficina de Astronomía
+                                            para la Educación en Colombia (OAE)</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> • <span>Doris
+                                                Paola Sanabria García</span></p>
+                                        <div class="tesis-directors">Director: Santiago Vargas Domínguez<br>Director:
+                                            Angela Pérez</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2022"
+                                    data-dir="Santiago Vargas Domínguez">
+                                    <div class="tesis-year-badge">2022</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Enseñanza de la Astronomía para promover la paz y la
+                                            reconciliación en comunidades vulnerables</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> • <span>Erika
+                                                Hernández Vásquez</span></p>
+                                        <div class="tesis-directors">Director: Santiago Vargas Domínguez<br>Director:
+                                            Itzel Hernández Armenta</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2021"
+                                    data-dir="Santiago Vargas Domínguez">
+                                    <div class="tesis-year-badge">2021</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Maletín de herramientas didácticas para la enseñanza del
+                                            electromagnetismo en grado 11</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> • <span>John
+                                                Fredy Puentes Torres</span></p>
+                                        <div class="tesis-directors">Director: Santiago Vargas Domínguez</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2019"
+                                    data-dir="Santiago Vargas Domínguez">
+                                    <div class="tesis-year-badge">2019</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Desarrollo de una secuencia didáctica para la
+                                            enseñanza-aprendizaje de los conceptos de triángulo de posición y movimiento
+                                            diurno para estudiantes de astronomía esférica de la Universidad Distrital
+                                            Francisco José de Caldas</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> •
+                                            <span>Edilberto Suárez</span>
+                                        </p>
+                                        <div class="tesis-directors">Director: Santiago Vargas Domínguez</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2018"
+                                    data-dir="Santiago Vargas Domínguez">
+                                    <div class="tesis-year-badge">2018</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Propuesta didáctica para la enseñanza de la astronomía
+                                            en la escuela</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> • <span>Alvaro
+                                                Baquero</span></p>
+                                        <div class="tesis-directors">Director: Santiago Vargas Domínguez</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2016"
+                                    data-dir="Santiago Vargas Domínguez">
+                                    <div class="tesis-year-badge">2016</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Actividades didácticas en astronomía estelar, para un
+                                            público en general del museo de la ciencia y el juego de la Universidad
+                                            Nacional de Colombia</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> • <span>Julián
+                                                Pico</span></p>
+                                        <div class="tesis-directors">Director: Santiago Vargas Domínguez</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2015"
+                                    data-dir="Santiago Vargas Domínguez">
+                                    <div class="tesis-year-badge">2015</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Estudio del magnetismo de cuerpos astronómicos; una
+                                            propuesta para motivar y profundizar las temáticas del electromagnetismo en
+                                            el curso de física de grado 11</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> • <span>Johana
+                                                Katherine Morales Chaparro</span></p>
+                                        <div class="tesis-directors">Director: Santiago Vargas Domínguez</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2023"
+                                    data-dir="Néstor Hernando Méndez">
+                                    <div class="tesis-year-badge">2023</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">La espectroscopia estelar como herramienta para llevar
+                                            al aula el modelo atómico de Bohr</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Pregrado</span> • <span>Ana
+                                                Gabriela Martinez Mahecha</span></p>
+                                        <div class="tesis-directors">Director: Néstor Hernando Méndez</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2019"
+                                    data-dir="Santiago Vargas Domínguez">
+                                    <div class="tesis-year-badge">2019</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Efecto de las turbulencias atmosféricas terrestres sobre
+                                            los parámetros de Stokes usados para el cálculo del campo magnético solar
+                                        </h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Maestría</span> • <span>Rene
+                                                Restrepo</span></p>
+                                        <div class="tesis-directors">Director: Santiago Vargas Domínguez</div>
+                                    </div>
+                                </li>
+                                <li class="tesis-item glassmorphism-light" data-year="2013" data-dir="Giovanni Cardona">
+                                    <div class="tesis-year-badge">2013</div>
+                                    <div class="tesis-content">
+                                        <h4 class="tesis-title">Actividad solar y su relación con el cambio de clima en
+                                            la Tierra</h4>
+                                        <p class="tesis-author"><span class="tesis-cat">Pregrado</span> • <span>Sandra
+                                                Patricia Molina García</span></p>
+                                        <div class="tesis-directors">Director: Giovanni Cardona<br>Director: Ignacio
+                                            Alberto Monroy Cañon<br>Director: Santiago Vargas Domínguez</div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <!-- Eventos -->
+                        <div id="eventos" class="tab-pane glassmorphism">
+                            <p class="tab-intro events-intro"><span class="es">GoSA participa y organiza eventos de formación, investigación y divulgación desde escuelas temáticas y olimpiadas hasta congresos internacionales. Esta sección prioriza una lectura más clara de participantes, colaboradores, instituciones y productos presentados.</span><span class="en">GoSA participates in and organizes training, research, and outreach events ranging from schools and olympiads to major international conferences. This section prioritizes a clearer reading of participants, collaborators, institutions, and presented outputs.</span></p>
+
+                            <div class="events-summary-grid">
+                                <article class="events-summary-card glassmorphism-light">
+                                    <span class="events-summary-label"><span class="es">Cobertura</span><span class="en">Scope</span></span>
+                                    <strong>2014-2026</strong>
+                                    <p><span class="es">Participación sostenida en congresos, escuelas, talleres, pasantías y actividades de divulgación.</span><span class="en">Sustained participation in conferences, schools, workshops, internships, and outreach activities.</span></p>
+                                </article>
+                                <article class="events-summary-card glassmorphism-light">
+                                    <span class="events-summary-label"><span class="es">Alcance</span><span class="en">Reach</span></span>
+                                    <strong>Nacional e internacional</strong>
+                                    <p><span class="es">Presencia en Colombia, América Latina, Europa, África y formatos virtuales de alto impacto.</span><span class="en">Presence across Colombia, Latin America, Europe, Africa, and high-impact virtual formats.</span></p>
+                                </article>
+                                <article class="events-summary-card glassmorphism-light">
+                                    <span class="events-summary-label"><span class="es">Perfil</span><span class="en">Profile</span></span>
+                                    <strong>Investigación + formación</strong>
+                                    <p><span class="es">Ponencias, pósteres, escuelas, monitorías, pasantías y reconocimientos estudiantiles.</span><span class="en">Talks, posters, schools, mentoring, internships, and student recognitions.</span></p>
+                                </article>
+                            </div>
+
+                            <div class="events-timeline">
+                                <section class="event-year-block">
+                                    <div class="event-year-heading">2026</div>
+                                    <div class="event-year-list">
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">Septiembre • Bogotá, Colombia</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">Nacional</span>
+                                                    <span class="event-tag event-tag-alt">13 ponencias y 1 póster</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">Congreso Colombiano de Astronomía y Astrofísica — CoCoA 2026</h4>
+                                            <p class="event-work">El Congreso Colombiano de Astronomía y Astrofísica (CoCoA) es el principal encuentro de la comunidad astronómica del país, organizado por el Nodo AstroCo de la Academia Colombiana de Ciencias Exactas, Físicas y Naturales (ACCEFYN). Reúne cada dos años a investigadores, docentes y estudiantes de todas las instituciones colombianas para presentar sus resultados, tejer colaboraciones y discutir el rumbo de la astronomía nacional.</p>
+                                            <p class="event-work">En la edición 2026, celebrada en Bogotá, GoSA participó con 14 contribuciones —13 ponencias y 1 póster— en física solar, clima espacial, heliosismología, inteligencia artificial aplicada a observaciones solares, instrumentación satelital y apropiación social del conocimiento. La delegación incluyó estudiantes de pregrado, maestría y doctorado junto a investigadores del grupo, una representación que confirma a GoSA como el grupo más activo en investigación astronómica del país.</p>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Institución / red:</strong> GoSA, OAN, Universidad Nacional de Colombia</p>
+                                                <p><a href="https://accefyn.com/microsites/nodos/astroco/cocoa-2026/" target="_blank" class="pub-link">Ver evento ↗</a></p>
+                                            </div>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">CoCoA 2026 • Contribución 1</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">GoSA</span>
+                                                    <span class="event-tag event-tag-alt">Ponencia</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">On the photospheric magnetic origin of coronal rain in the solar atmosphere</h4>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponente:</strong> Samuel Noreña</p>
+                                                <p><strong>Coautores:</strong> Santiago Vargas Domínguez, Jenny Rodríguez Gómez, Patrick Antolin</p>
+                                            </div>
+                                            <details class="event-abstract">
+                                                <summary>Resumen</summary>
+                                                <p>Coronal rain is a solar coronal phenomenon deeply coupled to the lower solar atmosphere, specifically the chromosphere and the underlying magnetic structures of the photosphere. It consists of cooled (10⁴ K - 10⁵ K), dense, and partially ionized plasma clumps, which condense in coronal loops, believed to be formed by the action of both Thermal Non-Equilibrium (TNE) and Thermal Instability (TI) driven by footpoint heating. However, both the TNE-TI mechanism and the physical nature of its driving footpoint heating still lack direct observational validation. We present a study that aims to investigate the photospheric magnetic field as a possible origin of the heating that drives coronal rain formation. We focus on a quiescent coronal rain event in the active region NOAA 12974 from March 29, 2022 at 23:30 UTC to March 30, 2022 at 00:30 UTC. Observations from SDO/AIA and HMI/SDO Line-Of-Sight (LOS) magnetic field data, with a time cadence of 12s and 45s respectively, were used to characterize coronal rain before and during the occurrence. The AIA and HMI datasets were co-aligned using SunPy's reproject_to method, alongside the propagate_with_solar_surface routine to correct for solar differential rotation. To enhance the visibility of fine-scale structures, a multiscale Gaussian normalization (MGN) filter was applied to the AIA images. AIA 171 Å and 304 Å images were used to define the region of interest for the HMI analysis, and search for photospheric magnetic activity such as cancellation events, flux emergence and polarity inversion related to the coronal rain origin. Preliminary results show temporal variations of the LOS magnetic field consistent with possible contributions to the heating that eventually can trigger coronal rain.</p>
+                                            </details>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">CoCoA 2026 • Contribución 2</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">Kuntur-GoSA</span>
+                                                    <span class="event-tag event-tag-alt">Póster</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">Diseño y simulación de un campo magnético terrestre para la validación del ADCS en nanosatélite</h4>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponente:</strong> Danna Ortiz Carrillo</p>
+                                                <p><strong>Coautores:</strong> Juan José Delgado, Andrés Morales, Sofía Vera</p>
+                                            </div>
+                                            <details class="event-abstract">
+                                                <summary>Resumen</summary>
+                                                <p>La validación en tierra de los algoritmos y actuadores del sistema de control de actitud (ADCS) es una fase crítica en el desarrollo de nano-satélites. Para recrear de forma precisa el entorno magnético orbital, es necesario construir plataformas de prueba de alta fidelidad. Este trabajo presenta el codiseño y la simulación multifísica de un sistema de bobinas de Helmholtz de 3 ejes y 1 metro de diámetro, proyectado para su posterior fabricación utilizando perfiles y alambre esmaltado de aluminio. El objetivo central de la simulación es garantizar la viabilidad técnica de la estructura antes de su manufactura, analizando las variables críticas que podrían alterar las pruebas del satélite. Mediante el uso integrado de MATLAB, Julia y COMSOL Multiphysics, se evaluó la homogeneidad del campo magnético en el volumen central de prueba y el comportamiento térmico del aluminio bajo operación continua. Asimismo, se modeló el impacto electromagnético de la estructura de soporte para asegurar que no induzca distorsiones transitorias durante las maniobras dinámicas de control simuladas. Los resultados cuantitativos validan la viabilidad del diseño propuesto, proporcionando una base sólida para la construcción de una infraestructura de pruebas local que reduce la incertidumbre antes de la integración del hardware espacial.</p>
+                                            </details>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">CoCoA 2026 • Contribución 3</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">GoSA</span>
+                                                    <span class="event-tag event-tag-alt">Ponencia</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">Estudio de los flujos horizontales en el entorno de manchas solares y su relación con el campo magnético local</h4>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponente:</strong> Juan Pablo Herrera Moreno</p>
+                                                <p><strong>Coautores:</strong> José Iván Campos Rozo, Benjamín Calvo Mozo</p>
+                                            </div>
+                                            <details class="event-abstract">
+                                                <summary>Resumen</summary>
+                                                <p>Las manchas solares son estructuras observadas principalmente en la fotosfera solar caracterizadas por una intensa concentración de campo magnético, cuya presencia inhibe los procesos convectivos subyacentes y reduce la temperatura del plasma en la superficie, dando lugar al oscurecimiento de la región respecto al entorno circundante. Una mancha solar típica está compuesta por una umbra central, de menor temperatura y mayor intensidad de campo magnético, rodeada por una penumbra de brillo intermedio, donde el campo magnético presenta una mayor inclinación respecto a la normal. En el presente trabajo se determinan los flujos horizontales aparentes asociados a un conjunto de manchas solares seleccionadas, así como a su entorno inmediato, mediante la aplicación de técnicas de seguimiento por correlación local (Local Correlation Tracking, LCT). Se centra particularmente en la caracterización de los flujos radiales salientes a la mancha observados en la región circundante a las penumbras, denominados flujos moat. A partir del análisis comparativo entre estos flujos y la configuración del campo magnético local, se evidencia el grado de alineación entre los flujos y las líneas de campo, así como el efecto inhibidor que ejerce un campo magnético intenso sobre la magnitud de los flujos horizontales.</p>
+                                            </details>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">CoCoA 2026 • Contribución 4</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">GoSA</span>
+                                                    <span class="event-tag event-tag-alt">Ponencia</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">Diagnósticos multi-punto para el estudio de la transferencia de energía en plasmas turbulentos</h4>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponente:</strong> Andrés Felipe Guerrero</p>
+                                                <p><strong>Coautores:</strong> Santiago Vargas Domínguez, Jeffersson A. Agudelo Rueda, Gustavo Guerrero, Camila N. Koshikumo, Reinaldo Santos-Lima</p>
+                                            </div>
+                                            <details class="event-abstract">
+                                                <summary>Resumen</summary>
+                                                <p>La transferencia de energía entre escalas es uno de los procesos fundamentales de la turbulencia en plasmas espaciales y constituye el mecanismo que conecta la inyección de energía a gran escala con su disipación en escalas cinéticas. Tradicionalmente, las estimaciones de la tasa de transferencia de energía en el viento solar y otros plasmas espaciales se han basado en observaciones de una sola nave espacial, lo que requiere asumir isotropía y utilizar la hipótesis de Taylor para relacionar escalas temporales y espaciales. El desarrollo de misiones multipunto abre la posibilidad de superar estas limitaciones y caracterizar directamente la naturaleza anisotrópica de la cascada turbulenta. En este trabajo analizamos diferentes métodos para estimar la transferencia de energía a partir de diagnósticos de tercer orden basados en la ley de Politano–Pouquet. Utilizamos simulaciones magnetohidrodinámicas (MHD) y simulaciones cinéticas Particle-in-Cell (PIC), considerando distintos niveles de magnetización y regímenes de turbulencia forzada y decadente. Mediante la emulación de una constelación de nueve naves espaciales, evaluamos directamente la divergencia del flujo de Yaglom en el espacio de retardos sin asumir isotropía ni recurrir a la hipótesis de Taylor. Nuestros resultados muestran que la transferencia de energía presenta una marcada anisotropía angular tanto en el régimen MHD como en el cinético, organizada con respecto al campo magnético medio. Encontramos que la dependencia angular de la cascada está principalmente controlada por las condiciones del plasma, caracterizadas por el número de Mach Alfvénico, y no por el mecanismo de inyección de energía. Además, las reconstrucciones multipunto revelan la coexistencia de eventos locales de transferencia directa e inversa distribuidos de forma no uniforme en ángulo, produciendo cancelaciones parciales que pueden ocultar una actividad turbulenta intensa en estimaciones promediadas. Estos resultados resaltan la importancia de resolver la estructura geométrica completa de la transferencia de energía y demuestran el potencial de las técnicas multipunto para la interpretación de observaciones de futuras misiones espaciales.</p>
+                                            </details>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">CoCoA 2026 • Contribución 5</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">GoSA</span>
+                                                    <span class="event-tag event-tag-alt">Ponencia</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">Rastreando fuentes de emisión sísmica de alta frecuencia en el quiet Sun mediante holografía heliosísmica</h4>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponente:</strong> Daniel Alberto Rodríguez Torres</p>
+                                                <p><strong>Coautores:</strong> Santiago Vargas, Alina Donea</p>
+                                            </div>
+                                            <details class="event-abstract">
+                                                <summary>Resumen</summary>
+                                                <p>La holografía heliosísmica aplicada a altas frecuencias constituye una potente herramienta para estudiar el origen y la distribución de la emisión acústica en el quiet Sun. Al reconstruir el campo de ondas acústicas a partir de observaciones superficiales, esta técnica permite identificar regiones emisoras y, al mismo tiempo, proporcionar un diagnóstico de la interacción entre las oscilaciones solares, la convección cercana a la superficie y los campos magnéticos de pequeña escala. Este trabajo presenta la aplicación de una metodología computacional basada en holografía heliosísmica para estudiar la distribución espacial de fuentes de emisión sísmica en el quiet Sun utilizando observaciones de SDO/HMI. A partir de la construcción de mapas de potencia acústica en frecuencias comprendidas entre la banda de los modos p y 11 mHz, se busca identificar regiones de emisión acústica y caracterizar su dependencia con la frecuencia. Los mapas holográficos obtenidos son comparados con imágenes de continuo y magnetogramas fotosféricos para investigar la relación entre las fuentes sísmicas, la granulación solar y las concentraciones magnéticas de pequeña escala, proporcionando información sobre los mecanismos responsables de la generación y modulación de la emisión acústica de alta frecuencia.</p>
+                                            </details>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">CoCoA 2026 • Contribución 6</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">GoSA</span>
+                                                    <span class="event-tag event-tag-alt">Ponencia</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">Monitoreo histórico y en tiempo casi real del índice de perturbación geomagnética local (Dlat) para el Observatorio de Fúquene</h4>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponente:</strong> Santiago Alejandro Pinilla</p>
+                                                <p><strong>Coautores:</strong> Simón Salas, Santiago Pinzón, Santiago Vargas, Andrés Cárdenas</p>
+                                            </div>
+                                            <details class="event-abstract">
+                                                <summary>Resumen</summary>
+                                                <p>El monitoreo continuo del campo geomagnético es fundamental para comprender las interacciones dinámicas entre el Sol y la magnetosfera terrestre, las cuales pueden generar tormentas geomagnéticas a partir de eyecciones de masa coronal y corrientes de alta velocidad, capaces de alterar la precisión del posicionamiento GPS y comprometer la seguridad aérea. Existen indicadores como el Dst, que cuantifican la variación de la componente horizontal (H) del campo geomagnético en el ecuador a partir de un reducido conjunto de observatorios distribuidos longitudinalmente; sin embargo, la escasez en la red de estaciones puede introducir sesgos regionales y una resolución temporal insuficiente, lo cual motivó el desarrollo de índices locales como Dlat, que aprovecha los registros locales de un observatorio específico para generar una mayor resolución temporal y estimar la perturbación en una banda de latitud geográficamente definida. Gracias a la modernización de equipos para el observatorio magnético de Fúquene presentamos la primera conexión de datos geomagnéticos en tiempo real para Colombia, lograda mediante software de código abierto, que permite la visualización y el procesamiento continuo de datos. Dentro de esta infraestructura, implementamos un índice de perturbación local durante tormentas (Dlat) siguiendo la metodología de Love y Gannon. Este índice incluye tanto un flujo de datos históricos para el periodo 1957-2018 como una versión operativa casi en tiempo real (NRT) con una resolución de un minuto. Una característica clave de ambas implementaciones es el uso combinado de técnicas en el dominio del tiempo y en el dominio de la frecuencia para la eliminación de la variación solar en días tranquilos (Sq). El método aprovecha los procesos físicos asociados con armónicos de Fourier específicos, lo que permite una identificación y discretización rigurosas de la señal Sq antes de extraer la serie de perturbaciones. Posteriormente, se aplicó una corrección de latitud magnética utilizando el modelo IGRF de 14.ª generación evaluado en FUQ. Para la metodología histórica, los resultados se validaron con el índice Dst de Kioto mediante la correlación de Pearson y el análisis del error cuadrático medio durante los eventos de tormenta ocurridos entre 1957 y 2018, obteniendo para tormentas de alta magnitud como la de 1989 un coeficiente de correlación de 0.94 y un error medio cuadrático de 18.6 nT. Para la metodología NRT, la validación se realizó con la red de observatorios del USGS, demostrando una fuerte concordancia durante los periodos de tormenta registrados en 2026, como la tormenta del 20 de enero, donde se obtuvo una correlación fuerte con el Observatorio de San Juan (SJG), con un coeficiente de 0.984 y un error medio cuadrático de 11.0 nT, gracias a que la latitud magnética del observatorio es la más cercana a Fúquene en esta red.</p>
+                                            </details>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">CoCoA 2026 • Contribución 7</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">GoSA</span>
+                                                    <span class="event-tag event-tag-alt">Ponencia</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">On the nature of long-period umbral oscillations</h4>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponente:</strong> Thomas González Rodríguez</p>
+                                                <p><strong>Coautores:</strong> Sebastián Castellanos Durán, Benjamín Calvo Mozo</p>
+                                            </div>
+                                            <details class="event-abstract">
+                                                <summary>Resumen</summary>
+                                                <p>Umbrae are the dark cores of sunspots. Doppler observations of sunspots as they cross the solar disk have revealed long-period oscillations in their umbrae. We aim to explain the reasons for these long-period umbral oscillations by analysing continuum images, magnetograms, and Dopplergrams observed by SDO/HMI. We followed active regions with sunspots that appeared between 2011 and 2017, on average, for 9.6 ± 1.4 days at a 720s cadence, through their transit from the eastern limb to the western limb. We found that the oscillations are observed only in the umbra and penumbra, with a period of ~24h, which corresponds to the satellite orbit, suggesting that these oscillations are biased towards darker regions. They are also found in the magnetograms and are related to oscillations in the Dopplergrams. We also observed oscillations with half a period, suggesting a similar source. Taken together, these results suggest that the Wilson depression strongly affects the reliability of umbral velocity measurements.</p>
+                                            </details>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">CoCoA 2026 • Contribución 8</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">GoSA</span>
+                                                    <span class="event-tag event-tag-alt">Ponencia</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">Investigating the Origin of Flare-Driven Seismic Emission in Active Region 4455</h4>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponente:</strong> Luis Felipe Losada González</p>
+                                                <p><strong>Coautores:</strong> Ángel Martínez, Benjamín Calvo Mozo</p>
+                                            </div>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">CoCoA 2026 • Contribución 9</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">GoSA</span>
+                                                    <span class="event-tag event-tag-alt">Ponencia</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">A Fokker-Planck Model of Anisotropic Electron Transport in Solar Flares and its Hard X-ray Polarization Signatures</h4>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponente:</strong> Milena Barrios Gallego</p>
+                                                <p><strong>Coautores:</strong> Juan Camilo Buitrago-Casas, Santiago Vargas Domínguez</p>
+                                            </div>
+                                            <details class="event-abstract">
+                                                <summary>Resumen</summary>
+                                                <p>We present a numerical model for the transport of anisotropic electron beams in the solar atmosphere during flares, based on the solution of the kinetic Fokker-Planck equation developed by Siversky &amp; Zharkova (2009) and Zharkova, Kuznetsov &amp; Siversky (2010). The model describes the evolution of the electron distribution function in a three-dimensional phase space defined by column depth, energy, and pitch angle. It includes the effects of Coulomb collisions, the return-current electric field, and the convergence of the coronal magnetic field. Using the resulting distribution function, it is possible to derive both the energy spectrum and the anisotropy of the injected electrons at each layer of the atmosphere; which can be used to compute the hard X-ray emission and its polarization. The goal of this work is to reproduce and extend the results of these papers in order to connect theoretical predictions about the distribution of electrons with observations from solar X-ray missions.</p>
+                                            </details>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">CoCoA 2026 • Contribución 10</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">GoSA</span>
+                                                    <span class="event-tag event-tag-alt">Ponencia</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">Modelling non-thermal bremsstrahlung emission from electron populations in solar flares</h4>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponente:</strong> Paula Jessica González Prieto</p>
+                                                <p><strong>Coautores:</strong> Alina Donea</p>
+                                            </div>
+                                            <details class="event-abstract">
+                                                <summary>Resumen</summary>
+                                                <p>Solar flares are among the most energetic phenomena in the Solar System, releasing large amounts of energy through plasma heating and particle acceleration. Although their X-ray emission has been extensively observed, the physical processes governing the transition from the preflare phase to the impulsive phase remain incompletely understood. In particular, the acceleration of non-thermal electron populations plays a fundamental role in shaping the observed soft and hard X-ray spectra. This work presents the mathematical modelling of solar flare X-ray emission through analytical and numerical descriptions of their electron distributions. The model describes a thermal Maxwellian electron population that is smoothly connected at a pivot (injection) point to a nonthermal power-law distribution, enabling the calculation of the resulting thermal and nonthermal X-ray spectra. This combined electron spectrum is then used to calculate thermal and nonthermal bremsstrahlung emission, allowing the transition from pre-flare heating to flare-time particle acceleration to be investigated. Specific attention is given to the pre-flare processes that provide seed populations of suprathermal electrons that can later be accelerated into the nonthermal power-law distribution responsible for hard X-ray emission. The model aims to identify early X-ray signatures of electron acceleration and establish quantitative links between pre-flare plasma heating and the onset of impulsive particle acceleration. These developments will contribute to the interpretation of solar flare observations and provide a framework for future comparisons with space-based measurements.</p>
+                                            </details>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">CoCoA 2026 • Contribución 11</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">GoSA</span>
+                                                    <span class="event-tag event-tag-alt">Ponencia</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">Un copiloto para física solar</h4>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponente:</strong> Juan Esteban Agudelo Ortiz</p>
+                                                <p><strong>Coautores:</strong> Santiago Vargas Domínguez, Andrés Muñoz Jaramillo</p>
+                                            </div>
+                                            <details class="event-abstract">
+                                                <summary>Resumen</summary>
+                                                <p>Los modelos fundacionales de inteligencia artificial han mostrado un desempeño notable en tareas generales, pero su aplicación directa a dominios científicos especializados sigue siendo limitada por la falta de contexto específico de cada disciplina. En el caso de la física solar, ya existen modelos fundacionales visuales entrenados sobre observaciones, como Surya, el modelo de heliofísica de la NASA preentrenado con 15 años de imágenes multicanal del Observatorio de Dinámica Solar (SDO) en los canales EUV/UV de AIA y de campo magnético de HMI. Sin embargo, estos modelos por sí solos no permiten una interacción en lenguaje natural que explique el significado físico de lo observado. Este trabajo propone un Modelo de Lenguaje Visual (VLM) que actúa como copiloto para la física solar, conectando las representaciones visuales de Surya con un Modelo de Lenguaje de Gran Escala (LLM) mediante un conector tipo MLP entrenado por instrucciones, el cual proyecta las incrustaciones espaciotemporales del modelo visual hacia el espacio de tokens del LLM. Esto permite formular preguntas en lenguaje natural sobre una observación solar y recibir respuestas fundamentadas científicamente. Si bien ya existen conjuntos de datos que asocian imágenes solares con descripciones textuales generales, ninguno ofrece pares de pregunta y respuesta contextualizados científicamente. Por ello, construimos lo que constituye el primer conjunto de datos de pares imagen-pregunta/respuesta para física solar derivado directamente de la literatura científica revisada por pares, en contraste con las descripciones genéricas o generadas automáticamente usadas en trabajos previos. La construcción del conjunto de datos parte de artículos publicados entre 2010 y 2024 que emplean datos del SDO: se extraen automáticamente las figuras observacionales de cada artículo en PDF y se busca asociarlas con su observación correspondiente en el archivo del SDO. Para esta asociación proponemos dos estrategias de registro de imágenes en desarrollo: una basada en métodos clásicos de visión por computador (SIFT, prueba de razón de Lowe y estimación afín mediante RANSAC), y otra basada en aprendizaje profundo mediante el emparejamiento neuronal LightGlue, pensadas para tolerar las modificaciones que sufren las figuras en los artículos respecto a la observación original, como recortes, cambios de contraste y anotaciones superpuestas. La alineación final de coordenadas se realiza mediante transformaciones Helioproyectivas-Cartesianas con las librerías SunPy y Astropy. A partir de estas correspondencias, generamos pares de pregunta y respuesta que capturan no solo la identificación de las estructuras solares, sino también el razonamiento físico y la interpretación que los autores originales dieron a dichas observaciones. Este trabajo se desarrolla en el marco del programa de Doctorado en Ciencias – Astronomía de la Universidad Nacional de Colombia.</p>
+                                            </details>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">CoCoA 2026 • Contribución 12</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">GoSA</span>
+                                                    <span class="event-tag event-tag-alt">Ponencia</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">Apropiación social e investigación astronómica en Colombia: la experiencia de la revista eSPECTRA</h4>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponente:</strong> Johan Nicolás Molina Córdoba</p>
+                                                <p><strong>Coautores:</strong> Santiago Vargas Domínguez</p>
+                                            </div>
+                                            <details class="event-abstract">
+                                                <summary>Resumen</summary>
+                                                <p>El presente trabajo resume el proceso mediante el cual se ha impactado la comunidad astronómica nacional, a partir del proyecto académico que actualmente se constituye como la revista eSPECTRA del Observatorio Astronómico Nacional (OAN). La revista eSPECTRA nace como un espacio para compartir y preservar la producción científica de los estudiantes de la Maestría en Astronomía del OAN y de otros escenarios académicos del país. Más que un repositorio de artículos, busca ser un puente que conecte a la comunidad científica y educativa interesada en la astronomía en Colombia. Iniciada en 2023 como parte de la conmemoración de los 220 años del Observatorio Astronómico Nacional, eSPECTRA se ha consolidado como la única revista científica de astrociencias en el país, con una propuesta editorial sólida y alta proyección nacional. La revista retoma una tradición escritural que ha sido interrumpida bajo el nombre de tres proyectos editoriales diferentes que dieron comienzo en distintos momentos históricos: los Anales del Observatorio (1882), el Boletín del Observatorio Astronómico Nacional (1903), y la Revista Colombiana de Astronomía, Astrofísica, Cosmología y Ciencias Afines (a finales del siglo XX). La publicación semestral de eSPECTRA recoge los avances de jóvenes investigadores que ven en la astronomía no solo una disciplina académica, sino también una oportunidad para fortalecer su formación y abrirse camino en el derrotero científico. Siguiendo las formas de intrincar redes de difusión más amplias en el contexto de la comunicación de la astronomía, la revista también abre un espacio de divulgación, invitando a toda persona apasionada por el cielo a compartir ideas y experiencias, enriqueciendo así el diálogo entre ciencia y sociedad. El proceso editorial cuenta con la guía de profesores del Observatorio Astronómico Nacional, quienes acompañan la revisión y garantizan la calidad de los contenidos en sus áreas de experticia. El impacto de eSPECTRA ya es evidente: desde su primera edición, publicada en 2023, alcanzando a distintas universidades y comunidades del país, se han publicado 6 editoriales, subdivididas en 4 volúmenes con 2 números por año, alcanzando un total de 13.330 descargas y sumando un número creciente de lectores, despertando un interés creciente en torno a la comunicación de la astronomía a nivel nacional.</p>
+                                            </details>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">CoCoA 2026 • Contribución 13</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">GoSA</span>
+                                                    <span class="event-tag event-tag-alt">Ponencia</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">MOSAIC: A tool for analysing plasma and MHD wave dynamics in solar physics</h4>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponente:</strong> Oscar Calvo</p>
+                                                <p><strong>Coautores:</strong> Sebastián Castellanos, Santiago Vargas</p>
+                                            </div>
+                                            <details class="event-abstract">
+                                                <summary>Resumen</summary>
+                                                <p>Solar observations increasingly generate multidimensional data cubes, with each pixel containing spatial, temporal, spectral, or polarimetric information, such as wavelength profiles or Stokes parameters. As spatial resolution, cadence, and dimensionality increase, manual analysis of dynamic structures becomes inefficient and fragmented. MOSAIC (Multidimensional Observation and Structure Analysis through Interactive Cuts) is an interactive Python environment designed for time–distance (TD) analysis of multidimensional data cubes. MOSAIC integrates data-cube exploration, the definition of straight or curved cuts, construction of TD diagrams, slope measurements, oscillation tracking, detrending, model fitting, and result export within a unified workflow. Inclined tracks in TD maps enable measurement of apparent velocities, travelled distances, lifetimes, durations, and propagation directions. A dedicated kink-like magnetohydrodynamic (MHD) oscillation module tracks transverse displacements of bright or dark structures, even when the signal deviates from a perfect sinusoid, and includes a custom implementation for automated wave tracking. Background trends can be removed prior to fitting, and users may select or adapt the fitting function to match event morphology. The primary strength of MOSAIC is its high degree of editability: each step can be inspected, corrected, refined, annotated, and linked across different TD cuts. MOSAIC can follow bright or dark structures along complex trajectories, including coronal loops, fibrils, bright points, umbral dots, penumbral grains, coronal rain, and plasmoids, whenever the dynamics can be projected onto TD maps. This integration facilitates a transition from isolated manual inspections to systematic and reproducible studies of dynamics and waves in multidimensional solar data.</p>
+                                            </details>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">CoCoA 2026 • Contribución 14</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">GoSA</span>
+                                                    <span class="event-tag event-tag-alt">Ponencia</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">De los registros históricos al monitoreo geomagnético casi en tiempo real: implementación local del índice K en el Observatorio de Fúquene, Colombia</h4>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponente:</strong> Simón Salas Hernández</p>
+                                                <p><strong>Coautores:</strong> Santiago Alejandro Pinilla, Santiago Pinzón, Santiago Vargas, Andrés Cárdenas</p>
+                                            </div>
+                                            <details class="event-abstract">
+                                                <summary>Resumen</summary>
+                                                <p>Los observatorios geomagnéticos terrestres son esenciales para el monitoreo regional del clima espacial, especialmente en regiones ecuatoriales y de bajas latitudes, donde las perturbaciones geomagnéticas presentan un comportamiento particular. Este trabajo presenta el desarrollo de SIAPV, un sistema integrado para la adquisición, procesamiento, validación y visualización de información geomagnética proveniente del Observatorio Geomagnético de Fúquene —FUQ— en Colombia. Este proyecto se basa en la estimación del índice K a partir de registros históricos y datos casi en tiempo real, con el propósito de apoyar los estudios de clima espacial en regiones ecuatoriales, específicamente en Colombia. Para los datos históricos, se adaptó el método FMI Linear Elimination a los registros de FUQ, incluyendo el preprocesamiento, la identificación y eliminación de valores atípicos y picos anómalos, el tratamiento de vacíos de información, la estimación de la curva de variación solar regular y el cálculo de la perturbación trihoraria. En el caso de los datos casi en tiempo real, se implementaron procedimientos operacionales basados en el método propuesto por el Real Instituto Meteorológico de Bélgica, procurando preservar en la mayor medida posible el método original de Linear Elimination, e incorporando la adquisición automática de datos, la estimación de la curva de días tranquilos y banderas de control de calidad. La ubicación de Colombia resulta ideal debido a que se encuentra en la región ecuatorial y próxima a la Anomalía del Atlántico Sur, lo que otorga una relevancia especial a este trabajo, ya que contribuye al fortalecimiento del monitoreo geomagnético en una región con limitada disponibilidad de productos operacionales y con alto interés científico para el estudio del campo magnético terrestre.</p>
+                                            </details>
+                                        </article>
+                                    </div>
+                                </section>
+
+                                <section class="event-year-block">
+                                    <div class="event-year-heading">2024</div>
+                                    <div class="event-year-list">
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">Marzo 25-26 • Lovaina, Bélgica</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">Internacional</span>
+                                                    <span class="event-tag event-tag-alt">Ponencia</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">DynaSun Kick-off Meeting</h4>
+                                            <p class="event-work">Dynamics of the Cold Solar Chromosphere Observed with ALMA</p>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponente:</strong> Francisco Javier Ordoñez Araujo</p>
+                                                <p><strong>Colaboradores:</strong> Benjamín Calvo Mozo, Juan Camilo Guevara, Sven Wedermeyer</p>
+                                                <p><strong>Institución / red:</strong> DynaSun Network</p>
+                                            </div>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">Abril 15-19 • Viena, Austria</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">Internacional</span>
+                                                    <span class="event-tag event-tag-alt">Ponencia</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">EGU24</h4>
+                                            <p class="event-work">Machine learning synthesis and inversion method for Stokes parameters in the solar context</p>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponente:</strong> Juan Esteban Agudelo Ortiz</p>
+                                                <p><strong>Colaboradores:</strong> Nicolas Morales, Santiago Vargas, Sergiy Shelyag</p>
+                                                <p><strong>Institución / red:</strong> European Geosciences Union</p>
+                                            </div>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">Agosto 5-9 • Ciudad del Cabo, Sudáfrica</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">Internacional</span>
+                                                    <span class="event-tag event-tag-alt">Póster</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">IAU General Assembly 2024</h4>
+                                            <p class="event-work">Applied machine learning methods for the synthesis and inversion of the Stokes parameters in the solar context</p>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponente:</strong> Juan Esteban Agudelo Ortiz</p>
+                                                <p><strong>Colaboradores:</strong> Nicolas Morales, Santiago Vargas, Sergiy Shelyag</p>
+                                                <p><strong>Institución / red:</strong> International Astronomical Union</p>
+                                            </div>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">Septiembre 2-6 • Newcastle, Reino Unido</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">Internacional</span>
+                                                    <span class="event-tag event-tag-alt">Ponencias</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">DynaSun Network Workshop</h4>
+                                            <p class="event-work">Decoding solar complexity: small-scale phenomena impacting upper atmospheric processes / The Group of Solar Astrophysics</p>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponentes:</strong> Santiago Vargas Domínguez, Benjamín Calvo Mozo</p>
+                                                <p><strong>Institución / red:</strong> DynaSun Network</p>
+                                                <p><a href="https://sites.google.com/view/dynasun2024/" target="_blank" class="pub-link">Ver evento ↗</a></p>
+                                            </div>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">Noviembre 20-22 • Bucaramanga, Colombia</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">Nacional</span>
+                                                    <span class="event-tag event-tag-alt">Ponencias y pósteres</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">Congreso Colombiano de Astronomía</h4>
+                                            <p class="event-work">Participación destacada del grupo en holografía acústica, actividad solar, radiofrecuencia, Marte, contaminación lumínica y magnetogramas</p>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Participantes GoSA:</strong> Daniel Rodríguez, Santiago Vargas, Freddy Moreno, Paula Jessica González, Andrés Felipe Guerrero, Oscar Andrés Calvo, Johan Nicolás Molina, Juan Esteban Agudelo, Diego Fernando Páez, Germain Nicolás Morales, Erika Puentes, Juan Pablo Herrera</p>
+                                                <p><strong>Institución / red:</strong> GoSA, OAN, Universidad Nacional de Colombia</p>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </section>
+
+                                <section class="event-year-block">
+                                    <div class="event-year-heading">2023</div>
+                                    <div class="event-year-list">
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">Abril 20-22 • Sofía, Bulgaria</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">Internacional</span>
+                                                    <span class="event-tag event-tag-alt">Ponencia</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">International Workshop on Machine Learning and Computer Vision in Heliophysics</h4>
+                                            <p class="event-work">Deep Learning techniques implementation for the generation of Stokes parameters and atmospheric parameters in the solar context</p>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponente:</strong> Juan Esteban Agudelo Ortiz</p>
+                                                <p><strong>Colaboradores:</strong> Nicolas Morales, Santiago Vargas, Sergiy Shelyag</p>
+                                            </div>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">Julio • Oslo, Noruega</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">Internacional</span>
+                                                    <span class="event-tag event-tag-alt">Pasantía</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">Rosseland Centre for Solar Physics (RoCS)</h4>
+                                            <p class="event-work">Dynamics of the Cold Solar Chromosphere Observed with ALMA</p>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Investigador:</strong> Francisco Javier Ordoñez Araujo</p>
+                                                <p><strong>Institución / red:</strong> Rosseland Centre for Solar Physics</p>
+                                            </div>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">Julio 11-20 • Berlín, Alemania</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">Internacional</span>
+                                                    <span class="event-tag event-tag-alt">Ponencia</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">International Union of Geodesy and Geophysics (IUGG)</h4>
+                                            <p class="event-work">Ring Current local time dependence using Dst index proxies</p>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponente:</strong> Santiago Pinzón Cortés</p>
+                                                <p><strong>Colaboradores:</strong> Natalia Gómez-Pérez, Santiago Vargas Domínguez</p>
+                                                <p><a href="https://iugg2023.gcon.me/page/home" target="_blank" class="pub-link">Ver evento ↗</a></p>
+                                            </div>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">Noviembre 26 - Diciembre 1 • Montevideo, Uruguay</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">Internacional</span>
+                                                    <span class="event-tag event-tag-alt">Pósteres</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">XVII LARIM</h4>
+                                            <p class="event-work">Synthesis and inversion of Stokes parameters in the solar context applying Deep Learning Techniques / Assessing the predictability of solar active regions using helioseismic holography</p>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponentes:</strong> Juan Esteban Agudelo Ortiz, Daniel Alberto Rodríguez Torres</p>
+                                                <p><strong>Colaboradores:</strong> Nicolas Morales, Santiago Vargas, Sergiy Shelyag, Milo Buitrago Casas, Benjamín Calvo Mozo</p>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </section>
+
+                                <section class="event-year-block">
+                                    <div class="event-year-heading">2022</div>
+                                    <div class="event-year-list">
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">Agosto 14-22 • Kutaisi, Georgia</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">Internacional</span>
+                                                    <span class="event-tag event-tag-alt">Olimpiada</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">International Olympiad on Astronomy and Astrophysics (IOAA)</h4>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Participante:</strong> Juan Camilo Hernández Clavijo</p>
+                                                <p><strong>Institución / red:</strong> IOAA</p>
+                                                <p><a href="https://www.ioaastrophysics.org/" target="_blank" class="pub-link">Ver evento ↗</a></p>
+                                            </div>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">Septiembre 21-23 • Tunja, Colombia</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">Nacional</span>
+                                                    <span class="event-tag event-tag-alt">Ponencias y pósteres</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">Congreso Colombiano de Astronomía</h4>
+                                            <p class="event-work">Amplia representación del grupo en redes neuronales, magnetismo solar, seeing astronómico, metaverso, actividad geomagnética, historia de la astronomía y astrobiología</p>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Participantes GoSA:</strong> Juan Esteban Agudelo, Johan Nicolas Molina, Erika Puentes, Willinton Caicedo, Valeria Quintero, Natalia Granados, Gerardine Berríos, Oscar Calvo, Francisco Javier Ordoñez, Freddy Moreno, Sofía Guevara, Erika Hernández, Santiago Pinzón, Javier Sánchez, Angel Martínez, Germain Nicolas Morales, Paula Gonzalez, Ivanna Hernández</p>
+                                                <p><strong>Institución / red:</strong> ACCEFYN, GoSA, OAN, Universidad Nacional de Colombia</p>
+                                                <p><a href="https://accefyn.com/microsites/nodos/astroco/congreso-colombiano-de-astronomia-cocoa-2022%E2%80%8B/" target="_blank" class="pub-link">Ver evento ↗</a></p>
+                                            </div>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">Octubre 2-8 • Ciudad de Panamá, Panamá</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">Internacional</span>
+                                                    <span class="event-tag event-tag-alt">Olimpiada</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">Olimpiada Latinoamericana de Astronomía y Astronáutica (OLAA)</h4>
+                                            <p class="event-work">Medalla de Bronce</p>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Participante:</strong> Juan Camilo Hernández Clavijo</p>
+                                                <p><strong>Institución / red:</strong> OLAA</p>
+                                                <p><a href="https://olaapanama2022.com/" target="_blank" class="pub-link">Ver evento ↗</a></p>
+                                            </div>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">Octubre 24 - Noviembre 11 • OAN, Colombia</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">Nacional</span>
+                                                    <span class="event-tag event-tag-alt">Escuela</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">Escuela de Magnetismo y Actividad Solar y Estelar</h4>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Institución / red:</strong> Observatorio Astronómico Nacional</p>
+                                                <p><a href="https://youtube.com/playlist?list=PLWVo5HIkfQraf7jkSTyhJoOU9-aNb_eOc" target="_blank" class="pub-link">Ver registro ↗</a></p>
+                                            </div>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">Noviembre 24-26 • São José dos Campos, Brasil</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">Internacional</span>
+                                                    <span class="event-tag event-tag-alt">Escuela</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">International Space Science School (ISSS)</h4>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Participantes:</strong> Juan Sebastián Hincapié Tarquino, Javier Sánchez González</p>
+                                                <p><strong>Institución / red:</strong> INPE</p>
+                                                <p><a href="https://www.gov.br/inpe/en/events/colage/2022/isss" target="_blank" class="pub-link">Ver escuela ↗</a></p>
+                                            </div>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">Noviembre 27 - Diciembre 2 • São José dos Campos, Brasil</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">Internacional</span>
+                                                    <span class="event-tag event-tag-alt">Pósteres</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">XIII Conferencia Latinoamericana de Geofísica Espacial (COLAGE)</h4>
+                                            <p class="event-work">Development of a Multi-Element Phased Array Solar Radio Interferometer at 1.42 GHz / Implementation of a Portable Site-Testing Instrument for Solar Observations</p>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponentes:</strong> Juan Sebastián Hincapié Tarquino, Javier Sánchez González</p>
+                                                <p><strong>Colaboradores:</strong> Benjamín Calvo Mozo, Juan Carlos Martínez Oliveros, Javier Leonardo Araque Quijano, Santiago Vargas, Charles Triana, Raúl Joya, Doménico Bonaccini</p>
+                                                <p><strong>Reconocimiento:</strong> Roberto Manzano Award - Best student contribution, Session I: Space Weather</p>
+                                                <p><a href="https://www.gov.br/inpe/en/events/colage/2022" target="_blank" class="pub-link">Ver conferencia ↗</a></p>
+                                            </div>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">Diciembre 12-16 • Virtual / Chicago, EE. UU.</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">Internacional</span>
+                                                    <span class="event-tag event-tag-alt">Ponencia y póster</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">Congreso Iberoamericano de Estudiantes de Física / AGU Fall Meeting 2022</h4>
+                                            <p class="event-work">Implementación de redes neuronales convolucionales para la generación de parámetros de Stokes y parámetros atmosféricos en el contexto solar / Low Latitude Geomagnetic Activity Using a Dst index Proxy</p>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponentes:</strong> Juan Esteban Agudelo Ortiz, Santiago Pinzón Cortés</p>
+                                                <p><strong>Colaboradores:</strong> Nicolas Morales, Santiago Vargas, Sergiy Shelyag, Natalia Gómez-Pérez</p>
+                                                <p><a href="https://www.cief-web.org/cronograma/" target="_blank" class="pub-link">CIEF ↗</a> <a href="https://www.agu.org/Fall-Meeting" target="_blank" class="pub-link">AGU ↗</a></p>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </section>
+
+                                <section class="event-year-block">
+                                    <div class="event-year-heading">2020-2014</div>
+                                    <div class="event-year-list">
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">2020 • Mendoza, Argentina / Virtual</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">Internacional</span>
+                                                    <span class="event-tag event-tag-alt">Pósteres</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">IAUS 367 / Royal Astronomical Society</h4>
+                                            <p class="event-work">Sonifying the brightness of the stars, portable site-testing instrument for solar observations y Voiced of stellar magnitude</p>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponente:</strong> Javier Sánchez González</p>
+                                                <p><strong>Colaboradores:</strong> Santiago Vargas Domínguez, Charles Triana, Raúl Joya, Doménico Bonaccini</p>
+                                            </div>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">2019-2018 • UNAL / Viena, Austria</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">Nacional e internacional</span>
+                                                    <span class="event-tag event-tag-alt">Escuela, monitoría y póster</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">Clubes de Ciencia, Simposio Max Planck e IAU GA 2018</h4>
+                                            <p class="event-work">Astronomical Experience for Visually-Impaired People</p>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Participante principal:</strong> Javier Sánchez González</p>
+                                                <p><strong>Colaboradores:</strong> Santiago Vargas Domínguez</p>
+                                            </div>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">2016 • Cartagena, Colombia / Puebla, México</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">Internacional</span>
+                                                    <span class="event-tag event-tag-alt">Póster y escuela</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">XV LARIM, IAUS 327 y Taller de Astronomía Observacional</h4>
+                                            <p class="event-work">2D spectrum the cross disperser specthograph</p>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Ponente:</strong> Javier Sánchez González</p>
+                                                <p><strong>Colaboradores:</strong> Santiago Vargas</p>
+                                            </div>
+                                        </article>
+
+                                        <article class="event-entry glassmorphism-light">
+                                            <div class="event-entry-top">
+                                                <p class="event-date">2015-2014 • Bogotá y OAN, Colombia</p>
+                                                <div class="event-tags">
+                                                    <span class="event-tag">Nacional</span>
+                                                    <span class="event-tag event-tag-alt">Escuelas y monitoría</span>
+                                                </div>
+                                            </div>
+                                            <h4 class="event-title">Métodos Bayesianos en Cosmología, VI Escuela Colombiana de Astronomía, II Workshop Astronomía en Los Andes y Entendiendo el Universo</h4>
+                                            <div class="event-meta-grid">
+                                                <p><strong>Participante principal:</strong> Javier Sánchez González</p>
+                                                <p><strong>Institución / red:</strong> GoSA, OAN, comunidad astronómica colombiana</p>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </section>
+                            </div>
+
+                            <div class="events-side-notes">
+                                <h4><span class="es">Líneas visibles en esta participación</span><span class="en">Themes visible in these participations</span></h4>
+                                <ul class="prod-list">
+                                    <li><strong>Física solar y actividad magnética:</strong> Stokes, fulguraciones, manchas solares, holografía acústica y cromosfera fría observada con ALMA.</li>
+                                    <li><strong>Aprendizaje automático:</strong> síntesis e inversión de parámetros atmosféricos y análisis de regiones activas.</li>
+                                    <li><strong>Clima espacial y geofísica:</strong> proxies geomagnéticos, turbulencia e instrumentación solar.</li>
+                                    <li><strong>Formación y divulgación:</strong> olimpiadas, escuelas temáticas, Clubes de Ciencia y actividades abiertas de apropiación social.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+{{footer}}
+
+    <script src="script.js"></script>
+    <script src="produccion.js"></script>
+</body>
+
+</html>

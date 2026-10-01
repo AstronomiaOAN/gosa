@@ -1,0 +1,426 @@
+[
+  {
+    "name": "Benjamín Calvo Mozo",
+    "category": "investigador",
+    "image": "images/team-optimized/benjamin_calvo_mozo.webp",
+    "role_html": "<span class=\"es\">Investigador Principal</span><span class=\"en\">Principal Investigator</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:bcalvom@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+  },
+  {
+    "name": "Santiago Vargas Domínguez",
+    "category": "investigador",
+    "image": "images/team-optimized/santiago_vargas_dominguez.webp",
+    "role_html": "<span class=\"es\">Investigador Principal</span><span class=\"en\">Principal Investigator</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:svargasd@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0002-5999-4842\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                            <a href=\"https://www.researchgate.net/profile/Santiago-Vargas-Dominguez-2\" target=\"_blank\"\n                                class=\"member-link\" title=\"ResearchGate\"><i class=\"fa-brands fa-researchgate\"></i></a>\n                        "
+  },
+  {
+    "name": "Juan Carlos Martínez Oliveros",
+    "category": "investigador",
+    "image": "images/team-optimized/juan_carlos_martinez_oliveros.webp",
+    "role_html": "<span class=\"es\">Colaborador Externo</span><span class=\"en\">External Collaborator</span>",
+    "institution_html": "",
+    "links_html": "\n                        "
+  },
+  {
+    "name": "Juan Camilo Buitrago",
+    "category": "investigador",
+    "image": "images/team-optimized/juan_camilo_buitrago.webp",
+    "role_html": "<span class=\"es\">Colaborador Externo / Egresado</span><span class=\"en\">External Collaborator / Alumni</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:jcbuitragoc@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0002-8203-4794\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+  },
+  {
+    "name": "Jose Ivan Campos Rozo",
+    "category": "investigador",
+    "image": "images/team-optimized/jose_ivan_campos_rozo.webp",
+    "role_html": "<span class=\"es\">Colaborador Externo / Egresado</span><span class=\"en\">External Collaborator / Alumni</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:jicamposr@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0001-8883-6790\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+  },
+  {
+    "name": "Juan Sebastián Hincapié Tarquino",
+    "category": "egresado",
+    "image": "images/team-optimized/juan_sebastian_hincapie_tarquino.webp",
+    "role_html": "<span class=\"es\">Egresado</span><span class=\"en\">Alumnus</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:jshincapiet@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0001-8758-1706\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                            <a href=\"https://www.researchgate.net/profile/Juan-Hincapie-Tarquino\" target=\"_blank\"\n                                class=\"member-link\" title=\"ResearchGate\"><i class=\"fa-brands fa-researchgate\"></i></a>\n                        "
+  },
+  {
+    "name": "Angel Daniel Martínez",
+    "category": "anteriores",
+    "image": "images/team-optimized/angel_daniel_martinez.webp",
+    "role_html": "<span class=\"es\">Miembro anterior</span><span class=\"en\">Former Member</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:andmartinezci@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0002-3435-4881\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                            <a href=\"https://www.researchgate.net/profile/Angel_Martinez67\" target=\"_blank\"\n                                class=\"member-link\" title=\"ResearchGate\"><i class=\"fa-brands fa-researchgate\"></i></a>\n                        "
+  },
+  {
+    "name": "Santiago Pinzón Cortés",
+    "category": "egresado",
+    "image": "images/Santiago Pinzon.jpeg",
+    "role_html": "<span class=\"es\">Egresado</span><span class=\"en\">Alumnus</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:sanpinzoncor@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0001-8710-6892\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                            <a href=\"https://www.researchgate.net/profile/Santiago-Pinzon-3\" target=\"_blank\"\n                                class=\"member-link\" title=\"ResearchGate\"><i class=\"fa-brands fa-researchgate\"></i></a>\n                        "
+  },
+  {
+    "name": "Valeria Quintero Ortega",
+    "category": "anteriores",
+    "image": "images/team-optimized/valeria_quintero_ortega.webp",
+    "role_html": "<span class=\"es\">Miembro anterior</span><span class=\"en\">Former Member</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:vquinteroo@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0002-5911-6783\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                            <a href=\"https://www.researchgate.net/profile/Valeria-Quintero-Ortega?ev=hdr_xprf\" target=\"_blank\"\n                                class=\"member-link\" title=\"ResearchGate\"><i class=\"fa-brands fa-researchgate\"></i></a>\n                        "
+  },
+  {
+    "name": "Juan Camilo Guevara Gómez",
+    "category": "anteriores",
+    "image": "images/team-optimized/juan_camilo_guevara_gomez.webp",
+    "role_html": "<span class=\"es\">Miembro anterior</span><span class=\"en\">Former Member</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:jcguevarag@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+  },
+  {
+    "name": "Laura Viviana Alfonso Díaz",
+    "category": "anteriores",
+    "image": "images/team-optimized/laura_viviana_alfonso_diaz.webp",
+    "role_html": "<span class=\"es\">Miembro anterior</span><span class=\"en\">Former Member</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:lalfonsod@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+  },
+  {
+    "name": "Javier Sánchez González",
+    "category": "egresado",
+    "image": "images/team-optimized/javier_sanchez_gonzalez.webp",
+    "role_html": "<span class=\"es\">Egresado</span><span class=\"en\">Alumnus</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:jsanchezg@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+  },
+  {
+    "name": "Julio Flórez Macías",
+    "category": "maestria",
+    "image": "images/team-optimized/julio_florez_macias.webp",
+    "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
+    "institution_html": "",
+    "links_html": "\n                        "
+  },
+  {
+    "name": "Erika Paola Puentes León",
+    "category": "anteriores",
+    "image": "images/team-optimized/erika_paola_puentes_leon.webp",
+    "role_html": "<span class=\"es\">Miembro anterior</span><span class=\"en\">Former Member</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:eppuentesl@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+  },
+  {
+    "name": "Germain Nicolas Morales Suárez",
+    "category": "anteriores",
+    "image": "images/team-optimized/germain_nicolas_morales_suarez.webp",
+    "role_html": "<span class=\"es\">Miembro anterior</span><span class=\"en\">Former Member</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:gemoraless@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+  },
+  {
+    "name": "Daniel Alberto Rodríguez Torres",
+    "category": "maestria",
+    "image": "images/daniel_rodriguez.jpg",
+    "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:darodriguezto@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0000-1203-2913\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+  },
+  {
+    "name": "Daniel Esteban Ramos Salamanca",
+    "category": "maestria",
+    "image": "images/Daniel R.png",
+    "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:deramoss@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+  },
+  {
+    "name": "Paula Jessica González Prieto",
+    "category": "maestria",
+    "image": "images/team-optimized/paula_jessica_gonzalez_prieto.webp",
+    "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:pjgonzalezp@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0003-5287-8114\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+  },
+  {
+    "name": "Oscar Andres Calvo Rebellon",
+    "category": "maestria",
+    "image": "images/team-optimized/oscar_andres_calvo_rebellon.webp",
+    "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:oscara.calvor@uqvirtual.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0001-5926-4164\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+  },
+  {
+    "name": "Juan Pablo Herrera Moreno",
+    "category": "maestria",
+    "image": "images/team-optimized/juan_pablo_herrera_moreno.webp",
+    "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:juapherreramor@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0000-5600-8317\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+  },
+  {
+    "name": "Johan Nicolás Molina",
+    "category": "egresado",
+    "image": "images/team-optimized/johan_nicolas_molina.webp",
+    "role_html": "<span class=\"es\">Egresado</span><span class=\"en\">Alumnus</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:jomolinac@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0001-7938-8295\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+  },
+  {
+    "name": "Carlos Alberto Martinez Sibaja",
+    "category": "maestria",
+    "image": "images/team-optimized/carlos_alberto_martinez_sibaja.webp",
+    "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:cmartinezsi@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0005-4432-8264\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+  },
+  {
+    "name": "Juan Esteban Agudelo Ortiz",
+    "category": "maestria",
+    "image": "images/team-optimized/juan_esteban_agudelo_ortiz.webp",
+    "role_html": "<span class=\"es\">Estudiante de Doctorado</span><span class=\"en\">PhD\n                                Student</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:juagudeloo@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0002-7840-9370\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                            <a href=\"https://www.researchgate.net/profile/Juan-Agudelo-Ortiz\" target=\"_blank\"\n                                class=\"member-link\" title=\"ResearchGate\"><i class=\"fa-brands fa-researchgate\"></i></a>\n                        "
+  },
+  {
+    "name": "Laura Camila Palacino Téllez",
+    "category": "maestria",
+    "image": "images/team-optimized/laura_camila_palacino_tellez.webp",
+    "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:lpalacino@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0003-8022-7001\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+  },
+  {
+    "name": "Andrés Felipe Guerrero Guio",
+    "category": "maestria",
+    "image": "images/Andres Felipe Guerrero.jpeg",
+    "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:afguerrerogu@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0002-9877-5191\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+  },
+  {
+    "name": "Juan José Beltrán Ramírez",
+    "category": "maestria",
+    "image": "images/Juan Jose Beltran.jpeg",
+    "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:jubeltranr@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+  },
+  {
+    "name": "Claudia Alejandra Cuellar Nieto",
+    "category": "maestria",
+    "image": "images/Claudia Alejandra Cuellar Nieto.jpeg",
+    "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:clcuellarn@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0001-3686-8237\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+  },
+  {
+    "name": "Santiago Fonseca Buitrago",
+    "category": "pregrado",
+    "image": "https://ui-avatars.com/api/?name=Santiago+Fonseca+Buitrago&background=00b4d8&color=fff&size=150",
+    "role_html": "<span class=\"es\">Pregrado</span><span class=\"en\">Undergraduate</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:safonsecab@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+  },
+  {
+    "name": "Juan David Niño Reyes",
+    "category": "pregrado",
+    "image": "images/team-optimized/juan_david_nino_reyes.webp",
+    "role_html": "<span class=\"es\">Pregrado</span><span class=\"en\">Undergraduate</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:jninore@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+  },
+  {
+    "name": "Milena Andrea Barrios Gallego",
+    "category": "pregrado",
+    "image": "images/team-optimized/milena_andrea_barrios_gallego.webp",
+    "role_html": "<span class=\"es\">Pregrado</span><span class=\"en\">Undergraduate</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:mibarriosg@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0004-6858-1363\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+  },
+  {
+    "name": "Danna Vanessa Ortiz Carrillo",
+    "category": "pregrado",
+    "image": "images/team-optimized/danna_vanessa_ortiz_carrillo.webp",
+    "role_html": "<span class=\"es\">Pregrado</span><span class=\"en\">Undergraduate</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:daortizca@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+  },
+  {
+    "name": "Laura Vanessa Olaya Zuleta",
+    "category": "pregrado",
+    "image": "https://ui-avatars.com/api/?name=Laura+Vanessa+Olaya+Zuleta&background=00b4d8&color=fff&size=150",
+    "role_html": "<span class=\"es\">Pregrado</span><span class=\"en\">Undergraduate</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:lolayaz@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+  },
+  {
+    "name": "Julian Andrés Riveros Pacheco",
+    "category": "pregrado",
+    "image": "https://ui-avatars.com/api/?name=Julian+Andrés+Riveros+Pacheco&background=00b4d8&color=fff&size=150",
+    "role_html": "<span class=\"es\">Pregrado</span><span class=\"en\">Undergraduate</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:jriverosp@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+  },
+  {
+    "name": "Breyner Eduardo Medina Camacho",
+    "category": "pregrado",
+    "image": "https://ui-avatars.com/api/?name=Breyner+Eduardo+Medina+Camacho&background=00b4d8&color=fff&size=150",
+    "role_html": "<span class=\"es\">Pregrado</span><span class=\"en\">Undergraduate</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:bmedinac@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+  },
+  {
+    "name": "Julián David Acosta Calderón",
+    "category": "pregrado",
+    "image": "https://ui-avatars.com/api/?name=Julián+David+Acosta+Calderón&background=00b4d8&color=fff&size=150",
+    "role_html": "<span class=\"es\">Pregrado</span><span class=\"en\">Undergraduate</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:juacostaca@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0009-4158-7032\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+  },
+  {
+    "name": "Dayan Andrea Cantor Ortiz",
+    "category": "pregrado",
+    "image": "https://ui-avatars.com/api/?name=Dayan+Andrea+Cantor+Ortiz&background=00b4d8&color=fff&size=150",
+    "role_html": "<span class=\"es\">Pregrado</span><span class=\"en\">Undergraduate</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:dcantoro@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+  },
+  {
+    "name": "Thomas González Rodríguez",
+    "category": "pregrado",
+    "image": "images/team-optimized/thomas_gonzalez_rodriguez.webp",
+    "role_html": "<span class=\"es\">Pregrado</span><span class=\"en\">Undergraduate</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:thgonzalezr@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0006-3576-9110\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+  },
+  {
+    "name": "Samuel David Matallana Díaz",
+    "category": "pregrado",
+    "image": "images/team-optimized/samuel_david_matallana_diaz.webp",
+    "role_html": "<span class=\"es\">Pregrado</span><span class=\"en\">Undergraduate</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:smatallanad@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0002-9305-8334\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+  },
+  {
+    "name": "Nicoll Valeria Moreno Alzate",
+    "category": "otras",
+    "image": "images/team-optimized/nicoll_valeria_moreno_alzate.webp",
+    "role_html": "<span class=\"es\">Otras Inst.</span><span class=\"en\">Other Inst.</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:nvmorenoa@eafit.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+  },
+  {
+    "name": "Juan Camilo Hernández Clavijo",
+    "category": "otras",
+    "image": "images/Juan Camilo Hernandez.jpeg",
+    "role_html": "<span class=\"es\">Otras Inst.</span><span class=\"en\">Other Inst.</span>",
+    "institution_html": "<p class=\"inst\"><span class=\"es\">Colegio San Carlos</span><span class=\"en\">Colegio San Carlos</span></p>",
+    "links_html": "\n                            <a href=\"mailto:juancamilohdez2005@gmail.com\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+  },
+  {
+    "name": "Samuel Felipe Noreña Téllez",
+    "category": "otras",
+    "image": "images/team-optimized/samuel_felipe_norena_tellez.webp",
+    "role_html": "<span class=\"es\">Otras Inst.</span><span class=\"en\">Other Inst.</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:sanorenat@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0000-4745-3208\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                            <a href=\"https://www.researchgate.net/profile/Samuel-Norena-Tellez\" target=\"_blank\"\n                                class=\"member-link\" title=\"ResearchGate\"><i class=\"fa-brands fa-researchgate\"></i></a>\n                        "
+  },
+  {
+    "name": "Mariana Castellanos Ramírez",
+    "category": "otras",
+    "image": "https://ui-avatars.com/api/?name=Mariana+Castellanos+Ramírez&background=00b4d8&color=fff&size=150",
+    "role_html": "<span class=\"es\">Otras Inst.</span><span class=\"en\">Other Inst.</span>",
+    "institution_html": "",
+    "links_html": "\n                        "
+  },
+  {
+    "name": "Sofía Guevara Montoya",
+    "category": "anteriores",
+    "image": "images/Sofia Guevara.png",
+    "role_html": "<span class=\"es\">Miembro anterior</span><span class=\"en\">Former Member</span>",
+    "institution_html": "<p class=\"inst\"><span class=\"es\">Estudiante Pregrado, Universidad Nacional</span><span class=\"en\">Undergraduate Student, National University of Colombia</span></p>",
+    "links_html": ""
+  },
+  {
+    "name": "Ana Gabriela Martínez",
+    "category": "anteriores",
+    "image": "images/team-optimized/ana_gabriela_martinez.webp",
+    "role_html": "<span class=\"es\">Miembro anterior</span><span class=\"en\">Former Member</span>",
+    "institution_html": "<p class=\"inst\"><span class=\"es\">Estudiante Pregrado, Universidad Pedagógica Nacional</span><span class=\"en\">Undergraduate Student, Universidad Pedagógica Nacional</span></p>",
+    "links_html": "\n                            <a href=\"mailto:agmartinezm@upn.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+  },
+  {
+    "name": "Andrés Mauricio Gómez Mongui",
+    "category": "anteriores",
+    "image": "https://ui-avatars.com/api/?name=Andres+Mauricio+Gomez+Mongui&background=5b3a29&color=fff&size=150",
+    "role_html": "<span class=\"es\">Miembro anterior</span><span class=\"en\">Former Member</span>",
+    "institution_html": "<p class=\"inst\"><span class=\"es\">Estudiante Pregrado, Universidad Nacional</span><span class=\"en\">Undergraduate Student, National University of Colombia</span></p>",
+    "links_html": ""
+  },
+  {
+    "name": "Alyona C. Ivanova Araujo",
+    "category": "anteriores",
+    "image": "images/Alyonapng",
+    "role_html": "<span class=\"es\">Miembro anterior</span><span class=\"en\">Former Member</span>",
+    "institution_html": "<p class=\"inst\"><span class=\"es\">Estudiante Pregrado, Universidad Javeriana</span><span class=\"en\">Undergraduate Student, Pontificia Universidad Javeriana</span></p>",
+    "links_html": ""
+  },
+  {
+    "name": "Miguel Valbuena Suárez",
+    "category": "anteriores",
+    "image": "images/miguel .png",
+    "role_html": "<span class=\"es\">Miembro anterior</span><span class=\"en\">Former Member</span>",
+    "institution_html": "<p class=\"inst\"><span class=\"es\">Estudiante Maestría, Universidad Nacional</span><span class=\"en\">Master's Student, National University of Colombia</span></p>",
+    "links_html": ""
+  },
+  {
+    "name": "Anyul S. Figueroa Moya",
+    "category": "anteriores",
+    "image": "https://ui-avatars.com/api/?name=Anyul+S+Figueroa+Moya&background=5b3a29&color=fff&size=150",
+    "role_html": "<span class=\"es\">Miembro anterior</span><span class=\"en\">Former Member</span>",
+    "institution_html": "<p class=\"inst\"><span class=\"es\">Estudiante Maestría, Universidad Nacional</span><span class=\"en\">Master's Student, National University of Colombia</span></p>",
+    "links_html": ""
+  },
+  {
+    "name": "Willinton Caicedo",
+    "category": "anteriores",
+    "image": "https://ui-avatars.com/api/?name=Willinton+Caicedo&background=5b3a29&color=fff&size=150",
+    "role_html": "<span class=\"es\">Miembro anterior</span><span class=\"en\">Former Member</span>",
+    "institution_html": "<p class=\"inst\"><span class=\"es\">Estudiante Maestría, Universidad Nacional</span><span class=\"en\">Master's Student, National University of Colombia</span></p>",
+    "links_html": ""
+  },
+  {
+    "name": "Johan Samir Méndez",
+    "category": "anteriores",
+    "image": "https://ui-avatars.com/api/?name=Johan+Samir+Mendez&background=5b3a29&color=fff&size=150",
+    "role_html": "<span class=\"es\">Miembro anterior</span><span class=\"en\">Former Member</span>",
+    "institution_html": "<p class=\"inst\"><span class=\"es\">Estudiante Maestría, UNAM</span><span class=\"en\">Master's Student, UNAM</span></p>",
+    "links_html": ""
+  },
+  {
+    "name": "Bárbara Elizabeth Riquelme R",
+    "category": "anteriores",
+    "image": "images/barbara_elizabeth_riquelme_r.jpeg",
+    "role_html": "<span class=\"es\">Miembro anterior</span><span class=\"en\">Former Member</span>",
+    "institution_html": "<p class=\"inst\"><span class=\"es\">Estudiante Pregrado, P. Universidad Católica de Chile</span><span class=\"en\">Undergraduate Student, Pontificia Universidad Católica de Chile</span></p>",
+    "links_html": ""
+  },
+  {
+    "name": "Katalina Londoño Espinosa",
+    "category": "anteriores",
+    "image": "https://ui-avatars.com/api/?name=Katalina+Londono+Espinosa&background=5b3a29&color=fff&size=150",
+    "role_html": "<span class=\"es\">Miembro anterior</span><span class=\"en\">Former Member</span>",
+    "institution_html": "<p class=\"inst\"><span class=\"es\">Estudiante Pregrado, Universidad ECCI</span><span class=\"en\">Undergraduate Student, Universidad ECCI</span></p>",
+    "links_html": ""
+  },
+  {
+    "name": "Yul Erick Lha",
+    "category": "anteriores",
+    "image": "https://ui-avatars.com/api/?name=Yul+Erick+Lha&background=5b3a29&color=fff&size=150",
+    "role_html": "<span class=\"es\">Miembro anterior</span><span class=\"en\">Former Member</span>",
+    "institution_html": "<p class=\"inst\"><span class=\"es\">Estudiante Maestría, Universidad Nacional</span><span class=\"en\">Master's Student, National University of Colombia</span></p>",
+    "links_html": ""
+  }
+]

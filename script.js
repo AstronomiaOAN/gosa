@@ -98,6 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    document.documentElement.classList.add('js-started');
+
     const handleScroll = () => {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
@@ -130,34 +132,60 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuBtn = document.getElementById('menu-btn');
     const nav = document.getElementById('navbar');
 
-    menuBtn.addEventListener('click', () => {
-        nav.classList.toggle('open');
+    const mobileQuery = window.matchMedia('(max-width: 768px)');
+    const setMenu = (open, returnFocus = false) => {
+        nav.classList.toggle('open', open);
+        menuBtn.setAttribute('aria-expanded', String(open));
+        nav.inert = mobileQuery.matches && !open;
+        if (returnFocus) menuBtn.focus();
+    };
+    menuBtn.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
+    nav.addEventListener('click', e => {
+        if (e.target.closest('.nav-link')) setMenu(false);
     });
-
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            if (nav.classList.contains('open')) {
-                nav.classList.remove('open');
-            }
-        });
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && nav.classList.contains('open')) setMenu(false, true);
     });
+    nav.addEventListener('focusout', e => {
+        if (mobileQuery.matches && !nav.contains(e.relatedTarget)) setMenu(false);
+    });
+    mobileQuery.addEventListener('change', () => setMenu(false));
+    setMenu(false);
 
-    // Tab Switching
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabPanes = document.querySelectorAll('.tab-pane');
-
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const target = btn.getAttribute('data-tab');
-
-            // Remove active class from all
-            tabBtns.forEach(b => b.classList.remove('active'));
-            tabPanes.forEach(p => p.classList.remove('active'));
-
-            // Add active class to target
-            btn.classList.add('active');
-            document.getElementById(target).classList.add('active');
+    // Accessible tabs: arrows, Home and End move focus and activate the panel.
+    document.querySelectorAll('.tabs-container').forEach(container => {
+        const buttons = [...container.querySelectorAll('.tab-btn')];
+        container.querySelector('.tabs-header').setAttribute('role', 'tablist');
+        const activate = selected => buttons.forEach(btn => {
+            const active = btn === selected;
+            btn.classList.toggle('active', active);
+            btn.setAttribute('aria-selected', String(active));
+            btn.tabIndex = active ? 0 : -1;
+            const panel = document.getElementById(btn.dataset.tab);
+            panel.classList.toggle('active', active);
+            panel.hidden = !active;
         });
+        buttons.forEach((btn, index) => {
+            const panel = document.getElementById(btn.dataset.tab);
+            btn.id = 'tab-' + btn.dataset.tab;
+            btn.setAttribute('role', 'tab');
+            btn.setAttribute('aria-controls', panel.id);
+            panel.setAttribute('role', 'tabpanel');
+            panel.setAttribute('aria-labelledby', btn.id);
+            btn.addEventListener('click', () => activate(btn));
+            btn.addEventListener('keydown', e => {
+                let next;
+                if (e.key === 'ArrowRight') next = (index + 1) % buttons.length;
+                if (e.key === 'ArrowLeft') next = (index + buttons.length - 1) % buttons.length;
+                if (e.key === 'Home') next = 0;
+                if (e.key === 'End') next = buttons.length - 1;
+                if (next === undefined) return;
+                e.preventDefault();
+                activate(buttons[next]);
+                buttons[next].focus();
+            });
+        });
+        activate(buttons.find(btn => btn.classList.contains('active')) || buttons[0]);
     });
 
     // Team filtering
@@ -185,16 +213,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Publications Year Filter
+    // Search and year are combined, including DOI URLs and accent-insensitive names.
     const pubYearFilter = document.getElementById('pub-year-filter');
-    if (pubYearFilter) {
-        pubYearFilter.addEventListener('change', (e) => {
-            const y = e.target.value;
-            document.querySelectorAll('#pub-list .pub-item').forEach(item => {
-                const matchesYear = (y === 'all' || item.getAttribute('data-year') === y);
-                item.classList.toggle('hidden', !matchesYear);
+    const pubSearch = document.getElementById('pub-search');
+    const normalize = text => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    if (pubYearFilter && pubSearch) {
+        const publications = [...document.querySelectorAll('#pub-list .pub-item')].map(item => ({
+            item,
+            text: normalize(item.textContent + ' ' + [...item.querySelectorAll('a[href]')].map(a => a.href).join(' '))
+        }));
+        const applyPublicationFilters = () => {
+            const terms = normalize(pubSearch.value).trim().split(/\s+/).filter(Boolean);
+            let count = 0;
+            publications.forEach(({ item, text }) => {
+                const matches = (pubYearFilter.value === 'all' || item.dataset.year === pubYearFilter.value)
+                    && terms.every(term => text.includes(term));
+                item.classList.toggle('hidden', !matches);
+                item.hidden = !matches;
+                if (matches) count++;
             });
-        });
+            const isEn = document.body.classList.contains('lang-en');
+            document.getElementById('pub-results').textContent = isEn
+                ? `${count} of ${publications.length} publications`
+                : `${count} de ${publications.length} publicaciones`;
+            document.getElementById('pub-empty').hidden = count !== 0;
+        };
+        pubYearFilter.addEventListener('change', applyPublicationFilters);
+        pubSearch.addEventListener('input', applyPublicationFilters);
+        document.addEventListener('languagechange', applyPublicationFilters);
+        applyPublicationFilters();
     }
 
     // Tesis Year and Dir Filters
@@ -214,20 +261,32 @@ document.addEventListener('DOMContentLoaded', () => {
     if (tesisYearFilter) tesisYearFilter.addEventListener('change', applyTesisFilters);
     if (tesisDirFilter) tesisDirFilter.addEventListener('change', applyTesisFilters);
 
-    // Expandable Cards Logic (Research & News)
-    const initExpandableCards = () => {
-        // News cards expansion
-        document.querySelectorAll('.news-card.expandable').forEach(card => {
-            card.addEventListener('click', (e) => {
-                // Let links inside the card work without collapsing it
-                if (e.target.closest('a')) return;
-                // Toggle expansion
-                card.classList.toggle('expanded');
-            });
-        });
-    };
+    // Native buttons keep links in expanded cards independent and keyboard accessible.
+    document.querySelectorAll('.research-card, .news-card.expandable').forEach((card, index) => {
+        const panel = card.querySelector('.research-details, .expand-content');
+        if (!panel) return;
+        panel.id ||= 'card-details-' + index;
+        const oldOpen = card.querySelector('.expand-btn-open');
+        const oldClose = card.querySelector('.expand-btn-close');
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'card-toggle';
+        button.setAttribute('aria-controls', panel.id);
+        const setExpanded = expanded => {
+            card.classList.toggle('expanded', expanded);
+            button.setAttribute('aria-expanded', String(expanded));
+            button.innerHTML = expanded
+                ? '<span class="es">Mostrar menos ↑</span><span class="en">Show less ↑</span>'
+                : '<span class="es">Ver más ↓</span><span class="en">Read more ↓</span>';
+            panel.hidden = !expanded;
+        };
+        if (oldOpen) oldOpen.replaceWith(button);
+        else panel.before(button);
+        if (oldClose) oldClose.remove();
+        button.addEventListener('click', () => setExpanded(!card.classList.contains('expanded')));
+        setExpanded(false);
+    });
 
-    initExpandableCards();
     initTeamAvatars();
 
     // Play looping videos (former GIFs) only while visible, so they load on demand.
@@ -252,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Language Initialization. In the published site (scripts/build_site.py) each
     // language is its own page, so the page language wins over the saved one.
-    const savedLang = isBuiltSite() ? document.documentElement.lang : (localStorage.getItem('gosa_lang') || 'es');
+    const savedLang = isBuiltSite() ? document.documentElement.lang : readSavedLanguage();
     setLang(savedLang);
 });
 
@@ -271,11 +330,17 @@ function langUrl(lang) {
     return target + window.location.hash;
 }
 
+function readSavedLanguage() {
+    try { return localStorage.getItem('gosa_lang') === 'en' ? 'en' : 'es'; }
+    catch { return 'es'; }
+}
+
 // Global Language Switcher
 window.setLang = function (lang) {
     document.body.classList.remove('lang-es', 'lang-en');
     document.body.classList.add('lang-' + lang);
-    localStorage.setItem('gosa_lang', lang);
+    document.documentElement.lang = lang;
+    try { localStorage.setItem('gosa_lang', lang); } catch { /* Storage may be disabled. */ }
 
     document.querySelectorAll('.lang-toggle-btn').forEach(btn => {
         btn.classList.remove('active');
@@ -287,6 +352,7 @@ window.setLang = function (lang) {
     document.querySelectorAll('[data-es-placeholder]').forEach(el => {
         el.placeholder = lang === 'es' ? el.getAttribute('data-es-placeholder') : el.getAttribute('data-en-placeholder');
     });
+    document.dispatchEvent(new Event('languagechange'));
 };
 
 // Delegated handlers (replace inline onclick so the CSP can forbid inline scripts)
@@ -298,6 +364,4 @@ document.addEventListener('click', (e) => {
         else if (lang !== document.documentElement.lang) window.location.href = langUrl(lang);
         return;
     }
-    const card = e.target.closest('.research-card');
-    if (card) card.classList.toggle('expanded');
 });

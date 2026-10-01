@@ -25,6 +25,13 @@ from datetime import date
 from html.parser import HTMLParser
 from pathlib import Path
 
+try:
+    from .content import render_page
+    from .site_assets import collect_assets
+except ImportError:
+    from content import render_page
+    from site_assets import collect_assets
+
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "_site"
 BASE_URL = "https://astronomiaoan.co/gosa/"
@@ -35,7 +42,6 @@ PAGES = ["index.html", "escuela.html", "produccion.html", "dynasun.html"] + RESE
 PRIORITY = {"index.html": "1.0", "escuela.html": "0.8", "produccion.html": "0.8", "dynasun.html": "0.7",
             **{page: "0.8" for page in RESEARCH_PAGES}}
 # Archivos y carpetas que se publican tal cual (el resto del repo no se sube).
-ASSETS = ["styles.css", "script.js", "produccion.js", "images", "Media"]
 ASSET_GLOBS = ["google*.html"]
 
 LANGS = ("es", "en")
@@ -134,7 +140,7 @@ def set_meta(html, selector, value):
 
 
 def build_page(page, lang):
-    source = (ROOT / page).read_text(encoding="utf-8")
+    source = render_page(page)
 
     parser = LangFilter(drop="en" if lang == "es" else "es")
     parser.feed(source)
@@ -177,13 +183,13 @@ def build_page(page, lang):
 
 def last_modified(page):
     try:
-        out = subprocess.run(["git", "log", "-1", "--format=%cs", "--", page], cwd=ROOT,
+        out = subprocess.run(["git", "log", "-1", "--format=%cs", "--", f"templates/pages/{page}", "templates/partials", "data"], cwd=ROOT,
                              capture_output=True, text=True, check=True).stdout.strip()
         if out:
             return out
     except (OSError, subprocess.CalledProcessError):
         pass
-    return date.fromtimestamp((ROOT / page).stat().st_mtime).isoformat()
+    return date.fromtimestamp((ROOT / "templates/pages" / page).stat().st_mtime).isoformat()
 
 
 def build_sitemap():
@@ -209,18 +215,23 @@ def main():
         (OUT / page).write_text(build_page(page, "es"), encoding="utf-8")
         (OUT / "en" / page).write_text(build_page(page, "en"), encoding="utf-8")
 
-    ignore = shutil.ignore_patterns(".DS_Store")
-    for name in ASSETS:
-        src = ROOT / name
-        if src.is_dir():
-            shutil.copytree(src, OUT / name, ignore=ignore)
-        else:
-            shutil.copy2(src, OUT / name)
+    source_pages = {page: render_page(page) for page in PAGES}
+    assets = collect_assets(ROOT, source_pages)
+    for src in assets:
+        destination = OUT / src.relative_to(ROOT)
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(src, destination)
+    print(f"Recursos publicados: {len(assets)} ({sum(p.stat().st_size for p in assets) / 1_000_000:.2f} MB)")
     for pattern in ASSET_GLOBS:
         for src in ROOT.glob(pattern):
             shutil.copy2(src, OUT / src.name)
 
     (OUT / "sitemap.xml").write_text(build_sitemap(), encoding="utf-8")
+    try:
+        from .validate_site import validate
+    except ImportError:
+        from validate_site import validate
+    validate(OUT)
     print(f"Sitio generado en {OUT.relative_to(ROOT)}/ ({len(PAGES)} páginas × {len(LANGS)} idiomas)")
 
 

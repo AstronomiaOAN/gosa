@@ -1866,3 +1866,17 @@ img { max-width: 100%; }
 .research-more { margin-top: 1.5rem; }
 .research-page a:not(.news-link) { color: var(--gold-dark); }
 .research-page a:not(.news-link):hover { color: var(--ink); }
+
+/* Keep the existing entrance animation. Reveal only if initialization never starts. */
+@keyframes reveal-without-script { to { opacity: 1; transform: none; } }
+html:not(.js-started) .scroll-appear { animation: reveal-without-script 0s 4s forwards; }
+[hidden] { display: none !important; }
+.mobile-menu-btn { border: 0; background: transparent; padding: 12px; }
+.card-toggle { display: inline-block; margin: 16px 0; padding: 10px 16px; border: 1px solid currentColor; border-radius: 8px; color: var(--primary); background: transparent; font: inherit; cursor: pointer; }
+.research-card[style*="background-image"] .card-toggle { color: #fff; }
+.news-card.expandable, .research-card { cursor: default; }
+:where(a, button, input, select, textarea):focus-visible { outline: 3px solid #a95000; outline-offset: 4px; }
+.publication-search { flex: 1 1 260px; }
+.publication-search label, .year-filter label { display: block; margin-bottom: 8px; }
+.publication-search input { width: 100%; padding: 12px; border: 1px solid var(--line); border-radius: 8px; font: inherit; background: #fff; color: var(--ink); }
+#pub-results, #pub-empty { margin: 16px 0; }

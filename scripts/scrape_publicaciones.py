@@ -26,6 +26,8 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
+from content import render_page
+
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "publicaciones_openalex.csv"
 
@@ -67,7 +69,7 @@ def norm(text):
 
 
 def load_members():
-    html = (ROOT / "index.html").read_text(encoding="utf-8")
+    html = render_page("index.html")
     pattern = (r'<div class="team-member-card glassmorphism ([^"]*)">.*?<h4>(.*?)</h4>\s*'
                r'<p class="role"><span class="es">(.*?)</span>')
     return [{"name": n, "class": c, "role": r} for c, n, r in re.findall(pattern, html, re.S)]
@@ -223,7 +225,7 @@ def csv_record(r):
 
 
 def existing_dois():
-    html = (ROOT / "produccion.html").read_text(encoding="utf-8")
+    html = render_page("produccion.html")
     # DOI en cualquier enlace (doi.org o la página de la editorial).
     hrefs = re.findall(r'href="([^"]+)"', html)
     return {m.group(1).lower().rstrip(".") for h in hrefs
@@ -231,7 +233,7 @@ def existing_dois():
 
 
 def existing_titles():
-    html = (ROOT / "produccion.html").read_text(encoding="utf-8")
+    html = render_page("produccion.html")
     titles = re.findall(r'<h4 class="pub-title">(.*?)</h4>', html, re.S)
     return {" ".join(norm(t))[:60] for t in titles}
 
