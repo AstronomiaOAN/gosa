@@ -162,6 +162,41 @@
             pointer-events: none;
         }
 
+        /* Recursos: grabaciones, repositorio y grupo */
+        .escuela-recursos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: var(--space-sm);
+            margin-top: var(--space-md);
+        }
+
+        .recurso-card {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-md);
+            text-decoration: none;
+        }
+
+        .recurso-card i {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            flex-shrink: 0;
+        }
+
+        .recurso-card h4 {
+            margin: 0;
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            color: var(--text-bright);
+        }
+
+        .recurso-card p {
+            margin: 2px 0 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
         /* Cronograma */
         .cronograma-table {
             width: 100%;
@@ -395,6 +430,62 @@
                             <span class="en">Questions? Write to <a href="mailto:svargasd@unal.edu.co"
                                     class="news-link">svargasd@unal.edu.co</a></span>
                         </p>
+                    </div>
+                </div>
+
+                <!-- ============ Material, grabaciones y grupo ============ -->
+                <h2 class="section-title">
+                    <span class="es">Material y <span class="gradient-text">grabaciones</span></span>
+                    <span class="en">Material and <span class="gradient-text">recordings</span></span>
+                </h2>
+                <div class="glassmorphism escuela-intro" style="padding: var(--space-md) var(--space-lg);">
+                    <p>
+                        <span class="es">Los códigos y materiales de cada sesión están en el repositorio de GitHub de la
+                            escuela, y las grabaciones se publican en YouTube después de cada clase. Los avisos y las dudas
+                            se atienden en el grupo de WhatsApp.</span>
+                        <span class="en">The code and materials for each session live in the school's GitHub repository,
+                            and the recordings are published on YouTube after every class. Announcements and questions are
+                            handled in the WhatsApp group.</span>
+                    </p>
+                    <div class="escuela-recursos">
+                        <a class="glassmorphism recurso-card"
+                            href="https://github.com/Group-of-Solar-Astrophysics/Escuela-Astrofisica-Solar-2026"
+                            target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i>
+                            <span>
+                                <h4><span class="es">Repositorio</span><span class="en">Repository</span></h4>
+                                <p><span class="es">Material y códigos de las sesiones</span><span class="en">Session
+                                        material and code</span></p>
+                            </span>
+                        </a>
+                        <a class="glassmorphism recurso-card"
+                            href="https://chat.whatsapp.com/KQp2NvgY1XxJYjd8L4zYbx?mode=gi_t" target="_blank"
+                            rel="noopener">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>
+                                <h4><span class="es">Grupo de WhatsApp</span><span class="en">WhatsApp group</span></h4>
+                                <p><span class="es">Avisos, dudas y contacto</span><span class="en">Announcements,
+                                        questions and contact</span></p>
+                            </span>
+                        </a>
+                        <a class="glassmorphism recurso-card" href="https://youtu.be/L4wd_H3OvX0" target="_blank"
+                            rel="noopener">
+                            <i class="fa-brands fa-youtube"></i>
+                            <span>
+                                <h4><span class="es">Clase 1, parte 1</span><span class="en">Class 1, part 1</span></h4>
+                                <p><span class="es">Introducción y herramientas para el análisis de datos</span><span
+                                        class="en">Introduction and tools for data analysis</span></p>
+                            </span>
+                        </a>
+                        <a class="glassmorphism recurso-card" href="https://youtu.be/B6WXTEFeoJo" target="_blank"
+                            rel="noopener">
+                            <i class="fa-brands fa-youtube"></i>
+                            <span>
+                                <h4><span class="es">Clase 1, parte 2</span><span class="en">Class 1, part 2</span></h4>
+                                <p><span class="es">Introducción y herramientas para el análisis de datos</span><span
+                                        class="en">Introduction and tools for data analysis</span></p>
+                            </span>
+                        </a>
                     </div>
                 </div>
 
