@@ -1,0 +1,73 @@
+{
+  "courses": [
+    {
+      "id": "heliodata-2026",
+      "kicker_es": "Escuela · 2026",
+      "kicker_en": "School · 2026",
+      "title_es": "HelioData Academy 2026",
+      "title_en": "HelioData Academy 2026",
+      "summary_es": "Escuela de astrofísica solar: del manejo de datos solares a la magnetohidrodinámica, las partículas y el Machine Learning.",
+      "summary_en": "School of solar astrophysics: from handling solar data to magnetohydrodynamics, particles and Machine Learning.",
+      "unit_es": "Clase",
+      "unit_en": "Class",
+      "links": [
+        {"href": "escuela.html", "icon": "fa-solid fa-calendar-days", "label_es": "Programa", "label_en": "Programme"},
+        {"href": "https://github.com/Group-of-Solar-Astrophysics/Escuela-Astrofisica-Solar-2026", "icon": "fa-brands fa-github", "label_es": "Código", "label_en": "Code"}
+      ],
+      "lessons": [
+        {"video": "L4wd_H3OvX0", "seconds": 7082, "title_es": "Clase 1, parte 1", "title_en": "Class 1, part 1", "detail_es": "Introducción y herramientas para el análisis de datos", "detail_en": "Introduction and tools for data analysis", "speakers": "Daniel Alberto Rodríguez Torres"},
+        {"video": "B6WXTEFeoJo", "seconds": 4696, "title_es": "Clase 1, parte 2", "title_en": "Class 1, part 2", "detail_es": "Introducción y herramientas para el análisis de datos", "detail_en": "Introduction and tools for data analysis", "speakers": "Daniel Alberto Rodríguez Torres"},
+        {"video": "8QkbbOaHuIc", "seconds": 6297, "title_es": "Clase 2", "title_en": "Class 2", "detail_es": "Observaciones solares, flujos y movimientos", "detail_en": "Solar observations, flows and motions", "speakers": "Juan Pablo Herrera Moreno · Luis Felipe Losada González"},
+        {"video": "JabXCibdofU", "seconds": 6402, "title_es": "Clase 3", "title_en": "Class 3", "detail_es": "Magnetohidrodinámica y oscilaciones en la atmósfera solar", "detail_en": "Magnetohydrodynamics and oscillations in the solar atmosphere", "speakers": "Óscar Andrés Calvo Rebellón · Carlos Alberto Martínez Sibaja"},
+        {"video": "PnAFRGhhc10", "seconds": 6096, "title_es": "Clase 4", "title_en": "Class 4", "detail_es": "Partículas, rayos X y viento solar", "detail_en": "Particles, X-rays and the solar wind", "speakers": "Milena Andrea Barrios Gallego · Carlos Alberto Martínez Sibaja"}
+      ]
+    },
+    {
+      "id": "escuela-2022",
+      "kicker_es": "Escuela · 2022",
+      "kicker_en": "School · 2022",
+      "title_es": "Escuela de Magnetismo y Actividad Solar y Estelar",
+      "title_en": "School of Solar and Stellar Magnetism and Activity",
+      "summary_es": "Once sesiones sobre el magnetismo y la actividad del Sol y de otras estrellas, ofrecidas por el GoSA en 2022.",
+      "summary_en": "Eleven sessions on the magnetism and activity of the Sun and other stars, given by GoSA in 2022.",
+      "unit_es": "Sesión",
+      "unit_en": "Session",
+      "links": [
+        {"href": "https://www.youtube.com/playlist?list=PLWVo5HIkfQraf7jkSTyhJoOU9-aNb_eOc", "icon": "fa-brands fa-youtube", "label_es": "Lista en YouTube", "label_en": "YouTube playlist"}
+      ],
+      "lessons": [
+        {"video": "UXg_2DKVvlI", "seconds": 6938, "title_es": "Sesión 1", "title_en": "Session 1", "detail_es": "Sesión inaugural", "detail_en": "Opening session"},
+        {"video": "SObiK3kcywM", "seconds": 2579, "title_es": "Sesión 2", "title_en": "Session 2"},
+        {"video": "RBsUtW6Rcck", "seconds": 7235, "title_es": "Sesión 3", "title_en": "Session 3"},
+        {"video": "8Ejw--7nsOc", "seconds": 4671, "title_es": "Sesión 4", "title_en": "Session 4"},
+        {"video": "W0OdVIGCE_0", "seconds": 5382, "title_es": "Sesión 5", "title_en": "Session 5"},
+        {"video": "FAco0xjxlrg", "seconds": 4676, "title_es": "Sesión 6", "title_en": "Session 6"},
+        {"video": "eLRksY1kzJM", "seconds": 6180, "title_es": "Sesión 7", "title_en": "Session 7"},
+        {"video": "iTVYzcm1fc4", "seconds": 5561, "title_es": "Sesión 8", "title_en": "Session 8"},
+        {"video": "VplK6WncKww", "seconds": 6918, "title_es": "Sesión 9", "title_en": "Session 9"},
+        {"video": "8LgFLk9292I", "seconds": 5676, "title_es": "Sesión 10", "title_en": "Session 10"},
+        {"video": "TgzpArKkD_s", "seconds": 4867, "title_es": "Sesión 11", "title_en": "Session 11"}
+      ]
+    },
+    {
+      "id": "tesis",
+      "kicker_es": "Investigación",
+      "kicker_en": "Research",
+      "title_es": "Sustentaciones de tesis",
+      "title_en": "Thesis defences",
+      "summary_es": "Defensas de tesis de integrantes del GoSA. La lista completa del Observatorio incluye sustentaciones de otras áreas de la astronomía.",
+      "summary_en": "Thesis defences by GoSA members. The Observatory's full playlist also includes defences from other areas of astronomy.",
+      "unit_es": "Sustentación",
+      "unit_en": "Defence",
+      "links": [
+        {"href": "produccion.html", "icon": "fa-solid fa-book", "label_es": "Producción", "label_en": "Publications"},
+        {"href": "https://www.youtube.com/playlist?list=PLWVo5HIkfQrZvWZX-kKd40J3MeIRlzA8N", "icon": "fa-brands fa-youtube", "label_es": "Todas las sustentaciones", "label_en": "All defences"}
+      ],
+      "lessons": [
+        {"video": "8PkIjk6NCUU", "seconds": 4528, "title_es": "Paula Jessica González Prieto", "title_en": "Paula Jessica González Prieto", "detail_es": "Maestría · Precursor Mechanisms of Solar Flares: Validation of the Flare Anticipation Index (FAI) through Soft X-ray Observations", "detail_en": "Master's · Precursor Mechanisms of Solar Flares: Validation of the Flare Anticipation Index (FAI) through Soft X-ray Observations"},
+        {"video": "OjVxaz7RM3Y", "seconds": 3877, "title_es": "Juan Esteban Agudelo Ortiz", "title_en": "Juan Esteban Agudelo Ortiz", "detail_es": "Sustentación de tesis de maestría", "detail_en": "Master's thesis defence"},
+        {"video": "yfGLG9WZqAs", "seconds": 4130, "title_es": "Javier Sánchez González", "title_en": "Javier Sánchez González", "detail_es": "Sustentación de tesis de maestría", "detail_en": "Master's thesis defence"}
+      ]
+    }
+  ]
+}

@@ -13,6 +13,7 @@ El proyecto está dividido en varios archivos principales que separan la estruct
 - **`script.js`**: Archivo principal de lógica del cliente. Maneja la interactividad de la página, animaciones al hacer scroll, filtros y la internacionalización (cambio de idioma).
 - **`Media/` e `images/`**: Carpetas que contienen los recursos visuales, imágenes de fondo, fotografías de los miembros del equipo y logotipos.
 - **`data/`**: Archivos de datos fuente de las publicaciones (`publicaciones_organizadas.csv` y `publicaicones.txt`).
+- **`data/material.json`** y **`material.js`**: Aula virtual de `material.html` (escuelas y sustentaciones en video). Para agregar una clase, añade una entrada a `lessons` del curso con el ID del video de YouTube, su duración en segundos y los títulos en español e inglés.
 - **`docs/`**: Documentos de referencia del grupo (p. ej. `Tesis de Maestría.txt`).
 - **`scripts/`**: Scripts auxiliares de mantenimiento (p. ej. `translate_html.py`, usado puntualmente para inyectar el selector de idioma en el HTML).
 - **`archive/`**: Archivos sueltos sin uso actual en el sitio, conservados por si acaso (fotos sin referenciar, un duplicado, un archivo `.enc`).

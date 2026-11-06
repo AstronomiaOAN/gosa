@@ -851,9 +851,21 @@ nav ul {
     transition: var(--transition);
 }
 
+@media (min-width: 1151px) {
+    .nav-link {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 1320px) and (min-width: 1151px) {
+    nav ul {
+        gap: 20px;
+    }
+}
+
 @media (max-width: 1150px) and (min-width: 769px) {
     nav ul {
-        gap: var(--space-sm);
+        gap: 10px;
     }
 
     .nav-link {
@@ -1880,3 +1892,38 @@ html:not(.js-started) .scroll-appear { animation: reveal-without-script 0s 4s fo
 .publication-search label, .year-filter label { display: block; margin-bottom: 8px; }
 .publication-search input { width: 100%; padding: 12px; border: 1px solid var(--line); border-radius: 8px; font: inherit; background: #fff; color: var(--ink); }
 #pub-results, #pub-empty { margin: 16px 0; }
+
+/* Tarjetas de recursos (escuela y material) */
+.escuela-recursos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+}
+
+.recurso-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    text-decoration: none;
+}
+
+.recurso-card i {
+    font-size: 1.5rem;
+    color: var(--secondary);
+    flex-shrink: 0;
+}
+
+.recurso-card h4 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: var(--text-bright);
+}
+
+.recurso-card p {
+    margin: 2px 0 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
