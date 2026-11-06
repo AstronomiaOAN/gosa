@@ -38,8 +38,8 @@ BASE_URL = "https://astronomiaoan.co/gosa/"
 
 RESEARCH_PAGES = ["optica-alta-resolucion.html", "radio-rayos-x.html", "clima-espacial.html",
                   "simulaciones-machine-learning.html"]
-PAGES = ["index.html", "escuela.html", "produccion.html", "dynasun.html"] + RESEARCH_PAGES
-PRIORITY = {"index.html": "1.0", "escuela.html": "0.8", "produccion.html": "0.8", "dynasun.html": "0.7",
+PAGES = ["index.html", "escuela.html", "material.html", "produccion.html", "dynasun.html"] + RESEARCH_PAGES
+PRIORITY = {"index.html": "1.0", "escuela.html": "0.8", "material.html": "0.7", "produccion.html": "0.8", "dynasun.html": "0.7",
             **{page: "0.8" for page in RESEARCH_PAGES}}
 # Archivos y carpetas que se publican tal cual (el resto del repo no se sube).
 ASSET_GLOBS = ["google*.html"]
