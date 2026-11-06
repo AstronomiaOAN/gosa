@@ -11,16 +11,74 @@
       "unit_es": "Clase",
       "unit_en": "Class",
       "links": [
-        {"href": "escuela.html", "icon": "fa-solid fa-calendar-days", "label_es": "Programa", "label_en": "Programme"},
-        {"href": "https://github.com/Group-of-Solar-Astrophysics/Escuela-Astrofisica-Solar-2026", "icon": "fa-brands fa-github", "label_es": "Código", "label_en": "Code"}
+        {
+          "href": "escuela.html",
+          "icon": "fa-solid fa-calendar-days",
+          "label_es": "Programa",
+          "label_en": "Programme"
+        },
+        {
+          "href": "https://github.com/Group-of-Solar-Astrophysics/Escuela-Astrofisica-Solar-2026",
+          "icon": "fa-brands fa-github",
+          "label_es": "Código",
+          "label_en": "Code"
+        }
       ],
       "lessons": [
-        {"video": "L4wd_H3OvX0", "seconds": 7082, "title_es": "Clase 1, parte 1", "title_en": "Class 1, part 1", "detail_es": "Introducción y herramientas para el análisis de datos", "detail_en": "Introduction and tools for data analysis", "speakers": "Daniel Alberto Rodríguez Torres"},
-        {"video": "B6WXTEFeoJo", "seconds": 4696, "title_es": "Clase 1, parte 2", "title_en": "Class 1, part 2", "detail_es": "Introducción y herramientas para el análisis de datos", "detail_en": "Introduction and tools for data analysis", "speakers": "Daniel Alberto Rodríguez Torres"},
-        {"video": "8QkbbOaHuIc", "seconds": 6297, "title_es": "Clase 2", "title_en": "Class 2", "detail_es": "Observaciones solares, flujos y movimientos", "detail_en": "Solar observations, flows and motions", "speakers": "Juan Pablo Herrera Moreno · Luis Felipe Losada González"},
-        {"video": "JabXCibdofU", "seconds": 6402, "title_es": "Clase 3", "title_en": "Class 3", "detail_es": "Magnetohidrodinámica y oscilaciones en la atmósfera solar", "detail_en": "Magnetohydrodynamics and oscillations in the solar atmosphere", "speakers": "Óscar Andrés Calvo Rebellón · Carlos Alberto Martínez Sibaja"},
-        {"video": "NclRrbsRp5Q", "seconds": 5868, "title_es": "Clase 4", "title_en": "Class 4", "detail_es": "Partículas, rayos X y viento solar", "detail_en": "Particles, X-rays and the solar wind", "speakers": "Milena Andrea Barrios Gallego · Carlos Alberto Martínez Sibaja"},
-        {"video": "PnAFRGhhc10", "seconds": 6096, "title_es": "Clase 5", "title_en": "Class 5", "detail_es": "Machine Learning aplicado al estudio del Sol", "detail_en": "Machine Learning applied to the study of the Sun", "speakers": "Juan Esteban Agudelo Ortiz"}
+        {
+          "video": "L4wd_H3OvX0",
+          "seconds": 7082,
+          "title_es": "Clase 1, parte 1",
+          "title_en": "Class 1, part 1",
+          "detail_es": "Introducción y herramientas para el análisis de datos",
+          "detail_en": "Introduction and tools for data analysis",
+          "speakers": "Daniel Alberto Rodríguez Torres"
+        },
+        {
+          "video": "B6WXTEFeoJo",
+          "seconds": 4696,
+          "title_es": "Clase 1, parte 2",
+          "title_en": "Class 1, part 2",
+          "detail_es": "Introducción y herramientas para el análisis de datos",
+          "detail_en": "Introduction and tools for data analysis",
+          "speakers": "Daniel Alberto Rodríguez Torres"
+        },
+        {
+          "video": "8QkbbOaHuIc",
+          "seconds": 6297,
+          "title_es": "Clase 2",
+          "title_en": "Class 2",
+          "detail_es": "Observaciones solares, flujos y movimientos",
+          "detail_en": "Solar observations, flows and motions",
+          "speakers": "Juan Pablo Herrera Moreno · Luis Felipe Losada González"
+        },
+        {
+          "video": "JabXCibdofU",
+          "seconds": 6402,
+          "title_es": "Clase 3",
+          "title_en": "Class 3",
+          "detail_es": "Magnetohidrodinámica y oscilaciones en la atmósfera solar",
+          "detail_en": "Magnetohydrodynamics and oscillations in the solar atmosphere",
+          "speakers": "Óscar Andrés Calvo Rebellón · Carlos Alberto Martínez Sibaja"
+        },
+        {
+          "video": "NclRrbsRp5Q",
+          "seconds": 5868,
+          "title_es": "Clase 4",
+          "title_en": "Class 4",
+          "detail_es": "Partículas, rayos X y viento solar",
+          "detail_en": "Particles, X-rays and the solar wind",
+          "speakers": "Milena Andrea Barrios Gallego · Carlos Alberto Martínez Sibaja"
+        },
+        {
+          "video": "PnAFRGhhc10",
+          "seconds": 6096,
+          "title_es": "Clase 5",
+          "title_en": "Class 5",
+          "detail_es": "Machine Learning aplicado al estudio del Sol",
+          "detail_en": "Machine Learning applied to the study of the Sun",
+          "speakers": "Juan Esteban Agudelo Ortiz"
+        }
       ]
     },
     {
@@ -29,26 +87,209 @@
       "kicker_en": "School · 2022",
       "title_es": "Escuela de Magnetismo y Actividad Solar y Estelar",
       "title_en": "School of Solar and Stellar Magnetism and Activity",
-      "summary_es": "Once sesiones sobre el magnetismo y la actividad del Sol y de otras estrellas, ofrecidas por el GoSA en 2022.",
-      "summary_en": "Eleven sessions on the magnetism and activity of the Sun and other stars, given by GoSA in 2022.",
+      "summary_es": "Escuela con la que el GoSA celebró sus 10 años: once sesiones sobre el magnetismo y la actividad del Sol y de otras estrellas, del 24 de octubre al 11 de noviembre de 2022.",
+      "summary_en": "The school with which GoSA celebrated its 10th anniversary: eleven sessions on the magnetism and activity of the Sun and other stars, from October 24 to November 11, 2022.",
       "unit_es": "Sesión",
       "unit_en": "Session",
       "links": [
-        {"href": "https://www.youtube.com/playlist?list=PLWVo5HIkfQraf7jkSTyhJoOU9-aNb_eOc", "icon": "fa-brands fa-youtube", "label_es": "Lista en YouTube", "label_en": "YouTube playlist"}
+        {
+          "href": "https://www.youtube.com/playlist?list=PLWVo5HIkfQraf7jkSTyhJoOU9-aNb_eOc",
+          "icon": "fa-brands fa-youtube",
+          "label_es": "Lista en YouTube",
+          "label_en": "YouTube playlist"
+        }
       ],
       "lessons": [
-        {"video": "UXg_2DKVvlI", "seconds": 6938, "title_es": "Sesión 1", "title_en": "Session 1", "detail_es": "Sesión inaugural", "detail_en": "Opening session"},
-        {"video": "SObiK3kcywM", "seconds": 2579, "title_es": "Sesión 2", "title_en": "Session 2"},
-        {"video": "RBsUtW6Rcck", "seconds": 7235, "title_es": "Sesión 3", "title_en": "Session 3"},
-        {"video": "8Ejw--7nsOc", "seconds": 4671, "title_es": "Sesión 4", "title_en": "Session 4"},
-        {"video": "W0OdVIGCE_0", "seconds": 5382, "title_es": "Sesión 5", "title_en": "Session 5"},
-        {"video": "FAco0xjxlrg", "seconds": 4676, "title_es": "Sesión 6", "title_en": "Session 6"},
-        {"video": "eLRksY1kzJM", "seconds": 6180, "title_es": "Sesión 7", "title_en": "Session 7"},
-        {"video": "iTVYzcm1fc4", "seconds": 5561, "title_es": "Sesión 8", "title_en": "Session 8"},
-        {"video": "VplK6WncKww", "seconds": 6918, "title_es": "Sesión 9", "title_en": "Session 9"},
-        {"video": "8LgFLk9292I", "seconds": 5676, "title_es": "Sesión 10", "title_en": "Session 10"},
-        {"video": "TgzpArKkD_s", "seconds": 4867, "title_es": "Sesión 11", "title_en": "Session 11"}
-      ]
+        {
+          "video": "UXg_2DKVvlI",
+          "seconds": 6938,
+          "title_es": "Sesión 1",
+          "title_en": "Session 1",
+          "detail_es": "Introducción general a la atmósfera solar · Práctica: datos solares y herramientas básicas",
+          "detail_en": "General introduction to the solar atmosphere · Practice: solar data and basic tools"
+        },
+        {
+          "video": "SObiK3kcywM",
+          "seconds": 2579,
+          "title_es": "Sesión 2",
+          "title_en": "Session 2",
+          "detail_es": "Transferencia radiativa I: líneas espectrales y RTE · Práctica: generar líneas espectrales",
+          "detail_en": "Radiative transfer I: spectral lines and the RTE · Practice: generating spectral lines"
+        },
+        {
+          "video": "RBsUtW6Rcck",
+          "seconds": 7235,
+          "title_es": "Sesión 3",
+          "title_en": "Session 3",
+          "detail_es": "Transferencia radiativa II: perfiles de Stokes y efecto Zeeman",
+          "detail_en": "Radiative transfer II: Stokes profiles and the Zeeman effect"
+        },
+        {
+          "video": "8Ejw--7nsOc",
+          "seconds": 4671,
+          "title_es": "Sesión 4",
+          "title_en": "Session 4",
+          "detail_es": "Magnetismo solar · Práctica: campo magnético de una mancha solar",
+          "detail_en": "Solar magnetism · Practice: the magnetic field of a sunspot"
+        },
+        {
+          "video": "W0OdVIGCE_0",
+          "seconds": 5382,
+          "title_es": "Sesión 5",
+          "title_en": "Session 5",
+          "detail_es": "Actividad y magnetismo estelar",
+          "detail_en": "Stellar activity and magnetism"
+        },
+        {
+          "video": "FAco0xjxlrg",
+          "seconds": 4676,
+          "title_es": "Sesión 6",
+          "title_en": "Session 6",
+          "detail_es": "Actividad y magnetismo estelar",
+          "detail_en": "Stellar activity and magnetism"
+        },
+        {
+          "video": "eLRksY1kzJM",
+          "seconds": 6180,
+          "title_es": "Sesión 7",
+          "title_en": "Session 7",
+          "detail_es": "Actividad y magnetismo estelar",
+          "detail_en": "Stellar activity and magnetism"
+        },
+        {
+          "video": "iTVYzcm1fc4",
+          "seconds": 5561,
+          "title_es": "Sesión 8",
+          "title_en": "Session 8",
+          "detail_es": "Actividad y magnetismo estelar",
+          "detail_en": "Stellar activity and magnetism"
+        },
+        {
+          "video": "VplK6WncKww",
+          "seconds": 6918,
+          "title_es": "Sesión 9",
+          "title_en": "Session 9",
+          "detail_es": "Actividad y magnetismo estelar",
+          "detail_en": "Stellar activity and magnetism"
+        },
+        {
+          "video": "8LgFLk9292I",
+          "seconds": 5676,
+          "title_es": "Sesión 10",
+          "title_en": "Session 10",
+          "detail_es": "Actividad y magnetismo estelar",
+          "detail_en": "Stellar activity and magnetism"
+        },
+        {
+          "video": "TgzpArKkD_s",
+          "seconds": 4867,
+          "title_es": "Sesión 11",
+          "title_en": "Session 11",
+          "detail_es": "Actividad y magnetismo estelar",
+          "detail_en": "Stellar activity and magnetism"
+        }
+      ],
+      "about": {
+        "facts": [
+          {
+            "icon": "fa-solid fa-calendar-days",
+            "label_es": "Fechas",
+            "label_en": "Dates",
+            "value_es": "24 de octubre a 11 de noviembre de 2022",
+            "value_en": "October 24 to November 11, 2022"
+          },
+          {
+            "icon": "fa-regular fa-clock",
+            "label_es": "Horario",
+            "label_en": "Schedule",
+            "value_es": "Lunes a jueves, 4:00 a 6:00 p. m.",
+            "value_en": "Monday to Thursday, 4:00 to 6:00 p.m."
+          },
+          {
+            "icon": "fa-solid fa-location-dot",
+            "label_es": "Lugar",
+            "label_en": "Venue",
+            "value_es": "Observatorio Astronómico Nacional (UNAL, Bogotá) y transmisión por YouTube",
+            "value_en": "National Astronomical Observatory (UNAL, Bogotá) and YouTube live stream"
+          }
+        ],
+        "people": [
+          {
+            "role_es": "Coordinadores",
+            "role_en": "Coordinators",
+            "names": [
+              "Prof. Benjamín Calvo Mozo — Observatorio Astronómico Nacional",
+              "Prof. Santiago Vargas Domínguez — Observatorio Astronómico Nacional"
+            ]
+          },
+          {
+            "role_es": "Ponentes invitados",
+            "role_en": "Guest speakers",
+            "names": [
+              "Dr. Juan Sebastián Castellanos Durán — Max Planck Institute for Solar System Research, Alemania",
+              "Dr. Julián David Alvarado Gómez — Leibniz Institute for Astrophysics Potsdam (AIP), Alemania",
+              "Dra. Eliana Maritza Amazo Gómez — Leibniz Institute for Astrophysics Potsdam (AIP), Alemania"
+            ]
+          }
+        ],
+        "program": [
+          {
+            "title_es": "Semana 1 · El Sol",
+            "title_en": "Week 1 · The Sun",
+            "by": "",
+            "items_es": [
+              "Sesión 1. Introducción general a la atmósfera solar · Práctica: introducción a datos solares y herramientas básicas",
+              "Sesión 2. Transferencia radiativa I: líneas espectrales y ecuación de transferencia radiativa (RTE) · Práctica: generar líneas espectrales desde cero",
+              "Sesión 3. Transferencia radiativa II: perfiles de Stokes y efecto Zeeman · Práctica: interpretar los parámetros de Stokes para obtener información sobre el Sol",
+              "Sesión 4. Magnetismo solar · Práctica: medir el campo magnético de una mancha solar con observaciones espaciales"
+            ],
+            "items_en": [
+              "Session 1. General introduction to the solar atmosphere · Practice: introduction to solar data and basic tools",
+              "Session 2. Radiative transfer I: spectral lines and the radiative transfer equation (RTE) · Practice: generating spectral lines from scratch",
+              "Session 3. Radiative transfer II: Stokes profiles and the Zeeman effect · Practice: interpreting the Stokes parameters to learn about the Sun",
+              "Session 4. Solar magnetism · Practice: measuring the magnetic field of a sunspot with space-based observations"
+            ]
+          },
+          {
+            "title_es": "Semanas 2 y 3 · Estrellas, parte 1",
+            "title_en": "Weeks 2 and 3 · Stars, part 1",
+            "by": "Dra. Eliana Maritza Amazo Gómez",
+            "items_es": [
+              "Tipos espectrales: ¿dónde está el Sol en el diagrama HR?",
+              "Contexto: diferencias observacionales entre el Sol y otras estrellas",
+              "Firmas fotométricas del Sol frente a otras estrellas: manchas, fáculas, fulguraciones y planetas",
+              "Detección con GPS de características magnéticas asociadas al brillo de la estrella",
+              "TSI frente a Kepler y TESS"
+            ],
+            "items_en": [
+              "Spectral types: where is the Sun in the HR diagram?",
+              "Context: observational differences between the Sun and other stars",
+              "Photometric signatures of the Sun versus other stars: spots, faculae, flares and planets",
+              "GPS detection of magnetic features linked to stellar brightness",
+              "TSI versus Kepler and TESS"
+            ]
+          },
+          {
+            "title_es": "Semanas 2 y 3 · Estrellas, parte 2",
+            "title_en": "Weeks 2 and 3 · Stars, part 2",
+            "by": "Dr. Julián David Alvarado Gómez",
+            "items_es": [
+              "Indicadores del magnetismo: actividad estelar",
+              "Técnicas de medición del campo magnético estelar",
+              "Magnetismo en el diagrama HR",
+              "Clima espacial estelar, exoplanetas y habitabilidad",
+              "Taller: reconstrucción del campo magnético de una estrella fría con Zeeman-Doppler Imaging (ZDI)"
+            ],
+            "items_en": [
+              "Magnetism proxies: stellar activity",
+              "Techniques for measuring stellar magnetic fields",
+              "Magnetism across the HR diagram",
+              "Stellar space weather, exoplanets and habitability",
+              "Workshop: reconstructing the magnetic field of a cool star with Zeeman-Doppler Imaging (ZDI)"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "tesis",
@@ -61,13 +302,44 @@
       "unit_es": "Sustentación",
       "unit_en": "Defence",
       "links": [
-        {"href": "produccion.html", "icon": "fa-solid fa-book", "label_es": "Producción", "label_en": "Publications"},
-        {"href": "https://www.youtube.com/playlist?list=PLWVo5HIkfQrZvWZX-kKd40J3MeIRlzA8N", "icon": "fa-brands fa-youtube", "label_es": "Todas las sustentaciones", "label_en": "All defences"}
+        {
+          "href": "produccion.html",
+          "icon": "fa-solid fa-book",
+          "label_es": "Producción",
+          "label_en": "Publications"
+        },
+        {
+          "href": "https://www.youtube.com/playlist?list=PLWVo5HIkfQrZvWZX-kKd40J3MeIRlzA8N",
+          "icon": "fa-brands fa-youtube",
+          "label_es": "Todas las sustentaciones",
+          "label_en": "All defences"
+        }
       ],
       "lessons": [
-        {"video": "8PkIjk6NCUU", "seconds": 4528, "title_es": "Paula Jessica González Prieto", "title_en": "Paula Jessica González Prieto", "detail_es": "Maestría · Precursor Mechanisms of Solar Flares: Validation of the Flare Anticipation Index (FAI) through Soft X-ray Observations", "detail_en": "Master's · Precursor Mechanisms of Solar Flares: Validation of the Flare Anticipation Index (FAI) through Soft X-ray Observations"},
-        {"video": "OjVxaz7RM3Y", "seconds": 3877, "title_es": "Juan Esteban Agudelo Ortiz", "title_en": "Juan Esteban Agudelo Ortiz", "detail_es": "Sustentación de tesis de maestría", "detail_en": "Master's thesis defence"},
-        {"video": "yfGLG9WZqAs", "seconds": 4130, "title_es": "Javier Sánchez González", "title_en": "Javier Sánchez González", "detail_es": "Sustentación de tesis de maestría", "detail_en": "Master's thesis defence"}
+        {
+          "video": "8PkIjk6NCUU",
+          "seconds": 4528,
+          "title_es": "Paula Jessica González Prieto",
+          "title_en": "Paula Jessica González Prieto",
+          "detail_es": "Maestría · Precursor Mechanisms of Solar Flares: Validation of the Flare Anticipation Index (FAI) through Soft X-ray Observations",
+          "detail_en": "Master's · Precursor Mechanisms of Solar Flares: Validation of the Flare Anticipation Index (FAI) through Soft X-ray Observations"
+        },
+        {
+          "video": "OjVxaz7RM3Y",
+          "seconds": 3877,
+          "title_es": "Juan Esteban Agudelo Ortiz",
+          "title_en": "Juan Esteban Agudelo Ortiz",
+          "detail_es": "Sustentación de tesis de maestría",
+          "detail_en": "Master's thesis defence"
+        },
+        {
+          "video": "yfGLG9WZqAs",
+          "seconds": 4130,
+          "title_es": "Javier Sánchez González",
+          "title_en": "Javier Sánchez González",
+          "detail_es": "Sustentación de tesis de maestría",
+          "detail_en": "Master's thesis defence"
+        }
       ]
     }
   ]

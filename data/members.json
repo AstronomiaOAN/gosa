@@ -168,6 +168,14 @@
     "links_html": "\n                            <a href=\"mailto:jomolinac@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0001-7938-8295\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
   },
   {
+    "name": "Eliana Maritza Amazo Gómez",
+    "category": "egresado",
+    "image": "https://ui-avatars.com/api/?name=Eliana+Maritza+Amazo+G%C3%B3mez&background=00b4d8&color=fff&size=150",
+    "role_html": "<span class=\"es\">Egresada</span><span class=\"en\">Alumna</span>",
+    "institution_html": "<p class=\"inst\"><span class=\"es\">Doctorado, Universität Göttingen y Max Planck Institute for Solar System Research</span><span class=\"en\">PhD, University of Göttingen and Max Planck Institute for Solar System Research</span></p>",
+    "links_html": "\n                            <a href=\"mailto:emamazog@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0003-1283-0848\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+  },
+  {
     "name": "Carlos Alberto Martinez Sibaja",
     "category": "maestria",
     "image": "images/team-optimized/carlos_alberto_martinez_sibaja.webp",
@@ -214,6 +222,14 @@
     "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
     "institution_html": "",
     "links_html": "\n                            <a href=\"mailto:clcuellarn@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0001-3686-8237\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+  },
+  {
+    "name": "Juan Rafael Jiménez Sanabria",
+    "category": "maestria",
+    "image": "https://ui-avatars.com/api/?name=Juan+Rafael+Jim%C3%A9nez+Sanabria&background=00b4d8&color=fff&size=150",
+    "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:jjimenezsan@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0003-1467-011X\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
   },
   {
     "name": "Santiago Fonseca Buitrago",
@@ -304,6 +320,14 @@
     "links_html": "\n                            <a href=\"mailto:smatallanad@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0002-9305-8334\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
   },
   {
+    "name": "Samuel Felipe Unriza León",
+    "category": "pregrado",
+    "image": "https://ui-avatars.com/api/?name=Samuel+Felipe+Unriza+Le%C3%B3n&background=00b4d8&color=fff&size=150",
+    "role_html": "<span class=\"es\">Pregrado</span><span class=\"en\">Undergraduate</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:sunrizal@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+  },
+  {
     "name": "Nicoll Valeria Moreno Alzate",
     "category": "otras",
     "image": "images/team-optimized/nicoll_valeria_moreno_alzate.webp",
@@ -334,6 +358,14 @@
     "role_html": "<span class=\"es\">Otras Inst.</span><span class=\"en\">Other Inst.</span>",
     "institution_html": "",
     "links_html": "\n                        "
+  },
+  {
+    "name": "Santiago Alejandro Pinilla Capador",
+    "category": "otras",
+    "image": "https://ui-avatars.com/api/?name=Santiago+Alejandro+Pinilla+Capador&background=00b4d8&color=fff&size=150",
+    "role_html": "<span class=\"es\">Otras Inst.</span><span class=\"en\">Other Inst.</span>",
+    "institution_html": "<p class=\"inst\"><span class=\"es\">Pregrado, Universidad Distrital Francisco José de Caldas</span><span class=\"en\">Undergraduate, Universidad Distrital Francisco José de Caldas</span></p>",
+    "links_html": "\n                            <a href=\"mailto:sapinillac@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
   },
   {
     "name": "Sofía Guevara Montoya",

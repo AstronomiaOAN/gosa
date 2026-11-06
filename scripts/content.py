@@ -47,6 +47,38 @@ def thumbnail(video):
     return f'https://i.ytimg.com/vi/{escape(video)}/hqdefault.jpg'
 
 
+def render_about(about):
+    """Collapsible block with a course's dates, people and programme."""
+    if not about:
+        return ''
+    facts = ''.join(f'''
+                            <div class="school-fact"><i class="{escape(fact['icon'])}" aria-hidden="true"></i>
+                                <span><strong>{bilingual(fact['label_es'], fact['label_en'])}</strong>{bilingual(fact['value_es'], fact['value_en'])}</span></div>'''
+                    for fact in about.get('facts', []))
+    people = ''.join(f'''
+                            <div class="school-people"><h4>{bilingual(group['role_es'], group['role_en'])}</h4>
+                                <ul>{''.join(f'<li>{escape(name)}</li>' for name in group['names'])}</ul></div>'''
+                     for group in about.get('people', []))
+    program = ''.join(f'''
+                            <div class="school-block"><h4>{bilingual(block['title_es'], block['title_en'])}</h4>'''
+                      + (f'<p class="school-by">{escape(block["by"])}</p>' if block.get('by') else '')
+                      + f'''
+                                <ul class="es">{''.join(f'<li>{escape(item)}</li>' for item in block['items_es'])}</ul>
+                                <ul class="en">{''.join(f'<li>{escape(item)}</li>' for item in block['items_en'])}</ul></div>'''
+                      for block in about.get('program', []))
+    return f'''
+                    <details class="course-about">
+                        <summary><i class="fa-solid fa-circle-info" aria-hidden="true"></i> {bilingual('Sobre la escuela y programa', 'About the school and programme')}</summary>
+                        <div class="school-facts">{facts}
+                        </div>
+                        <div class="school-grid">{people}
+                        </div>
+                        <h4 class="school-heading">{bilingual('Programa', 'Programme')}</h4>
+                        <div class="school-grid">{program}
+                        </div>
+                    </details>'''
+
+
 def render_material(data):
     """Course-style video library: tabs, a player per course and its lesson list."""
     tabs, courses = [], []
@@ -97,7 +129,7 @@ def render_material(data):
                         <span class="course-stat"><i class="fa-solid fa-circle-play" aria-hidden="true"></i> {count}</span>
                         <span class="course-stat"><i class="fa-regular fa-clock" aria-hidden="true"></i> {total}</span>
                         {links}
-                    </div>
+                    </div>{render_about(course.get('about'))}
                 </div>
                 <div class="course-layout">
                     <div class="player">
