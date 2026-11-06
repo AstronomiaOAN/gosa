@@ -19,7 +19,8 @@
         {"video": "B6WXTEFeoJo", "seconds": 4696, "title_es": "Clase 1, parte 2", "title_en": "Class 1, part 2", "detail_es": "Introducción y herramientas para el análisis de datos", "detail_en": "Introduction and tools for data analysis", "speakers": "Daniel Alberto Rodríguez Torres"},
         {"video": "8QkbbOaHuIc", "seconds": 6297, "title_es": "Clase 2", "title_en": "Class 2", "detail_es": "Observaciones solares, flujos y movimientos", "detail_en": "Solar observations, flows and motions", "speakers": "Juan Pablo Herrera Moreno · Luis Felipe Losada González"},
         {"video": "JabXCibdofU", "seconds": 6402, "title_es": "Clase 3", "title_en": "Class 3", "detail_es": "Magnetohidrodinámica y oscilaciones en la atmósfera solar", "detail_en": "Magnetohydrodynamics and oscillations in the solar atmosphere", "speakers": "Óscar Andrés Calvo Rebellón · Carlos Alberto Martínez Sibaja"},
-        {"video": "PnAFRGhhc10", "seconds": 6096, "title_es": "Clase 4", "title_en": "Class 4", "detail_es": "Partículas, rayos X y viento solar", "detail_en": "Particles, X-rays and the solar wind", "speakers": "Milena Andrea Barrios Gallego · Carlos Alberto Martínez Sibaja"}
+        {"video": "NclRrbsRp5Q", "seconds": 5868, "title_es": "Clase 4", "title_en": "Class 4", "detail_es": "Partículas, rayos X y viento solar", "detail_en": "Particles, X-rays and the solar wind", "speakers": "Milena Andrea Barrios Gallego · Carlos Alberto Martínez Sibaja"},
+        {"video": "PnAFRGhhc10", "seconds": 6096, "title_es": "Clase 5", "title_en": "Class 5", "detail_es": "Machine Learning aplicado al estudio del Sol", "detail_en": "Machine Learning applied to the study of the Sun", "speakers": "Juan Esteban Agudelo Ortiz"}
       ]
     },
     {
