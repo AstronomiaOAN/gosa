@@ -244,6 +244,49 @@
         .lesson-check { color: #d3dde3; margin-top: 8px; transition: color .2s ease; }
         .lesson.seen .lesson-check { color: #2f9e6b; }
 
+
+        /* Sobre la escuela */
+        .course-about {
+            margin-top: var(--space-sm);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: #fff;
+        }
+        .course-about summary {
+            cursor: pointer;
+            padding: 14px 18px;
+            font-weight: 600;
+            color: var(--blue);
+            list-style: none;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .course-about summary::-webkit-details-marker { display: none; }
+        .course-about summary::after { content: "+"; margin-left: auto; font-size: 1.3rem; line-height: 1; color: var(--gold-dark); }
+        .course-about[open] summary::after { content: "−"; }
+        .course-about[open] summary { border-bottom: 1px solid var(--border-subtle); }
+        .course-about > :not(summary) { margin-left: 18px; margin-right: 18px; }
+        .school-facts {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px; margin-top: 18px;
+        }
+        .school-fact {
+            display: flex; gap: 12px; align-items: flex-start;
+            padding: 12px 14px; border-radius: 10px; background: #f6f8fa;
+            font-size: var(--fs-sm); color: var(--text-muted); line-height: 1.45;
+        }
+        .school-fact i { color: var(--gold-dark); margin-top: 3px; }
+        .school-fact strong { display: block; color: var(--ink); }
+        .school-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 14px 24px; margin-top: 18px; margin-bottom: 18px;
+            align-items: start;
+        }
+        .school-grid h4, .school-heading { font-family: var(--font-heading); color: var(--ink); font-size: 1.05rem; margin-bottom: 6px; }
+        .school-heading { margin-top: 6px; padding-top: 16px; border-top: 1px solid var(--border-subtle); }
+        .school-by { font-size: var(--fs-sm); color: var(--blue); margin-bottom: 6px; }
+        .school-grid ul { padding-left: 18px; color: var(--text-muted); font-size: var(--fs-sm); line-height: 1.55; }
+        .school-grid li + li { margin-top: 4px; }
+
         @media (max-width: 960px) {
             .course-layout { grid-template-columns: 1fr; }
             .lesson-list { max-height: none; }
