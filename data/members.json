@@ -170,7 +170,7 @@
   {
     "name": "Eliana Maritza Amazo Gómez",
     "category": "egresado",
-    "image": "https://ui-avatars.com/api/?name=Eliana+Maritza+Amazo+G%C3%B3mez&background=00b4d8&color=fff&size=150",
+    "image": "images/team-optimized/eliana_maritza_amazo_gomez.jpg",
     "role_html": "<span class=\"es\">Egresada</span><span class=\"en\">Alumna</span>",
     "institution_html": "<p class=\"inst\"><span class=\"es\">Doctorado, Universität Göttingen y Max Planck Institute for Solar System Research</span><span class=\"en\">PhD, University of Göttingen and Max Planck Institute for Solar System Research</span></p>",
     "links_html": "\n                            <a href=\"mailto:emamazog@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0003-1283-0848\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
@@ -234,7 +234,7 @@
   {
     "name": "Santiago Fonseca Buitrago",
     "category": "pregrado",
-    "image": "https://ui-avatars.com/api/?name=Santiago+Fonseca+Buitrago&background=00b4d8&color=fff&size=150",
+    "image": "images/team-optimized/santiago_fonseca_buitrago.jpg",
     "role_html": "<span class=\"es\">Pregrado</span><span class=\"en\">Undergraduate</span>",
     "institution_html": "",
     "links_html": "\n                            <a href=\"mailto:safonsecab@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
@@ -397,14 +397,6 @@
     "image": "images/Alyonapng",
     "role_html": "<span class=\"es\">Miembro anterior</span><span class=\"en\">Former Member</span>",
     "institution_html": "<p class=\"inst\"><span class=\"es\">Estudiante Pregrado, Universidad Javeriana</span><span class=\"en\">Undergraduate Student, Pontificia Universidad Javeriana</span></p>",
-    "links_html": ""
-  },
-  {
-    "name": "Miguel Valbuena Suárez",
-    "category": "anteriores",
-    "image": "images/miguel .png",
-    "role_html": "<span class=\"es\">Miembro anterior</span><span class=\"en\">Former Member</span>",
-    "institution_html": "<p class=\"inst\"><span class=\"es\">Estudiante Maestría, Universidad Nacional</span><span class=\"en\">Master's Student, National University of Colombia</span></p>",
     "links_html": ""
   },
   {
