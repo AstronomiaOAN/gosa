@@ -253,7 +253,13 @@ document.addEventListener('DOMContentLoaded', () => {
     miniWindow.querySelector('.mini-close').addEventListener('click', closeMiniWindow);
     miniWindow.addEventListener('click', event => { if (event.target === miniWindow) closeMiniWindow(); });
 
-    // Team: a summary card emerges on hover; a click opens articles, schools and theses in the mini window.
+    // Team: a summary card emerges from the photo on hover (or on tapping the photo on touch screens);
+    // a click opens articles, schools and theses in the mini window.
+    document.addEventListener('click', event => {
+        document.querySelectorAll('.team-member-card.is-open').forEach(card => {
+            if (!card.contains(event.target)) card.classList.remove('is-open');
+        });
+    });
     const finePointer = window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 641px)');
     document.querySelectorAll('.team-member-card.has-profile').forEach(card => {
         const pop = card.querySelector('.member-pop');
@@ -273,9 +279,23 @@ document.addEventListener('DOMContentLoaded', () => {
             timer = setTimeout(() => { card.classList.add('is-open'); place(); }, 200);
         });
         card.addEventListener('mouseleave', () => { clearTimeout(timer); card.classList.remove('is-open'); });
+        const avatar = card.querySelector('.team-avatar-img');
+        const onPhoto = event => {
+            const rect = avatar.getBoundingClientRect();
+            return event.clientX >= rect.left && event.clientX <= rect.right
+                && event.clientY >= rect.top && event.clientY <= rect.bottom;
+        };
         card.addEventListener('click', event => {
             if (event.target.closest('a')) return;
             clearTimeout(timer);
+            // On touch screens there is no hover: tapping the photo shows the emerging card,
+            // tapping it (or anywhere else on the card) opens the full profile.
+            if (!finePointer.matches && !card.classList.contains('is-open') && onPhoto(event)) {
+                document.querySelectorAll('.team-member-card.is-open').forEach(other => other.classList.remove('is-open'));
+                card.classList.add('is-open');
+                place();
+                return;
+            }
             card.classList.remove('is-open');
             openMiniWindow(details, null, opener());
         });

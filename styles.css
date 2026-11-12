@@ -2005,8 +2005,10 @@ a.pop-detail { color: var(--blue); }
 .pop-more:hover { color: var(--gold-dark); }
 .pop-links { justify-content: flex-start; margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
 .pop-links:not(:has(a)) { display: none; }
-@media (max-width: 640px), (hover: none) {
-    .member-pop { display: none; }
+/* The emerging card grows out of the member's photo. */
+.member-pop { top: 14px; transform-origin: 50% 70px; }
+.team-member-card:not(.is-open) .member-pop {
+    transform: translateX(calc(-50% + var(--shift, 0px))) scale(.45);
 }
 
 /* Mini window shared by team members and research lines */

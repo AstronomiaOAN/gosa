@@ -17,6 +17,7 @@ Uso:
     python3 -m http.server 8123 -d _site     # vista previa local
 """
 
+import hashlib
 import re
 import shutil
 import subprocess
@@ -176,9 +177,21 @@ def build_page(page, lang):
     if n != 1:
         sys.exit(f"build_site: {page}: falta <link rel=\"canonical\">")
 
+    html = version_assets(html)
     if lang == "en":
         html = prefix_assets(html)
     return html
+
+
+def version_assets(html):
+    """styles.css -> styles.css?v=<hash>: browsers fetch the new file on every change instead of a cached copy."""
+    def stamp(m):
+        path = ROOT / m.group(2)
+        if not path.is_file():
+            return m.group(0)
+        digest = hashlib.sha1(path.read_bytes()).hexdigest()[:10]
+        return f'{m.group(1)}="{m.group(2)}?v={digest}"'
+    return re.sub(r'\b(href|src)="([\w./-]+\.(?:css|js))"', stamp, html)
 
 
 def last_modified(page):
