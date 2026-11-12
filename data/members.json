@@ -68,7 +68,7 @@
   {
     "name": "Santiago Pinzón Cortés",
     "category": "egresado",
-    "image": "images/Santiago Pinzon.jpeg",
+    "image": "images/team-optimized/santiago_pinzon_cortes.jpg",
     "role_html": "<span class=\"es\">Egresado</span><span class=\"en\">Alumnus</span>",
     "institution_html": "",
     "links_html": "\n                            <a href=\"mailto:sanpinzoncor@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0001-8710-6892\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                            <a href=\"https://www.researchgate.net/profile/Santiago-Pinzon-3\" target=\"_blank\"\n                                class=\"member-link\" title=\"ResearchGate\"><i class=\"fa-brands fa-researchgate\"></i></a>\n                        "
@@ -142,7 +142,7 @@
   {
     "name": "Daniel Esteban Ramos Salamanca",
     "category": "maestria",
-    "image": "images/Daniel R.png",
+    "image": "images/team-optimized/daniel_esteban_ramos_salamanca.jpg",
     "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
     "institution_html": "",
     "links_html": "\n                            <a href=\"mailto:deramoss@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        ",
@@ -242,7 +242,7 @@
   {
     "name": "Claudia Alejandra Cuellar Nieto",
     "category": "maestria",
-    "image": "images/Claudia Alejandra Cuellar Nieto.jpeg",
+    "image": "images/team-optimized/claudia_alejandra_cuellar_nieto.jpg",
     "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
     "institution_html": "",
     "links_html": "\n                            <a href=\"mailto:clcuellarn@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0001-3686-8237\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
@@ -394,7 +394,7 @@
   {
     "name": "Sofía Guevara Montoya",
     "category": "anteriores",
-    "image": "images/Sofia Guevara.png",
+    "image": "images/team-optimized/sofia_guevara_montoya.jpg",
     "role_html": "<span class=\"es\">Miembro anterior</span><span class=\"en\">Former Member</span>",
     "institution_html": "<p class=\"inst\"><span class=\"es\">Estudiante Pregrado, Universidad Nacional</span><span class=\"en\">Undergraduate Student, National University of Colombia</span></p>",
     "links_html": ""
@@ -418,7 +418,7 @@
   {
     "name": "Alyona C. Ivanova Araujo",
     "category": "anteriores",
-    "image": "images/Alyonapng",
+    "image": "images/team-optimized/alyona_c_ivanova_araujo.jpg",
     "role_html": "<span class=\"es\">Miembro anterior</span><span class=\"en\">Former Member</span>",
     "institution_html": "<p class=\"inst\"><span class=\"es\">Estudiante Pregrado, Universidad Javeriana</span><span class=\"en\">Undergraduate Student, Pontificia Universidad Javeriana</span></p>",
     "links_html": ""

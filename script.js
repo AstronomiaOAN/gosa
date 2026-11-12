@@ -1,3 +1,7 @@
+// Stylesheets preloaded in <head> (the icon font) become active as soon as this script runs,
+// so they never block the first paint. Done here because the CSP forbids inline onload handlers.
+document.querySelectorAll('link[rel="preload"][as="style"]').forEach(link => { link.rel = 'stylesheet'; });
+
 document.addEventListener('DOMContentLoaded', () => {
     const buildAvatarFallback = (name) => {
         const initials = (name || 'GoSA')
@@ -253,19 +257,19 @@ document.addEventListener('DOMContentLoaded', () => {
     miniWindow.querySelector('.mini-close').addEventListener('click', closeMiniWindow);
     miniWindow.addEventListener('click', event => { if (event.target === miniWindow) closeMiniWindow(); });
 
-    // Team: a summary card emerges from the photo on hover (or on tapping the photo on touch screens);
-    // a click opens articles, schools and theses in the mini window.
-    document.addEventListener('click', event => {
-        document.querySelectorAll('.team-member-card.is-open').forEach(card => {
-            if (!card.contains(event.target)) card.classList.remove('is-open');
-        });
+    // Team: a click on a card makes a summary card emerge from the photo;
+    // a click on that summary opens articles, schools and theses in the mini window.
+    const closeTeamCards = except => document.querySelectorAll('.team-member-card.is-open').forEach(card => {
+        if (card !== except) card.classList.remove('is-open');
     });
-    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 641px)');
+    document.addEventListener('click', event => {
+        if (!event.target.closest('.team-member-card')) closeTeamCards();
+    });
+    document.addEventListener('keydown', event => { if (event.key === 'Escape') closeTeamCards(); });
     document.querySelectorAll('.team-member-card.has-profile').forEach(card => {
         const pop = card.querySelector('.member-pop');
         const details = card.querySelector('.member-details');
         const opener = () => [...card.querySelectorAll('.member-open')].find(button => button.offsetParent !== null);
-        let timer;
         const place = () => {
             pop.style.setProperty('--shift', '0px');
             const rect = pop.getBoundingClientRect();
@@ -273,25 +277,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 : rect.right > window.innerWidth - 16 ? window.innerWidth - 16 - rect.right : 0;
             pop.style.setProperty('--shift', `${Math.round(shift)}px`);
         };
-        card.addEventListener('mouseenter', () => {
-            if (!finePointer.matches) return;
-            clearTimeout(timer);
-            timer = setTimeout(() => { card.classList.add('is-open'); place(); }, 200);
-        });
-        card.addEventListener('mouseleave', () => { clearTimeout(timer); card.classList.remove('is-open'); });
-        const avatar = card.querySelector('.team-avatar-img');
-        const onPhoto = event => {
-            const rect = avatar.getBoundingClientRect();
-            return event.clientX >= rect.left && event.clientX <= rect.right
-                && event.clientY >= rect.top && event.clientY <= rect.bottom;
-        };
         card.addEventListener('click', event => {
             if (event.target.closest('a')) return;
-            clearTimeout(timer);
-            // On touch screens there is no hover: tapping the photo shows the emerging card,
-            // tapping it (or anywhere else on the card) opens the full profile.
-            if (!finePointer.matches && !card.classList.contains('is-open') && onPhoto(event)) {
-                document.querySelectorAll('.team-member-card.is-open').forEach(other => other.classList.remove('is-open'));
+            if (!card.classList.contains('is-open')) {
+                closeTeamCards(card);
                 card.classList.add('is-open');
                 place();
                 return;

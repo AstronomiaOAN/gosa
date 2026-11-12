@@ -553,6 +553,16 @@ def member_profiles(members):
     return profiles
 
 
+def initials_avatar(name):
+    """Inline SVG with the member's initials, instead of requesting a third-party avatar service."""
+    initials = ''.join(part[0] for part in name.split()[:2]).upper()
+    svg = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">'
+           '<rect width="120" height="120" fill="#133f59"/>'
+           f'<text x="60" y="62" dominant-baseline="middle" text-anchor="middle" font-family="Georgia, serif" '
+           f'font-size="40" fill="#e0bd86">{escape(initials)}</text></svg>')
+    return 'data:image/svg+xml,' + quote(svg)
+
+
 def render_page(page):
     source = (TEMPLATES / 'pages' / page).read_text(encoding='utf-8')
     values = {
@@ -571,7 +581,8 @@ def render_page(page):
         source = re.sub(r'(<select id="pub-year-filter">).*?(</select>)',
                         lambda m: m[1] + options + m[2], source, flags=re.S)
     if '{{members}}' in source:
-        members = read_data('members')
+        members = [{**item, 'image': initials_avatar(item['name'])} if 'ui-avatars.com' in item['image'] else item
+                   for item in read_data('members')]
         values['members'] = '\n'.join(render_record('member', {**item, **extra})
                                       for item, extra in zip(members, member_profiles(members)))
     if '{{material}}' in source:
