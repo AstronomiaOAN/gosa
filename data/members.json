@@ -5,14 +5,16 @@
     "image": "images/team-optimized/benjamin_calvo_mozo.webp",
     "role_html": "<span class=\"es\">Investigador Principal</span><span class=\"en\">Principal Investigator</span>",
     "institution_html": "",
-    "links_html": "\n                            <a href=\"mailto:bcalvom@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+    "links_html": "\n                            <a href=\"mailto:bcalvom@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        ",
+    "bio_es": "Uno de los pioneros de la física solar en Colombia y fundador del GoSA.",
+    "bio_en": "One of the pioneers of solar physics in Colombia and founder of GoSA."
   },
   {
     "name": "Santiago Vargas Domínguez",
     "category": "investigador",
     "image": "images/team-optimized/santiago_vargas_dominguez.webp",
     "role_html": "<span class=\"es\">Investigador Principal</span><span class=\"en\">Principal Investigator</span>",
-    "institution_html": "",
+    "institution_html": "<p class=\"inst\"><span class=\"es\">Director del Observatorio Astronómico Nacional</span><span class=\"en\">Director of the National Astronomical Observatory</span></p>",
     "links_html": "\n                            <a href=\"mailto:svargasd@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0002-5999-4842\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                            <a href=\"https://www.researchgate.net/profile/Santiago-Vargas-Dominguez-2\" target=\"_blank\"\n                                class=\"member-link\" title=\"ResearchGate\"><i class=\"fa-brands fa-researchgate\"></i></a>\n                        "
   },
   {
@@ -29,7 +31,15 @@
     "image": "images/team-optimized/juan_camilo_buitrago.webp",
     "role_html": "<span class=\"es\">Colaborador Externo / Egresado</span><span class=\"en\">External Collaborator / Alumni</span>",
     "institution_html": "",
-    "links_html": "\n                            <a href=\"mailto:jcbuitragoc@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0002-8203-4794\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+    "links_html": "\n                            <a href=\"mailto:jcbuitragoc@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0002-8203-4794\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        ",
+    "bio_es": "Forma parte del equipo de PADRE (solar PolArization and Directivity X-Ray Experiment), un CubeSat de la NASA liderado por el Space Sciences Laboratory de UC Berkeley que estudia los rayos X duros emitidos por las fulguraciones solares.",
+    "bio_en": "Member of the PADRE team (solar PolArization and Directivity X-Ray Experiment), a NASA CubeSat led by UC Berkeley's Space Sciences Laboratory that studies the hard X-rays emitted by solar flares.",
+    "projects": [
+      {
+        "name": "PADRE",
+        "href": "https://www.ssl.berkeley.edu/projects/padre/"
+      }
+    ]
   },
   {
     "name": "Jose Ivan Campos Rozo",
@@ -125,7 +135,9 @@
     "image": "images/daniel_rodriguez.jpg",
     "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
     "institution_html": "",
-    "links_html": "\n                            <a href=\"mailto:darodriguezto@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0000-1203-2913\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+    "links_html": "\n                            <a href=\"mailto:darodriguezto@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0000-1203-2913\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        ",
+    "bio_es": "Es heliosismólogo: estudia el interior del Sol a partir de sus oscilaciones, por ejemplo para anticipar la aparición de regiones activas con holografía heliosísmica. En la HelioData Academy 2026 dictó la introducción y las herramientas para el análisis de datos solares.",
+    "bio_en": "A helioseismologist: he studies the solar interior through its oscillations, for example to anticipate the emergence of active regions with helioseismic holography. At HelioData Academy 2026 he taught the introduction and tools for solar data analysis."
   },
   {
     "name": "Daniel Esteban Ramos Salamanca",
@@ -133,7 +145,9 @@
     "image": "images/Daniel R.png",
     "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
     "institution_html": "",
-    "links_html": "\n                            <a href=\"mailto:deramoss@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+    "links_html": "\n                            <a href=\"mailto:deramoss@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        ",
+    "bio_es": "Trabaja en los puntos brillantes magnéticos (magnetic bright points) de la fotosfera solar.",
+    "bio_en": "Works on magnetic bright points in the solar photosphere."
   },
   {
     "name": "Paula Jessica González Prieto",
@@ -141,7 +155,9 @@
     "image": "images/team-optimized/paula_jessica_gonzalez_prieto.webp",
     "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
     "institution_html": "",
-    "links_html": "\n                            <a href=\"mailto:pjgonzalezp@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0003-5287-8114\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+    "links_html": "\n                            <a href=\"mailto:pjgonzalezp@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0003-5287-8114\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        ",
+    "bio_es": "Trabaja en la predicción de fulguraciones solares.",
+    "bio_en": "Works on solar flare prediction."
   },
   {
     "name": "Oscar Andres Calvo Rebellon",
@@ -149,7 +165,9 @@
     "image": "images/team-optimized/oscar_andres_calvo_rebellon.webp",
     "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
     "institution_html": "",
-    "links_html": "\n                            <a href=\"mailto:oscara.calvor@uqvirtual.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0001-5926-4164\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+    "links_html": "\n                            <a href=\"mailto:oscara.calvor@uqvirtual.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0001-5926-4164\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        ",
+    "bio_es": "Trabaja en espectropolarimetría solar. En la HelioData Academy 2026 enseñó las ecuaciones y ondas MHD, la observación de la cromosfera y las oscilaciones transversales en fibrillas cromosféricas.",
+    "bio_en": "Works on solar spectropolarimetry. At HelioData Academy 2026 he taught MHD equations and waves, chromospheric observations and transverse oscillations in chromospheric fibrils."
   },
   {
     "name": "Juan Pablo Herrera Moreno",
@@ -157,7 +175,9 @@
     "image": "images/team-optimized/juan_pablo_herrera_moreno.webp",
     "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
     "institution_html": "",
-    "links_html": "\n                            <a href=\"mailto:juapherreramor@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0000-5600-8317\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+    "links_html": "\n                            <a href=\"mailto:juapherreramor@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0000-5600-8317\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        ",
+    "bio_es": "Trabaja en la dinámica y la actividad magnética en la fotosfera solar. En la HelioData Academy 2026 dictó la clase de observaciones solares, flujos y movimientos.",
+    "bio_en": "Works on dynamics and magnetic activity in the solar photosphere. At HelioData Academy 2026 he taught the class on solar observations, flows and motions."
   },
   {
     "name": "Johan Nicolás Molina",
@@ -181,7 +201,9 @@
     "image": "images/team-optimized/carlos_alberto_martinez_sibaja.webp",
     "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
     "institution_html": "",
-    "links_html": "\n                            <a href=\"mailto:cmartinezsi@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0005-4432-8264\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+    "links_html": "\n                            <a href=\"mailto:cmartinezsi@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0005-4432-8264\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        ",
+    "bio_es": "Trabaja en simulaciones numéricas de plasma con códigos de partículas (PIC) y magnetohidrodinámica (MHD). En la HelioData Academy 2026 enseñó simulaciones MHD, la interacción de haces de partículas con la atmósfera solar, el viento solar y la ejecución de simulaciones en clusters.",
+    "bio_en": "Works on numerical plasma simulations with particle-in-cell (PIC) and magnetohydrodynamic (MHD) codes. At HelioData Academy 2026 he taught MHD simulations, the interaction of particle beams with the solar atmosphere, the solar wind and running simulations on clusters."
   },
   {
     "name": "Juan Esteban Agudelo Ortiz",
@@ -189,7 +211,9 @@
     "image": "images/team-optimized/juan_esteban_agudelo_ortiz.webp",
     "role_html": "<span class=\"es\">Estudiante de Doctorado</span><span class=\"en\">PhD\n                                Student</span>",
     "institution_html": "",
-    "links_html": "\n                            <a href=\"mailto:juagudeloo@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0002-7840-9370\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                            <a href=\"https://www.researchgate.net/profile/Juan-Agudelo-Ortiz\" target=\"_blank\"\n                                class=\"member-link\" title=\"ResearchGate\"><i class=\"fa-brands fa-researchgate\"></i></a>\n                        "
+    "links_html": "\n                            <a href=\"mailto:juagudeloo@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0002-7840-9370\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                            <a href=\"https://www.researchgate.net/profile/Juan-Agudelo-Ortiz\" target=\"_blank\"\n                                class=\"member-link\" title=\"ResearchGate\"><i class=\"fa-brands fa-researchgate\"></i></a>\n                        ",
+    "bio_es": "Trabaja en inteligencia artificial aplicada a la física solar, en particular en la inversión de los parámetros de Stokes para inferir las condiciones físicas de la atmósfera solar. En la HelioData Academy 2026 dictó la clase de machine learning aplicado al estudio del Sol.",
+    "bio_en": "Works on artificial intelligence for solar physics, in particular on the inversion of Stokes parameters to infer the physical conditions of the solar atmosphere. At HelioData Academy 2026 he taught the class on machine learning applied to the study of the Sun."
   },
   {
     "name": "Laura Camila Palacino Téllez",

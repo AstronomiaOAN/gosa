@@ -213,6 +213,74 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Mini window shared by team members and research lines. The content is moved in while open
+    // and put back on close, so the page keeps a single copy (and its IDs).
+    const miniWindow = document.createElement('dialog');
+    miniWindow.className = 'mini-window';
+    miniWindow.innerHTML = `<div class="mini-head"><div class="mini-title"></div>
+        <button type="button" class="mini-close" aria-label="Cerrar / Close"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div>
+        <div class="mini-body"></div>`;
+    document.body.append(miniWindow);
+    const miniTitle = miniWindow.querySelector('.mini-title');
+    const miniBody = miniWindow.querySelector('.mini-body');
+    let miniRestore = null;
+    const openMiniWindow = (content, titleNode, opener) => {
+        if (miniWindow.open) return;
+        miniRestore = { content, parent: content.parentNode, next: content.nextSibling, opener };
+        miniTitle.replaceChildren(...(titleNode ? [titleNode] : []));
+        content.hidden = false;
+        miniBody.append(content);
+        miniBody.scrollTop = 0;
+        miniWindow.showModal();
+        content.querySelectorAll('video').forEach(video => video.play().catch(() => {}));
+    };
+    const closeMiniWindow = () => {
+        if (!miniWindow.open || miniWindow.classList.contains('is-closing')) return;
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        miniWindow.classList.add('is-closing');
+        setTimeout(() => { miniWindow.classList.remove('is-closing'); miniWindow.close(); }, reduced ? 0 : 170);
+    };
+    miniWindow.addEventListener('close', () => {
+        if (!miniRestore) return;
+        const { content, parent, next, opener } = miniRestore;
+        content.querySelectorAll('video').forEach(video => video.pause());
+        content.hidden = true;
+        parent.insertBefore(content, next);
+        miniRestore = null;
+        if (opener) opener.focus();
+    });
+    miniWindow.addEventListener('cancel', event => { event.preventDefault(); closeMiniWindow(); });
+    miniWindow.querySelector('.mini-close').addEventListener('click', closeMiniWindow);
+    miniWindow.addEventListener('click', event => { if (event.target === miniWindow) closeMiniWindow(); });
+
+    // Team: a summary card emerges on hover; a click opens articles, schools and theses in the mini window.
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 641px)');
+    document.querySelectorAll('.team-member-card.has-profile').forEach(card => {
+        const pop = card.querySelector('.member-pop');
+        const details = card.querySelector('.member-details');
+        const opener = () => [...card.querySelectorAll('.member-open')].find(button => button.offsetParent !== null);
+        let timer;
+        const place = () => {
+            pop.style.setProperty('--shift', '0px');
+            const rect = pop.getBoundingClientRect();
+            const shift = rect.left < 16 ? 16 - rect.left
+                : rect.right > window.innerWidth - 16 ? window.innerWidth - 16 - rect.right : 0;
+            pop.style.setProperty('--shift', `${Math.round(shift)}px`);
+        };
+        card.addEventListener('mouseenter', () => {
+            if (!finePointer.matches) return;
+            clearTimeout(timer);
+            timer = setTimeout(() => { card.classList.add('is-open'); place(); }, 200);
+        });
+        card.addEventListener('mouseleave', () => { clearTimeout(timer); card.classList.remove('is-open'); });
+        card.addEventListener('click', event => {
+            if (event.target.closest('a')) return;
+            clearTimeout(timer);
+            card.classList.remove('is-open');
+            openMiniWindow(details, null, opener());
+        });
+    });
+
     // Search and year are combined, including DOI URLs and accent-insensitive names.
     const pubYearFilter = document.getElementById('pub-year-filter');
     const pubSearch = document.getElementById('pub-search');
@@ -241,6 +309,9 @@ document.addEventListener('DOMContentLoaded', () => {
         pubYearFilter.addEventListener('change', applyPublicationFilters);
         pubSearch.addEventListener('input', applyPublicationFilters);
         document.addEventListener('languagechange', applyPublicationFilters);
+        // Links from the team cards open this page already filtered: produccion.html?q=apellido
+        const presetQuery = new URLSearchParams(window.location.search).get('q');
+        if (presetQuery) pubSearch.value = presetQuery;
         applyPublicationFilters();
     }
 
@@ -262,7 +333,29 @@ document.addEventListener('DOMContentLoaded', () => {
     if (tesisDirFilter) tesisDirFilter.addEventListener('change', applyTesisFilters);
 
     // Native buttons keep links in expanded cards independent and keyboard accessible.
-    document.querySelectorAll('.research-card, .news-card.expandable').forEach((card, index) => {
+    document.querySelectorAll('.research-card').forEach((card, index) => {
+        const panel = card.querySelector('.research-details');
+        if (!panel) return;
+        panel.hidden = true;
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'card-toggle';
+        button.setAttribute('aria-haspopup', 'dialog');
+        button.innerHTML = '<span class="es">Ver más</span><span class="en">Read more</span>';
+        panel.before(button);
+        const title = () => {
+            const heading = card.querySelector('h3').cloneNode(true);
+            const icon = card.querySelector('.card-icon');
+            if (icon) heading.prepend(icon.cloneNode(true));
+            return heading;
+        };
+        card.addEventListener('click', event => {
+            if (event.target.closest('a')) return;
+            openMiniWindow(panel, title(), button);
+        });
+    });
+
+    document.querySelectorAll('.news-card.expandable').forEach((card, index) => {
         const panel = card.querySelector('.research-details, .expand-content');
         if (!panel) return;
         panel.id ||= 'card-details-' + index;
