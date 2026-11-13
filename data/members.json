@@ -62,8 +62,8 @@
     "role_html": "<span class=\"es\">Egresado</span><span class=\"en\">Alumnus</span>",
     "institution_html": "",
     "links_html": "\n                            <a href=\"mailto:jshincapiet@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0001-8758-1706\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                            <a href=\"https://www.researchgate.net/profile/Juan-Hincapie-Tarquino\" target=\"_blank\"\n                                class=\"member-link\" title=\"ResearchGate\"><i class=\"fa-brands fa-researchgate\"></i></a>\n                        ",
-    "bio_es": "Trabaja en instrumentación para radioastronomía solar: participó en el diseño e implementación del interferómetro solar de radio multielemento a 1,42 GHz del OAN.",
-    "bio_en": "Works on instrumentation for solar radio astronomy: took part in the design and implementation of the OAN multi-element solar radio interferometer at 1.42 GHz."
+    "bio_es": "Trabaja en instrumentación para radioastronomía solar: participó en el diseño e implementación del interferómetro solar de radio multielemento a 1,42 GHz del OAN. En el proyecto DynaSun (Academia de Ciencias de Chequia y Max Planck Institute) implementa el software de la antena RT2 y estudia estructuras solares con MiHI.",
+    "bio_en": "Works on instrumentation for solar radio astronomy: took part in the design and implementation of the OAN multi-element solar radio interferometer at 1.42 GHz. In the DynaSun project (Czech Academy of Sciences and Max Planck Institute), implements the software for the RT2 antenna and studies solar structures with MiHI."
   },
   {
     "name": "Angel Daniel Martínez",
@@ -129,7 +129,9 @@
     "image": "images/team-optimized/julio_florez_macias.webp",
     "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
     "institution_html": "",
-    "links_html": "\n                        "
+    "links_html": "\n                        ",
+    "bio_es": "Participa en el proyecto DynaSun 2026. Hizo su trabajo de grado en el GoSA en 2021, dirigido por Benjamín Calvo Mozo.",
+    "bio_en": "Takes part in the DynaSun 2026 project. Completed an undergraduate thesis at GoSA in 2021, supervised by Benjamín Calvo Mozo."
   },
   {
     "name": "Erika Paola Puentes León",
@@ -178,8 +180,8 @@
     "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
     "institution_html": "",
     "links_html": "\n                            <a href=\"mailto:pjgonzalezp@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0003-5287-8114\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        ",
-    "bio_es": "Trabaja en la predicción de fulguraciones solares.",
-    "bio_en": "Works on solar flare prediction."
+    "bio_es": "Trabaja en la predicción de fulguraciones solares. En el proyecto DynaSun, con la Universidad de Graz, evalúa el Flare Anticipation Index (FAI) con datos históricos del satélite GOES.",
+    "bio_en": "Works on solar flare prediction. In the DynaSun project, with the University of Graz, evaluates the Flare Anticipation Index (FAI) using historical GOES satellite data."
   },
   {
     "name": "Oscar Andres Calvo Rebellon",
@@ -217,7 +219,9 @@
     "image": "images/team-optimized/eliana_maritza_amazo_gomez.jpg",
     "role_html": "<span class=\"es\">Egresada</span><span class=\"en\">Alumna</span>",
     "institution_html": "<p class=\"inst\"><span class=\"es\">Doctorado, Universität Göttingen y Max Planck Institute for Solar System Research</span><span class=\"en\">PhD, University of Göttingen and Max Planck Institute for Solar System Research</span></p>",
-    "links_html": "\n                            <a href=\"mailto:emamazog@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0003-1283-0848\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+    "links_html": "\n                            <a href=\"mailto:emamazog@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0003-1283-0848\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        ",
+    "bio_es": "Estudia el Sol en comparación con otras estrellas: las firmas fotométricas de manchas, fáculas y fulguraciones. Se doctoró en la Universität Göttingen y el Max Planck Institute for Solar System Research, ha trabajado en el Leibniz Institute for Astrophysics Potsdam (AIP) y dictó el módulo de estrellas en la Escuela de Magnetismo y Actividad Solar y Estelar del OAN.",
+    "bio_en": "Studies the Sun compared with other stars: the photometric signatures of spots, faculae and flares. Holds a PhD from the University of Göttingen and the Max Planck Institute for Solar System Research, has worked at the Leibniz Institute for Astrophysics Potsdam (AIP) and taught the stars module at the OAN School of Solar and Stellar Magnetism and Activity."
   },
   {
     "name": "Carlos Alberto Martinez Sibaja",
@@ -245,7 +249,9 @@
     "image": "images/team-optimized/laura_camila_palacino_tellez.webp",
     "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
     "institution_html": "",
-    "links_html": "\n                            <a href=\"mailto:lpalacino@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0003-8022-7001\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+    "links_html": "\n                            <a href=\"mailto:lpalacino@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0003-8022-7001\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        ",
+    "bio_es": "Trabaja en magnetohidrodinámica (MHD) e instrumentación de radio: en el proyecto DynaSun, con la Academia de Ciencias de Chequia, analiza las vibraciones de la antena RT5.",
+    "bio_en": "Works on magnetohydrodynamics (MHD) and radio instrumentation: in the DynaSun project, with the Czech Academy of Sciences, analyses the vibrations of the RT5 antenna."
   },
   {
     "name": "Andrés Felipe Guerrero Guio",
@@ -305,7 +311,9 @@
     "image": "images/team-optimized/milena_andrea_barrios_gallego.webp",
     "role_html": "<span class=\"es\">Pregrado</span><span class=\"en\">Undergraduate</span>",
     "institution_html": "",
-    "links_html": "\n                            <a href=\"mailto:mibarriosg@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0004-6858-1363\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+    "links_html": "\n                            <a href=\"mailto:mibarriosg@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0004-6858-1363\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        ",
+    "bio_es": "Modela el transporte de haces de electrones anisotrópicos en fulguraciones solares con la ecuación de Fokker-Planck y sus firmas de polarización en rayos X duros. En la HelioData Academy 2026 dictó la clase de transporte de electrones acelerados y procesos estocásticos.",
+    "bio_en": "Models the transport of anisotropic electron beams in solar flares with the Fokker-Planck equation and their hard X-ray polarization signatures. At HelioData Academy 2026, taught the class on accelerated electron transport and stochastic processes."
   },
   {
     "name": "Danna Vanessa Ortiz Carrillo",
@@ -313,7 +321,9 @@
     "image": "images/team-optimized/danna_vanessa_ortiz_carrillo.webp",
     "role_html": "<span class=\"es\">Pregrado</span><span class=\"en\">Undergraduate</span>",
     "institution_html": "",
-    "links_html": "\n                            <a href=\"mailto:daortizca@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+    "links_html": "\n                            <a href=\"mailto:daortizca@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        ",
+    "bio_es": "Trabaja en instrumentación espacial con el proyecto Kuntur-GoSA: diseñó y simuló un campo magnético terrestre para validar en tierra el sistema de control de actitud (ADCS) de un nanosatélite.",
+    "bio_en": "Works on space instrumentation in the Kuntur-GoSA project: designed and simulated an Earth-like magnetic field to validate a nanosatellite attitude control system (ADCS) on the ground."
   },
   {
     "name": "Laura Vanessa Olaya Zuleta",
@@ -361,7 +371,9 @@
     "image": "images/team-optimized/thomas_gonzalez_rodriguez.webp",
     "role_html": "<span class=\"es\">Pregrado</span><span class=\"en\">Undergraduate</span>",
     "institution_html": "",
-    "links_html": "\n                            <a href=\"mailto:thgonzalezr@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0006-3576-9110\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        "
+    "links_html": "\n                            <a href=\"mailto:thgonzalezr@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0006-3576-9110\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        ",
+    "bio_es": "Estudia las oscilaciones de largo periodo en las umbras de las manchas solares a partir de observaciones Doppler.",
+    "bio_en": "Studies long-period oscillations in sunspot umbrae using Doppler observations."
   },
   {
     "name": "Samuel David Matallana Díaz",
@@ -393,7 +405,9 @@
     "image": "images/Juan Camilo Hernandez.jpeg",
     "role_html": "<span class=\"es\">Otras Inst.</span><span class=\"en\">Other Inst.</span>",
     "institution_html": "<p class=\"inst\"><span class=\"es\">Colegio San Carlos</span><span class=\"en\">Colegio San Carlos</span></p>",
-    "links_html": "\n                            <a href=\"mailto:juancamilohdez2005@gmail.com\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+    "links_html": "\n                            <a href=\"mailto:juancamilohdez2005@gmail.com\" class=\"member-link\" title=\"Email\">✉️</a>\n                        ",
+    "bio_es": "Representó a Colombia en olimpiadas de astronomía: participó en la Olimpiada Internacional de Astronomía y Astrofísica (IOAA 2022, Georgia) y ganó medalla de bronce en la Olimpiada Latinoamericana de Astronomía y Astronáutica (OLAA 2022, Panamá).",
+    "bio_en": "Represented Colombia at astronomy olympiads: took part in the International Olympiad on Astronomy and Astrophysics (IOAA 2022, Georgia) and won a bronze medal at the Latin American Astronomy and Astronautics Olympiad (OLAA 2022, Panama)."
   },
   {
     "name": "Samuel Felipe Noreña Téllez",
@@ -401,7 +415,9 @@
     "image": "images/team-optimized/samuel_felipe_norena_tellez.webp",
     "role_html": "<span class=\"es\">Otras Inst.</span><span class=\"en\">Other Inst.</span>",
     "institution_html": "",
-    "links_html": "\n                            <a href=\"mailto:sanorenat@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0000-4745-3208\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                            <a href=\"https://www.researchgate.net/profile/Samuel-Norena-Tellez\" target=\"_blank\"\n                                class=\"member-link\" title=\"ResearchGate\"><i class=\"fa-brands fa-researchgate\"></i></a>\n                        "
+    "links_html": "\n                            <a href=\"mailto:sanorenat@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0000-4745-3208\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                            <a href=\"https://www.researchgate.net/profile/Samuel-Norena-Tellez\" target=\"_blank\"\n                                class=\"member-link\" title=\"ResearchGate\"><i class=\"fa-brands fa-researchgate\"></i></a>\n                        ",
+    "bio_es": "Estudia el origen magnético fotosférico de la lluvia coronal: la emergencia de flujo y la inversión de polaridad bajo las regiones donde se forma.",
+    "bio_en": "Studies the photospheric magnetic origin of coronal rain: flux emergence and polarity inversion beneath the regions where it forms."
   },
   {
     "name": "Mariana Castellanos Ramírez",
@@ -417,7 +433,9 @@
     "image": "https://ui-avatars.com/api/?name=Santiago+Alejandro+Pinilla+Capador&background=00b4d8&color=fff&size=150",
     "role_html": "<span class=\"es\">Otras Inst.</span><span class=\"en\">Other Inst.</span>",
     "institution_html": "<p class=\"inst\"><span class=\"es\">Pregrado, Universidad Distrital Francisco José de Caldas</span><span class=\"en\">Undergraduate, Universidad Distrital Francisco José de Caldas</span></p>",
-    "links_html": "\n                            <a href=\"mailto:sapinillac@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+    "links_html": "\n                            <a href=\"mailto:sapinillac@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        ",
+    "bio_es": "Trabaja en clima espacial con el Observatorio Geomagnético de Fúquene: monitoreo histórico y en tiempo casi real del índice de perturbación geomagnética local (Dlat) y del índice K.",
+    "bio_en": "Works on space weather with the Fúquene Geomagnetic Observatory: historical and near-real-time monitoring of the local geomagnetic disturbance index (Dlat) and the K index."
   },
   {
     "name": "Sofía Guevara Montoya",
@@ -425,7 +443,9 @@
     "image": "images/team-optimized/sofia_guevara_montoya.jpg",
     "role_html": "<span class=\"es\">Miembro anterior</span><span class=\"en\">Former Member</span>",
     "institution_html": "<p class=\"inst\"><span class=\"es\">Estudiante Pregrado, Universidad Nacional</span><span class=\"en\">Undergraduate Student, National University of Colombia</span></p>",
-    "links_html": ""
+    "links_html": "",
+    "bio_es": "Participó con el GoSA en el Congreso Colombiano de Astronomía de 2022 en Tunja.",
+    "bio_en": "Took part with GoSA in the 2022 Colombian Astronomy Congress in Tunja."
   },
   {
     "name": "Ana Gabriela Martínez",
