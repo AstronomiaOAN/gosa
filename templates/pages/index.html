@@ -13,7 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap"
         rel="stylesheet">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self'; media-src 'self'; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co https://*.goatcounter.com; media-src 'self'; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <link rel="canonical" href="https://astronomiaoan.co/gosa/">
     <meta property="og:type" content="website">
@@ -506,6 +506,7 @@
                 <h2 class="section-title"><span class="es">Novedades y <span
                             class="gradient-text">Actualidad</span></span><span class="en">News and <span
                             class="gradient-text">Updates</span></span></h2>
+                <p class="news-feed"><a href="feed.xml" class="es"><i class="fa-solid fa-rss" aria-hidden="true"></i> Suscríbete a las novedades por RSS</a><a href="en/feed.xml" class="en"><i class="fa-solid fa-rss" aria-hidden="true"></i> Subscribe to the news via RSS</a></p>
                 <div class="news-grid">
                     {{news:0}}
                     {{news:1}}
@@ -580,7 +581,11 @@
                             </li>
                         </ul>
                     </div>
-                    <form action="https://formspree.io/f/svargasd@unal.edu.co" method="POST" class="contact-form">
+                    <form action="https://formsubmit.co/svargasd@unal.edu.co" method="POST" class="contact-form" data-ajax-form>
+                        <!-- FormSubmit: envía el formulario a este correo; el primer envío pide confirmar el correo (una sola vez). -->
+                        <input type="hidden" name="_subject" value="Nuevo mensaje desde la web del GoSA">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
                         <div class="form-group">
                             <label for="name"><span class="es">Nombre</span><span class="en">Name</span></label>
                             <input type="text" id="name" name="name" placeholder="" required
@@ -605,6 +610,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary"><span class="es">Enviar Mensaje</span><span
                                 class="en">Send Message</span></button>
+                        <p class="form-status" role="status" aria-live="polite" hidden></p>
                     </form>
                 </div>
             </div>

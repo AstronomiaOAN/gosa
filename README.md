@@ -89,3 +89,12 @@ python3 -m http.server 8123 -d _site
 ```
 
 El título y la descripción en inglés de cada página se declaran junto a los de español, en `data-en` (`<title>`) y `data-en-content` (`<meta name="description">`).
+
+## 🧩 Funciones adicionales del sitio publicado
+
+- **Formulario de contacto** (`index.html`): se envía con [FormSubmit](https://formsubmit.co) a `svargasd@unal.edu.co` sin recargar la página. La primera vez FormSubmit manda un correo de activación a esa dirección; hasta que se confirme no se entregan los mensajes.
+- **Página 404** (`templates/pages/404.html`): una sola página bilingüe publicada en `_site/404.html`. Usa `<base href="/gosa/">` para que sus enlaces funcionen desde cualquier ruta; si la URL que falta contiene `/en/`, se muestra en inglés.
+- **Estadísticas de visitas**: con [GoatCounter](https://www.goatcounter.com) (sin cookies). Crea un sitio en GoatCounter y escribe su código en `data/site.json` (`"goatcounter": "gosa-oan"` para `gosa-oan.goatcounter.com`). Si está vacío, no se añade ningún script.
+- **Indicadores** (`produccion.html`): además del gráfico por año, el bloque «Formación, líneas y equipo» se calcula al construir a partir de las tesis, `data/publications.json` y `data/members.json`.
+- **RSS**: `feed.xml` (español) y `en/feed.xml` (inglés) se generan con las novedades de la portada (`data/news.json`). Añade `"date": "AAAA-MM-DD"` a una novedad para publicar su fecha.
+- **Perfiles de integrantes**: la descripción sale de `bio_es` / `bio_en` en `data/members.json`; sin ella se deduce de sus tesis y artículos, y si no hay nada se usa un texto según su categoría.

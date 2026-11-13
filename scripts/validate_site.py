@@ -42,8 +42,8 @@ def validate(root):
             errors.append(f'{page.relative_to(root)}: duplicate IDs {duplicates}')
         if '{{' in html:
             errors.append(f'{page.relative_to(root)}: unresolved template')
-        if page.name.startswith('google'):
-            continue
+        if page.name.startswith('google') or page.relative_to(root).as_posix() == '404.html':
+            continue  # verification file / single bilingual error page (not indexed)
         meta = Metadata()
         meta.feed(html)
         expected = 'en' if page.parent == root / 'en' else 'es'
@@ -52,7 +52,8 @@ def validate(root):
         canonical = [link['href'] for link in meta.links if link.get('rel') == 'canonical']
         if len(canonical) != 1 or local_target(root, page, canonical[0])[0] != page:
             errors.append(f'{page.relative_to(root)}: invalid canonical')
-        alternates = {link.get('hreflang'): link.get('href', '') for link in meta.links if link.get('rel') == 'alternate'}
+        alternates = {link.get('hreflang'): link.get('href', '') for link in meta.links
+                      if link.get('rel') == 'alternate' and link.get('hreflang')}
         for language in ('es', 'en', 'x-default'):
             target = local_target(root, page, alternates.get(language, ''))
             expected_page = root / ('en' if language == 'en' else '') / page.name
@@ -79,7 +80,7 @@ def validate(root):
                 errors.append(f'{css.relative_to(root)}: missing asset {url}')
     sitemap = ET.parse(root / 'sitemap.xml')
     urls = sitemap.findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}loc')
-    expected_pages = {p for p in parsed if not p.name.startswith('google')}
+    expected_pages = {p for p in parsed if not p.name.startswith('google') and p != root / '404.html'}
     actual_pages = {local_target(root, root / 'index.html', node.text)[0] for node in urls}
     if actual_pages != expected_pages or len(urls) != len(expected_pages):
         errors.append('Sitemap does not match published pages')

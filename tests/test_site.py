@@ -24,6 +24,8 @@ class SiteTests(unittest.TestCase):
                     target = cls.root / ('en' if lang == 'en' else '') / page
                     target.write_text(build_site.build_page(page, lang))
             (cls.root / 'sitemap.xml').write_text(build_site.build_sitemap())
+            for lang in build_site.LANGS:
+                (cls.root / ('en' if lang == 'en' else '') / 'feed.xml').write_text(build_site.build_feed(lang))
             import shutil
             pages = {page: render_page(page) for page in build_site.PAGES}
             cls.assets = collect_assets(build_site.ROOT, pages)

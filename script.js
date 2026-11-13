@@ -413,7 +413,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Language Initialization. In the published site (scripts/build_site.py) each
     // language is its own page, so the page language wins over the saved one.
-    const savedLang = isBuiltSite() ? document.documentElement.lang : readSavedLanguage();
+    // The single error page (404.html) is bilingual: /en/ in the missing URL selects English.
+    const savedLang = isBuiltSite() ? document.documentElement.lang
+        : /\/en\//.test(window.location.pathname) ? 'en' : readSavedLanguage();
     setLang(savedLang);
 });
 
@@ -465,5 +467,40 @@ document.addEventListener('click', (e) => {
         if (!isBuiltSite()) window.setLang(lang);
         else if (lang !== document.documentElement.lang) window.location.href = langUrl(lang);
         return;
+    }
+});
+
+// Contact form: send through FormSubmit's AJAX endpoint and report the result in place.
+// Without JavaScript the form still posts normally to the same service.
+document.addEventListener('submit', async (e) => {
+    const form = e.target.closest('form[data-ajax-form]');
+    if (!form) return;
+    e.preventDefault();
+    const status = form.querySelector('.form-status');
+    const button = form.querySelector('button[type="submit"]');
+    const en = document.documentElement.lang === 'en';
+    const show = (state, es, enText) => {
+        status.hidden = false;
+        status.dataset.state = state;
+        status.textContent = en ? enText : es;
+    };
+    button.disabled = true;
+    show('sending', 'Enviando…', 'Sending…');
+    try {
+        const response = await fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+            method: 'POST',
+            headers: { Accept: 'application/json' },
+            body: new FormData(form),
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok || String(data.success) === 'false') throw new Error(data.message || response.status);
+        form.reset();
+        show('ok', '¡Gracias! Tu mensaje fue enviado. Te responderemos pronto.',
+            'Thank you! Your message was sent. We will get back to you soon.');
+    } catch {
+        show('error', 'No se pudo enviar el mensaje. Inténtalo de nuevo o escríbenos a svargasd@unal.edu.co.',
+            'The message could not be sent. Please try again or write to svargasd@unal.edu.co.');
+    } finally {
+        button.disabled = false;
     }
 });

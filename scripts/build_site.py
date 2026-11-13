@@ -18,19 +18,24 @@ Uso:
 """
 
 import hashlib
+import json
 import re
 import shutil
+from email.utils import format_datetime
+from datetime import datetime, timezone
+from html import escape as html_escape
 import subprocess
 import sys
 from datetime import date
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import urlsplit
 
 try:
-    from .content import render_page
+    from .content import name_tokens, plain, read_data, render_page
     from .site_assets import collect_assets
 except ImportError:
-    from content import render_page
+    from content import name_tokens, plain, read_data, render_page
     from site_assets import collect_assets
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -44,6 +49,8 @@ PRIORITY = {"index.html": "1.0", "escuela.html": "0.8", "material.html": "0.7", 
             **{page: "0.8" for page in RESEARCH_PAGES}}
 # Archivos y carpetas que se publican tal cual (el resto del repo no se sube).
 ASSET_GLOBS = ["google*.html"]
+# Página de error: una sola, bilingüe, en la raíz (GitHub Pages la sirve en cualquier ruta inexistente).
+NOT_FOUND = "404.html"
 
 LANGS = ("es", "en")
 OG_LOCALE = {"es": "es_CO", "en": "en_US"}
@@ -170,17 +177,43 @@ def build_page(page, lang):
     html = set_meta(html, 'property="og:locale"', OG_LOCALE[lang])
     html = set_meta(html, 'property="og:url"', page_url(page, lang))
 
-    links = [f'<link rel="canonical" href="{page_url(page, lang)}">']
+    links = [f'<link rel="canonical" href="{page_url(page, lang)}">',
+             f'<link rel="alternate" type="application/rss+xml" title="{FEED_TITLE[lang]}" href="{feed_url(lang)}">']
     links += [f'<link rel="alternate" hreflang="{code}" href="{page_url(page, code)}">' for code in LANGS]
     links.append(f'<link rel="alternate" hreflang="x-default" href="{page_url(page, "es")}">')
     html, n = re.subn(r'<link rel="canonical" href="[^"]*">', "\n    ".join(links), html, count=1)
     if n != 1:
         sys.exit(f"build_site: {page}: falta <link rel=\"canonical\">")
 
-    html = version_assets(html)
+    html = add_analytics(version_assets(html))
     if lang == "en":
         html = prefix_assets(html)
     return html
+
+
+def site_config():
+    try:
+        return json.loads((ROOT / "data" / "site.json").read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        return {}
+
+
+def add_analytics(html):
+    """GoatCounter (sin cookies) si data/site.json define su código; si está vacío no se añade nada."""
+    code = site_config().get("goatcounter", "").strip()
+    if not code:
+        return html
+    if not re.fullmatch(r"[a-z0-9-]+", code):
+        sys.exit(f"build_site: código de GoatCounter no válido en data/site.json: {code!r}")
+    tag = (f'    <script data-goatcounter="https://{code}.goatcounter.com/count" async '
+           f'src="https://gc.zgo.at/count.js"></script>\n')
+    return html.replace("</body>", tag + "</body>", 1)
+
+
+def build_not_found():
+    base = urlsplit(BASE_URL).path or "/"
+    html = render_page(NOT_FOUND, {"base": f'<base href="{base}">'})
+    return add_analytics(version_assets(html))
 
 
 def version_assets(html):
@@ -203,6 +236,56 @@ def last_modified(page):
     except (OSError, subprocess.CalledProcessError):
         pass
     return date.fromtimestamp((ROOT / "templates/pages" / page).stat().st_mtime).isoformat()
+
+
+FEED_TITLE = {"es": "GoSA · Novedades", "en": "GoSA · News"}
+FEED_DESC = {"es": "Novedades del Grupo de Astrofísica Solar (GoSA), Observatorio Astronómico Nacional, UNAL.",
+             "en": "News from the Solar Astrophysics Group (GoSA), National Astronomical Observatory, UNAL."}
+
+
+def feed_url(lang):
+    return BASE_URL + ("en/" if lang == "en" else "") + "feed.xml"
+
+
+def in_language(fragment, lang):
+    parser = LangFilter(drop="en" if lang == "es" else "es")
+    parser.feed(fragment)
+    parser.close()
+    return plain("".join(parser.out))
+
+
+def build_feed(lang):
+    """RSS 2.0 con las novedades de la portada (data/news.json -> index.html).
+    Un campo opcional "date" (AAAA-MM-DD) en cada novedad se publica como pubDate."""
+    link = page_url("index.html", lang) + "#novedades"
+    items = []
+    for record in read_data("news").get("index.html", []):
+        title = in_language(record["title_html"], lang)
+        body = in_language(record["body_html"], lang)
+        if len(body) > 600:
+            body = body[:600].rsplit(" ", 1)[0] + "…"
+        slug = "-".join(name_tokens(in_language(record["title_html"], "es")))[:80]
+        item = [f"      <title>{html_escape(title)}</title>", f"      <link>{link}</link>",
+                f'      <guid isPermaLink="false">gosa-news-{slug}</guid>',
+                f"      <description>{html_escape(body)}</description>"]
+        if record.get("date"):
+            when = datetime.fromisoformat(record["date"]).replace(tzinfo=timezone.utc)
+            item.append(f"      <pubDate>{format_datetime(when)}</pubDate>")
+        items.append("    <item>\n" + "\n".join(item) + "\n    </item>")
+    return "\n".join([
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">',
+        "  <channel>",
+        f"    <title>{FEED_TITLE[lang]}</title>",
+        f"    <link>{page_url('index.html', lang)}</link>",
+        f"    <description>{FEED_DESC[lang]}</description>",
+        f"    <language>{'es-co' if lang == 'es' else 'en'}</language>",
+        f'    <atom:link href="{feed_url(lang)}" rel="self" type="application/rss+xml"/>',
+        *items,
+        "  </channel>",
+        "</rss>",
+        "",
+    ])
 
 
 def build_sitemap():
@@ -228,7 +311,10 @@ def main():
         (OUT / page).write_text(build_page(page, "es"), encoding="utf-8")
         (OUT / "en" / page).write_text(build_page(page, "en"), encoding="utf-8")
 
+    (OUT / NOT_FOUND).write_text(build_not_found(), encoding="utf-8")
+
     source_pages = {page: render_page(page) for page in PAGES}
+    source_pages[NOT_FOUND] = render_page(NOT_FOUND, {"base": ""})
     assets = collect_assets(ROOT, source_pages)
     for src in assets:
         destination = OUT / src.relative_to(ROOT)
@@ -240,6 +326,8 @@ def main():
             shutil.copy2(src, OUT / src.name)
 
     (OUT / "sitemap.xml").write_text(build_sitemap(), encoding="utf-8")
+    for lang in LANGS:
+        (OUT / ("en" if lang == "en" else "") / "feed.xml").write_text(build_feed(lang), encoding="utf-8")
     try:
         from .validate_site import validate
     except ImportError:

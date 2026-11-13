@@ -311,6 +311,7 @@ LINE_PAGES = {
     'ml': ('simulaciones-machine-learning.html', 'Simulaciones y machine learning', 'Simulations and machine learning'),
 }
 TOPICS = [
+    (None, r'instrument', 'instrumentación', 'instrumentation'),
     ('optica', r'photosph|fotosf', 'fotosfera solar', 'solar photosphere'),
     ('optica', r'sunspot|manchas? solar', 'manchas solares', 'sunspots'),
     ('optica', r'granul', 'granulación', 'granulation'),
@@ -341,6 +342,7 @@ TOPICS = [
     ('clima', r'cosmic|cosmico', 'rayos cósmicos', 'cosmic rays'),
     ('ml', r'machine learning|deep learning|neural|neuronal|aprendizaje|convolution|artificial intelligence|inteligencia artificial', 'machine learning', 'machine learning'),
     ('ml', r'\bpic\b|particle.in.cell|codigos de particulas', 'simulaciones de partículas (PIC)', 'particle-in-cell (PIC) simulations'),
+    ('ml', r'ondas? mhd|mhd waves?|alfven|magnetoacust|oscilaciones transversales|transverse oscillation', 'ondas MHD', 'MHD waves'),
     ('ml', r'\bmhd\b|magnetohydro|magnetohidro', 'magnetohidrodinámica (MHD)', 'magnetohydrodynamics (MHD)'),
     ('ml', r'simulat|simulaci|numeric', 'simulaciones numéricas', 'numerical simulations'),
     ('ml', r'data analysis|analisis de datos|python|database|base de datos|pipeline|algorithm|algoritmo', 'análisis de datos', 'data analysis'),
@@ -380,6 +382,8 @@ SKILLS = {
     'machine learning': ('Machine learning y deep learning', 'Machine learning and deep learning'),
     'simulaciones de partículas (PIC)': ('Simulaciones PIC', 'PIC simulations'),
     'magnetohidrodinámica (MHD)': ('Modelado MHD', 'MHD modelling'),
+    'ondas MHD': ('Análisis de ondas MHD', 'MHD wave analysis'),
+    'instrumentación': ('Desarrollo de instrumentación', 'Instrument development'),
     'simulaciones numéricas': ('Cómputo científico', 'Scientific computing'),
     'análisis de datos': ('Análisis de datos solares', 'Solar data analysis'),
 }
@@ -399,19 +403,36 @@ def member_topics(texts, lead=''):
         for line, pattern, es, en in TOPICS:
             if re.search(pattern, text):
                 counts[(es, en)] = counts.get((es, en), 0) + 1
-                line_counts[line] = line_counts.get(line, 0) + 1
+                if line:  # cross-cutting topics such as instrumentation belong to no single line
+                    line_counts[line] = line_counts.get(line, 0) + 1
     topics = sorted(counts, key=lambda key: (position(key[0]), -counts[key]))
     lines = [LINE_PAGES[line] for line in sorted(line_counts, key=lambda line: -line_counts[line])]
     return topics, lines
+
+
+# Fallback when a member has no bio, publications or theses on the site yet.
+CATEGORY_TEXT = {
+    'pregrado': ('{} es estudiante de pregrado y se está formando en física solar con el GoSA.',
+                 '{} is an undergraduate student training in solar physics with GoSA.'),
+    'maestria': ('{} es estudiante de posgrado en el GoSA.', '{} is a graduate student at GoSA.'),
+    'egresado': ('{} se formó en el GoSA.', '{} trained at GoSA.'),
+    'anteriores': ('{} fue integrante del GoSA.', '{} was a member of GoSA.'),
+    'otras': ('{} colabora con el GoSA desde otra institución.', '{} collaborates with GoSA from another institution.'),
+    'investigador': ('{} es investigador/a del GoSA.', '{} is a GoSA researcher.'),
+    '': ('{} forma parte del Grupo de Astrofísica Solar (GoSA).', '{} is part of the Solar Astrophysics Group (GoSA).'),
+}
 
 
 def member_work_html(member, topics, lines):
     """A few words on what the member works on: hand-written bio if present, otherwise derived from their work."""
     bio = (f'<p class="pop-text">{bilingual(member["bio_es"], member.get("bio_en", member["bio_es"]))}</p>'
            if member.get('bio_es') else '')
-    first = escape(member['name'].split()[0])
+    if bio:
+        return bio  # the hand-written bio already says what they work on
+    first = member['name'].split()[0]
     if not topics:
-        return bio or (f'<p class="pop-text">{bilingual(f"{first} forma parte del Grupo de Astrofísica Solar (GoSA).", f"{first} is part of the Solar Astrophysics Group (GoSA).")}</p>')
+        es, en = CATEGORY_TEXT.get(member.get('category'), CATEGORY_TEXT[''])
+        return f'<p class="pop-text">{bilingual(es.format(first), en.format(first))}</p>'
     def listing(items, conjunction):
         return items[0] if len(items) == 1 else ', '.join(items[:-1]) + f' {conjunction} ' + items[-1]
     line_es = listing([f'«{es}»' for _, es, _ in lines[:2]], 'y')
@@ -419,7 +440,7 @@ def member_work_html(member, topics, lines):
     word_es, word_en = ('las líneas', 'the research lines') if len(lines) > 1 else ('la línea', 'the research line')
     top_es = listing([es for es, _ in topics[:3]], 'y')
     top_en = listing([en for _, en in topics[:3]], 'and')
-    return bio + (f'<p class="pop-text">{bilingual(f"Su trabajo en el grupo se relaciona con {word_es} {line_es}, en especial con temas de {top_es}.", f"Their work in the group relates to {word_en} {line_en}, especially {top_en}.")}</p>')
+    return (f'<p class="pop-text">{bilingual(f"Su trabajo en el grupo se relaciona con {word_es} {line_es}, en especial con temas de {top_es}.", f"Their work in the group relates to {word_en} {line_en}, especially {top_en}.")}</p>')
 
 
 def member_profiles(members):
@@ -553,6 +574,86 @@ def member_profiles(members):
     return profiles
 
 
+# ---------------------------------------------------------------------------
+# Production indicators (produccion.html): theses, publications by line, team
+# ---------------------------------------------------------------------------
+
+def bar_rows(rows, label_es, label_en):
+    """Horizontal bars (label, value, optional link) scaled to the largest value; one hue, values labelled."""
+    top = max(value for _, _, value, _ in rows) or 1
+    items = []
+    for es, en, value, href in rows:
+        name = bilingual(es, en)
+        name = f'<a href="{escape(href)}">{name}</a>' if href else name
+        items.append(f'''<li class="ind-row" title="{escape(es)}: {value}">
+                            <span class="ind-name">{name}</span>
+                            <span class="ind-track"><span class="ind-fill" style="width:{value / top * 100:.1f}%"></span></span>
+                            <span class="ind-val">{value}</span></li>''')
+    return (f'<ul class="ind-bars" aria-label="{escape(label_es)} / {escape(label_en)}">' + ''.join(items) + '</ul>')
+
+
+def render_indicators():
+    theses = read_theses()
+    levels = {}
+    for t in theses:
+        levels[t['level']] = levels.get(t['level'], 0) + 1
+    directors = {' '.join(d) for t in theses for d in t['directors'] if d}
+    first_year = min(t['year'] for t in theses)
+    level_rows = [(level, LEVEL_EN.get(level, level), levels[level], '')
+                  for level in ('Doctorado', 'Maestría', 'Pregrado') if levels.get(level)]
+
+    publications = read_data('publications')
+    line_counts, other = {}, 0
+    for item in publications:
+        text = ' '.join(name_tokens(item['title_html'])) + ' ' + plain(item['title_html']).lower()
+        found = {line for line, pattern, _, _ in TOPICS if line and re.search(pattern, text)}
+        for line in found:
+            line_counts[line] = line_counts.get(line, 0) + 1
+        other += not found
+    line_rows = [(LINE_PAGES[line][1], LINE_PAGES[line][2], n, LINE_PAGES[line][0])
+                 for line, n in sorted(line_counts.items(), key=lambda kv: -kv[1])]
+    line_rows.append(('Ciencia y sociedad, otros temas', 'Science and society, other topics', other, ''))
+
+    categories = {}
+    for member in read_data('members'):
+        categories[member['category']] = categories.get(member['category'], 0) + 1
+    team_rows = [(es, en, categories.get(key, 0), '') for key, es, en in (
+        ('investigador', 'Investigadores y colaboradores', 'Researchers and collaborators'),
+        ('maestria', 'Posgrado', 'Graduate students'),
+        ('pregrado', 'Pregrado', 'Undergraduates'),
+        ('otras', 'Otras instituciones', 'Other institutions')) if categories.get(key)]
+    current = sum(n for _, _, n, _ in team_rows)
+    alumni = categories.get('egresado', 0) + categories.get('anteriores', 0)
+
+    def card(title_es, title_en, number, number_es, number_en, rows, note_es, note_en):
+        return f'''<div class="ind-card">
+                        <h5 class="ind-title">{bilingual(title_es, title_en)}</h5>
+                        <p class="ind-big"><span class="ind-num">{number}</span> {bilingual(number_es, number_en)}</p>
+                        {bar_rows(rows, title_es, title_en)}
+                        <p class="ind-note">{bilingual(note_es, note_en)}</p>
+                    </div>'''
+
+    return f'''<div class="info-panel ind-panel">
+                        <div class="info-panel-head">
+                            <div>
+                                <h4 class="info-section-title">{bilingual('Formación, líneas y equipo', 'Training, research lines and team')}</h4>
+                                <p class="info-section-sub">{bilingual('Indicadores calculados a partir de las tesis, publicaciones e integrantes listados en el sitio', 'Indicators computed from the theses, publications and members listed on the site')}</p>
+                            </div>
+                        </div>
+                        <div class="ind-grid">
+                    {card('Tesis completadas', 'Completed theses', len(theses), f'tesis desde {first_year}', f'theses since {first_year}',
+                          level_rows, f'Dirigidas o codirigidas por {len(directors)} investigadores.',
+                          f'Supervised or co-supervised by {len(directors)} researchers.')}
+                    {card('Publicaciones por línea', 'Publications by research line', len(publications), 'publicaciones', 'publications',
+                          line_rows, 'Clasificadas por palabras clave del título; una publicación puede tocar varias líneas.',
+                          'Classified by title keywords; a publication can belong to several lines.')}
+                    {card('Equipo actual', 'Current team', current, 'integrantes', 'members',
+                          team_rows, f'Además, {alumni} egresados y antiguos integrantes han pasado por el grupo.',
+                          f'In addition, {alumni} alumni and former members have been part of the group.')}
+                        </div>
+                    </div>'''
+
+
 def initials_avatar(name):
     """Inline SVG with the member's initials, instead of requesting a third-party avatar service."""
     initials = ''.join(part[0] for part in name.split()[:2]).upper()
@@ -563,9 +664,10 @@ def initials_avatar(name):
     return 'data:image/svg+xml,' + quote(svg)
 
 
-def render_page(page):
+def render_page(page, extra=None):
     source = (TEMPLATES / 'pages' / page).read_text(encoding='utf-8')
     values = {
+        **(extra or {}),
         'header': substitute((TEMPLATES / 'partials/header.html').read_text(encoding='utf-8'),
                              {'home': '' if page == 'index.html' else 'index.html'}),
         'footer': substitute((TEMPLATES / 'partials/footer.html').read_text(encoding='utf-8'),
@@ -585,6 +687,8 @@ def render_page(page):
                    for item in read_data('members')]
         values['members'] = '\n'.join(render_record('member', {**item, **extra})
                                       for item, extra in zip(members, member_profiles(members)))
+    if '{{indicators}}' in source:
+        values['indicators'] = render_indicators()
     if '{{material}}' in source:
         values['material'] = render_material(read_data('material'))
     for index, record in enumerate(read_data('news').get(page, [])):
