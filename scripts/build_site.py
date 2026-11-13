@@ -32,10 +32,10 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 try:
-    from .content import name_tokens, plain, read_data, render_page
+    from .content import name_tokens, news_link, news_summary_html, plain, read_data, render_page
     from .site_assets import collect_assets
 except ImportError:
-    from content import name_tokens, plain, read_data, render_page
+    from content import name_tokens, news_link, news_summary_html, plain, read_data, render_page
     from site_assets import collect_assets
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -44,8 +44,9 @@ BASE_URL = "https://astronomiaoan.co/gosa/"
 
 RESEARCH_PAGES = ["optica-alta-resolucion.html", "radio-rayos-x.html", "clima-espacial.html",
                   "simulaciones-machine-learning.html"]
-PAGES = ["index.html", "escuela.html", "material.html", "produccion.html", "dynasun.html"] + RESEARCH_PAGES
+PAGES = ["index.html", "escuela.html", "material.html", "produccion.html", "dynasun.html", "rss.html"] + RESEARCH_PAGES
 PRIORITY = {"index.html": "1.0", "escuela.html": "0.8", "material.html": "0.7", "produccion.html": "0.8", "dynasun.html": "0.7",
+            "rss.html": "0.3",
             **{page: "0.8" for page in RESEARCH_PAGES}}
 # Archivos y carpetas que se publican tal cual (el resto del repo no se sube).
 ASSET_GLOBS = ["google*.html"]
@@ -257,13 +258,16 @@ def in_language(fragment, lang):
 def build_feed(lang):
     """RSS 2.0 con las novedades de la portada (data/news.json -> index.html).
     Un campo opcional "date" (AAAA-MM-DD) en cada novedad se publica como pubDate."""
-    link = page_url("index.html", lang) + "#novedades"
     items = []
     for record in read_data("news").get("index.html", []):
         title = in_language(record["title_html"], lang)
-        body = in_language(record["body_html"], lang)
-        if len(body) > 600:
-            body = body[:600].rsplit(" ", 1)[0] + "…"
+        body = in_language(news_summary_html(record["body_html"]), lang)
+        target = news_link(record)
+        if target.startswith("http"):
+            link = target
+        else:
+            page, _, fragment = target.partition("#")
+            link = page_url(page or "index.html", lang) + (f"#{fragment}" if fragment else "")
         slug = "-".join(name_tokens(in_language(record["title_html"], "es")))[:80]
         item = [f"      <title>{html_escape(title)}</title>", f"      <link>{link}</link>",
                 f'      <guid isPermaLink="false">gosa-news-{slug}</guid>',

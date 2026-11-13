@@ -654,6 +654,48 @@ def render_indicators():
                     </div>'''
 
 
+# ---------------------------------------------------------------------------
+# News: short summary and target link (RSS feed and rss.html)
+# ---------------------------------------------------------------------------
+
+def news_summary_html(body_html, limit=320):
+    """Leading paragraphs of a news body (trusted HTML), without tables, expandable blocks or "Ver más →" links."""
+    # "Ver más →" call-to-action links are dropped; links inside a sentence keep their text.
+    body = re.sub(r'<a\b[^>]*class="news-link"[^>]*>(.*?)</a>',
+                  lambda m: '' if '→' in m.group(1) else m.group(1), body_html, flags=re.S)
+    body = re.sub(r'<table\b.*?</table>', '', body, flags=re.S)
+    paragraphs, length = [], 0
+    for paragraph in re.findall(r'<p\b[^>]*>(.*?)</p>', body, flags=re.S):
+        text = plain(paragraph)
+        if not text:
+            continue
+        paragraphs.append(paragraph.strip())
+        length += len(text) / 2  # both languages are in the same fragment
+        if length >= limit:
+            break
+    return ' '.join(paragraphs)
+
+
+def news_link(record):
+    """Where a news item points: its own "Ver más →" link, else the news section of the home page."""
+    found = re.search(r'<a\b[^>]*href="([^"]+)"[^>]*class="news-link"|<a\b[^>]*class="news-link"[^>]*href="([^"]+)"',
+                      record['body_html'], flags=re.S)
+    return (found.group(1) or found.group(2)) if found else 'index.html#novedades'
+
+
+def render_rss_items():
+    items = []
+    for record in read_data('news').get('index.html', []):
+        href = news_link(record)
+        external = href.startswith('http')
+        items.append(f'''                        <li class="rss-item">
+                            <h3><a href="{escape(href)}"{' target="_blank" rel="noopener"' if external else ''}>{record['title_html']}</a></h3>
+                            <p class="rss-date">{record['date_html']}</p>
+                            <p>{news_summary_html(record['body_html'])}</p>
+                        </li>''')
+    return '\n'.join(items)
+
+
 def initials_avatar(name):
     """Inline SVG with the member's initials, instead of requesting a third-party avatar service."""
     initials = ''.join(part[0] for part in name.split()[:2]).upper()
@@ -689,6 +731,8 @@ def render_page(page, extra=None):
                                       for item, extra in zip(members, member_profiles(members)))
     if '{{indicators}}' in source:
         values['indicators'] = render_indicators()
+    if '{{rss_items}}' in source:
+        values['rss_items'] = render_rss_items()
     if '{{material}}' in source:
         values['material'] = render_material(read_data('material'))
     for index, record in enumerate(read_data('news').get(page, [])):

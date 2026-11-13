@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Subscribe to GoSA news (RSS) | GoSA">Suscríbete a las novedades (RSS) | GoSA</title>
+    <meta name="description"
+        content="Recibe las novedades del Grupo de Astrofísica Solar (GoSA) en tu lector de noticias con el canal RSS."
+        data-en-content="Get news from the Solar Astrophysics Group (GoSA) in your feed reader with the RSS feed.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co https://*.goatcounter.com; media-src 'self'; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="canonical" href="https://astronomiaoan.co/gosa/rss.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="GoSA">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:title" content="Suscríbete a las novedades (RSS) | GoSA">
+    <meta property="og:description" content="Recibe las novedades del Grupo de Astrofísica Solar (GoSA) en tu lector de noticias con el canal RSS.">
+    <meta property="og:url" content="https://astronomiaoan.co/gosa/rss.html">
+    <meta property="og:image" content="https://astronomiaoan.co/gosa/Media/imagen%20sol.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Suscríbete a las novedades (RSS) | GoSA">
+    <meta name="twitter:description" content="Recibe las novedades del Grupo de Astrofísica Solar (GoSA) en tu lector de noticias con el canal RSS.">
+    <meta name="twitter:image" content="https://astronomiaoan.co/gosa/Media/imagen%20sol.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <!-- Icon font loads without blocking the first paint -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
+    <noscript><style>.scroll-appear { opacity: 1; transform: none; animation: none !important; }</style></noscript>
+</head>
+
+<body class="lang-es">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
+{{header}}
+
+    <main>
+        <section class="section-spacing" style="padding-top: 150px;">
+            <div class="container">
+                <article class="glassmorphism research-page rss-page">
+                    <p class="research-page-kicker"><a href="index.html#novedades"><span class="es">← Novedades</span><span class="en">← News</span></a></p>
+                    <h1 class="section-title"><span class="es">Suscríbete a las <span class="gradient-text">novedades</span></span><span class="en">Subscribe to the <span class="gradient-text">news</span></span></h1>
+                    <p class="research-page-answer"><span class="es">Con el canal RSS recibes cada novedad del GoSA (escuelas, seminarios, congresos y proyectos) en tu lector de noticias, sin redes sociales ni correos.</span><span class="en">With the RSS feed you get every GoSA update (schools, seminars, conferences and projects) in your feed reader, without social media or email.</span></p>
+
+                    <h2 class="research-page-question"><span class="es">Cómo suscribirte</span><span class="en">How to subscribe</span></h2>
+                    <ol class="rss-steps">
+                        <li><span class="es">Copia la dirección del canal:</span><span class="en">Copy the feed address:</span>
+                            <div class="rss-copy">
+                                <input class="rss-url es" type="text" readonly value="https://astronomiaoan.co/gosa/feed.xml" aria-label="Dirección del canal RSS">
+                                <input class="rss-url en" type="text" readonly value="https://astronomiaoan.co/gosa/en/feed.xml" aria-label="RSS feed address">
+                                <button type="button" class="btn btn-primary rss-copy-btn" data-copy-feed><i class="fa-regular fa-copy" aria-hidden="true"></i> <span class="es">Copiar</span><span class="en">Copy</span></button>
+                            </div>
+                            <p class="rss-copied" role="status" aria-live="polite"></p>
+                        </li>
+                        <li><span class="es">Pégala en tu lector (Feedly, Inoreader, NetNewsWire, Thunderbird…) o ábrela directamente:</span><span class="en">Paste it into your reader (Feedly, Inoreader, NetNewsWire, Thunderbird…) or open it directly:</span>
+                            <div class="rss-readers">
+                                <a class="btn btn-secondary es" href="https://feedly.com/i/subscription/feed/https://astronomiaoan.co/gosa/feed.xml" target="_blank" rel="noopener">Feedly ↗</a>
+                                <a class="btn btn-secondary en" href="https://feedly.com/i/subscription/feed/https://astronomiaoan.co/gosa/en/feed.xml" target="_blank" rel="noopener">Feedly ↗</a>
+                                <a class="btn btn-secondary es" href="https://www.inoreader.com/?add_feed=https://astronomiaoan.co/gosa/feed.xml" target="_blank" rel="noopener">Inoreader ↗</a>
+                                <a class="btn btn-secondary en" href="https://www.inoreader.com/?add_feed=https://astronomiaoan.co/gosa/en/feed.xml" target="_blank" rel="noopener">Inoreader ↗</a>
+                            </div>
+                        </li>
+                    </ol>
+                    <p class="rss-note"><span class="es">Si abres el archivo <a href="feed.xml">feed.xml</a> en el navegador verás código: es normal, está pensado para los lectores de noticias.</span><span class="en">If you open the <a href="en/feed.xml">feed.xml</a> file in a browser you will see code: that is expected, it is meant for feed readers.</span></p>
+
+                    <h2 class="research-page-question"><span class="es">Lo que publica el canal</span><span class="en">What the feed publishes</span></h2>
+                    <ul class="rss-items">
+{{rss_items}}
+                    </ul>
+                </article>
+            </div>
+        </section>
+    </main>
+
+{{footer}}
+
+    <script src="script.js"></script>
+</body>
+
+</html>

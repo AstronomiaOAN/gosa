@@ -504,3 +504,20 @@ document.addEventListener('submit', async (e) => {
         button.disabled = false;
     }
 });
+
+// rss.html: copy the feed address (the visible input is the one for the page language).
+document.addEventListener('click', async (e) => {
+    const button = e.target.closest('[data-copy-feed]');
+    if (!button) return;
+    const box = button.closest('li');
+    const input = [...box.querySelectorAll('.rss-url')].find(el => el.offsetParent !== null);
+    const status = box.querySelector('.rss-copied');
+    const en = document.documentElement.lang === 'en';
+    try {
+        await navigator.clipboard.writeText(input.value);
+        status.textContent = en ? 'Address copied. Paste it into your feed reader.' : 'Dirección copiada. Pégala en tu lector de noticias.';
+    } catch {
+        input.select();
+        status.textContent = en ? 'Select the address and copy it (Ctrl/Cmd + C).' : 'Selecciona la dirección y cópiala (Ctrl/Cmd + C).';
+    }
+});
