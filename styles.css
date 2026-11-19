@@ -212,6 +212,8 @@ header.scrolled {
 
 nav ul {
     list-style: none;
+    /* Native scrollspy: links whose #target is in view match :target-current */
+    scroll-target-group: auto;
     display: flex;
     gap: 30px;
 }
@@ -240,12 +242,12 @@ nav ul {
 }
 
 .nav-link:hover::after,
-.nav-link.active::after {
+.nav-link:is(:target-current, .active)::after {
     width: 100%;
 }
 
 .nav-link:hover,
-.nav-link.active {
+.nav-link:is(:target-current, .active) {
     color: var(--text-bright);
 }
 
@@ -458,23 +460,15 @@ nav ul {
 }
 
 .research-details {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.8s ease-in-out, opacity 0.5s ease-in-out, margin 0.5s ease-in-out;
     text-align: left;
-    margin-top: 0px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.research-card.expanded .research-details {
-    max-height: 3500px;
-    opacity: 1;
-    margin-top: 30px;
-    border-top: 1px solid var(--border-subtle);
-    padding-top: 30px;
+/* Details only show inside the mini window (script.js moves them there); stay collapsed in the card, even before JS runs. */
+.research-card > .research-details {
+    display: none;
 }
 
 .research-detail-img {
@@ -1872,7 +1866,7 @@ header { gap: 24px; }
     font-family: var(--font-body);
 }
 .nav-link { font-size: .9rem; font-weight: 500; }
-.nav-link:hover, .nav-link.active { color: var(--gold-dark); }
+.nav-link:hover, .nav-link:is(:target-current, .active) { color: var(--gold-dark); }
 .nav-link::after { background: var(--gold); }
 .mobile-menu-btn { position: relative; z-index: 1001; }
 .mobile-menu-btn span { background: var(--ink); }
@@ -1923,7 +1917,6 @@ header { gap: 24px; }
 .research-card { text-align: left; min-height: 300px; }
 .research-card h3 { font-size: 1.5rem; color: var(--ink); }
 .research-card p.summary { margin-left: 0; }
-.research-card.expanded .research-details { max-height: none; border-color: var(--line); }
 .research-text h4 { color: var(--ink); border-color: var(--gold); }
 .team-avatar-img { box-shadow: none; border: 3px solid #efe6d6; background: #eaf0f3; }
 .team-member-card .role, .tesis-cat { color: var(--gold-dark); }
@@ -2036,9 +2029,6 @@ img { max-width: 100%; }
 }
 .research-card[style*="background-image"] a:hover {
     color: #ffffff;
-}
-.research-card[style*="background-image"].expanded .research-details {
-    border-color: rgba(224, 189, 134, .5);
 }
 
 /* Páginas de líneas de investigación (optica-alta-resolucion.html, clima-espacial.html, ...) */
@@ -2215,9 +2205,7 @@ a.pop-detail { color: var(--blue); }
 .mini-body .member-details .pop-head { margin-bottom: 14px; }
 .mini-body .member-details .pop-avatar { width: 64px; height: 64px; }
 .mini-body .member-details .pop-name { font-size: 1.25rem; }
-.mini-body .research-details {
-    max-height: none; opacity: 1; overflow: visible; margin: 0; padding: 0; border: 0;
-}
+.mini-body .research-details { margin: 0; padding: 0; border: 0; }
 .mini-body .research-text p, .mini-body .research-text li { font-size: 1rem; }
 html:has(.mini-window[open]) { overflow: hidden; }
 @media (max-width: 640px) {

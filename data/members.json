@@ -69,6 +69,19 @@
     ]
   },
   {
+    "name": "Jeffersson Agudelo Rueda",
+    "category": "investigador",
+    "image": "images/team-optimized/jeffersson_agudelo_rueda.jpg",
+    "role_html": "<span class=\"es\">Colaborador Externo</span><span class=\"en\">External Collaborator</span>",
+    "institution_html": "<p class=\"inst\"><span class=\"es\">Northumbria University, Reino Unido · Investigador posdoctoral</span><span class=\"en\">Northumbria University, United Kingdom · Postdoctoral researcher</span></p>",
+    "links_html": "\n                            <a href=\"https://researchportal.northumbria.ac.uk/en/persons/jeffersson-agudelo/\" target=\"_blank\" class=\"member-link\"\n                                title=\"Northumbria Research Portal\"><i class=\"fa-solid fa-globe\"></i></a>\n                        ",
+    "bio_es": "Investigador posdoctoral en Northumbria University (Reino Unido), antes posdoctoral en Dartmouth College (EE. UU.). Estudia la reconexión magnética y la turbulencia en plasmas espaciales sin colisiones mediante simulaciones cinéticas particle-in-cell en 3D: el transporte de energía en la reconexión a pequeña escala, la formación de plasmoides en hojas de corriente forzadas por turbulencia y los electrones del viento solar observados por Parker Solar Probe. En el GoSA codirige tesis y trabajos sobre turbulencia e intermitencia en el viento solar y la magnetofunda, y es coautor de la revisión «Actividad solar y clima espacial» (2026).",
+    "bio_en": "Postdoctoral researcher at Northumbria University (UK), previously a postdoc at Dartmouth College (USA). Studies magnetic reconnection and turbulence in collisionless space plasmas with 3D particle-in-cell kinetic simulations: energy transport in small-scale reconnection, plasmoid formation in turbulence-driven current sheets and solar-wind electrons observed by Parker Solar Probe. At GoSA he co-supervises theses and projects on turbulence and intermittency in the solar wind and the magnetosheath, and co-authored the review “Solar activity and space weather” (2026).",
+    "lines": [
+      "clima"
+    ]
+  },
+  {
     "name": "Angel Daniel Martínez",
     "category": "anteriores",
     "image": "images/team-optimized/angel_daniel_martinez.webp",

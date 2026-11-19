@@ -104,33 +104,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.documentElement.classList.add('js-started');
 
-    const handleScroll = () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-
-        // Active Nav Link Update
-        let current = '';
-        const sections = document.querySelectorAll('section');
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (window.scrollY >= sectionTop - 200) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    };
-
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => header.classList.toggle('scrolled', window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Trigger on load
+
+    // Active nav link (scrollspy). Supporting browsers highlight it natively with
+    // scroll-target-group + :target-current (see styles.css); script only mirrors it in aria-current.
+    // Elsewhere an IntersectionObserver sets the .active class as a fallback.
+    const navLinks = [...document.querySelectorAll('.nav-link')];
+    const markCurrent = current => navLinks.forEach(link => {
+        if (link === current) link.setAttribute('aria-current', 'true');
+        else link.removeAttribute('aria-current');
+    });
+    if (CSS.supports('scroll-target-group: auto')) {
+        const syncCurrent = () => markCurrent(document.querySelector('.nav-link:target-current'));
+        // :target-current settles in the next rendering update, after scrollend fires.
+        const syncSoon = () => requestAnimationFrame(() => setTimeout(syncCurrent));
+        syncSoon();
+        document.addEventListener('scrollend', syncSoon);
+    } else if ('IntersectionObserver' in window) {
+        const linkFor = new Map();
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            const target = href.startsWith('#') && document.getElementById(href.slice(1));
+            if (target) linkFor.set(target, link);
+        });
+        const spy = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const current = linkFor.get(entry.target);
+                navLinks.forEach(link => link.classList.toggle('active', link === current));
+                markCurrent(current);
+            });
+        }, { rootMargin: '-50% 0px -50% 0px', threshold: 0 });
+        linkFor.forEach((link, target) => spy.observe(target));
+    }
 
     // Mobile Menu Toggle
     const menuBtn = document.getElementById('menu-btn');
