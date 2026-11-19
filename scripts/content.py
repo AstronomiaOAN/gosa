@@ -228,6 +228,7 @@ def read_theses():
             'title': plain(re.search(r'class="tesis-title">(.*?)</h4>', body, re.S).group(1)),
             'level': level,
             'author': name_tokens(author.split('•', 1)[-1]),
+            'author_name': ' '.join(plain(author.split('•', 1)[-1]).split()),
             'directors': [name_tokens(re.sub(r'^\s*Director:?', '', item))
                           for item in re.split(r'<br\s*/?>', directors.group(1))] if directors else [],
         })
@@ -563,7 +564,8 @@ def member_profiles(members):
             more = (f'<a class="pop-more" href="produccion.html?q={quote(query)}">'
                     f'{bilingual("Ver todos en Producción", "See all in Research output")} <span aria-hidden="true">→</span></a>'
                     if query and n > 3 else '')
-            title = bilingual('Artículos recientes', 'Recent articles') if n > 3 else bilingual('Artículos', 'Articles')
+            title = (bilingual('Artículos recientes con el GoSA', 'Recent articles with GoSA') if n > 3
+                     else bilingual('Artículos con el GoSA', 'Articles with GoSA'))
             sections.append(f'<div class="pop-section"><h5>{title}</h5><ul class="pop-list">{items}</ul>{more}</div>')
         if roles:
             grouped = {}
@@ -590,6 +592,16 @@ def member_profiles(members):
                             for t in sorted(own, key=lambda t: -t['year']))
             sections.append(f'<div class="pop-section"><h5>{bilingual("Tesis", "Thesis" if len(own) == 1 else "Theses")}</h5>'
                             f'<ul class="pop-list">{items}</ul></div>')
+        if directed:
+            # Theses they supervised, most recent first, with the student's name.
+            shown = sorted(directed, key=lambda t: -t['year'])[:4]
+            items = ''.join(f'<li><span class="pop-year">{t["year"]}</span><span>{escape(t["title"])}'
+                            f'<span class="pop-role">{bilingual(t["level"], LEVEL_EN.get(t["level"], t["level"]))} · '
+                            f'{escape(t["author_name"])}</span></span></li>' for t in shown)
+            more = (f'<a class="pop-more" href="produccion.html#tesis">{bilingual("Ver todas en Producción", "See all in Research output")} '
+                    f'<span aria-hidden="true">→</span></a>' if len(directed) > 4 else '')
+            sections.append(f'<div class="pop-section"><h5>{bilingual("Tesis dirigidas", "Supervised theses")}</h5>'
+                            f'<ul class="pop-list">{items}</ul>{more}</div>')
 
         institution = member.get('institution_html', '')
         emails = re.findall(r'href="mailto:([^"]+)"', member['links_html'])
