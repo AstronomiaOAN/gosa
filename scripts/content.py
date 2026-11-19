@@ -189,10 +189,13 @@ def name_tokens(text):
     return re.sub(r'[^a-z ]', ' ', text).split()
 
 
-def is_author(member, author):
-    """`author` (tokens from a publication) is the member, allowing initials such as "J. C. Buitrago-Casas"."""
+def is_author(member, author, surnames=None):
+    """`author` (tokens from a publication) is the member, allowing initials such as "J. C. Buitrago-Casas".
+    `surnames` (from "surnames" in members.json) overrides the guess for names like "Simón Salas Hernández"."""
     if not author or (author[0] != member[0] and not (len(author[0]) == 1 and author[0] == member[0][0])):
         return False
+    if surnames:
+        return all(token in author[1:] for token in surnames)
     surnames = member[-2:] if len(member) >= 4 else member[-1:]
     if len(author[0]) == 1 and len(member) >= 4:
         return all(token in author[1:] for token in surnames)  # initials need both surnames
@@ -240,7 +243,20 @@ SCHOOL_ROLES = {
     'defense': ('Sustentación', 'Thesis defence', 'sustentó su tesis (video disponible)', 'defended a thesis (video available)'),
     'organize': ('Organización', 'Organization', 'participó en la organización del {es}', 'helped organize the {en}'),
     'attend': ('Participación', 'Participation', 'participó en el {es}', 'took part in the {en}'),
+    'staff': ('Staff', 'Staff', 'formó parte del staff del {es}', 'was part of the {en} staff'),
+    'present': ('Presentación', 'Presentation', 'presentó un trabajo en el {es}', 'presented work at the {en}'),
+    'coauthor': ('Coautoría', 'Co-authorship', 'firmó trabajos presentados en el {es}', 'co-authored work presented at the {en}'),
 }
+# Extra roles in the same events read as "donde también presentó un trabajo" / "where they also presented work".
+EVENT_PHRASES = {
+    'organize': ('participó en la organización', 'helped organize it'),
+    'staff': ('formó parte del staff', 'was on the staff'),
+    'attend': ('participó', 'took part'),
+    'present': ('presentó un trabajo', 'presented work'),
+    'coauthor': ('firmó trabajos', 'co-authored contributions'),
+}
+# Contribution types in data/events.json -> (es, en) label shown before the title.
+CONTRIBUTION_TYPES = {'oral': ('Charla oral', 'Oral talk'), 'flash': ('Flash talk', 'Flash talk'), 'poster': ('Póster', 'Poster')}
 
 
 def read_school_roles():
@@ -270,13 +286,22 @@ def read_school_roles():
                     detail = (f"{lesson['title_es']}: {lesson.get('detail_es', '')}".rstrip(': '),
                               f"{lesson['title_en']}: {lesson.get('detail_en', '')}".rstrip(': '))
                     roles.append({**base, 'kind': 'teach', 'who': name_tokens(speaker), 'details': [detail]})
-    # Events (data/events.json): organizers and participants; organizing takes precedence.
+    # Events (data/events.json): organizers, staff (or plain participants) and contributed work;
+    # organizing takes precedence over staff.
     for event in read_data('events')['events']:
         base = {'id': event['id'], 'title_es': event['title_es'], 'title_en': event['title_en'], 'href': event.get('href', '')}
         organizers = [name_tokens(name) for name in event.get('organizers', [])]
         roles += [{**base, 'kind': 'organize', 'who': who, 'details': []} for who in organizers]
+        roles += [{**base, 'kind': 'staff', 'who': name_tokens(name), 'details': []}
+                  for name in event.get('staff', []) if name_tokens(name) not in organizers]
         roles += [{**base, 'kind': 'attend', 'who': name_tokens(name), 'details': []}
                   for name in event.get('participants', []) if name_tokens(name) not in organizers]
+        for work in event.get('contributions', []):
+            label_es, label_en = CONTRIBUTION_TYPES.get(work.get('type'), ('Trabajo', 'Contribution'))
+            detail = (f'{label_es}: {work["title"]}', f'{label_en}: {work["title"]}')
+            for i, name in enumerate(work.get('members', [])):
+                kind = 'present' if i == 0 and work.get('presenter') else 'coauthor'
+                roles.append({**base, 'kind': kind, 'who': name_tokens(name), 'details': [detail]})
     return roles
 
 
@@ -342,7 +367,7 @@ TOPICS = [
     ('clima', r'cosmic|cosmico', 'rayos cósmicos', 'cosmic rays'),
     ('ml', r'machine learning|deep learning|neural|neuronal|aprendizaje|convolution|artificial intelligence|inteligencia artificial', 'machine learning', 'machine learning'),
     ('ml', r'\bpic\b|particle.in.cell|codigos de particulas', 'simulaciones de partículas (PIC)', 'particle-in-cell (PIC) simulations'),
-    ('ml', r'ondas? mhd|mhd waves?|alfven|magnetoacust|oscilaciones transversales|transverse oscillation', 'ondas MHD', 'MHD waves'),
+    ('ml', r'ondas? mhd|mhd waves?|oscilaciones mhd|mhd oscillations?|alfven|magnetoacust|oscilaciones transversales|transverse oscillation', 'ondas MHD', 'MHD waves'),
     ('ml', r'\bmhd\b|magnetohydro|magnetohidro', 'magnetohidrodinámica (MHD)', 'magnetohydrodynamics (MHD)'),
     ('ml', r'simulat|simulaci|numeric', 'simulaciones numéricas', 'numerical simulations'),
     ('ml', r'data analysis|analisis de datos|python|database|base de datos|pipeline|algorithm|algoritmo', 'análisis de datos', 'data analysis'),
@@ -414,6 +439,7 @@ def member_topics(texts, lead=''):
 CATEGORY_TEXT = {
     'pregrado': ('{} es estudiante de pregrado y se está formando en física solar con el GoSA.',
                  '{} is an undergraduate student training in solar physics with GoSA.'),
+    'doctorado': ('{} es estudiante de doctorado en el GoSA.', '{} is a PhD student at GoSA.'),
     'maestria': ('{} es estudiante de posgrado en el GoSA.', '{} is a graduate student at GoSA.'),
     'egresado': ('{} se formó en el GoSA.', '{} trained at GoSA.'),
     'anteriores': ('{} fue integrante del GoSA.', '{} was a member of GoSA.'),
@@ -451,7 +477,8 @@ def member_profiles(members):
     profiles = []
     for index, member in enumerate(members):
         tokens = name_tokens(member['name'])
-        pubs = [i for i, people in enumerate(authors) if any(is_author(tokens, a) for a in people)]
+        surnames = name_tokens(member.get('surnames', ''))
+        pubs = [i for i, people in enumerate(authors) if any(is_author(tokens, a, surnames) for a in people)]
         own = [t for t in theses if same_person(tokens, t['author'])]
         directed = [t for t in theses if any(same_person(tokens, d) for d in t['directors'])]
         roles = [r for r in schools if same_person(tokens, r['who'])]
@@ -468,15 +495,49 @@ def member_profiles(members):
                               else f'presentó {len(own)} tesis en el grupo')
             clauses_en.append(f'completed a {LEVEL_EN.get(latest["level"], latest["level"]).lower()} thesis in {latest["year"]}'
                               if len(own) == 1 else f'completed {len(own)} theses with the group')
-        if directed:
+        # A bio that already tells how many theses they supervise wins over the count of theses listed on the site.
+        if directed and not re.search(r'dirig\w* \d+ tesis', member.get('bio_es', '')):
             clauses_es.append(f'dirigió {k} tesis')
             clauses_en.append(f'supervised {k} thes{"es" if k > 1 else "is"}')
         seen = set()
+        kinds = {(role['kind'], role['id']) for role in roles}
+        # Events: one clause per role, listing every event with that role ("presentó trabajos en el A y el B");
+        # roles held in exactly the same events share a clause ("formó parte del staff del A, donde también …").
+        event_kinds = {}
+        for role in roles:
+            if role['kind'] in EVENT_PHRASES and not (role['kind'] == 'coauthor' and ('present', role['id']) in kinds):
+                titles = event_kinds.setdefault(role['kind'], {})
+                titles[role['id']] = (role['title_es'], role['title_en'])
         for role in roles:
             key = (role['kind'], role['id'])
-            if key in seen or role['kind'] == 'defense' and own:
+            if (key in seen or role['kind'] == 'defense' and own
+                    or role['kind'] == 'coauthor' and ('present', role['id']) in kinds):
                 continue
             seen.add(key)
+            if role['kind'] in EVENT_PHRASES:
+                if role['kind'] not in event_kinds:
+                    continue  # already written
+                events = event_kinds[role['kind']]
+                group = [k for k in EVENT_PHRASES if k in event_kinds and list(event_kinds[k]) == list(events)]
+                for k in group:
+                    del event_kinds[k]
+                names_es = [es for es, _ in events.values()]
+                names_en = [en for _, en in events.values()]
+                title_es = ', el '.join(names_es[:-1]) + ' y el ' + names_es[-1] if len(names_es) > 1 else names_es[0]
+                title_en = ', the '.join(names_en[:-1]) + ' and the ' + names_en[-1] if len(names_en) > 1 else names_en[0]
+                first, rest = group[0], group[1:]
+                clause_es = SCHOOL_ROLES[first][2].format(es=title_es)
+                if first == 'present' and len(events) > 1:
+                    clause_es = clause_es.replace('presentó un trabajo', 'presentó trabajos')
+                clause_en = SCHOOL_ROLES[first][3].format(en=title_en)
+                if rest:
+                    also_es = join_clauses([EVENT_PHRASES[k][0] for k in rest], 'y')[:-1]
+                    also_en = join_clauses([EVENT_PHRASES[k][1] for k in rest], 'and')[:-1]
+                    clause_es += f', donde también {also_es[0].lower() + also_es[1:]}'
+                    clause_en += f', where they also {also_en[0].lower() + also_en[1:]}'
+                clauses_es.append(clause_es)
+                clauses_en.append(clause_en)
+                continue
             clauses_es.append(SCHOOL_ROLES[role['kind']][2].format(es=role['title_es']))
             clauses_en.append(SCHOOL_ROLES[role['kind']][3].format(en=role['title_en']))
         summary = bilingual(join_clauses(clauses_es, 'y'), join_clauses(clauses_en, 'and')) if clauses_es else ''
@@ -486,6 +547,8 @@ def member_profiles(members):
         # A hand-written bio says best what the member works on, so its topics come first.
         bio = member.get('bio_es', '')
         topics, lines = member_topics(([bio] * 5 if bio else []) + texts, lead=bio.split('. ')[0])
+        if member.get('lines'):  # research lines chosen by the member ("optica", "radio", "clima", "ml")
+            lines = [LINE_PAGES[key] for key in member['lines'] if key in LINE_PAGES]
         work = member_work_html(member, topics, lines)
         topic_chips = ''.join(f'<span class="member-chip">{bilingual(es, en)}</span>' for es, en in topics[:4])
 
@@ -541,7 +604,10 @@ def member_profiles(members):
         about = (f'<div class="pop-section"><h5>{bilingual("Sobre su trabajo", "About their work")}</h5>{work}'
                  + (f'<p class="pop-summary">{summary}</p>' if summary else '')
                  + (f'<div class="member-chips pop-chips">{lines_html}</div>' if lines_html else '') + '</div>')
-        skills = list(dict.fromkeys(SKILLS[es] for es, _ in topics if es in SKILLS))[:6]
+        skills = list(dict.fromkeys(SKILLS[es] for es, _ in topics if es in SKILLS))
+        if SKILLS['ondas MHD'] in skills:  # MHD comes from the waves they analyse, not from running models
+            skills = [skill for skill in skills if skill != SKILLS['magnetohidrodinámica (MHD)']]
+        skills = skills[:6]
         if skills:
             about += (f'<div class="pop-section"><h5>{bilingual("Habilidades", "Skills")}</h5><div class="member-chips pop-chips">'
                       + ''.join(f'<span class="member-chip member-skill">{bilingual(es, en)}</span>' for es, en in skills)
@@ -619,8 +685,10 @@ def render_indicators():
         categories[member['category']] = categories.get(member['category'], 0) + 1
     team_rows = [(es, en, categories.get(key, 0), '') for key, es, en in (
         ('investigador', 'Investigadores y colaboradores', 'Researchers and collaborators'),
-        ('maestria', 'Posgrado', 'Graduate students'),
+        ('doctorado', 'Doctorado', 'PhD students'),
+        ('maestria', 'Maestría', 'MSc students'),
         ('pregrado', 'Pregrado', 'Undergraduates'),
+        ('integrante', 'Otros integrantes', 'Other members'),
         ('otras', 'Otras instituciones', 'Other institutions')) if categories.get(key)]
     current = sum(n for _, _, n, _ in team_rows)
     alumni = categories.get('egresado', 0) + categories.get('anteriores', 0)

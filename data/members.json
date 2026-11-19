@@ -56,14 +56,17 @@
     "bio_en": "Studies photospheric plasma dynamics in active regions: horizontal flows, granulation and magnetic bright points measured in high-resolution observations."
   },
   {
-    "name": "Juan Sebastián Hincapié Tarquino",
-    "category": "egresado",
-    "image": "images/team-optimized/juan_sebastian_hincapie_tarquino.webp",
-    "role_html": "<span class=\"es\">Egresado</span><span class=\"en\">Alumnus</span>",
-    "institution_html": "",
-    "links_html": "\n                            <a href=\"mailto:jshincapiet@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0001-8758-1706\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                            <a href=\"https://www.researchgate.net/profile/Juan-Hincapie-Tarquino\" target=\"_blank\"\n                                class=\"member-link\" title=\"ResearchGate\"><i class=\"fa-brands fa-researchgate\"></i></a>\n                        ",
-    "bio_es": "Trabaja en instrumentación para radioastronomía solar: participó en el diseño e implementación del interferómetro solar de radio multielemento a 1,42 GHz del OAN. En el proyecto DynaSun (Academia de Ciencias de Chequia y Max Planck Institute) implementa el software de la antena RT2 y estudia estructuras solares con MiHI.",
-    "bio_en": "Works on instrumentation for solar radio astronomy: took part in the design and implementation of the OAN multi-element solar radio interferometer at 1.42 GHz. In the DynaSun project (Czech Academy of Sciences and Max Planck Institute), implements the software for the RT2 antenna and studies solar structures with MiHI."
+    "name": "Juan Sebastián Castellanos Durán",
+    "category": "investigador",
+    "image": "images/team-optimized/juan_sebastian_castellanos_duran_v2.webp",
+    "role_html": "<span class=\"es\">Colaborador Externo</span><span class=\"en\">External Collaborator</span>",
+    "institution_html": "<p class=\"inst\"><span class=\"es\">Max Planck Institute for Solar System Research (MPS) · Profesor adjunto, Observatorio Astronómico Nacional</span><span class=\"en\">Max Planck Institute for Solar System Research (MPS) · Adjunct Professor, National Astronomical Observatory</span></p>",
+    "links_html": "\n                            <a href=\"mailto:castellanos@mps.mpg.de\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0003-4319-2009\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        ",
+    "bio_es": "Investigador posdoctoral en el Max Planck Institute for Solar System Research desde 2022 y profesor adjunto del Observatorio Astronómico Nacional desde 2026. Es experto en la observación de alta resolución de la fotosfera y la cromosfera solar: miembro central del equipo de Sunrise III, coordinó sus co-observaciones con observatorios en tierra y en el espacio (2022–2025), integra el comité de asignación de tiempo del telescopio GREGOR y ha liderado 8 campañas como investigador principal en GREGOR. Se doctoró en el MPS y la Universidad de Göttingen (2022) y es magíster en Astronomía y físico de la Universidad Nacional de Colombia. Ha dirigido 4 tesis de pregrado y actualmente dirige 3 tesis de maestría y 2 de pregrado.",
+    "bio_en": "Postdoctoral researcher at the Max Planck Institute for Solar System Research since 2022 and adjunct professor at the National Astronomical Observatory since 2026. An expert in high-resolution observations of the solar photosphere and chromosphere: core member of the Sunrise III team, chair of its co-observations with ground- and space-based observatories (2022–2025), member of the GREGOR time-allocation committee and PI of 8 GREGOR campaigns. He holds a PhD from MPS and the University of Göttingen (2022) and an MSc in Astronomy and a BSc in Physics from the National University of Colombia. He has supervised 4 bachelor's theses and currently supervises 3 master's and 2 bachelor's theses.",
+    "lines": [
+      "optica"
+    ]
   },
   {
     "name": "Angel Daniel Martínez",
@@ -74,6 +77,16 @@
     "links_html": "\n                            <a href=\"mailto:andmartinezci@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0002-3435-4881\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                            <a href=\"https://www.researchgate.net/profile/Angel_Martinez67\" target=\"_blank\"\n                                class=\"member-link\" title=\"ResearchGate\"><i class=\"fa-brands fa-researchgate\"></i></a>\n                        ",
     "bio_es": "Estudia la sismología de fulguraciones: el origen de las fuentes acústicas subfotosféricas que producen los sismos solares.",
     "bio_en": "Studies flare seismology: the origin of the subphotospheric acoustic sources that produce sunquakes."
+  },
+  {
+    "name": "Julián David Alvarado Gómez",
+    "category": "egresado",
+    "image": "images/team-optimized/julian_david_alvarado_gomez.webp",
+    "role_html": "<span class=\"es\">Egresado</span><span class=\"en\">Alumnus</span>",
+    "institution_html": "<p class=\"inst\"><span class=\"es\">Leibniz Institute for Astrophysics Potsdam (AIP), Alemania</span><span class=\"en\">Leibniz Institute for Astrophysics Potsdam (AIP), Germany</span></p>",
+    "links_html": "\n                            <a href=\"mailto:julian.alvarado-gomez@aip.de\" class=\"member-link\" title=\"Email\">✉️</a>\n                        ",
+    "bio_es": "Uno de los precursores del GoSA. Estudia el magnetismo estelar y el clima espacial más allá del Sistema Solar: coronas y vientos estelares, eyecciones de masa coronal en estrellas activas y su impacto en los exoplanetas. Es físico y magíster en Astrofísica de la Universidad Nacional de Colombia y el OAN, hizo su doctorado en el ESO (IMPRS), fue posdoctoral en el Center for Astrophysics | Harvard & Smithsonian y es Karl Schwarzschild Fellow del Leibniz Institute for Astrophysics Potsdam (AIP).",
+    "bio_en": "One of GoSA's founding members. Studies stellar magnetism and space weather beyond the Solar System: stellar coronae and winds, coronal mass ejections in active stars and their impact on exoplanets. He holds a BSc in Physics and an MSc in Astrophysics from the National University of Colombia and the OAN, did his PhD at ESO (IMPRS), was a postdoc at the Center for Astrophysics | Harvard & Smithsonian and is a Karl Schwarzschild Fellow at the Leibniz Institute for Astrophysics Potsdam (AIP)."
   },
   {
     "name": "Santiago Pinzón Cortés",
@@ -122,6 +135,36 @@
     "links_html": "\n                            <a href=\"mailto:jsanchezg@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        ",
     "bio_es": "Trabaja en instrumentación: implementó un medidor de centelleo atmosférico diurno para la prospección de sitios de observación y participa en la red radiointerferométrica solar del OAN (RRIS-OAN).",
     "bio_en": "Works on instrumentation: built a daytime atmospheric scintillation monitor for observatory site testing and takes part in the OAN solar radio-interferometric network (RRIS-OAN)."
+  },
+  {
+    "name": "Paula Jessica González Prieto",
+    "category": "doctorado",
+    "image": "images/team-optimized/paula_jessica_gonzalez_prieto.webp",
+    "role_html": "<span class=\"es\">Estudiante de Doctorado</span><span class=\"en\">PhD Student</span>",
+    "institution_html": "<p class=\"inst\"><span class=\"es\">Observatorio Astronómico Nacional (OAN)</span><span class=\"en\">National Astronomical Observatory (OAN)</span></p>",
+    "links_html": "\n                            <a href=\"mailto:pjgonzalezp@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0003-5287-8114\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        ",
+    "bio_es": "Trabaja en la predicción de fulguraciones solares. En el proyecto DynaSun, con la Universidad de Graz, evalúa el Flare Anticipation Index (FAI) con datos históricos del satélite GOES.",
+    "bio_en": "Works on solar flare prediction. In the DynaSun project, with the University of Graz, evaluates the Flare Anticipation Index (FAI) using historical GOES satellite data."
+  },
+  {
+    "name": "Juan Esteban Agudelo Ortiz",
+    "category": "doctorado",
+    "image": "images/team-optimized/juan_esteban_agudelo_ortiz.webp",
+    "role_html": "<span class=\"es\">Estudiante de Doctorado</span><span class=\"en\">PhD Student</span>",
+    "institution_html": "<p class=\"inst\"><span class=\"es\">Observatorio Astronómico Nacional (OAN)</span><span class=\"en\">National Astronomical Observatory (OAN)</span></p>",
+    "links_html": "\n                            <a href=\"mailto:juagudeloo@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0002-7840-9370\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                            <a href=\"https://www.researchgate.net/profile/Juan-Agudelo-Ortiz\" target=\"_blank\"\n                                class=\"member-link\" title=\"ResearchGate\"><i class=\"fa-brands fa-researchgate\"></i></a>\n                        ",
+    "bio_es": "Trabaja en inteligencia artificial aplicada a la física solar, en particular en la inversión de los parámetros de Stokes para inferir las condiciones físicas de la atmósfera solar. En la HelioData Academy 2026 dictó la clase de machine learning aplicado al estudio del Sol.",
+    "bio_en": "Works on artificial intelligence for solar physics, in particular on the inversion of Stokes parameters to infer the physical conditions of the solar atmosphere. At HelioData Academy 2026 he taught the class on machine learning applied to the study of the Sun."
+  },
+  {
+    "name": "Juan Sebastián Hincapié Tarquino",
+    "category": "doctorado",
+    "image": "images/team-optimized/juan_sebastian_hincapie_tarquino.webp",
+    "role_html": "<span class=\"es\">Estudiante de Doctorado</span><span class=\"en\">PhD Student</span>",
+    "institution_html": "<p class=\"inst\"><span class=\"es\">PhD en Ciencias del Espacio y Tecnología, Universidad de Trento / Instituto Nacional de Física Nuclear (INFN), División de Pisa</span><span class=\"en\">PhD in Space Science and Technology, University of Trento / National Institute for Nuclear Physics (INFN), Pisa Division</span></p>",
+    "links_html": "\n                            <a href=\"mailto:jshincapiet@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0001-8758-1706\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                            <a href=\"https://www.researchgate.net/profile/Juan-Hincapie-Tarquino\" target=\"_blank\"\n                                class=\"member-link\" title=\"ResearchGate\"><i class=\"fa-brands fa-researchgate\"></i></a>\n                        ",
+    "bio_es": "Trabaja en instrumentación para radioastronomía solar: participó en el diseño e implementación del interferómetro solar de radio multielemento a 1,42 GHz del OAN. En el proyecto DynaSun (Academia de Ciencias de Chequia y Max Planck Institute) implementa el software de la antena RT2 y estudia estructuras solares con MiHI.",
+    "bio_en": "Works on instrumentation for solar radio astronomy: took part in the design and implementation of the OAN multi-element solar radio interferometer at 1.42 GHz. In the DynaSun project (Czech Academy of Sciences and Max Planck Institute), implements the software for the RT2 antenna and studies solar structures with MiHI."
   },
   {
     "name": "Julio Flórez Macías",
@@ -174,24 +217,17 @@
     "bio_en": "Works on magnetic bright points in the solar photosphere."
   },
   {
-    "name": "Paula Jessica González Prieto",
-    "category": "maestria",
-    "image": "images/team-optimized/paula_jessica_gonzalez_prieto.webp",
-    "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
-    "institution_html": "",
-    "links_html": "\n                            <a href=\"mailto:pjgonzalezp@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0003-5287-8114\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        ",
-    "bio_es": "Trabaja en la predicción de fulguraciones solares. En el proyecto DynaSun, con la Universidad de Graz, evalúa el Flare Anticipation Index (FAI) con datos históricos del satélite GOES.",
-    "bio_en": "Works on solar flare prediction. In the DynaSun project, with the University of Graz, evaluates the Flare Anticipation Index (FAI) using historical GOES satellite data."
-  },
-  {
     "name": "Oscar Andres Calvo Rebellon",
     "category": "maestria",
     "image": "images/team-optimized/oscar_andres_calvo_rebellon.webp",
     "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
     "institution_html": "",
     "links_html": "\n                            <a href=\"mailto:oscara.calvor@uqvirtual.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0001-5926-4164\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        ",
-    "bio_es": "Trabaja en ondas MHD en la atmósfera solar, en particular en las oscilaciones transversales de fibrillas cromosféricas. En la HelioData Academy 2026 enseñó las ecuaciones y ondas MHD y la observación de la cromosfera.",
-    "bio_en": "Works on MHD waves in the solar atmosphere, in particular transverse oscillations of chromospheric fibrils. At HelioData Academy 2026, taught MHD equations and waves and chromospheric observations."
+    "bio_es": "Trabaja con datos observacionales de la fotosfera y la cromosfera solar y en la comparación de esas observaciones con modelos de la atmósfera solar. Tiene experiencia en el tratamiento de observaciones de telescopios de alta resolución como DKIST, GREGOR y SST. Actualmente estudia las oscilaciones MHD en fibrillas cromosféricas.",
+    "bio_en": "Works with observational data of the solar photosphere and chromosphere and on comparing those observations with models of the solar atmosphere. Experienced in processing observations from high-resolution telescopes such as DKIST, GREGOR and SST. Currently studies MHD oscillations in chromospheric fibrils.",
+    "lines": [
+      "optica"
+    ]
   },
   {
     "name": "Juan Pablo Herrera Moreno",
@@ -204,16 +240,6 @@
     "bio_en": "Works on dynamics and magnetic activity in the solar photosphere. At HelioData Academy 2026 he taught the class on solar observations, flows and motions."
   },
   {
-    "name": "Johan Nicolás Molina",
-    "category": "egresado",
-    "image": "images/team-optimized/johan_nicolas_molina.webp",
-    "role_html": "<span class=\"es\">Egresado</span><span class=\"en\">Alumnus</span>",
-    "institution_html": "",
-    "links_html": "\n                            <a href=\"mailto:jomolinac@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0001-7938-8295\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        ",
-    "bio_es": "Estudia la influencia del ciclo solar en la atmósfera de Marte, en particular la variabilidad de la concentración de HO en la baja atmósfera marciana.",
-    "bio_en": "Studies the influence of the solar cycle on the Martian atmosphere, in particular the variability of HO concentration in the lower Martian atmosphere."
-  },
-  {
     "name": "Eliana Maritza Amazo Gómez",
     "category": "egresado",
     "image": "images/team-optimized/eliana_maritza_amazo_gomez.jpg",
@@ -222,6 +248,26 @@
     "links_html": "\n                            <a href=\"mailto:emamazog@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0003-1283-0848\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        ",
     "bio_es": "Estudia el Sol en comparación con otras estrellas: las firmas fotométricas de manchas, fáculas y fulguraciones. Se doctoró en la Universität Göttingen y el Max Planck Institute for Solar System Research, ha trabajado en el Leibniz Institute for Astrophysics Potsdam (AIP) y dictó el módulo de estrellas en la Escuela de Magnetismo y Actividad Solar y Estelar del OAN.",
     "bio_en": "Studies the Sun compared with other stars: the photometric signatures of spots, faculae and flares. Holds a PhD from the University of Göttingen and the Max Planck Institute for Solar System Research, has worked at the Leibniz Institute for Astrophysics Potsdam (AIP) and taught the stars module at the OAN School of Solar and Stellar Magnetism and Activity."
+  },
+  {
+    "name": "Andrés Felipe Guerrero Guio",
+    "category": "egresado",
+    "image": "images/Andres Felipe Guerrero.jpeg",
+    "role_html": "<span class=\"es\">Egresado</span><span class=\"en\">Alumnus</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:afguerrerogu@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0002-9877-5191\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        ",
+    "bio_es": "Estudia la turbulencia del plasma en el viento solar con simulaciones cinéticas 3D: anisotropía e intermitencia. También ha investigado la contaminación lumínica en ciudades de Latinoamérica.",
+    "bio_en": "Studies plasma turbulence in the solar wind with 3D kinetic simulations (anisotropy and intermittency). Has also researched light pollution in Latin American cities."
+  },
+  {
+    "name": "Johan Nicolás Molina",
+    "category": "egresado",
+    "image": "images/team-optimized/johan_nicolas_molina.webp",
+    "role_html": "<span class=\"es\">Egresado</span><span class=\"en\">Alumnus</span>",
+    "institution_html": "",
+    "links_html": "\n                            <a href=\"mailto:jomolinac@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0001-7938-8295\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        ",
+    "bio_es": "Estudia la influencia del ciclo solar en la atmósfera de Marte, en particular la variabilidad de la concentración de HO en la baja atmósfera marciana.",
+    "bio_en": "Studies the influence of the solar cycle on the Martian atmosphere, in particular the variability of HO concentration in the lower Martian atmosphere."
   },
   {
     "name": "Carlos Alberto Martinez Sibaja",
@@ -234,16 +280,6 @@
     "bio_en": "Works on numerical plasma simulations with particle-in-cell (PIC) and magnetohydrodynamic (MHD) codes. At HelioData Academy 2026 he taught MHD simulations, the interaction of particle beams with the solar atmosphere, the solar wind and running simulations on clusters."
   },
   {
-    "name": "Juan Esteban Agudelo Ortiz",
-    "category": "maestria",
-    "image": "images/team-optimized/juan_esteban_agudelo_ortiz.webp",
-    "role_html": "<span class=\"es\">Estudiante de Doctorado</span><span class=\"en\">PhD\n                                Student</span>",
-    "institution_html": "",
-    "links_html": "\n                            <a href=\"mailto:juagudeloo@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0002-7840-9370\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                            <a href=\"https://www.researchgate.net/profile/Juan-Agudelo-Ortiz\" target=\"_blank\"\n                                class=\"member-link\" title=\"ResearchGate\"><i class=\"fa-brands fa-researchgate\"></i></a>\n                        ",
-    "bio_es": "Trabaja en inteligencia artificial aplicada a la física solar, en particular en la inversión de los parámetros de Stokes para inferir las condiciones físicas de la atmósfera solar. En la HelioData Academy 2026 dictó la clase de machine learning aplicado al estudio del Sol.",
-    "bio_en": "Works on artificial intelligence for solar physics, in particular on the inversion of Stokes parameters to infer the physical conditions of the solar atmosphere. At HelioData Academy 2026 he taught the class on machine learning applied to the study of the Sun."
-  },
-  {
     "name": "Laura Camila Palacino Téllez",
     "category": "maestria",
     "image": "images/team-optimized/laura_camila_palacino_tellez.webp",
@@ -252,16 +288,6 @@
     "links_html": "\n                            <a href=\"mailto:lpalacino@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0009-0003-8022-7001\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        ",
     "bio_es": "Trabaja en magnetohidrodinámica (MHD) e instrumentación de radio: en el proyecto DynaSun, con la Academia de Ciencias de Chequia, analiza las vibraciones de la antena RT5.",
     "bio_en": "Works on magnetohydrodynamics (MHD) and radio instrumentation: in the DynaSun project, with the Czech Academy of Sciences, analyses the vibrations of the RT5 antenna."
-  },
-  {
-    "name": "Andrés Felipe Guerrero Guio",
-    "category": "maestria",
-    "image": "images/Andres Felipe Guerrero.jpeg",
-    "role_html": "<span class=\"es\">Posgrado</span><span class=\"en\">Graduate Student</span>",
-    "institution_html": "",
-    "links_html": "\n                            <a href=\"mailto:afguerrerogu@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                            <a href=\"https://orcid.org/0000-0002-9877-5191\" target=\"_blank\" class=\"member-link\"\n                                title=\"ORCID\"><i class=\"fa-brands fa-orcid\"></i></a>\n                        ",
-    "bio_es": "Estudia la turbulencia del plasma en el viento solar con simulaciones cinéticas 3D: anisotropía e intermitencia. También ha investigado la contaminación lumínica en ciudades de Latinoamérica.",
-    "bio_en": "Studies plasma turbulence in the solar wind with 3D kinetic simulations (anisotropy and intermittency). Has also researched light pollution in Latin American cities."
   },
   {
     "name": "Juan José Beltrán Ramírez",
@@ -392,12 +418,29 @@
     "links_html": "\n                            <a href=\"mailto:sunrizal@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
   },
   {
+    "name": "Luis Felipe Losada González",
+    "category": "pregrado",
+    "image": "images/team-optimized/luis_felipe_losada_gonzalez.jpg",
+    "role_html": "<span class=\"es\">Pregrado</span><span class=\"en\">Undergraduate</span>",
+    "institution_html": "",
+    "links_html": ""
+  },
+  {
     "name": "Nicoll Valeria Moreno Alzate",
     "category": "otras",
     "image": "images/team-optimized/nicoll_valeria_moreno_alzate.webp",
     "role_html": "<span class=\"es\">Otras Inst.</span><span class=\"en\">Other Inst.</span>",
     "institution_html": "",
     "links_html": "\n                            <a href=\"mailto:nvmorenoa@eafit.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
+  },
+  {
+    "name": "Simón Salas Hernández",
+    "category": "integrante",
+    "image": "https://ui-avatars.com/api/?name=Sim%C3%B3n+Salas+Hern%C3%A1ndez&background=00b4d8&color=fff&size=150",
+    "role_html": "<span class=\"es\">Integrante</span><span class=\"en\">Member</span>",
+    "institution_html": "",
+    "links_html": "",
+    "surnames": "Salas Hernández"
   },
   {
     "name": "Juan Camilo Hernández Clavijo",

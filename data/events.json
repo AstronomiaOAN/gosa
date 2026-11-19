@@ -4,6 +4,7 @@
       "id": "iaus400",
       "title_es": "IAU Symposium 400",
       "title_en": "IAU Symposium 400",
+      "_comment": "organizers: organización; staff: equipo de apoyo del evento; contributions: trabajos con integrantes del grupo. type: oral | flash | poster. members: integrantes del grupo en el trabajo (nombre como en members.json); presenter: true si el primer autor es integrante y lo presentó.",
       "organizers": [
         "Jose Ivan Campos Rozo",
         "Juan Camilo Buitrago",
@@ -13,7 +14,7 @@
         "Milena Andrea Barrios Gallego",
         "Juan Pablo Herrera Moreno"
       ],
-      "participants": [
+      "staff": [
         "Julio Flórez Macías",
         "Daniel Alberto Rodríguez Torres",
         "Paula Jessica González Prieto",
@@ -23,6 +24,428 @@
         "Juan Esteban Agudelo Ortiz",
         "Laura Camila Palacino Téllez",
         "Andrés Felipe Guerrero Guio"
+      ],
+      "contributions": [
+        {
+          "type": "oral",
+          "title": "Solar Observations with a 21cm Multi-element Radio Interferometric Array",
+          "authors": "J. S. Hincapié Tarquino, B. Calvo Mozo, J. C. Martínez Oliveros, J. L. Araque Quijano y J. Sánchez González",
+          "members": [
+            "Juan Sebastián Hincapié Tarquino",
+            "Benjamín Calvo Mozo",
+            "Juan Carlos Martínez Oliveros",
+            "Javier Sánchez González"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "oral",
+          "title": "Solar Radio-Interferometric Network of the Observatorio Astronómico Nacional (RRIS-OAN): Inter-calibration and Instrumental Integration",
+          "authors": "J. Sánchez González, J. C. Martínez Oliveros y S. Vargas Domínguez",
+          "members": [
+            "Javier Sánchez González",
+            "Juan Carlos Martínez Oliveros",
+            "Santiago Vargas Domínguez"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "oral",
+          "title": "The PADRE Mission Blueprint: Accelerating Scientific Instrument Development Through Commercial CubeSat Partnerships",
+          "authors": "A. Stratton, C. Moeckel, J. C. Buitrago-Casas, C. Smith, J. C. Martínez Oliveros, V. Mihaylov y G. Naso",
+          "members": [
+            "Juan Camilo Buitrago",
+            "Juan Carlos Martínez Oliveros"
+          ],
+          "presenter": false
+        },
+        {
+          "type": "oral",
+          "title": "Solar Spectropolarimetric Inversions applying Deep Learning Techniques",
+          "authors": "J. E. Agudelo Ortiz, N. Germain Morales, S. Vargas Domínguez y S. Shelyag",
+          "members": [
+            "Juan Esteban Agudelo Ortiz",
+            "Germain Nicolas Morales Suárez",
+            "Santiago Vargas Domínguez"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "oral",
+          "title": "Precursory Mechanisms of Solar Flares: A statistical validation of the Flare Anticipation Index (FAI) Using Soft X-ray Observations",
+          "authors": "P. J. González Prieto, S. Vargas Domínguez y J. C. Buitrago-Casas",
+          "members": [
+            "Paula Jessica González Prieto",
+            "Santiago Vargas Domínguez",
+            "Juan Camilo Buitrago"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "flash",
+          "title": "Energy Transfer and Plasma Intermittency in the Earth's Magnetosheath using Multi-Point Measurements with HelioSwarm-like Trajectories",
+          "authors": "A. F. Guerrero Guio, J. A. Agudelo Rueda, S. Vargas Domínguez y C. Granier",
+          "members": [
+            "Andrés Felipe Guerrero Guio",
+            "Santiago Vargas Domínguez"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "poster",
+          "title": "Implementation of a portable site-testing instrument for solar Observations",
+          "authors": "J. Sánchez González y S. Vargas Domínguez",
+          "members": [
+            "Javier Sánchez González",
+            "Santiago Vargas Domínguez"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "poster",
+          "title": "Preliminary study of a narrow CME associated with the GOES M1.0-class solar flare observed during the FOXSI-4 flight on April 17, 2024 at 22:10 UTC",
+          "authors": "M. Castellanos Ramírez, C. Mac Cormack, M. Buitrago-Casas y A. Sahade",
+          "members": [
+            "Mariana Castellanos Ramírez"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "poster",
+          "title": "Analysis of the Unusual Movement of Umbral Dots Detached from a Light Bridge Toward the Penumbra in Active Region AR 13297 on May 9, 2023",
+          "authors": "O. A. Calvo Rebellon, J. S. Castellanos Durán y B. Calvo Mozo",
+          "members": [
+            "Oscar Andres Calvo Rebellon",
+            "Benjamín Calvo Mozo",
+            "Juan Sebastián Castellanos Durán"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "poster",
+          "title": "Relationship Between Magnetic Field Properties and Solar Granulation Patterns",
+          "authors": "J. I. Campos Rozo, J. Jurčák y M. Van Noort",
+          "members": [
+            "Jose Ivan Campos Rozo"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "poster",
+          "title": "Analysis of the Influence of the Magnetic Field on the Plasma Dynamics Around Active Regions",
+          "authors": "J. P. Herrera Moreno, J. I. Campos Rozo y B. Calvo Mozo",
+          "members": [
+            "Juan Pablo Herrera Moreno",
+            "Jose Ivan Campos Rozo",
+            "Benjamín Calvo Mozo"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "poster",
+          "title": "Ring Current Local Time dependence during geomagnetic storms using equatorial Dst-proxies",
+          "authors": "S. Pinzón-Cortés, N. Gómez-Pérez y S. Vargas Domínguez",
+          "members": [
+            "Santiago Pinzón Cortés",
+            "Santiago Vargas Domínguez"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "poster",
+          "title": "Influence of Surrounding Magnetic Structures on the Release of Coronal Mass Ejections in Sun-like Stars",
+          "authors": "M. Cécere, A. Costa, E. M. Amazo-Gómez y J. D. Alvarado-Gómez",
+          "members": [
+            "Eliana Maritza Amazo Gómez",
+            "Julián David Alvarado Gómez"
+          ],
+          "presenter": false
+        },
+        {
+          "type": "poster",
+          "title": "Assessment of acoustic holography parameters from the solar far side as a proxy of magnetic activity on the Sun's near side",
+          "authors": "D. A. Rodríguez Torres, B. Calvo Mozo y J. C. Buitrago-Casas",
+          "members": [
+            "Daniel Alberto Rodríguez Torres",
+            "Benjamín Calvo Mozo",
+            "Juan Camilo Buitrago"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "poster",
+          "title": "War Under the Sun: Exploring the Connection Between Solar Storms and Unexplained Events During World War II",
+          "authors": "F. Moreno, S. Vargas Domínguez, J. C. Buitrago-Casas y T. M. Naranjo",
+          "members": [
+            "Santiago Vargas Domínguez",
+            "Juan Camilo Buitrago"
+          ],
+          "presenter": false
+        },
+        {
+          "type": "poster",
+          "title": "Methods for the Determination of the Maximum Terrestrial Atmospheric Aberration that Allows the Inference of Sunspots' Magnetogram",
+          "authors": "M. Alzate Betancur, R. Restrepo Gómez, S. Vargas Domínguez y J. I. Campos Rozo",
+          "members": [
+            "Santiago Vargas Domínguez",
+            "Jose Ivan Campos Rozo"
+          ],
+          "presenter": false
+        },
+        {
+          "type": "poster",
+          "title": "Light Curves of Low-mass Dwarf Stars: A Frequency Analysis of Flares",
+          "authors": "J. N. Molina Córdoba, J. Murcia, S. Vargas Domínguez, S. Pineda y L. J. Contreras Ardila",
+          "members": [
+            "Johan Nicolás Molina",
+            "Santiago Vargas Domínguez"
+          ],
+          "presenter": true
+        }
+      ]
+    },
+    {
+      "id": "dynasun2026",
+      "title_es": "DynaSun Meeting 2026",
+      "title_en": "DynaSun Meeting 2026",
+      "subtitle": "Morphology and Evolution of Coronal Mass Ejections",
+      "href": "dynasun.html#dynasun-meeting-2026",
+      "dates": "2026-07-06/2026-07-10",
+      "place": "University of South Bohemia, Faculty of Science, České Budějovice, Czech Republic",
+      "organizers": [],
+      "staff": [],
+      "contributions": [
+        {
+          "type": "oral",
+          "title": "A copilot for solar physics",
+          "authors": "Juan Esteban Agudelo Ortiz, Santiago Vargas Domínguez y Andrés Muñoz Jaramillo",
+          "members": [
+            "Juan Esteban Agudelo Ortiz",
+            "Santiago Vargas Domínguez"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "oral",
+          "title": "Impact of Photospheric Magnetic Fields on the Size, Shape, and Brightness of Solar Granules",
+          "authors": "Jose Ivan Campos Rozo, Jan Jurčák, Saida Milena Díaz Castillo y Michiel van Noort",
+          "members": [
+            "Jose Ivan Campos Rozo"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "oral",
+          "title": "Acoustic power mapping of the quiet Sun as a diagnostic tool for MiHI observations of active region 12720",
+          "authors": "Daniel Alberto Rodríguez Torres, Alina Donea, Santiago Vargas Domínguez y Juan Sebastián Castellanos Durán",
+          "members": [
+            "Daniel Alberto Rodríguez Torres",
+            "Santiago Vargas Domínguez",
+            "Juan Sebastián Castellanos Durán"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "poster",
+          "title": "Physics-informed deep learning for spectropolarimetric inversions in the solar atmosphere",
+          "authors": "Juan Esteban Agudelo Ortiz, Santiago Vargas Domínguez, S. Shelyag y J. S. Castellanos Durán",
+          "members": [
+            "Juan Esteban Agudelo Ortiz",
+            "Santiago Vargas Domínguez",
+            "Juan Sebastián Castellanos Durán"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "poster",
+          "title": "H alpha broadening analysis with high-resolution spectropolarimetric data",
+          "authors": "Julio Flórez Macías, Sebastián Castellanos Durán y Benjamín Calvo Mozo",
+          "members": [
+            "Julio Flórez Macías",
+            "Benjamín Calvo Mozo",
+            "Juan Sebastián Castellanos Durán"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "poster",
+          "title": "Intermittency and Spectral Properties of Solar Wind Turbulence from Parker Solar Probe",
+          "authors": "Andrés F. Guerrero, Santiago Vargas Domínguez y T. Van Doorsselaere",
+          "members": [
+            "Andrés Felipe Guerrero Guio",
+            "Santiago Vargas Domínguez"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "poster",
+          "title": "Anisotropy-Driven Instabilities in Collisionless Plasmas with Non-Maxwellian Distributions",
+          "authors": "Carlos Alberto Martínez Sibaja, Santiago Vargas Domínguez y Jeffersson Agudelo Rueda",
+          "members": [
+            "Carlos Alberto Martinez Sibaja",
+            "Santiago Vargas Domínguez"
+          ],
+          "presenter": true
+        }
+      ]
+    },
+    {
+      "id": "cocoa2026",
+      "title_es": "CoCoA 2026",
+      "title_en": "CoCoA 2026",
+      "subtitle": "Congreso Colombiano de Astronomía y Astrofísica",
+      "href": "produccion.html#eventos",
+      "dates": "2026-09",
+      "place": "Bogotá, Colombia",
+      "organizers": [],
+      "staff": [],
+      "contributions": [
+        {
+          "type": "oral",
+          "title": "On the photospheric magnetic origin of coronal rain in the solar atmosphere",
+          "authors": "Samuel Noreña (ponente); Santiago Vargas Domínguez, Jenny Rodríguez Gómez, Patrick Antolin",
+          "members": [
+            "Samuel Felipe Noreña Téllez",
+            "Santiago Vargas Domínguez"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "poster",
+          "title": "Diseño y simulación de un campo magnético terrestre para la validación del ADCS en nanosatélite",
+          "authors": "Danna Ortiz Carrillo (ponente); Juan José Delgado, Andrés Morales, Sofía Vera",
+          "members": [
+            "Danna Vanessa Ortiz Carrillo"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "oral",
+          "title": "Estudio de los flujos horizontales en el entorno de manchas solares y su relación con el campo magnético local",
+          "authors": "Juan Pablo Herrera Moreno (ponente); José Iván Campos Rozo, Benjamín Calvo Mozo",
+          "members": [
+            "Juan Pablo Herrera Moreno",
+            "Jose Ivan Campos Rozo",
+            "Benjamín Calvo Mozo"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "oral",
+          "title": "Diagnósticos multi-punto para el estudio de la transferencia de energía en plasmas turbulentos",
+          "authors": "Andrés Felipe Guerrero (ponente); Santiago Vargas Domínguez, Jeffersson A. Agudelo Rueda, Gustavo Guerrero, Camila N. Koshikumo, Reinaldo Santos-Lima",
+          "members": [
+            "Andrés Felipe Guerrero Guio",
+            "Santiago Vargas Domínguez"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "oral",
+          "title": "Rastreando fuentes de emisión sísmica de alta frecuencia en el quiet Sun mediante holografía heliosísmica",
+          "authors": "Daniel Alberto Rodríguez Torres (ponente); Santiago Vargas, Alina Donea",
+          "members": [
+            "Daniel Alberto Rodríguez Torres",
+            "Santiago Vargas Domínguez"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "oral",
+          "title": "Monitoreo histórico y en tiempo casi real del índice de perturbación geomagnética local (Dlat) para el Observatorio de Fúquene",
+          "authors": "Santiago Alejandro Pinilla (ponente); Simón Salas, Santiago Pinzón, Santiago Vargas, Andrés Cárdenas",
+          "members": [
+            "Santiago Alejandro Pinilla Capador",
+            "Santiago Pinzón Cortés",
+            "Santiago Vargas Domínguez"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "oral",
+          "title": "On the nature of long-period umbral oscillations",
+          "authors": "Thomas González Rodríguez (ponente); Sebastián Castellanos Durán, Benjamín Calvo Mozo",
+          "members": [
+            "Thomas González Rodríguez",
+            "Benjamín Calvo Mozo",
+            "Juan Sebastián Castellanos Durán"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "oral",
+          "title": "Investigating the Origin of Flare-Driven Seismic Emission in Active Region 4455",
+          "authors": "Luis Felipe Losada González (ponente); Ángel Martínez, Benjamín Calvo Mozo",
+          "members": [
+            "Luis Felipe Losada González",
+            "Angel Daniel Martínez",
+            "Benjamín Calvo Mozo"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "oral",
+          "title": "A Fokker-Planck Model of Anisotropic Electron Transport in Solar Flares and its Hard X-ray Polarization Signatures",
+          "authors": "Milena Barrios Gallego (ponente); Juan Camilo Buitrago-Casas, Santiago Vargas Domínguez",
+          "members": [
+            "Milena Andrea Barrios Gallego",
+            "Juan Camilo Buitrago",
+            "Santiago Vargas Domínguez"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "oral",
+          "title": "Modelling non-thermal bremsstrahlung emission from electron populations in solar flares",
+          "authors": "Paula Jessica González Prieto (ponente); Alina Donea",
+          "members": [
+            "Paula Jessica González Prieto"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "oral",
+          "title": "Un copiloto para física solar",
+          "authors": "Juan Esteban Agudelo Ortiz (ponente); Santiago Vargas Domínguez, Andrés Muñoz Jaramillo",
+          "members": [
+            "Juan Esteban Agudelo Ortiz",
+            "Santiago Vargas Domínguez"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "oral",
+          "title": "Apropiación social e investigación astronómica en Colombia: la experiencia de la revista eSPECTRA",
+          "authors": "Johan Nicolás Molina Córdoba (ponente); Santiago Vargas Domínguez",
+          "members": [
+            "Johan Nicolás Molina",
+            "Santiago Vargas Domínguez"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "oral",
+          "title": "MOSAIC: A tool for analysing plasma and MHD wave dynamics in solar physics",
+          "authors": "Oscar Calvo (ponente); Sebastián Castellanos, Santiago Vargas",
+          "members": [
+            "Oscar Andres Calvo Rebellon",
+            "Santiago Vargas Domínguez",
+            "Juan Sebastián Castellanos Durán"
+          ],
+          "presenter": true
+        },
+        {
+          "type": "oral",
+          "title": "De los registros históricos al monitoreo geomagnético casi en tiempo real: implementación local del índice K en el Observatorio de Fúquene, Colombia",
+          "authors": "Simón Salas Hernández (ponente); Santiago Alejandro Pinilla, Santiago Pinzón, Santiago Vargas, Andrés Cárdenas",
+          "members": [
+            "Simón Salas Hernández",
+            "Santiago Alejandro Pinilla Capador",
+            "Santiago Pinzón Cortés",
+            "Santiago Vargas Domínguez"
+          ],
+          "presenter": true
+        }
       ]
     }
   ]
