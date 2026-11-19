@@ -434,15 +434,6 @@
     "links_html": "\n                            <a href=\"mailto:nvmorenoa@eafit.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        "
   },
   {
-    "name": "Simón Salas Hernández",
-    "category": "integrante",
-    "image": "https://ui-avatars.com/api/?name=Sim%C3%B3n+Salas+Hern%C3%A1ndez&background=00b4d8&color=fff&size=150",
-    "role_html": "<span class=\"es\">Integrante</span><span class=\"en\">Member</span>",
-    "institution_html": "",
-    "links_html": "",
-    "surnames": "Salas Hernández"
-  },
-  {
     "name": "Juan Camilo Hernández Clavijo",
     "category": "otras",
     "image": "images/Juan Camilo Hernandez.jpeg",
@@ -479,6 +470,15 @@
     "links_html": "\n                            <a href=\"mailto:sapinillac@unal.edu.co\" class=\"member-link\" title=\"Email\">✉️</a>\n                        ",
     "bio_es": "Trabaja en clima espacial con el Observatorio Geomagnético de Fúquene: monitoreo histórico y en tiempo casi real del índice de perturbación geomagnética local (Dlat) y del índice K.",
     "bio_en": "Works on space weather with the Fúquene Geomagnetic Observatory: historical and near-real-time monitoring of the local geomagnetic disturbance index (Dlat) and the K index."
+  },
+  {
+    "name": "Simón Salas Hernández",
+    "category": "otras",
+    "image": "https://ui-avatars.com/api/?name=Sim%C3%B3n+Salas+Hern%C3%A1ndez&background=00b4d8&color=fff&size=150",
+    "role_html": "<span class=\"es\">Otras Inst.</span><span class=\"en\">Other Inst.</span>",
+    "institution_html": "<p class=\"inst\"><span class=\"es\">Universidad Distrital Francisco José de Caldas</span><span class=\"en\">Universidad Distrital Francisco José de Caldas</span></p>",
+    "links_html": "",
+    "surnames": "Salas Hernández"
   },
   {
     "name": "Sofía Guevara Montoya",
