@@ -13,7 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap"
         rel="stylesheet">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co https://*.goatcounter.com; media-src 'self'; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co https://*.goatcounter.com https://services.swpc.noaa.gov; media-src 'self'; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <link rel="canonical" href="https://astronomiaoan.co/gosa/clima-espacial.html">
     <meta property="og:type" content="website">
@@ -138,6 +138,96 @@
                     </ul>
                     <p><a href="produccion.html" class="news-link"><span class="es">Ver la producción científica del grupo →</span><span class="en">See the group&#39;s scientific output →</span></a></p>
                 </article>
+
+                <section class="glassmorphism sw-monitor" id="tiempo-real" aria-labelledby="sw-title">
+                    <div class="sw-head">
+                        <div>
+                            <p class="sw-kicker"><span class="sw-live" aria-hidden="true"></span><span class="es">En vivo · NOAA · NASA · ESA</span><span class="en">Live · NOAA · NASA · ESA</span></p>
+                            <h2 class="section-title" id="sw-title"><span class="es">Clima espacial en <span class="gradient-text">tiempo real</span></span><span class="en">Space weather in <span class="gradient-text">real time</span></span></h2>
+                            <p class="sw-lead"><span class="es">El estado actual del Sol y del entorno terrestre, con datos abiertos que se actualizan cada pocos minutos.</span><span class="en">The current state of the Sun and of Earth&#39;s environment, with open data updated every few minutes.</span></p>
+                        </div>
+                        <div class="sw-controls">
+                            <button type="button" class="btn btn-secondary" id="sw-refresh"><i class="fa-solid fa-rotate" aria-hidden="true"></i> <span class="es">Actualizar</span><span class="en">Refresh</span></button>
+                            <p class="sw-status" id="sw-status" role="status" aria-live="polite"><span class="es">Cargando datos…</span><span class="en">Loading data…</span></p>
+                        </div>
+                    </div>
+
+                    <h3 class="sw-subtitle"><span class="es">Escalas NOAA de clima espacial</span><span class="en">NOAA space weather scales</span></h3>
+                    <div class="sw-scales">
+                        <div class="sw-scale" id="sw-R-card">
+                            <span class="sw-scale-value" id="sw-R">R–</span>
+                            <span class="sw-scale-name"><span class="es">Apagones de radio</span><span class="en">Radio blackouts</span></span>
+                            <span class="sw-scale-text" id="sw-R-text">—</span>
+                        </div>
+                        <div class="sw-scale" id="sw-S-card">
+                            <span class="sw-scale-value" id="sw-S">S–</span>
+                            <span class="sw-scale-name"><span class="es">Tormentas de radiación</span><span class="en">Radiation storms</span></span>
+                            <span class="sw-scale-text" id="sw-S-text">—</span>
+                        </div>
+                        <div class="sw-scale" id="sw-G-card">
+                            <span class="sw-scale-value" id="sw-G">G–</span>
+                            <span class="sw-scale-name"><span class="es">Tormentas geomagnéticas</span><span class="en">Geomagnetic storms</span></span>
+                            <span class="sw-scale-text" id="sw-G-text">—</span>
+                        </div>
+                    </div>
+
+                    <h3 class="sw-subtitle"><span class="es">Del Sol a la Tierra</span><span class="en">From the Sun to Earth</span></h3>
+                    <div class="sw-metrics">
+                        <article class="sw-metric" id="sw-xray-card">
+                            <h4><span class="es">Rayos X solares</span><span class="en">Solar X-rays</span></h4>
+                            <p class="sw-value"><span id="sw-xray">—</span></p>
+                            <p class="sw-note"><span class="es">Clase de fulguración GOES (0,1–0,8 nm)</span><span class="en">GOES flare class (0.1–0.8 nm)</span></p>
+                            <div class="sw-chart" id="sw-xray-chart"></div>
+                            <p class="sw-time"><span class="es">24 h · último:</span><span class="en">24 h · latest:</span> <span id="sw-xray-time">—</span></p>
+                        </article>
+                        <article class="sw-metric" id="sw-wind-card">
+                            <h4><span class="es">Viento solar</span><span class="en">Solar wind</span></h4>
+                            <p class="sw-value"><span id="sw-wind">—</span> <small>km/s</small></p>
+                            <p class="sw-note"><span class="es">Densidad:</span><span class="en">Density:</span> <span id="sw-dens">—</span> p/cm³</p>
+                            <div class="sw-chart" id="sw-wind-chart"></div>
+                            <p class="sw-time"><span class="es">L1 · último:</span><span class="en">L1 · latest:</span> <span id="sw-wind-time">—</span></p>
+                        </article>
+                        <article class="sw-metric" id="sw-bz-card">
+                            <h4><span class="es">Campo magnético Bz</span><span class="en">Magnetic field Bz</span></h4>
+                            <p class="sw-value"><span id="sw-bz">—</span> <small>nT</small></p>
+                            <p class="sw-note"><span class="es">Negativo sostenido favorece tormentas</span><span class="en">Sustained negative favours storms</span></p>
+                            <div class="sw-chart" id="sw-bz-chart"></div>
+                            <p class="sw-time"><span class="es">GSM · último:</span><span class="en">GSM · latest:</span> <span id="sw-bz-time">—</span></p>
+                        </article>
+                        <article class="sw-metric" id="sw-kp-card">
+                            <h4><span class="es">Índice Kp</span><span class="en">Kp index</span></h4>
+                            <p class="sw-value"><span id="sw-kp">—</span> <small>/ 9</small></p>
+                            <p class="sw-note" id="sw-kp-text">—</p>
+                            <div class="sw-chart" id="sw-kp-chart"></div>
+                            <p class="sw-time"><span class="es">3 días · último:</span><span class="en">3 days · latest:</span> <span id="sw-kp-time">—</span></p>
+                        </article>
+                    </div>
+
+                    <h3 class="sw-subtitle"><span class="es">Una ventana al Sol</span><span class="en">A window on the Sun</span></h3>
+                    <div class="sw-images">
+                        <figure class="sw-image">
+                            <img id="sw-sun" src="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_0193.jpg" data-base="https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_0193.jpg" alt="Imagen más reciente del Sol tomada por NASA SDO" width="1024" height="1024" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+                            <div class="sw-channels" role="group" aria-label="Canal SDO">
+                                <button type="button" data-channel="0193" aria-pressed="true">AIA 193</button>
+                                <button type="button" data-channel="0304" aria-pressed="false">AIA 304</button>
+                                <button type="button" data-channel="0171" aria-pressed="false">AIA 171</button>
+                                <button type="button" data-channel="HMIB" aria-pressed="false">HMI</button>
+                            </div>
+                            <figcaption>
+                                <span data-channel-note="0193"><span class="es">NASA SDO · Corona solar: plasma caliente y agujeros coronales.</span><span class="en">NASA SDO · Solar corona: hot plasma and coronal holes.</span></span>
+                                <span data-channel-note="0304" hidden><span class="es">NASA SDO · Cromosfera y región de transición: filamentos y prominencias.</span><span class="en">NASA SDO · Chromosphere and transition region: filaments and prominences.</span></span>
+                                <span data-channel-note="0171" hidden><span class="es">NASA SDO · Corona solar: arcos magnéticos.</span><span class="en">NASA SDO · Solar corona: magnetic loops.</span></span>
+                                <span data-channel-note="HMIB" hidden><span class="es">NASA SDO · Magnetograma: polaridades del campo magnético en la fotosfera.</span><span class="en">NASA SDO · Magnetogram: magnetic polarities in the photosphere.</span></span>
+                            </figcaption>
+                        </figure>
+                        <figure class="sw-image">
+                            <img id="sw-c2" src="https://soho.nascom.nasa.gov/data/realtime/c2/1024/latest.jpg" data-base="https://soho.nascom.nasa.gov/data/realtime/c2/1024/latest.jpg" alt="Imagen más reciente del coronógrafo LASCO C2 de SOHO" width="1024" height="1024" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+                            <figcaption><span class="es">ESA/NASA SOHO · Coronógrafo LASCO C2: aquí se ven salir las eyecciones de masa coronal (CMEs).</span><span class="en">ESA/NASA SOHO · LASCO C2 coronagraph: this is where coronal mass ejections (CMEs) are seen leaving the Sun.</span></figcaption>
+                        </figure>
+                    </div>
+
+                    <p class="sw-credits"><span class="es">Sección adaptada, con su autorización, del <a href="https://astronomiaoan.co/santiagovargas/climaespacial" rel="noopener">monitor de clima espacial de Santiago Vargas Domínguez</a>. Datos: <a href="https://www.swpc.noaa.gov/" rel="noopener">NOAA SWPC</a>, <a href="https://sdo.gsfc.nasa.gov/" rel="noopener">NASA SDO</a> y <a href="https://soho.nascom.nasa.gov/" rel="noopener">ESA/NASA SOHO</a>. Información divulgativa, no es un servicio oficial de alertas.</span><span class="en">Section adapted, with his permission, from <a href="https://astronomiaoan.co/santiagovargas/climaespacial" rel="noopener">Santiago Vargas Domínguez&#39;s space weather monitor</a>. Data: <a href="https://www.swpc.noaa.gov/" rel="noopener">NOAA SWPC</a>, <a href="https://sdo.gsfc.nasa.gov/" rel="noopener">NASA SDO</a> and <a href="https://soho.nascom.nasa.gov/" rel="noopener">ESA/NASA SOHO</a>. For outreach only, not an official alert service.</span></p>
+                </section>
             </div>
         </section>
     </main>
@@ -145,6 +235,7 @@
 {{footer}}
 
     <script src="script.js"></script>
+    <script src="clima.js" defer></script>
 </body>
 
 </html>

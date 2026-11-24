@@ -2233,3 +2233,57 @@ html:has(.mini-window[open]) { overflow: hidden; }
 .pop-email i { color: var(--gold-dark); }
 .pop-email:hover { color: var(--gold-dark); text-decoration: underline; }
 .pop-head > div { min-width: 0; }
+
+/* Clima espacial en tiempo real (clima-espacial.html#tiempo-real · clima.js) */
+.sw-monitor { padding: 40px; max-width: 1000px; margin: 40px auto; scroll-margin-top: 100px; }
+.sw-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 1.5rem; }
+.sw-head .section-title { text-align: left; margin-bottom: .5rem; }
+.sw-kicker { display: flex; align-items: center; gap: 8px; font-size: .8rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--gold-dark); margin: 0 0 .5rem; }
+.sw-live { width: 9px; height: 9px; border-radius: 50%; background: #2e9d5b; box-shadow: 0 0 0 0 rgba(46, 157, 91, .5); animation: sw-pulse 2s infinite; }
+@keyframes sw-pulse { 70% { box-shadow: 0 0 0 8px rgba(46, 157, 91, 0); } 100% { box-shadow: 0 0 0 0 rgba(46, 157, 91, 0); } }
+@media (prefers-reduced-motion: reduce) { .sw-live { animation: none; } }
+.sw-lead { color: var(--text-muted); margin: 0; max-width: 560px; }
+.sw-controls { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.sw-status { font-size: .8rem; color: var(--text-muted); margin: 0; }
+.sw-subtitle { font-family: var(--font-heading); font-size: 1.2rem; color: var(--ink); margin: 2rem 0 1rem; }
+.sw-scales { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.sw-scale { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px; padding: 18px 12px; border: 1px solid var(--line); border-top: 4px solid #2e9d5b; border-radius: 6px; background: var(--paper); }
+.sw-scale-value { font-variant-numeric: tabular-nums; font-family: var(--font-body); font-size: 2rem; font-weight: 700; color: var(--ink); line-height: 1; }
+.sw-scale-name { font-size: .85rem; font-weight: 600; color: var(--ink); }
+.sw-scale-text { font-size: .8rem; color: var(--text-muted); }
+.sw-metrics { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.sw-metric { padding: 18px 20px; border: 1px solid var(--line); border-left: 4px solid #2e9d5b; border-radius: 6px; background: #fff; display: flex; flex-direction: column; }
+.sw-metric h4 { margin: 0; font-size: .9rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+.sw-value { font-family: var(--font-body); font-size: 2.2rem; font-weight: 700; color: var(--ink); margin: .3rem 0 0; line-height: 1.1; font-variant-numeric: lining-nums tabular-nums; }
+.sw-value small { font-size: .95rem; font-weight: 400; color: var(--text-muted); font-family: var(--font-body); }
+.sw-note { font-size: .85rem; color: var(--text-muted); margin: .25rem 0 .5rem; min-height: 1.3em; }
+.sw-chart { height: 70px; margin-top: auto; }
+.sw-chart svg { width: 100%; height: 100%; display: block; }
+.sw-line { fill: none; stroke: var(--blue); stroke-width: 1.6; }
+.sw-axis { stroke: var(--line); stroke-width: 1; stroke-dasharray: 3 3; }
+.sw-bar { fill: #7fa7bf; }
+.sw-bar-active { fill: var(--gold); }
+.sw-bar-storm { fill: #c0503a; }
+.sw-time { font-size: .75rem; color: var(--text-muted); margin: .5rem 0 0; }
+.sw-level-0 { border-top-color: #2e9d5b; border-left-color: #2e9d5b; }
+.sw-level-1 { border-top-color: #d8b13a; border-left-color: #d8b13a; }
+.sw-level-2 { border-top-color: #e07b2e; border-left-color: #e07b2e; }
+.sw-level-3 { border-top-color: #c0392b; border-left-color: #c0392b; }
+.sw-images { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.sw-image { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.sw-image img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 6px; background: #000; display: block; }
+.sw-image figcaption { font-size: .85rem; color: var(--text-muted); line-height: 1.5; }
+.sw-channels { display: flex; flex-wrap: wrap; gap: 6px; }
+.sw-channels button { font: inherit; font-size: .8rem; padding: 5px 10px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--ink); cursor: pointer; }
+.sw-channels button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+.sw-credits { font-size: .8rem; color: var(--text-muted); margin: 2rem 0 0; padding-top: 1rem; border-top: 1px solid var(--line); line-height: 1.6; }
+.sw-credits a { color: var(--gold-dark); }
+@media (max-width: 768px) {
+    .sw-monitor { padding: 24px 18px; }
+    .sw-controls { align-items: flex-start; }
+    .sw-scales { grid-template-columns: 1fr; }
+    .sw-scale { flex-direction: row; justify-content: space-between; text-align: left; gap: 10px; }
+    .sw-metrics, .sw-images { grid-template-columns: 1fr; }
+}
+/* Novedades: 2×2 simétrico arriba; las tarjetas desplegables ocupan el ancho completo debajo. */
+@media (min-width: 769px) { .news-grid { grid-template-columns: repeat(2, 1fr); } }
